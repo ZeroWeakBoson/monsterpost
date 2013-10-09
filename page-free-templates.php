@@ -11,7 +11,7 @@ get_header(); ?>
 						get_template_part('title');
 
 						$args = array(
-							'category_name'  => 'post-formats'
+							'category_name'  => 'free-website-templates'
 						);
 
 						// The Query
