@@ -1,0 +1,93 @@
+/* #General
+================================================== */
+::selection {
+	background: fade(@red, 80%);
+	color: #fff;
+	img&{
+		background: transparent;
+	}
+}
+::-moz-selection {
+	background: fade(@red, 80%);
+	color: #fff;
+	img&{
+		background: transparent;
+	}
+}
+
+html, body {
+	height: 100%;
+}
+body {
+	position: relative;
+	.ie8 & {
+		min-width: 980px;
+	}
+}
+a {
+	outline: none;
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+}
+p {
+	margin-bottom: 19px;
+}
+/* Heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: block;
+}
+h1 {
+	span {
+		color: @grayLight;
+	}
+}
+h5 {
+	margin-top: 0;
+	padding-top: 11px;
+}
+h6 {
+	text-transform: uppercase;
+}
+
+.main-holder {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	@media (min-width: 768px) and (max-width: 979px) {
+		// font-size: 15px !important;
+		// line-height: 18px !important;
+	}
+	@media (max-width: 768px) {
+		// font-size: 15px !important;
+		// line-height: 18px !important;
+	}
+}
+
+.extra{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -140px;
+	position: relative;
+	z-index: 1;
+	&-block {
+		height: 140px;
+	}
+}
+
+/* Indents */
+.indent {
+	&-bot {
+		margin-bottom: 30px;
+	}
+}

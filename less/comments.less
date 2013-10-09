@@ -1,0 +1,189 @@
+/* #Comments
+================================================== */
+.comment-holder {
+	padding: 0;
+	margin: 0 0 2em;
+}
+
+/* Comment Heading */
+.comment-reply-title {
+	padding: 0;
+	margin: 0;
+	small {
+		display: block;
+		font-size: 50%;
+		a {
+			color: @red;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* Comment List */
+.comment-list {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+	.comment{
+		position: relative;
+		margin: 0;
+		padding: 0;
+		background: none;
+		list-style-type: none;
+		text-transform: none;
+		.comment-body {
+			position: relative;
+			overflow: hidden;
+			margin-top: 10px;
+			padding: 20px;
+			border: 1px solid #eee;
+			background: #eee;
+		}
+		p {
+
+		}
+		&.bypostauthor.comment-body {
+			background: #fafafa;
+		}
+	}
+	.odd {}
+	.even {}
+
+.author-comment {}
+.comment-text {}
+.comment-author {
+	float: left;
+	margin: 0 20px 0 0;
+	.author {
+		display: block;
+		padding-top: 6px;
+		width: 5px;
+		text-align: center;
+		text-transform: capitalize;
+		font-weight: bold;
+		font-size: 12px;
+	}
+}
+
+/* Comment meta */
+.comment-meta {
+	float: right;
+}
+
+/* Reply */
+.reply {
+	float: right;
+	margin-left: 28px;
+	a {
+		display: inline-block;
+		text-decoration: none !important;
+		&:hover {
+
+		}
+	}
+}
+
+.waiting-for-approval {}
+ #trackbacks {}
+li.trackback {}
+p#no-comments {}
+
+.allowed_tags {
+	padding: 15px;
+	background: #eee;
+	color: #666;
+	font: 11px "Courier New", Courier, monospace;
+	strong {
+		font-family: Tahoma, Geneva, sans-serif;
+	}
+}
+
+#respond {
+	padding-top: 25px;
+	h3 {
+
+	}
+}
+
+.cancel-comment-reply a {
+	&:hover {
+
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.comment-list ul.children {
+		margin: 0;
+	}
+}
+@media (max-width: 767px) {
+	.comment-list ul.children {
+		margin: 0;
+	}
+}
+.nocomments {
+	margin: 0;
+}
+
+
+/* Comment form */
+#commentform {
+	p.field {
+		margin-bottom: 10px;
+	}
+	small {
+		color: #8b8b8b;
+	}
+	code {
+		display: block;
+		white-space: normal;
+	}
+	label {
+		display:block;
+	}
+	input[type="text"] {
+		margin: 0;
+		padding: 6px;
+		width: 288px;
+		@media (max-width: 767px) {
+			width: 100%;
+			height: 30px;
+			.box-sizing(border-box);
+		}
+	}
+	input[type="submit"] {
+		&:hover {}
+	}
+	textarea {
+		overflow: auto;
+		margin: 0;
+		min-width: 530px;
+		min-height: 230px;
+		max-width: 530px;
+		width: 530px;
+		height: 230px;
+		.children & {
+			width: 100%;
+			max-width: 100%;
+			min-width: 100%;
+			.box-sizing(border-box);
+		}
+		@media (min-width: 768px) and (max-width: 979px) {
+			width: 100%;
+			max-width: 100%;
+			min-width: 100%;
+			.box-sizing(border-box);
+		}
+		@media (max-width: 767px) {
+			width: 100%;
+			max-width: 100%;
+			min-width: 100%;
+			.box-sizing(border-box);
+		}
+	}
+}

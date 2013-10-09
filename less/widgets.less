@@ -1,0 +1,417 @@
+/* #Widgets
+================================================== */
+/* General for Widget */
+.widget {
+	overflow: hidden;
+	margin-bottom: 20px;
+	padding: 0 35px 10px;
+	background: @white;
+	.box-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+	.border-radius(@baseBorderRadius);
+	@media (min-width: 768px) and (max-width: 979px) {
+		padding: 0 25px 10px;
+	}
+	h3 {
+		padding: 24px 35px 18px 35px;
+		margin: 0 -35px 35px;
+		border: 1px solid #fff;
+		line-height: 1.23;
+		.box-shadow(0 1px 1px 0px #e5e5e5);
+		.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+		#gradient > .vertical(#fff, #fafafa);
+		@media (min-width: 768px) and (max-width: 979px) {
+			padding: 20px 25px;
+			margin: 0 -25px 20px;
+		}
+	}
+}
+
+/* Standard Widgets
+---------------------------------------- */
+
+/* Calendar */
+#calendar_wrap {
+	padding:0;
+}
+	#wp-calendar {
+		width:100%;
+	}
+		#wp-calendar td {
+			padding:6px 0;
+			border:none;
+			text-align:center;
+		}
+		#wp-calendar caption {
+			margin-bottom:5px;
+			padding:4px 0;
+			color:#000;
+			font-weight:bold;
+			font-size:16px;
+			text-align:center;
+		}
+		#wp-calendar thead th {
+			padding:7px 0;
+			background:#fff;
+			color:#000;
+			text-align:center;
+			font-size:14px;
+		}
+		#wp-calendar #prev {
+			text-align:left;
+		}
+		#wp-calendar #next {
+			text-align:right;
+		}
+		
+/*/ Calendar */
+
+/* Text Widget */
+.textwidget {
+	word-wrap: break-word;
+}
+/*/ Text Widget */
+
+
+/* Custom Widgets
+---------------------------------------- */
+
+/* Custom Popular Posts */
+.custom-popular-posts ul,
+.custom-popular-list {
+	margin: -20px 0 0;
+	background: none;
+	border: none;
+	li {
+		position: relative;
+		overflow: hidden;
+		margin: 0 0 10px;
+		padding: 20px 0 0 0;
+		background: none;
+		border-top: 1px solid #f2f2f2;
+		list-style-type: none;
+		&:first-child {
+			border: none;
+		}
+		&.bnr-sidebar,
+		&.bnr-sidebar + li {
+			border: none;
+			padding-top: 8px;
+			margin-bottom: 22px;
+		}
+	}
+	a.wpp-thumbnail {
+		float: left;
+		display: block;
+		overflow: hidden;
+		margin: 0 24px 10px 0;
+		@media (min-width: 768px) and (max-width: 979px) {
+			width: 50px;
+			height: 50px;
+			margin: 0 10px 10px 0;
+		}
+		img {
+			width: 100%;
+			max-width: none;
+			.border-radius(@baseBorderRadius);
+		}
+	}
+	.wpp-author {
+		font-size: 0.875em;
+		color: #7f7f7f;
+	}
+	.wpp-date {
+		display: block;
+		font-size: 0.875em;
+		color: #7f7f7f;
+		@media (min-width: 1200px) {
+			position: absolute;
+			top: 20px;
+			right: 0;
+		}
+	}
+	.wpp-title {
+		overflow: hidden;
+		margin: 5px 0;
+		font-size: 17px;
+		line-height: 20px;
+	}
+	.sidebar-single & {
+		li, h4 {
+			font-family: @customFont;
+			font-size: 14px;
+		}
+		h4 {
+			margin: 0;
+		}
+		.wpp-date {
+			position: relative;
+			top: auto;
+			right: auto;
+		}
+		.wpp-author {
+			font-size: 1em;
+		}
+	}
+}
+
+/* Become an Author */
+.become-author {
+	position: relative;
+	display: block;
+	height: 84px;
+	margin: 0 -35px -10px -34px;
+	color: #333;
+	text-decoration: none;
+	vertical-align: top;
+	#gradient > .vertical(#fff, #fafafa);
+	@media (min-width: 768px) and (max-width: 979px) {
+		height: 40px;
+		margin: 0 -25px -10px -24px;
+	}
+	&:hover {
+		color: #333;
+		i {
+			&:after {
+				right: -33px;
+				@media (min-width: 768px) and (max-width: 979px) {
+					right: -25px;
+				}
+			}
+		}
+		.icon-box {
+			padding-right: 15px;
+		}
+	}
+	.icon-box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100px;
+		height: 100%;
+		margin-left: -1px;
+		text-align: center;
+		background: #d74937;
+		.border-radius(4px 0 0 4px);
+		-webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+		-webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		   -moz-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		    -ms-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		     -o-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		        transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+		-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		    -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+		        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+		@media (min-width: 768px) and (max-width: 979px) {
+			width: 50px;
+		}
+	}
+	strong {
+		display: block;
+		padding: 20px 0 0 140px;
+		font: normal 20px/1.23 @serifFontFamily;
+		vertical-align: top;
+		@media (min-width: 1200px) {
+			padding-top: 27px;
+			font-size: 22px;
+		}
+		@media (min-width: 768px) and (max-width: 979px) {
+			padding: 10px 0 0 80px;
+			font-size: 16px;
+		}
+	}
+	i {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		color: #fff;
+		font-size: 62px;
+		line-height: 84px;
+		&:after {
+			position: absolute;
+			top: 0;
+			right: -18px;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			border-width: 42px 0 42px 18px;
+			border-style: solid;
+			border-color: transparent transparent transparent #d74937;
+			content:'';
+			-webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+			-webkit-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			   -moz-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			    -ms-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			     -o-transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			        transition: all 300ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+			-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+			-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			    -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+			        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+			@media (min-width: 768px) and (max-width: 979px) {
+				right: -10px;
+				border-width: 20px 0 20px 10px;
+			}
+		}
+		@media (min-width: 768px) and (max-width: 979px) {
+			font-size: 25px;
+			line-height: 40px;
+		}
+	}
+}
+
+/* Custom Recent Comments */
+.comments-custom {
+	
+	& li {
+		overflow:hidden;
+		margin:0;
+		padding:25px 0 25px 0;
+		border-top:1px solid @grayLighter;
+		border-bottom:none;
+		background:none;
+	}
+	& li:first-child {
+		padding-top:0;
+		border-top:none;
+	}
+	&_txt {
+		padding:15px 0 0 0;
+	}
+		&_txt a {
+			color: @linkColor;
+			text-decoration:none;
+		}
+		&_txt a:hover {
+			text-decoration:underline;
+		}
+	&_h {
+		margin-bottom:.1em;
+	}
+	& time {
+		font-size:11px;
+	}
+
+}
+/*/ Custom Recent Comments */
+
+
+/* Posts List */
+.post-list {
+
+	& li {
+		overflow:hidden;
+		padding-top:1.5em;
+		padding-bottom:1.5em;
+		border-top:1px solid @grayLighter;
+	}
+	& li:first-child{
+		padding-top:0;
+		border:none;
+	}
+	&_h {
+
+	}
+	& .excerpt {
+		margin-bottom: 1em;
+	}
+	&_comment {
+
+	}
+}
+/*/ Posts List */
+
+/* Banners widget
+---------------------------------------- */
+.banners {
+	
+	&_li {
+		float:left;
+		margin:0 3px 3px 0;
+	}
+	&_img {
+		width: 125px;
+		height: auto;
+	}
+
+}
+/*/ Banners widget */
+
+
+/* vCard widget
+---------------------------------------- */			
+.vcard {
+	
+	& span {
+		display: block;
+	}
+}
+
+/*/ vCard widget */	
+
+/* Twitter widget
+---------------------------------------- */
+.twitter {
+  position: relative;
+}
+.twitter .tweet_list {
+  overflow: hidden;
+  margin: 0;
+}
+.twitter .tweet_list > li {
+  margin: 0 0 15px 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+.twitter .tweet_list .timestamp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  font-size: 11px;
+}
+.twitter .tweet_list .timestamp a {
+  color: #999;
+}
+.twitter .tweet_item {
+  border-bottom: 1px solid #E8E8E8;
+  min-height: 51px;
+  padding: 9px 12px;
+  position: relative;
+}
+.twitter .tweet_content {
+  margin-left: 58px;
+}
+.twitter .tweet_txt {
+  padding: 0 0 5px 0;
+}
+.twitter .tweet_txt a {
+  font-weight: bold;
+}
+.twitter_intents {
+  text-align: right;
+  float: right;
+  font-size: 11px;
+}
+.twitter_intents span {
+  display: inline-block;
+  padding-left: 5px;
+}
+.twitter .stream-item-header .account-group {
+  color: #999;
+}
+.twitter .stream-item-header .avatar {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+/* /Twitter widget */

@@ -1,0 +1,172 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('icomoon.eot');
+	src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+		url('icomoon.woff') format('woff'),
+		url('icomoon.ttf') format('truetype'),
+		url('icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-facebook, .icon-twitter, .icon-google-plus, .icon-pinterest, .icon-feed, .icon-play-dark, .icon-grid, .icon-list, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-books, .icon-case-studies, .icon-podcasts, .icon-home, .icon-question-sign, .icon-stumbleupon, .icon-videos, .icon-user-add, .icon-dollar, .icon-cog, .icon-edit, .icon-bullhorn, .icon-database, .icon-upload, .icon-graduate, .icon-cogs, .icon-picture, .icon-locked, .icon-envelope, .icon-close, .icon-search, .icon-forward, .icon-bubble, .icon-tag, .icon-yes, .icon-no, .icon-linkedin-sign, .icon-monster, .icon-quote, .icon-list-2, .icon-quora {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-facebook:before {
+	content: "\e000";
+}
+.icon-twitter:before {
+	content: "\e001";
+}
+.icon-google-plus:before {
+	content: "\e002";
+}
+.icon-pinterest:before {
+	content: "\e003";
+}
+.icon-feed:before {
+	content: "\e00c";
+}
+.icon-play-dark:before {
+	content: "\e01d";
+}
+.icon-grid:before {
+	content: "\e033";
+}
+.icon-list:before {
+	content: "\e035";
+}
+.icon-angle-left:before {
+	content: "\f104";
+}
+.icon-angle-right:before {
+	content: "\f105";
+}
+.icon-angle-up:before {
+	content: "\f106";
+}
+.icon-angle-down:before {
+	content: "\f107";
+}
+.icon-pencil:before {
+	content: "\e036";
+}
+.icon-books:before {
+	content: "\e038";
+}
+.icon-case-studies:before {
+	content: "\e037";
+}
+.icon-podcasts:before {
+	content: "\e03a";
+}
+.icon-home:before {
+	content: "\f015";
+}
+.icon-question-sign:before {
+	content: "\f059";
+}
+.icon-stumbleupon:before {
+	content: "\e00d";
+}
+.icon-videos:before {
+	content: "\e03b";
+}
+.icon-user-add:before {
+	content: "\e032";
+}
+.icon-dollar:before {
+	content: "\e034";
+}
+.icon-cog:before {
+	content: "\e03c";
+}
+.icon-edit:before {
+	content: "\e03d";
+}
+.icon-bullhorn:before {
+	content: "\f0a1";
+}
+.icon-database:before {
+	content: "\e040";
+}
+.icon-upload:before {
+	content: "\e041";
+}
+.icon-graduate:before {
+	content: "\e042";
+}
+.icon-cogs:before {
+	content: "\f085";
+}
+.icon-picture:before {
+	content: "\e03f";
+}
+.icon-locked:before {
+	content: "\e044";
+}
+.icon-envelope:before {
+	content: "\e029";
+}
+.icon-close:before {
+	content: "\e004";
+}
+.icon-search:before {
+	content: "\e005";
+}
+.icon-forward:before {
+	content: "\e006";
+}
+.icon-bubble:before {
+	content: "\e008";
+}
+.icon-tag:before {
+	content: "\f02b";
+}
+.icon-yes:before {
+	content: "\e007";
+}
+.icon-no:before {
+	content: "\e009";
+}
+.icon-linkedin-sign:before {
+	content: "\f08c";
+}
+.icon-monster:before {
+	content: "\e00b";
+}
+.icon-quote:before {
+	content: "\e00e";
+}
+.icon-list-2:before {
+	content: "\e00f";
+}
+.icon-quora:before {
+	content: "\e00a";
+}

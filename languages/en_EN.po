@@ -1,0 +1,1307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-10-08 11:53+0200\n"
+"PO-Revision-Date: 2013-10-08 11:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:9
+msgid "Page not found"
+msgstr ""
+
+#: ../404.php:10
+msgid "It might have been removed or is temporarily unavailable."
+msgstr ""
+
+#: ../404.php:14
+msgid "Try a search box to find what you're looking for:"
+msgstr ""
+
+#: ../404.php:16
+msgid "or"
+msgstr ""
+
+#: ../404.php:41
+msgid "Go Back"
+msgstr ""
+
+#: ../404.php:45
+msgid "Go to Home Page"
+msgstr ""
+
+#: ../404.php:47
+msgid "Contact Us"
+msgstr ""
+
+#: ../archive.php:7
+msgid "Archives"
+msgstr ""
+
+#: ../archive.php:102 ../category-layout-1.php:31 ../category-layout-2.php:11
+#: ../page-free-templates.php:36 ../tag-books.php:14 ../tag-podcasts.php:13
+#: ../tag-slide-decks.php:13 ../tag-videos.php:13 ../tag.php:31
+#: ../includes/post-formats/audio.php:8 ../includes/post-formats/chat.php:7
+#: ../includes/post-formats/gallery.php:8 ../includes/post-formats/image.php:8
+#: ../includes/post-formats/link.php:10
+#: ../includes/post-formats/standard.php:8
+#: ../includes/post-formats/video.php:12
+msgid "Permalink to:"
+msgstr ""
+
+#: ../archive.php:113 ../author.php:121 ../category-layout-1.php:47
+#: ../category-layout-2.php:29 ../index.php:77 ../page-free-templates.php:53
+#: ../search.php:20 ../tag-books.php:30 ../tag-podcasts.php:36
+#: ../tag-slide-decks.php:39 ../tag-videos.php:45 ../tag.php:42
+msgid "There has been an error."
+msgstr ""
+
+#: ../archive.php:114 ../author.php:122 ../category-layout-1.php:48
+#: ../category-layout-2.php:30 ../index.php:78 ../page-free-templates.php:54
+#: ../search.php:21 ../tag-books.php:31 ../tag-podcasts.php:37
+#: ../tag-slide-decks.php:40 ../tag-videos.php:46 ../tag.php:43
+msgid "We apologize for any inconvenience, please"
+msgstr ""
+
+#: ../archive.php:114 ../author.php:122 ../category-layout-1.php:48
+#: ../category-layout-2.php:30 ../index.php:78 ../page-free-templates.php:54
+#: ../search.php:21 ../tag-books.php:31 ../tag-podcasts.php:37
+#: ../tag-slide-decks.php:40 ../tag-videos.php:46 ../tag.php:43
+msgid "return to the home page"
+msgstr ""
+
+#: ../archive.php:114 ../author.php:122 ../category-layout-1.php:48
+#: ../category-layout-2.php:30 ../index.php:78 ../page-free-templates.php:54
+#: ../search.php:21 ../tag-books.php:31 ../tag-podcasts.php:37
+#: ../tag-slide-decks.php:40 ../tag-videos.php:46 ../tag.php:43
+msgid "or use the search form below."
+msgstr ""
+
+#: ../author.php:58
+msgid "Articles"
+msgstr ""
+
+#: ../author.php:62 ../sidebar-author.php:56
+msgid "Categories"
+msgstr ""
+
+#: ../author.php:66 ../includes/wordpress-popular-posts.php:315
+msgid "Comments"
+msgstr ""
+
+#: ../author.php:72
+msgid "Posts by"
+msgstr ""
+
+#: ../comments.php:7
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: ../comments.php:30
+msgid "No Comments Yet."
+msgstr ""
+
+#: ../comments.php:33 ../single.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: ../comments.php:40
+msgid "You must be"
+msgstr ""
+
+#: ../comments.php:40
+msgid "logged in"
+msgstr ""
+
+#: ../comments.php:40
+msgid "to post a comment."
+msgstr ""
+
+#: ../filterable-carousel.php:35
+msgid "Best of Web"
+msgstr ""
+
+#: ../filterable-carousel.php:95
+msgid "View all"
+msgstr ""
+
+#: ../followers.php:79
+msgid "Facebook"
+msgstr ""
+
+#: ../followers.php:86
+msgid "Twitter"
+msgstr ""
+
+#: ../followers.php:93 ../includes/author-social.php:36
+msgid "Google+"
+msgstr ""
+
+#: ../followers.php:99
+msgid "StumbleUpon"
+msgstr ""
+
+#: ../followers.php:105
+msgid "Pinterest"
+msgstr ""
+
+#: ../followers.php:110
+msgid "Tell a Friend"
+msgstr ""
+
+#: ../functions.php:226 ../functions.php:235
+msgid "Read More"
+msgstr ""
+
+#: ../head.php:11
+msgid "Search..."
+msgstr ""
+
+#: ../header.php:9
+msgid "Category Archive for &quot;"
+msgstr ""
+
+#: ../header.php:9 ../header.php:11 ../header.php:15
+msgid "&quot; | "
+msgstr ""
+
+#: ../header.php:11
+msgid "Tag Archive for &quot;"
+msgstr ""
+
+#: ../header.php:13
+msgid " Archive | "
+msgstr ""
+
+#: ../header.php:15
+msgid "Search for &quot;"
+msgstr ""
+
+#: ../header.php:19
+msgid "Error 404 Not Found | "
+msgstr ""
+
+#: ../index.php:71
+msgid "Next Page &nbsp;&rsaquo;&nbsp;"
+msgstr ""
+
+#: ../options.php:30
+msgid "Image Logo"
+msgstr ""
+
+#: ../options.php:31
+msgid "Text Logo"
+msgstr ""
+
+#: ../options.php:727
+msgid "General"
+msgstr ""
+
+#: ../options.php:1073
+msgid "Logo"
+msgstr ""
+
+#: ../options.php:1143 ../title.php:8
+msgid "Blog"
+msgstr ""
+
+#: ../options.php:1269
+msgid "Footer"
+msgstr ""
+
+#: ../sidebar-author.php:72 ../includes/widgets/my-author-widget.php:25
+msgid "Become an Author"
+msgstr ""
+
+#: ../single.php:32 ../includes/class-tgm-plugin-activation.php:1298
+#: ../includes/theme-postmeta.php:77
+msgid "Source"
+msgstr ""
+
+#: ../single.php:38
+msgid "About the Author"
+msgstr ""
+
+#: ../single.php:79
+msgid "&lsaquo;&nbsp;Previous"
+msgstr ""
+
+#: ../single.php:86
+msgid "Next&nbsp;&rsaquo;"
+msgstr ""
+
+#: ../single.php:94 ../includes/wordpress-popular-posts.php:250
+#: ../includes/wordpress-popular-posts.php:704
+msgid "Popular Posts"
+msgstr ""
+
+#: ../title.php:15
+msgid "Search for: "
+msgstr ""
+
+#: ../title.php:18
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#: ../title.php:21
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr ""
+
+#: ../title.php:24
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr ""
+
+#: ../title.php:31 ../top-posts.php:49
+#: ../includes/post-formats/post-meta.php:5
+msgid "by "
+msgstr ""
+
+#: ../top-posts.php:56 ../includes/post-formats/post-meta.php:11
+msgid "in "
+msgstr ""
+
+#: ../admin/options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../admin/options-framework.php:270
+msgid "Default options restored."
+msgstr ""
+
+#: ../admin/options-framework.php:313
+msgid "Options saved."
+msgstr ""
+
+#: ../admin/options-framework.php:369
+msgid "Cherry Options"
+msgstr ""
+
+#: ../admin/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: ../admin/options-medialibrary-uploader.php:129
+msgid "Upload"
+msgstr ""
+
+#: ../admin/options-medialibrary-uploader.php:152
+msgid "View File"
+msgstr ""
+
+#: ../admin/options-medialibrary-uploader.php:289
+msgid "Gallery"
+msgstr ""
+
+#: ../admin/options-medialibrary-uploader.php:289
+msgid "Previously Uploaded"
+msgstr ""
+
+#: ../admin/options-sanitize.php:257
+msgid "No Repeat"
+msgstr ""
+
+#: ../admin/options-sanitize.php:258
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../admin/options-sanitize.php:259
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../admin/options-sanitize.php:260
+msgid "Repeat All"
+msgstr ""
+
+#: ../admin/options-sanitize.php:273
+msgid "Top Left"
+msgstr ""
+
+#: ../admin/options-sanitize.php:274
+msgid "Top Center"
+msgstr ""
+
+#: ../admin/options-sanitize.php:275
+msgid "Top Right"
+msgstr ""
+
+#: ../admin/options-sanitize.php:276
+msgid "Middle Left"
+msgstr ""
+
+#: ../admin/options-sanitize.php:277
+msgid "Middle Center"
+msgstr ""
+
+#: ../admin/options-sanitize.php:278
+msgid "Middle Right"
+msgstr ""
+
+#: ../admin/options-sanitize.php:279
+msgid "Bottom Left"
+msgstr ""
+
+#: ../admin/options-sanitize.php:280
+msgid "Bottom Center"
+msgstr ""
+
+#: ../admin/options-sanitize.php:281
+msgid "Bottom Right"
+msgstr ""
+
+#: ../admin/options-sanitize.php:294
+msgid "Scroll Normally"
+msgstr ""
+
+#: ../admin/options-sanitize.php:295
+msgid "Fixed in Place"
+msgstr ""
+
+#: ../admin/options-sanitize.php:346
+msgid "1"
+msgstr ""
+
+#: ../admin/options-sanitize.php:347
+msgid "1.2"
+msgstr ""
+
+#: ../admin/options-sanitize.php:348
+msgid "1.5"
+msgstr ""
+
+#: ../admin/options-sanitize.php:349
+msgid "2"
+msgstr ""
+
+#: ../admin/options-sanitize.php:391
+msgid "Latin"
+msgstr ""
+
+#: ../admin/options-sanitize.php:392
+msgid "Latin Extended"
+msgstr ""
+
+#: ../admin/options-sanitize.php:393
+msgid "Greek"
+msgstr ""
+
+#: ../admin/options-sanitize.php:394
+msgid "Greek Extended"
+msgstr ""
+
+#: ../admin/options-sanitize.php:395
+msgid "Cyrillic"
+msgstr ""
+
+#: ../admin/options-sanitize.php:396
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: ../admin/options-sanitize.php:397
+msgid "Vietnamese"
+msgstr ""
+
+#: ../admin/options-sanitize.php:414
+msgid "Normal"
+msgstr ""
+
+#: ../admin/options-sanitize.php:415
+msgid "Italic"
+msgstr ""
+
+#: ../admin/options-sanitize.php:416
+msgid "Bold"
+msgstr ""
+
+#: ../admin/options-sanitize.php:417
+msgid "Bold Italic"
+msgstr ""
+
+#: ../includes/author-social.php:32
+msgid "Email"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:164
+#: ../includes/register-plugins.php:94
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:165
+#: ../includes/register-plugins.php:95
+msgid "Install Plugins"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:166
+#: ../includes/register-plugins.php:96
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:178
+#: ../includes/class-tgm-plugin-activation.php:490
+#: ../includes/register-plugins.php:108
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:179
+#: ../includes/class-tgm-plugin-activation.php:1846
+#: ../includes/register-plugins.php:109
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:517
+#: ../includes/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1956
+#: ../includes/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1956
+#: ../includes/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../includes/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../includes/register-plugins.php:97
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../includes/register-plugins.php:110
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: ../includes/sidebar-init.php:8
+msgid "Located at the right side of pages."
+msgstr ""
+
+#: ../includes/theme-function.php:61
+msgid "Thumbnail"
+msgstr ""
+
+#: ../includes/theme-function.php:82
+msgid "None"
+msgstr ""
+
+#: ../includes/theme-function.php:109
+msgid "Show All "
+msgstr ""
+
+#: ../includes/theme-function.php:161
+msgid "Prev"
+msgstr ""
+
+#: ../includes/theme-function.php:169
+msgid "Next"
+msgstr ""
+
+#: ../includes/theme-function.php:189
+#, php-format
+msgid "<span class=\"author\">%1$s</span>"
+msgstr ""
+
+#: ../includes/theme-function.php:192
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../includes/theme-function.php:202
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: ../includes/theme-init.php:43
+msgid "FAQs"
+msgstr ""
+
+#: ../includes/theme-init.php:44
+msgid "FAQ"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:12
+msgid "Link Settings"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:17
+msgid "The URL"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:18
+msgid "Insert the URL you wish to link to."
+msgstr ""
+
+#: ../includes/theme-postmeta.php:28
+msgid "Image Settings"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:33
+msgid "Enable Lightbox"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:34
+msgid "Check this to enable the lightbox."
+msgstr ""
+
+#: ../includes/theme-postmeta.php:45
+msgid "Go to Top Posts"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:50
+msgid "Yep, I'm top post."
+msgstr ""
+
+#: ../includes/theme-postmeta.php:51
+msgid "Check it, If you want to mark this post as a top."
+msgstr ""
+
+#: ../includes/theme-postmeta.php:61
+msgid "Go to Filterable Carousel"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:66
+msgid "Post from a Filterable Carousel."
+msgstr ""
+
+#: ../includes/theme-postmeta.php:67
+msgid "Check it, If you want to send this post to Filterable Carousel."
+msgstr ""
+
+#: ../includes/theme-postmeta.php:82
+msgid "URL to the source"
+msgstr ""
+
+#: ../includes/theme-postmeta.php:83
+msgid "If you use sided media content, please type URL to it."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:49
+msgid "The most Popular Posts on your blog."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:301
+#: ../includes/widgets/my-author-widget.php:44
+#: ../includes/widgets/my-newsletter-widget.php:50
+#: ../includes/widgets/my-post-cycle-widget.php:99
+#: ../includes/widgets/my-recent-posts.php:132
+#: ../includes/widgets/my-twitter-widget.php:156
+msgid "Title:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:301
+#: ../includes/wordpress-popular-posts.php:303
+#: ../includes/wordpress-popular-posts.php:305
+#: ../includes/wordpress-popular-posts.php:313
+#: ../includes/wordpress-popular-posts.php:324
+#: ../includes/wordpress-popular-posts.php:326
+#: ../includes/wordpress-popular-posts.php:330
+#: ../includes/wordpress-popular-posts.php:334
+#: ../includes/wordpress-popular-posts.php:343
+#: ../includes/wordpress-popular-posts.php:355
+#: ../includes/wordpress-popular-posts.php:367
+#: ../includes/wordpress-popular-posts.php:368
+#: ../includes/wordpress-popular-posts.php:369
+#: ../includes/wordpress-popular-posts.php:370
+#: ../includes/wordpress-popular-posts.php:385
+#: ../includes/wordpress-popular-posts.php:396
+msgid "What is this?"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:303
+msgid "Show up to:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:304
+msgid "posts"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:305
+msgid "Time Range:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:307
+msgid "Last 24 hours"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:308
+msgid "Last 7 days"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:309
+msgid "Last 30 days"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:310
+msgid "All-time"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:313
+msgid "Sort posts by:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:316
+msgid "Total views"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:317
+msgid "Avg. daily views"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:322
+msgid "Posts settings"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:324
+msgid "Display post rating"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:326
+msgid "Shorten title"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:328
+msgid "Shorten title to"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:328
+#: ../includes/wordpress-popular-posts.php:335
+msgid "characters"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:330
+msgid "Display post excerpt"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:333
+msgid "Excerpt Properties"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:334
+msgid "Keep text format and links"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:335
+msgid "Excerpt length:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:343
+msgid "Filters:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:344
+msgid "Post type(s):"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:346
+msgid "Category(ies) ID(s):"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:348
+msgid "Author(s) ID(s):"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:354
+msgid "Thumbnail settings"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:355
+msgid "Display post thumbnail"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:357
+msgid "Width:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:358
+#: ../includes/wordpress-popular-posts.php:360
+msgid "px"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:359
+msgid "Height:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:366
+msgid "Stats Tag settings"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:367
+msgid "Display comment count"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:368
+msgid "Display views"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:369
+msgid "Display author"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:370
+msgid "Display date"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:373
+msgid "Date Format"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:384
+msgid "HTML Markup settings"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:385
+msgid "Use custom HTML Markup"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:388
+msgid "Before / after title:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:390
+msgid "Before / after Popular Posts:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:392
+msgid "Before / after each post:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:396
+msgid "Use content formatting tags"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:399
+msgid "Content format:"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:513
+msgid "Success! The cache table has been cleared!"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:515
+msgid "Error: cache table does not exist."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:521
+msgid "Success! All data have been cleared!"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:523
+msgid "Error: one or both data tables are missing."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:526
+msgid "Invalid action."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:529
+msgid ""
+"Sorry, you do not have enough permissions to do this. Please contact the "
+"site administrator for support."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:962
+msgid "Sorry. No data so far."
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:1040
+msgid "comment(s)"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:1044
+msgid "view(s)"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:1047
+msgid "view(s) per day"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:1056
+msgid "by"
+msgstr ""
+
+#: ../includes/wordpress-popular-posts.php:1396
+msgid ""
+"Your Wordpress version is too old. Wordpress Popular Posts Plugin requires "
+"at least version 2.8 to function correctly. Please update your blog via "
+"Tools &gt; Upgrade."
+msgstr ""
+
+#: ../includes/post-formats/post-date.php:5
+msgid "Filed under:"
+msgstr ""
+
+#: ../includes/post-formats/post-nav.php:7
+msgid "&laquo; Older Entries"
+msgstr ""
+
+#: ../includes/post-formats/post-nav.php:10
+msgid "Newer Entries &raquo;"
+msgstr ""
+
+#: ../includes/post-formats/read-also-posts.php:16
+msgid "Read Also"
+msgstr ""
+
+#: ../includes/post-formats/related-posts.php:23
+msgid "Related Posts"
+msgstr ""
+
+#: ../includes/post-formats/single-post-meta.php:5
+msgid "Posted by "
+msgstr ""
+
+#: ../includes/post-formats/social-buttons.php:9
+msgid "Enjoyed This Post? Share!"
+msgstr ""
+
+#: ../includes/theme_shortcodes/widget.php:22
+#, php-format
+msgid ""
+"%s: Widget class not found. Make sure this widget exists and the class name "
+"is correct"
+msgstr ""
+
+#: ../includes/theme_shortcodes/tinymce/dialog.php:23
+msgid "Shortcode Options"
+msgstr ""
+
+#: ../includes/widgets/my-author-widget.php:45
+msgid "Enter URL:"
+msgstr ""
+
+#: ../includes/widgets/my-comment-widget.php:6
+msgid "My - Recent Comments"
+msgstr ""
+
+#: ../includes/widgets/my-comment-widget.php:7
+msgid "Cherry - Recent Comments"
+msgstr ""
+
+#: ../includes/widgets/my-comment-widget.php:14
+msgid "My Recent Comments"
+msgstr ""
+
+#: ../includes/widgets/my-comment-widget.php:48
+msgid "Go to this comment"
+msgstr ""
+
+#: ../includes/widgets/my-newsletter-widget.php:5
+msgid "A widget for newsletter form"
+msgstr ""
+
+#: ../includes/widgets/my-newsletter-widget.php:6
+msgid "Cherry - Newsletter"
+msgstr ""
+
+#: ../includes/widgets/my-newsletter-widget.php:46
+msgid "Get Updates (it's free)"
+msgstr ""
+
+#: ../includes/widgets/my-newsletter-widget.php:46
+msgid "Enter your email to get free newsletter updates"
+msgstr ""
+
+#: ../includes/widgets/my-newsletter-widget.php:54
+msgid "Description:"
+msgstr ""
+
+#: ../includes/widgets/my-post-cycle-widget.php:74
+msgid "View All"
+msgstr ""
+
+#: ../includes/widgets/my-post-cycle-widget.php:101
+msgid "Posts count:"
+msgstr ""
+
+#: ../includes/widgets/my-post-cycle-widget.php:103
+msgid "Select category:"
+msgstr ""
+
+#: ../includes/widgets/my-post-cycle-widget.php:121
+msgid "Animate slider automatically:"
+msgstr ""
+
+#: ../includes/widgets/my-post-cycle-widget.php:140
+msgid "Slideshow cycling speed (in sec.):"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:7
+msgid "Show custom posts"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:9
+msgid "Cherry - Advanced Cycle"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:199
+msgid "Title"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:206
+msgid "Posts type"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:223
+msgid "Number of posts to show"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:230
+msgid "Sort by"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:244
+msgid "Reverse sort order (ascending)"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:250
+msgid "Show number of comments"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:257
+msgid "Show meta"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:263
+msgid "Container class"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:264
+msgid "(default: \"featured_custom_posts\")"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:269
+msgid "Post title"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:273
+msgid "Show post title"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:279
+msgid ""
+"Date as title <span style=\"font-size:11px; color:#999;\">(\"[mm-dd-yyyy]\")"
+"</span>"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:286
+msgid "Excerpt"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:290
+msgid "Show post excerpt"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:295
+#: ../includes/widgets/my-recent-posts.php:162
+msgid "Excerpt length (words):"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:302
+msgid "Excerpt as link"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:309
+msgid "More link"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:313
+msgid "Show \"More link\""
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:319
+#: ../includes/widgets/my-posts-type-widget.php:366
+msgid "Link text"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:320
+msgid "(default: \"Read more\")"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:325
+msgid "Link class"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:326
+msgid "(default: \"link\")"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:331
+msgid "Thumbnail dimensions"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:336
+msgid "Show post thumbnail"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:352
+msgid "Thumbnail as link"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:357
+msgid "Link to all posts"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:361
+msgid "Show global link to all posts"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:367
+msgid "(default: \"View all\")"
+msgstr ""
+
+#: ../includes/widgets/my-posts-type-widget.php:372
+msgid "Link URL"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:85
+msgid "Permanent Link to"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:92
+msgid "Read more"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:134
+msgid "Category Slug:"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:136
+msgid "Post format:"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:150
+msgid "Post order:"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:160
+msgid "Posts per page:"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:164
+msgid "Link Text:"
+msgstr ""
+
+#: ../includes/widgets/my-recent-posts.php:166
+msgid "Link Url:"
+msgstr ""
+
+#: ../includes/widgets/my-twitter-widget.php:6
+msgid "A widget that displays the latest tweets"
+msgstr ""
+
+#: ../includes/widgets/my-twitter-widget.php:8
+msgid "Cherry - Twitter"
+msgstr ""
+
+#: ../includes/widgets/my-twitter-widget.php:148
+msgid "Latest Tweets"
+msgstr ""
+
+#: ../includes/widgets/my-twitter-widget.php:160
+msgid "Number of Twets:"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:5
+msgid "Use this widget to add a vCard"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:6
+msgid "Cherry - vCard"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:33
+msgid "vCard"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:98
+msgid "Title (optional):"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:102
+msgid "Street Address:"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:106
+msgid "City/Locality:"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:110
+msgid "State/Region:"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:114
+msgid "Zipcode/Postal Code:"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:118
+msgid "Telephone:"
+msgstr ""
+
+#: ../includes/widgets/my-vcard-widget.php:122
+msgid "Email:"
+msgstr ""

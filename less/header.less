@@ -1,0 +1,322 @@
+/* #Header
+================================================== */
+.header {
+	position: relative;
+	z-index: 99;
+	border-top: 1px solid #eee;
+}
+
+/* Logo
+---------------------------------------- */
+.logo {
+	float: left;
+	position: relative;
+	z-index: 99;
+	&_h {
+		// Text Based Logo
+		&__txt {
+			margin:0;
+		}
+		// Image Based Logo
+		&__img {
+
+		}
+	}
+	&_link {
+		color:@red;
+		text-decoration:none;
+		&:hover {
+			color:@red;
+			text-decoration: none;
+		}
+	}
+	@media (min-width: 768px) and (max-width: 979px) {
+		float: none;
+	}
+	@media (max-width: 767px) {
+		float: none;
+	}
+	.hires {
+		max-width: 295px;
+		@media (max-width: 480px) {
+			max-width: 100%;
+		}
+	}
+}
+/* /Logo */
+
+
+/* #Navigation
+---------------------------------------- */
+.nav{
+	&-row {
+		position: relative;
+		border: 1px solid #fff;
+		padding: 1px;
+		#gradient > .vertical(#fff, #fafafa);
+		.box-shadow(0 1px 3px rgba(0,0,0,.2));
+		.border-radius(0 0 5px 5px);
+		.box-sizing(border-box);
+		.top& {
+			&:after {
+				position: absolute;
+				right: 44px;
+				top: -12px;
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				border-width: 0 10.5px 11px 10.5px;
+				border-color: transparent transparent #eee transparent;
+				.stuck & {
+					border-color: transparent transparent #fff transparent;
+					.up& {
+						border-color: transparent transparent #fff transparent;
+					}
+				}
+				.up & {
+					border-color: transparent transparent #fff transparent;
+				}
+			}
+			&:before {
+				position: absolute;
+				right: 43px;
+				top: -14px;
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				border-width: 0 11.5px 12px 11.5px;
+				border-color: transparent transparent #e8e8e8 transparent;
+			}
+			.up & {
+				.border-radius(5px);
+			}
+		}
+	}
+	&-container {
+		position: relative;
+		z-index: 999;
+		width: 100%;
+		@media (max-width: 768px) {
+			height: auto !important;
+		}
+	}
+	&-inner{
+		position: relative;
+		@media (max-width: 768px) {
+			position: relative !important;
+			top: 0 !important;
+		}
+		&.stuck {
+			position: fixed;
+			top: 0;
+			.logged-in & {
+				top: 28px;
+			}
+		}
+	}
+	&__primary {
+		margin: 0;
+	}
+}
+
+/* Essential styles for dropdown menu */
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+	padding: 10px 0;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+/* Our skin for dropdown menu */
+.sf-menu {
+	display: block;
+	float: right;
+	margin: 0 40px 0 0;
+	padding: 0;
+	@media (max-width: 767px) {
+		display: none;
+	}
+	ul {
+		background: #2f2f2f;
+	}
+	@media (min-width: 1200px) {
+		margin: 0 86px 0 0;
+	}
+	@media (min-width: 768px) and (max-width: 979px) {
+		float: none;
+		margin: 0;
+		text-align: center;
+		white-space: nowrap;
+	}
+}
+.sf-menu > li {
+	@media (min-width: 768px) and (max-width: 979px) {
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+	}
+	&:first-child {
+		background: none;
+		> a {
+			border-left: none !important;
+		}
+	}
+}
+.sf-menu > li > a {
+	margin: 14px 0 12px 0;
+	padding: 0 6px;
+	color: #353535;
+	text-decoration: none;
+	// font-size: 17px;
+	// line-height: 21px;
+	border-left: 1px solid rgba(0,0,0,.1);
+	background: none;
+	.transition(0.25s);
+	.no-rgba & {
+		border-left: 1px solid #e2e2e2;
+	}
+	@media (min-width: 1200px) {
+		padding: 0 11px 0 12px;
+	}
+}
+.sf-menu li .desc {
+	display: block;
+	font-size: 0.5em;
+	text-transform: uppercase;
+}
+.sf-menu li li a {
+	padding: 0;
+	margin: 0 10px;
+	color: #999797;
+	text-decoration: none;
+	.transition(0.25s);
+}
+.sf-menu > li > a:hover,
+.sf-menu > li.sfHover> a,
+.sf-menu > li.current-menu-item > a,
+.sf-menu > li.current_page_item > a {
+	color: @red;
+}
+.sf-menu li li > a:hover,
+.sf-menu li li.sfHover > a,
+.sf-menu li li.current-menu-item > a,
+.sf-menu li li.current_page_item > a {
+	color: @red;
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+	padding-right: 2.5em;
+	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+	.followers-total& {
+		padding-right: 10px;
+		*padding-right: 10px;
+	}
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 1em;
+	margin-top: -3px;
+	height: 0;
+	width: 0;
+	/* order of following 3 rules important for fallbacks to work */
+	border: 5px solid transparent;
+	border-top-color: #000; /* edit this to suit design (no rgba in IE8) */
+	border-top-color: rgba(0,0,0,.5);
+	.followers-total& {
+		border: none;
+	}
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+	border-top-color: #000; /* IE8 fallback colour */
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+	margin-top: -5px;
+	margin-right: -3px;
+	border-color: transparent;
+	border-left-color: #fff; /* edit this to suit design (no rgba in IE8) */
+	border-left-color: rgba(255,255,255,.5);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: #fff;
+}
+
+/* Navigation select styling */
+.select-menu {
+	display: none;
+	border: 1px solid #c8c8c8;
+	background-color: #e4e4e4;
+	width: 100%;
+	height: 30px;
+	padding: 5px;
+	margin: 0;
+	font-size: 13px;
+	cursor: pointer;
+	outline: none;
+	.border-radius(0);
+	option {
+		padding: 5px;
+		cursor: pointer;
+		&.main_item {
+			font-weight: bold;
+		}
+	}
+	&:focus {
+		outline: none;
+		border-color: #999;
+	}
+}
+
+/* Advertising
+---------------------------------------- */
+.bnr{
+	&-top {
+		display: block;
+		margin: 0 auto;
+		padding-top: 30px;
+		text-align: center;
+		@media (min-width: 768px) and (max-width: 979px) {
+			padding-top: 15px;
+		}
+	}
+	&-content {
+		width: 100%;
+		overflow: hidden;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+}
