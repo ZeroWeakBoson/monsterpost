@@ -66,7 +66,6 @@ jQuery(document).ready(function(){
 		sform_height = jQuery('#search-header').outerHeight(),
 		sticky       = jQuery('.nav-inner'),
 		visible      = false;
-		console.log(sform_height);
 
 	jQuery(window).resize(function(){
 		var yes          = jQuery('#search-form-yes'),
@@ -77,7 +76,6 @@ jQuery(document).ready(function(){
 			sform_height = jQuery('#search-header').outerHeight(),
 			sticky       = jQuery('.nav-inner'),
 			visible      = false;
-			console.log(sform_height);
 		caller.click(function(){
 			if (visible) {
 				sform.stop().animate({height: 0}, 350, function() {
