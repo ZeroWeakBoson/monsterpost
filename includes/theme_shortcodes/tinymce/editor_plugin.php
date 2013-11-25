@@ -721,6 +721,16 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
 								
 								break;
+
+					// mfc_lightbox
+								
+								case 'mfc_lightbox':
+								
+								var a = '[mfc_lightbox]'+selectedText+'[/mfc_lightbox]';
+								
+								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
+								
+								break;
 															
 								default:
 								
@@ -854,6 +864,7 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 										a.addWithDialog(c,"Small","small");
 										a.addWithDialog(c,"Template URL","template_url");
 								a.addWithDialog(b,"Subscribe Form","subscribe_form");
+								a.addWithDialog(b,"Lightbox (Popup)","mfc_lightbox");
 								a.addWithDialog(b,"Tabs","tabs");
 								a.addWithDialog(b,"Accordion","accordions");
 								a.addWithDialog(b,"Table","table");

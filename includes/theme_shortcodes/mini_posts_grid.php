@@ -91,22 +91,19 @@ if (!function_exists('mini_posts_grid_shortcode')) {
 				$url = $attachment_url['0'];
 				$image = aq_resize($url, $thumb_x, $thumb_y, true);
 				$mediaType = get_post_meta($post->ID, 'tz_portfolio_type', true);
-				$prettyType = 0;
 
 					$output .= '<li class="'.$thumbs.'">';
 						if(has_post_thumbnail($post->ID) && $mediaType == 'Image') {
-												
-							$prettyType = 'prettyPhoto';									
 
 							$output .= '<figure class="featured-thumbnail thumbnail">';
-							$output .= '<a href="'.$url.'" title="'.get_the_title($post->ID).'" rel="' .$prettyType.'">';
+							$output .= '<a href="'.$url.'" title="'.get_the_title($post->ID).'">';
 							$output .= '<img  src="'.$image.'" alt="'.get_the_title($post->ID).'" />';
 							$output .= '<span class="zoom-icon"></span></a></figure>';
-						} elseif ($mediaType != 'Video' && $mediaType != 'Audio') {							
+						} elseif ($mediaType != 'Video' && $mediaType != 'Audio') {
 
 							$thumbid = 0;
 							$thumbid = get_post_thumbnail_id($post->ID);
-											
+
 							$images = get_children( array(
 								'orderby' => 'menu_order',
 								'order' => 'ASC',
@@ -122,7 +119,6 @@ if (!function_exists('mini_posts_grid_shortcode')) {
 								$k = 0;
 								//looping through the images
 								foreach ( $images as $attachment_id => $attachment ) {
-									$prettyType = "prettyPhoto[gallery".$i."]";								
 									//if( $attachment->ID == $thumbid ) continue;
 
 									$image_attributes = wp_get_attachment_image_src( $attachment_id, 'full' ); // returns an array
@@ -133,25 +129,24 @@ if (!function_exists('mini_posts_grid_shortcode')) {
 									if ( $k == 0 ) {
 										if (has_post_thumbnail($post->ID)) {
 											$output .= '<figure class="featured-thumbnail thumbnail">';
-											$output .= '<a href="'.$image_attributes[0].'" title="'.get_the_title($post->ID).'" rel="' .$prettyType.'">';
+											$output .= '<a href="'.$image_attributes[0].'" title="'.get_the_title($post->ID).'">';
 											$output .= '<img src="'.$image.'" alt="'.get_the_title($post->ID).'" />';
 										} else {
 											$output .= '<figure class="featured-thumbnail thumbnail">';
-											$output .= '<a href="'.$image_attributes[0].'" title="'.get_the_title($post->ID).'" rel="' .$prettyType.'">';
+											$output .= '<a href="'.$image_attributes[0].'" title="'.get_the_title($post->ID).'">';
 											$output .= '<img  src="'.$img.'" alt="'.get_the_title($post->ID).'" />';
 										}	
 									} else {
 										$output .= '<figure class="featured-thumbnail thumbnail" style="display:none;">';
-										$output .= '<a href="'.$image_attributes[0].'" title="'.get_the_title($post->ID).'" rel="' .$prettyType.'">';
+										$output .= '<a href="'.$image_attributes[0].'" title="'.get_the_title($post->ID).'">';
 										$output .= '<img  src="'.$img.'" alt="'.get_the_title($post->ID).'" />';
 									}
 									$output .= '<span class="zoom-icon"></span></a></figure>';
 									$k++;
 								}					
 							} elseif (has_post_thumbnail($post->ID)) {
-								$prettyType = 'prettyPhoto';
 								$output .= '<figure class="featured-thumbnail thumbnail">';
-								$output .= '<a href="'.$url.'" title="'.get_the_title($post->ID).'" rel="' .$prettyType.'">';
+								$output .= '<a href="'.$url.'" title="'.get_the_title($post->ID).'">';
 								$output .= '<img  src="'.$image.'" alt="'.get_the_title($post->ID).'" />';
 								$output .= '<span class="zoom-icon"></span></a></figure>';
 							} else {

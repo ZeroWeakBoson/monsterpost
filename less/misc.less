@@ -185,7 +185,9 @@ article .post-content img {
 }
 
 /* Featured thumbnail */
-.thumbnail {
+.thumbnail{
+	position: relative;
+	margin: 0;
 	padding: 0;
 	border: none;
 	.box-shadow(none);
@@ -193,6 +195,20 @@ article .post-content img {
 	.border-radius(@baseBorderRadius);
 	img {
 		.border-radius(@baseBorderRadius);
+	}
+	&-wrap {
+		.thumbnail{
+			display: inline-block;
+			vertical-align: top;
+			&:hover {
+				.zoom-icon {
+					opacity:1;
+					.no-rgba & {
+						visibility:visible;
+					}
+				}
+			}
+		}
 	}
 }
 .featured-thumbnail {

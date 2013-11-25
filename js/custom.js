@@ -19,7 +19,7 @@ jQuery(function(){
 // ---------------------------------------------------------
 function magnific_popup_init(item){
 	item.magnificPopup({
-		delegate: 'a[rel^="prettyPhoto"]',
+		delegate: 'a',
 		type: 'image',
 		removalDelay: 500,
 		mainClass: 'mfp-zoom-in',
@@ -139,7 +139,7 @@ jQuery(document).ready(function(){
 	// ---------------------------------------------------------
 	// Call Magnific Popup
 	// ---------------------------------------------------------
-	jQuery(".thumbnail").parent().each(function(){magnific_popup_init(jQuery(this))});
+	jQuery(".thumbnail a").each(function(){magnific_popup_init(jQuery(this))});
 	// ---------------------------------------------------------
 	// Back to Top
 	// ---------------------------------------------------------

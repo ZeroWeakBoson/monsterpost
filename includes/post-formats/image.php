@@ -36,7 +36,7 @@
 		if ($lightbox) : ?>
 
 			<figure class="featured-thumbnail thumbnail large">
-				<a class="image-wrap" rel="prettyPhoto" title="<?php the_title(); ?>" href="<?php echo $src[0]; ?>">
+				<a class="image-wrap" title="<?php the_title(); ?>" href="<?php echo $src[0]; ?>">
 					<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
 					<span class="zoom-icon"></span>
 				</a>

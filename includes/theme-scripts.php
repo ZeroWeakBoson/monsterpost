@@ -6,7 +6,7 @@ function my_script() {
 	wp_register_script('superfish', PARENT_URL.'/js/superfish.js', array('jquery'), '1.7.4', true);
 	wp_register_script('waypoints', PARENT_URL.'/js/waypoints.min.js', array('jquery'), '2.0.3', true);
 	wp_register_script('waypoints-sticky', PARENT_URL.'/js/waypoints-sticky.min.js', array('jquery'), '2.0.3', true);
-	wp_register_script('magnific-popup', PARENT_URL.'/js/jquery.magnific-popup.min.js', array('jquery'), '0.9.3', true);
+	// wp_register_script('magnific-popup', PARENT_URL.'/js/jquery.magnific-popup.min.js', array('jquery'), '0.9.3', true);
 	wp_register_script('mobilemenu', PARENT_URL.'/js/jquery.mobilemenu.js', array('jquery'), '1.0', true);
 	wp_register_script('flexslider', PARENT_URL.'/js/jquery.flexslider-min.js', array('jquery'), '2.1', true);
 	wp_register_script('fittext', PARENT_URL.'/js/jquery.fittext.js', array('jquery'), '1.1', true);
@@ -27,7 +27,7 @@ function my_script() {
 	wp_enqueue_script('superfish');
 	wp_enqueue_script('waypoints');
 	wp_enqueue_script('waypoints-sticky');
-	wp_enqueue_script('magnific-popup');
+	// wp_enqueue_script('magnific-popup');
 	wp_enqueue_script('swfobject');
 	wp_enqueue_script('mobilemenu');
 	wp_enqueue_script('flexslider');
@@ -48,7 +48,7 @@ function my_styles() {
 	wp_register_style('bootsrap', PARENT_URL . '/bootstrap/css/bootstrap.css', false, '2.3.0', 'all');
 	wp_register_style('resposive', PARENT_URL . '/bootstrap/css/responsive.css', false, '1.0', 'all');
 	wp_register_style('icomoon', PARENT_URL.'/font/font-icomoon/style.css', array(), null);
-	wp_register_style('magnific', PARENT_URL.'/css/magnific-popup.css', false, '0.9.3', 'all');
+	// wp_register_style('magnific', PARENT_URL.'/css/magnific-popup.css', false, '0.9.3', 'all');
 	wp_register_style('ladda', PARENT_URL.'/css/ladda.min.css', false, '0.8.0', 'all');
 	wp_register_style('style', get_stylesheet_uri(), false, '1.0', 'all');
 
@@ -56,7 +56,7 @@ function my_styles() {
 	wp_enqueue_style('resposive');
 	wp_enqueue_style('monster-fonts', monster_fonts_url(), array(), null);
 	wp_enqueue_style('icomoon');
-	wp_enqueue_style('magnific');
+	// wp_enqueue_style('magnific');
 	wp_enqueue_style('ladda');
 	wp_enqueue_style('style');
 }

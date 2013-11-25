@@ -131,7 +131,7 @@ if (!function_exists('shortcode_recent_posts')) {
 				
 				
 				$output .= '<figure class="thumbnail featured-thumbnail large">';
-					$output .= '<a class="image-wrap" rel="prettyPhoto[gallery]" title="' . get_the_title($post->ID) . '" href="' . $src[0] . '">';
+					$output .= '<a class="image-wrap" title="' . get_the_title($post->ID) . '" href="' . $src[0] . '">';
 					$output .= '<img src="' . $image . '" alt="' . get_the_title($post->ID) .'" />';
 					$output .= '<span class="zoom-icon"></span></a>';
 				$output .= '</figure>';

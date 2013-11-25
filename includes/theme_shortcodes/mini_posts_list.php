@@ -126,7 +126,6 @@ if (!function_exists('mini_posts_list_shortcode')) {
 								$k = 0;
 								//looping through the images
 								foreach ( $images as $attachment_id => $attachment ) {
-									//$prettyType = "prettyPhoto[gallery".$i."]";						
 									//if( $attachment->ID == $thumbid ) continue;
 
 									$image_attributes = wp_get_attachment_image_src( $attachment_id, 'full' ); // returns an array
@@ -149,7 +148,6 @@ if (!function_exists('mini_posts_list_shortcode')) {
 									$k++;
 								}					
 							} elseif (has_post_thumbnail($post->ID)) {
-								//$prettyType = 'prettyPhoto';
 								$output .= '<figure class="featured-thumbnail thumbnail '.$thumbs.'">';
 								$output .= '<a href="'.get_permalink($post->ID).'" title="'.get_the_title($post->ID).'">';
 								$output .= '<img src="'.$image.'" alt="'.get_the_title($post->ID).'" />';
