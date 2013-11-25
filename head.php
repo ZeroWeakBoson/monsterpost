@@ -101,8 +101,10 @@
 			</div><!--.nav-row-->
 		</div><!--.nav-inner-->
 		<?php
-			// output advertise in the header
-			get_template_part('bnr/foo-header');
+			if ( of_get_option('bnr_top') ) {
+				// output advertise in the header
+				get_template_part('bnr/foo-header');
+			}
 		?>
 	</header>
 	<div class="content-holder clearfix">

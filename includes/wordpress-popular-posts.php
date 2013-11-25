@@ -1118,9 +1118,11 @@ if ( !class_exists('WordpressPopularPosts') ) {
 
 					// output advertising in the sidebar
 					if ( ($post_count == $adv_sidebar) && (!is_singular()) ) {
-						ob_start();
-						include PARENT_DIR . '/bnr/foo-sidebar.php';
-						$content .= ob_get_clean();
+						if ( of_get_option('bnr_sidebar') ) {
+							ob_start();
+							include_once PARENT_DIR . '/bnr/foo-sidebar.php';
+							$content .= ob_get_clean();
+						}
 					}
 				}
 				
@@ -1137,12 +1139,12 @@ if ( !class_exists('WordpressPopularPosts') ) {
 			//if ($echo) { echo "<noscript>" . $content . "</noscript>"; } else { return $content; }
 			if ($return) { return $posts_data; } else { return $content; }
 			
-		}		
+		}
 		
 		// builds posts' excerpt
 		function get_summary($id, $instance){
 			if (!is_numeric($id)) return false;
-			global $wpdb;			
+			global $wpdb;
 			$excerpt = "";
 			$result = "";
 			

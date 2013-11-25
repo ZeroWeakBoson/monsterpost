@@ -4,7 +4,7 @@
 			<div id="content" class="span8 <?php echo of_get_option('blog_sidebar_pos') ?>">
 				<div class="content-inner">
 					<section class="title-section clearfix">
-						<ul id="tm-followers" class="followers-total unstyled clearfix"></ul>
+						<!-- <ul id="tm-followers" class="followers-total unstyled clearfix"></ul> -->
 						<?php 
 							$blog_text = of_get_option('blog_text');
 							if( $blog_text ){
@@ -31,10 +31,12 @@
 								if ( $post_counter == $carousel ) {
 									get_template_part('filterable-carousel');
 								}
-
-								// output advertising in the content
+								
 								if ( $post_counter == $adv_content ) {
-									get_template_part('bnr/foo-content');
+									// output advertising in the content
+									if ( of_get_option('bnr_content') ) {
+										get_template_part('bnr/foo-content');
+									}
 								}
 
 								if ( $pair_post > 2 ) {
