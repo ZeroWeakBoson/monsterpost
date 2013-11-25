@@ -59,7 +59,7 @@
 						"$param_type"         => $value,
 						'post_type'           => 'post',
 						'post_status'         => 'publish',
-						'showposts'           => -1,
+						'showposts'           => 10,
 						'ignore_sticky_posts' => 1,
 						'meta_key'            => 'tz_filter',
 						'meta_value'          => 'true'
