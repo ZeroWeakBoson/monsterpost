@@ -75,12 +75,6 @@ if (!function_exists('title_shortcode')) {
 if (!function_exists('mfc_lightbox_shortcode')) {
 	function mfc_lightbox_shortcode( $atts, $content ) {
 
-		// Load script and stylesheet
-		wp_register_script('magnific-popup', PARENT_URL.'/js/jquery.magnific-popup.min.js', array('jquery'), '0.9.3', true);
-		wp_register_style('magnific', PARENT_URL.'/css/magnific-popup.css', false, '0.9.3', 'all');
-		wp_enqueue_script('magnific-popup');
-		wp_enqueue_style('magnific');
-
 		$output = '<div class="thumbnail-wrap"><figure class="thumbnail">';
 		$output .= do_shortcode($content);
 		$output .= '<span class="zoom-icon"></span>';

@@ -1041,9 +1041,11 @@ if ( !class_exists('WordpressPopularPosts') ) {
 					}
 					//author
 					if ( $instance['stats_tag']['author'] ) {
-						$display_name = get_the_author_meta('display_name', $p->uid);
-						$display_link = get_author_posts_url( get_the_author_meta( 'ID' ) );
-						$stats .= ($stats == "") ? "<span class=\"wpp-author\">" . __('by', 'cherry')." <a href={$display_link}>{$display_name}</a></span>" : "<span class=\"wpp-author\">" . __('by', 'cherry') ." {$display_name}</span>";
+						// $display_name = get_the_author_meta('display_name', $p->uid);
+						// $display_link = get_author_posts_url( get_the_author_meta( 'ID' ) );
+						// $stats .= ($stats == "") ? "<span class=\"wpp-author\">" . __('by', 'cherry')." <a href={$display_link}>{$display_name}</a></span>" : "<span class=\"wpp-author\">" . __('by', 'cherry') ." {$display_name}</span>";
+						$display_name = "<a href=\"".get_author_posts_url($p->uid)."\">{$author}</a>";
+						$stats .= ($stats == "") ? "<span class=\"wpp-author\">" . __('by', 'cherry')." {$display_name}</span>" : " | <span class=\"wpp-author\">" . __('by', 'wordpress-popular-posts') . " {$display_name}</span>";
 					}
 					// date
 					if ( $instance['stats_tag']['date']['active'] ) {

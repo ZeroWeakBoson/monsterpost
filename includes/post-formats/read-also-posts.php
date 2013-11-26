@@ -1,8 +1,8 @@
 <?php
 	$author = get_the_author();
 	$args = array(
-		'author_name' => $author,
-		'showposts'   => 3
+		'author_name'    => "$author",
+		'posts_per_page' => 3
 	);
 
 	$read_also_query = new WP_Query($args);
