@@ -97,6 +97,7 @@
 	include_once PARENT_DIR . '/includes/theme_shortcodes/table.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/hero_unit.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/categories.php';
+	include_once PARENT_DIR . '/includes/theme_shortcodes/tags.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/related_posts.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/widget.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/subscribe_form.php';

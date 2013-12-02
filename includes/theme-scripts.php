@@ -56,8 +56,8 @@ function my_styles() {
 	wp_enqueue_style('bootsrap');
 	wp_enqueue_style('resposive');
 	wp_enqueue_style('monster-fonts', monster_fonts_url(), array(), null);
-	wp_enqueue_style('icomoon');
 	wp_enqueue_style('font-awesome');
+	wp_enqueue_style('icomoon');
 	wp_enqueue_style('magnific');
 	wp_enqueue_style('ladda');
 	wp_enqueue_style('style');

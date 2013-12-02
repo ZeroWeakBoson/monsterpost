@@ -676,7 +676,7 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								
 								case 'question':
 								
-								var a = '[question author_email="" question_text=""]'+selectedText+'[/question]';
+								var a = '[question author_name="" author_email="" question_text=""]';
 								
 								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
 								
@@ -686,7 +686,7 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								
 								case 'answer':
 								
-								var a = '[answer author_name="" author_email="" answer_text=""]'+selectedText+'[/answer]';
+								var a = '[answer author_name="" author_email="" answer_text=""]';
 								
 								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
 								
