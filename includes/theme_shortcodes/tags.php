@@ -1,16 +1,31 @@
 <?php
-//Tag Cloud
-if (!function_exists('shortcode_tags')) {
-	function shortcode_tags($atts, $content = null) {
-		$output = '<div class="tags-cloud clearfix"><ul>';
-		$tags = wp_tag_cloud('smallest=8&largest=8&format=array');
+/*
+ * Tags
+ *
+ */
+if (!function_exists('monster_tags_shortcode')) {
+	function monster_tags_shortcode( $atts ) {
+		extract(shortcode_atts(
+			array(
+				'class' => 'check'
+			), $atts)
+		);
+		$args = array(
+			'smallest' => 16,
+			'largest'  => 16,
+			'unit'     => 'px',
+			'format'   => 'array',
+			'echo'     => false
+		);
+		$tags = wp_tag_cloud($args);
+		$output = '<div class="list styled '.$class.'-list"><ul>';
 
 		foreach($tags as $tag){
 			$output .= '<li>' . $tag. '</li>';
 		}
 
-		$output .= '</ul></div><!-- .tags-cloud (end) -->';
+		$output .= '</ul></div>';
 		return $output;
 	}
-	add_shortcode('tags', 'shortcode_tags');
+	add_shortcode('tags', 'monster_tags_shortcode');
 } ?>

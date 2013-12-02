@@ -5,60 +5,66 @@
  *
  */
 
-// Button
-function button_shortcode($atts, $content = null) {
-	extract(shortcode_atts(
-		array(
-			'link'    => 'http://www.google.com',
-			'text'    => 'Button Text',
-			'size'    => 'normal',
-			'style'   => '',
-			'target'  => '_self',
-			'display' => '',
-			'class'   => '',
-			'icon'    => 'no'
-	), $atts));
-	
-	$output =  '<a href="'.$link.'" title="'.$text.'" class="btn btn-'.$style.' btn-'.$size.' btn-'.$display.' '.$class.'" target="'.$target.'">';
-	if ($icon != 'no') {
-		$output .= '<i class="icon-'.$icon.'"></i>';
+if ( !function_exists('monster_button_shortcode') ) {
+	// Button
+	function monster_button_shortcode($atts, $content = null) {
+		extract(shortcode_atts(
+			array(
+				'link'    => 'http://www.google.com',
+				'text'    => 'Button Text',
+				'size'    => 'normal',
+				'style'   => '',
+				'target'  => '_self',
+				'display' => '',
+				'class'   => '',
+				'icon'    => 'no'
+		), $atts));
+		
+		$output =  '<a href="'.$link.'" title="'.$text.'" class="btn btn-'.$style.' btn-'.$size.' btn-'.$display.' '.$class.'" target="'.$target.'">';
+		if ($icon != 'no') {
+			$output .= '<i class="icon-'.$icon.'"></i>';
+		}
+		$output .= $text;
+		$output .= '</a><!-- .btn -->';
+
+		return $output;
 	}
-	$output .= $text;
-	$output .= '</a><!-- .btn -->';
-
-	return $output;
+	add_shortcode('button', 'monster_button_shortcode');
 }
-add_shortcode('button', 'button_shortcode');
 
-// Map
-function map_shortcode($atts, $content = null) {
+if ( !function_exists('monster_map_shortcode') ) {
+	// Map
+	function monster_map_shortcode($atts, $content = null) {
 
-	extract(shortcode_atts(
-		array(
-			'src'    => '',
-			'width'  => '',
-			'height' => ''
-	), $atts));
-	
-	$output =  '<div class="google-map">';
-			$output .= '<iframe src="'.$src.'" frameborder="0" width="'.$width.'" height="'.$height.'" marginwidth="0" marginheight="0" scrolling="no">';
-			$output .= '</iframe>';
-		$output .= '</div>';
+		extract(shortcode_atts(
+			array(
+				'src'    => '',
+				'width'  => '',
+				'height' => ''
+		), $atts));
+		
+		$output =  '<div class="google-map">';
+				$output .= '<iframe src="'.$src.'" frameborder="0" width="'.$width.'" height="'.$height.'" marginwidth="0" marginheight="0" scrolling="no">';
+				$output .= '</iframe>';
+			$output .= '</div>';
 
-	return $output;
+		return $output;
+	}
+	add_shortcode('map', 'monster_map_shortcode');
 }
-add_shortcode('map', 'map_shortcode');
 
-// Dropcaps
-function dropcap_shortcode($atts, $content = null) {
+if ( !function_exists('monster_dropcap_shortcode') ) {
+	// Dropcaps
+	function monster_dropcap_shortcode($atts, $content = null) {
 
-	$output = '<span class="dropcap">';
-	$output .= do_shortcode($content);
-	$output .= '</span><!-- .dropcap (end) -->';
+		$output = '<span class="dropcap">';
+		$output .= do_shortcode($content);
+		$output .= '</span><!-- .dropcap (end) -->';
 
-	return $output;
+		return $output;
+	}
+	add_shortcode('dropcap', 'monster_dropcap_shortcode');
 }
-add_shortcode('dropcap', 'dropcap_shortcode');
 
 // Horizontal Rule
 function hr_shortcode($atts, $content = null) {
@@ -210,13 +216,15 @@ function label_shortcode($atts, $content = null) {
 }
 add_shortcode('label', 'label_shortcode');
 
-// Media description
-function media_desc_shortcode( $atts , $content = null ) {
+if ( !function_exists('monster_media_desc_shortcode') ) {
+	// Media description
+	function monster_media_desc_shortcode( $atts , $content = null ) {
 
-	// Code
-	return '<div class="media-desc">'.$content.'</div>';
+		// Code
+		return '<div class="media-desc">'.$content.'</div>';
+	}
+	add_shortcode( 'media_desc', 'monster_media_desc_shortcode' );
 }
-add_shortcode( 'media_desc', 'media_desc_shortcode' );
 
 // Text Highlight
 function highlight_shortcode($atts, $content = null) {
@@ -248,25 +256,26 @@ function extra_wrap_shortcode($atts, $content = null) {
 }
 add_shortcode('extra_wrap', 'extra_wrap_shortcode');
 
-// Icon
-function icon_shortcode($atts, $content = null) {
-	extract(shortcode_atts(
-		array(
-			'icon_font'       => '',
-			'icon_font_size'  => '',
-			'icon_font_color' => '',
-			'custom_class'    => '',
-			'align'           => ''
-	), $atts));
+if ( !function_exists('monster_icon_shortcode') ) {
+	// Icon
+	function monster_icon_shortcode($atts, $content = null) {
+		extract(shortcode_atts(
+			array(
+				'icon_font'       => '',
+				'icon_font_size'  => '',
+				'icon_font_color' => '',
+				'custom_class'    => '',
+				'align'           => ''
+		), $atts));
 
-	$icon_font = ($icon_font != '')? strtolower($icon_font) : "icon-question";
-	$icon_font_size = ($icon_font_size != '')? $icon_font_size : "14px";
-	if(stripos($icon_font_size, "px")===false && stripos($icon_font_size, "em")===false){
-		$icon_font_size = (int) $icon_font_size . "px";
+		$icon_font = ($icon_font != '')? strtolower($icon_font) : "icon-question";
+		$icon_font_size = ($icon_font_size != '')? $icon_font_size : "14px";
+		if(stripos($icon_font_size, "px")===false && stripos($icon_font_size, "em")===false){
+			$icon_font_size = (int) $icon_font_size . "px";
+		}
+		$icon_font_color = ($icon_font_color != '')? $icon_font_color : "#000";
+		$output = '<figure class="icon-holder align'.$align.' aligntext'.$align.' "><i class="'.$icon_font.' '.$custom_class.'" style="color:'.$icon_font_color.'; font-size:'.$icon_font_size.'; line-height:1.2em;"></i></figure>';
+		return $output;
 	}
-	$icon_font_color = ($icon_font_color != '')? $icon_font_color : "#000";
-	$output = '<figure class="icon-holder align'.$align.' aligntext'.$align.' "><i class="'.$icon_font.' '.$custom_class.'" style="color:'.$icon_font_color.'; font-size:'.$icon_font_size.'; line-height:1.2em;"></i></figure>';
-	return $output;
-}
-add_shortcode('icon', 'icon_shortcode');
-?>
+	add_shortcode('icon', 'monster_icon_shortcode');
+} ?>

@@ -2,9 +2,8 @@
 /**
  * Alert boxes
  */
-if (!function_exists('shortcode_alert_box')) {
-
-	function shortcode_alert_box($atts, $content = null) {
+if ( !function_exists('monster_alert_box') ) {
+	function monster_alert_box($atts, $content = null) {
 		extract(shortcode_atts(
 			array(
 				'style' => '',
@@ -19,6 +18,5 @@ if (!function_exists('shortcode_alert_box')) {
 		$output .=  '</div>';
 		return $output;
 	}
-	add_shortcode('alert_box', 'shortcode_alert_box');
-	
- }?>
+	add_shortcode('alert_box', 'monster_alert_box');
+} ?>

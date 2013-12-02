@@ -3,14 +3,13 @@
  * Categories
  *
  */
-if (!function_exists('categories_shortcode')) {
-
-	function categories_shortcode($atts) {
+if ( !function_exists('monster_categories_shortcode') ) {
+	function monster_categories_shortcode($atts) {
 		extract(shortcode_atts(
 			array(
-				'type' => '',
 				'class' => 'check'
-			), $atts));
+			), $atts)
+		);
 
 		$args = array(
 			'type'     => 'post',
@@ -30,6 +29,5 @@ if (!function_exists('categories_shortcode')) {
 
 		return $output;
 	}
-	add_shortcode('categories', 'categories_shortcode');
-
-}?>
+	add_shortcode('categories', 'monster_categories_shortcode');
+} ?>

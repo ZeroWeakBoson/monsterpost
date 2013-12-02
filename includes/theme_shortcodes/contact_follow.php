@@ -1,8 +1,10 @@
-<?php 
-	// Add Shortcode
-	function contact_follow_shortcode( $atts ) {
-
-		// Attributes
+<?php
+/**
+ * Contact follow list
+ *
+ */
+if ( !function_exists('monster_contact_follow') ) {
+	function monster_contact_follow( $atts ) {
 		extract( shortcode_atts(
 			array(
 				'facebook'    => '',
@@ -16,7 +18,6 @@
 
 		if (empty($atts)) return;
 
-		// Output
 		$output = '<ul class="contact-follow-us unstyled clearfix">';
 		foreach ($atts as $key => $value) {
 			if ( $key == 'google_plus' ) $key = 'google+';
@@ -25,8 +26,7 @@
 		}
 		$output .= '</ul>';
 
-		// Code
 		return $output;
 	}
-	add_shortcode( 'contact_follow', 'contact_follow_shortcode' );
-?>
+	add_shortcode( 'contact_follow', 'monster_contact_follow' );
+} ?>

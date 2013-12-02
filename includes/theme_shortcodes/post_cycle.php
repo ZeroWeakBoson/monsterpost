@@ -3,9 +3,8 @@
  * Post Cycle
  *
  */
-if (!function_exists('shortcode_post_cycle')) {
-
-	function shortcode_post_cycle( $atts ) {
+if ( !function_exists('monster_post_cycle') ) {
+	function monster_post_cycle( $atts ) {
 		extract(shortcode_atts(array(
 				'num'              => '3',
 				'effect'           => 'slide',
@@ -108,5 +107,5 @@ if (!function_exists('shortcode_post_cycle')) {
 		$output .= '</div>';
 		return $output;
 	}
-	add_shortcode('post_cycle', 'shortcode_post_cycle');
+	add_shortcode('post_cycle', 'monster_post_cycle');
 }?>

@@ -65,5 +65,4 @@ if ( !function_exists('monster_answer_shortcode') ) {
 		return $output;
 	}
 	add_shortcode( 'answer', 'monster_answer_shortcode' );
-}
-?>
+} ?>

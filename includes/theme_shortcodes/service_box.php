@@ -3,9 +3,8 @@
  * Service Box
  *
  */
-if (!function_exists('service_box_shortcode')) {
-
-	function service_box_shortcode($atts, $content = null) { 
+if ( !function_exists('monster_service_box') ) {
+	function monster_service_box( $atts ) {
 		extract(shortcode_atts(
 			array(
 				'title'    => '',
@@ -85,5 +84,5 @@ if (!function_exists('service_box_shortcode')) {
 		$output .= '</div><!-- /Service Box -->';
 		return $output;
 	}
-	add_shortcode('service_box', 'service_box_shortcode');
+	add_shortcode('service_box', 'monster_service_box');
 } ?>

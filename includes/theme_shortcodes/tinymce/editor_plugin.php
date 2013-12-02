@@ -82,16 +82,6 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
 								
 								break;
-								
-				// tags
-								
-								case 'tags':
-								
-								var a = '[tags]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
 
 				// subscribe form
 								

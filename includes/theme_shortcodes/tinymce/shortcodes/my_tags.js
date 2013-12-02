@@ -11,5 +11,5 @@ frameworkShortcodeAtts={
 			}
 	],
 	defaultContent:"",
-	shortcode:"categories"
+	shortcode:"tags"
 };

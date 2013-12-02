@@ -1,6 +1,10 @@
-<?php 
-	// Subscribe form
-	function subscribe_form_shortcode(){
+<?php
+/**
+ * Subscribe form
+ *
+ */
+if ( !function_exists('monster_subscribe_form') ) {
+	function monster_subscribe_form(){
 		
 		// Load scripts
 		wp_enqueue_script('livevalidation', PARENT_URL.'/js/livevalidation_standalone.compressed.js', array('jquery'), '1.3');
@@ -43,5 +47,5 @@
 					});
 				</script>';
 	}
-	add_shortcode( 'subscribe_form', 'subscribe_form_shortcode' );
-?>
+	add_shortcode( 'subscribe_form', 'monster_subscribe_form' );
+} ?>

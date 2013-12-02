@@ -3,13 +3,13 @@
  * Related Posts
  *
  */
-if (!function_exists('related_posts_shortcode')) {
-	function related_posts_shortcode() {
+if ( !function_exists('monster_related_posts') ) {
+	function monster_related_posts() {
 		ob_start();
 		get_template_part('includes/post-formats/related-posts');
 		$output = ob_get_contents();
 		ob_end_clean();
 		return $output;
 	}
-	add_shortcode('related_posts', 'related_posts_shortcode');
-}?>
+	add_shortcode('related_posts', 'monster_related_posts');
+} ?>

@@ -3,9 +3,8 @@
  * Hero Unit
  *
  */
-if (!function_exists('hero_unit_shortcode')) {
-
-	function hero_unit_shortcode($atts, $content = null) { 
+if ( !function_exists('monster_hero_unit') ) {
+	function monster_hero_unit($atts, $content = null) {
 		extract(shortcode_atts(
 			array(
 				'title'     => '',
@@ -17,7 +16,7 @@ if (!function_exists('hero_unit_shortcode')) {
 				'target'    => ''
 		), $atts));
 
-		$output =  '<div class="hero-unit">';
+		$output = '<div class="hero-unit">';
 
 		if ($title!="") {
 			$output .= '<h1>';
@@ -38,8 +37,7 @@ if (!function_exists('hero_unit_shortcode')) {
 		}
 
 		$output .= '</div><!-- .hero-unit (end) -->'; 
-		return $output; 
+		return $output;
 	}
-	add_shortcode('hero_unit', 'hero_unit_shortcode');
-
-}?>
+	add_shortcode('hero_unit', 'monster_hero_unit');
+} ?>
