@@ -69,7 +69,7 @@
 								} ?>
 
 								<div class="post-control">
-									<a href="archives/" class="btn btn-primary ladda-button" data-style="expand-left">
+									<a href="archives/" class="btn btn-primary btn-normal ladda-button" data-style="expand-left">
 										<span class="ladda-label"><?php _e('Next Page &nbsp;&rsaquo;&nbsp;', 'cherry') ?></span>
 									</a>
 								</div><!--.post-control-->

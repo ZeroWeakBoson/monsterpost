@@ -100,7 +100,7 @@ class MY_PostWidget extends WP_Widget {
 								
 								<!-- Link under post cycle -->
 								<?php if($linkurl !=""){?>
-									<a href="<?php echo $linkurl; ?>" class="btn btn-primary"><?php echo $linktext; ?></a>
+									<a href="<?php echo $linkurl; ?>" class="btn btn-primary btn-normal"><?php echo $linktext; ?></a>
 								<?php } ?>
 
 								

@@ -8,18 +8,16 @@ if (!function_exists('shortcode_post_cycle')) {
 	function shortcode_post_cycle( $atts ) {
 		extract(shortcode_atts(array(
 				'num'              => '3',
-				'type'             => 'post',
 				'effect'           => 'slide',
 				'thumb_width'      => '670',
 				'thumb_height'     => '385',
 				'category'         => '',
-				'custom_category'  => '',
 				'pagination'       => 'true',
 				'navigation'       => 'true',
 				'custom_class'     => ''
 		), $atts));
 		
-		$type_post         = $type;
+		$type_post         = 'post';
 		$slider_pagination = $pagination;
 		$slider_navigation = $navigation;
 		$i                 = 0;
@@ -27,10 +25,9 @@ if (!function_exists('shortcode_post_cycle')) {
 
 		global $post;
 		$args = array(
-			'post_type'              => $type_post,
-			'category_name'          => $category,
-			$type_post . '_category' => $custom_category,
-			'posts_per_page'            => -1
+			'post_type'      => $type_post,
+			'category_name'  => $category,
+			'posts_per_page' => -1
 		);
 
 		$latest = get_posts($args);
@@ -112,5 +109,4 @@ if (!function_exists('shortcode_post_cycle')) {
 		return $output;
 	}
 	add_shortcode('post_cycle', 'shortcode_post_cycle');
-	
 }?>

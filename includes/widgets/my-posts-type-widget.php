@@ -143,7 +143,7 @@ function widget($args, $instance) {
 	<?php } ?>
 	<?php echo "</ul>\n"; ?>
 	<?php if ( $instance['global_link'] ) : ?>
-	  <a href="<?php echo $instance['global_link_href']; ?>" class="btn btn-primary link_show_all"><?php if($instance['global_link_text']==""){ ?>View all<?php }else{ ?><?php echo $instance['global_link_text']; ?><?php } ?></a>
+	  <a href="<?php echo $instance['global_link_href']; ?>" class="btn btn-primary btn-normal link_show_all"><?php if($instance['global_link_text']==""){ ?>View all<?php }else{ ?><?php echo $instance['global_link_text']; ?><?php } ?></a>
 	<?php endif; ?>
 	
 <?php 	

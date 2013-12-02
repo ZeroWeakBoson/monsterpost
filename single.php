@@ -29,7 +29,7 @@
 								if ( array_intersect($filter_array, $tag_array) ) {
 									$source = get_post_meta(get_the_ID(), 'tz_source_url', true); ?>
 									<div class="source_holder">
-										<a href="<?php echo $source; ?>" target="_blank" class="btn btn-primary btn-source"><?php _e('Source', 'cherry'); ?></a>
+										<a href="<?php echo $source; ?>" target="_blank" class="btn btn-primary btn-normal btn-source"><?php _e('Source', 'cherry'); ?></a>
 									</div><!--.source_holder-->
 								<?php }
 							?>

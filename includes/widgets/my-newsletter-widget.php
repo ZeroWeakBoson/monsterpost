@@ -22,7 +22,7 @@ class MY_NewsletterWidget extends WP_Widget {
 		echo "<form action='#' method='post' id='newsletter-widget' class='newsletter newsletter__widget clearfix' novalidate>
 			<label for='email'>$desc</label>
 			<input type='email' name='email' id='email' tabindex='1'>
-			<input type='submit' value='Subscribe' class='btn btn-primary'>
+			<input type='submit' value='Subscribe' class='btn btn-primary btn-normal'>
 		</form>";
 
 		echo $after_widget;

@@ -5,17 +5,6 @@
  *
  */
 
-// Frames
-function frame_shortcode($atts, $content = null) {
-
-	$output = '<figure class="thumbnail align' . $atts['align'] . ' clearfix">';
-		$output .= do_shortcode($content);
-	$output .= '</figure>';
-
-	return $output;
-}
-add_shortcode('frame', 'frame_shortcode');
-
 // Button
 function button_shortcode($atts, $content = null) {
 	extract(shortcode_atts(
@@ -41,7 +30,6 @@ function button_shortcode($atts, $content = null) {
 }
 add_shortcode('button', 'button_shortcode');
 
-
 // Map
 function map_shortcode($atts, $content = null) {
 
@@ -61,7 +49,6 @@ function map_shortcode($atts, $content = null) {
 }
 add_shortcode('map', 'map_shortcode');
 
-
 // Dropcaps
 function dropcap_shortcode($atts, $content = null) {
 
@@ -73,7 +60,6 @@ function dropcap_shortcode($atts, $content = null) {
 }
 add_shortcode('dropcap', 'dropcap_shortcode');
 
-
 // Horizontal Rule
 function hr_shortcode($atts, $content = null) {
 
@@ -82,7 +68,6 @@ function hr_shortcode($atts, $content = null) {
 	return $output;
 }
 add_shortcode('hr', 'hr_shortcode');
-
 
 // Small Horizontal Rule
 function sm_hr_shortcode($atts, $content = null) {
@@ -93,7 +78,6 @@ function sm_hr_shortcode($atts, $content = null) {
 }
 add_shortcode('sm_hr', 'sm_hr_shortcode');
 
-
 // Spacer
 function spacer_shortcode($atts, $content = null) {
 
@@ -103,57 +87,6 @@ function spacer_shortcode($atts, $content = null) {
 }
 add_shortcode('spacer', 'spacer_shortcode');
 
-
-// Blockquote
-function blockquote_shortcode($atts, $content = null) {
-
-	$output = '<blockquote>';
-	$output .= do_shortcode($content);
-	$output .= '</blockquote><!-- blockquote (end) -->';
-
-	return $output;
-}
-add_shortcode('blockquote', 'blockquote_shortcode');
-
-
-// Row
-function row_shortcode($atts, $content=null) {
-
-	// add divs to the content	
-	$output = '<div class="row">';
-	$output .= do_shortcode($content);
-	$output .= '</div> <!-- .row (end) -->';
-
-	return $output;
-}
-add_shortcode('row', 'row_shortcode');
-
-
-// Row Inner
-function row_inner_shortcode($atts, $content=null) {
-
-	// add divs to the content  
-	$output = '<div class="row">';
-	$output .= do_shortcode($content);
-	$output .= '</div> <!-- .row (end) -->';
-
-	return $output;
-}
-add_shortcode('row_in', 'row_inner_shortcode');
-
-
-// Row Fluid
-function row_fluid_shortcode($atts, $content=null) {
-
-	// add divs to the content  
-	$output = '<div class="row-fluid">';
-	$output .= do_shortcode($content);
-	$output .= '</div> <!-- .row-fluid (end) -->';
-
-	return $output;
-}
-add_shortcode('row_fluid', 'row_fluid_shortcode');
-
 // Clear
 function clear_shortcode($atts, $content = null) {
 
@@ -162,7 +95,6 @@ function clear_shortcode($atts, $content = null) {
 	return $output;
 }
 add_shortcode('clear', 'clear_shortcode');
-
 
 // Address
 function address_shortcode($atts, $content = null) {
@@ -259,19 +191,6 @@ function custom_list_shortcode($atts, $content = null) {
 }
 add_shortcode('custom_list', 'custom_list_shortcode');
 
-
-// Vertical Rule
-function vr_shortcode($atts, $content = null) {
-	
-	$output = '<div class="vertical-divider">';
-	$output .= do_shortcode($content);
-	$output .= '</div> <!-- divider (end) -->';
-
-	return $output;
-}
-add_shortcode('vr', 'vr_shortcode');
-
-
 // Label
 function label_shortcode($atts, $content = null) {
 
@@ -298,7 +217,6 @@ function media_desc_shortcode( $atts , $content = null ) {
 	return '<div class="media-desc">'.$content.'</div>';
 }
 add_shortcode( 'media_desc', 'media_desc_shortcode' );
-
 
 // Text Highlight
 function highlight_shortcode($atts, $content = null) {
@@ -346,7 +264,7 @@ function icon_shortcode($atts, $content = null) {
 	if(stripos($icon_font_size, "px")===false && stripos($icon_font_size, "em")===false){
 		$icon_font_size = (int) $icon_font_size . "px";
 	}
-	$icon_font_color = ($icon_font_color != '')? $icon_font_color : "#00000";
+	$icon_font_color = ($icon_font_color != '')? $icon_font_color : "#000";
 	$output = '<figure class="icon-holder align'.$align.' aligntext'.$align.' "><i class="'.$icon_font.' '.$custom_class.'" style="color:'.$icon_font_color.'; font-size:'.$icon_font_size.'; line-height:1.2em;"></i></figure>';
 	return $output;
 }

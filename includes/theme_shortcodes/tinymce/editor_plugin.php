@@ -243,16 +243,6 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								
 								break;
 								
-				// Vertical Rule
-								
-								case 'vr':
-								
-								var a = '[vr]'+selectedText+'[/vr]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-								
 				// Small Horizontal Rule
 								
 								case 'sm_hr':
@@ -445,80 +435,6 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								
 								break;
 
-				// one_half
-								
-								case 'one_half':
-								
-								var a = '[one_half]'+selectedText+'[/one_half]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-
-				// one_third
-								
-								case 'one_third':
-								
-								var a = '[one_third]'+selectedText+'[/one_third]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-
-				// two_third
-								
-								case 'two_third':
-								
-								var a = '[two_third]'+selectedText+'[/two_third]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-
-				// one_fourth
-								
-								case 'one_fourth':
-								
-								var a = '[one_fourth]'+selectedText+'[/one_fourth]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-
-
-				// three_fourth
-								
-								case 'three_fourth':
-								
-								var a = '[three_fourth]'+selectedText+'[/three_fourth]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-
-
-				// one_sixth
-								
-								case 'one_sixth':
-								
-								var a = '[one_sixth]'+selectedText+'[/one_sixth]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-
-
-				// five_sixth
-								
-								case 'five_sixth':
-								
-								var a = '[five_sixth]'+selectedText+'[/five_sixth]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-				
-								
 				// dspan - 50x50
 								
 								case 'dspan_50x50':
@@ -652,16 +568,6 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								
 								break;
 								
-					// Close icon
-								
-								case 'close':
-								
-								var a = '[close dismiss="alert"]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-								
 					// Well
 								
 								case 'well':
@@ -707,16 +613,6 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								case 'related_posts':
 								
 								var a = '[related_posts]';
-								
-								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
-								
-								break;
-								
-					// small
-								
-								case 'small':
-								
-								var a = '[small]'+selectedText+'[/small]';
 								
 								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
 								
@@ -769,108 +665,80 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 								});
 								
 								var a=this;d.onRenderMenu.add(function(c,b){
-								/*c=b.addMenu({title:"Posts"});
-										a.addWithDialog(c,"Related Posts","related_posts");
-										a.addWithDialog(c,"Posts Grid","posts_grid");
-										a.addWithDialog(c,"Posts List","posts_list");
-										a.addWithDialog(c,"Mini Posts Grid","mini_posts_grid");
-										a.addWithDialog(c,"Mini Posts List","mini_posts_list");
-										a.addWithDialog(c,"Recent Posts","recentposts");
-								c=b.addMenu({title:"Basic"});b.addSeparator();
-										a.addWithDialog(c,"Banner","banner");
-										a.addWithDialog(c,"Comments","recentcomments");
-										a.addWithDialog(c,"Post Cycle","post_cycle");
-										a.addWithDialog(c,"Roundabout","roundabout");
-										a.addWithDialog(c,"Service Box","service_box");
-										a.addWithDialog(c,"Hero Unit","hero_unit");
-										a.addWithDialog(c,"Categories","categories");
-										a.addWithDialog(c,"Tags","tags");*/
-
-								c=b.addMenu({title:"Basic"});b.addSeparator();
-										a.addWithDialog(c,"Presentation Post","post_cycle");
-										a.addWithDialog(c,"Categories","categories");
-										a.addWithDialog(c,"Tags","tags");
-										a.addWithDialog(c,"Hero Unit","hero_unit");
-								c=b.addMenu({title:"Interview"});
-										a.addWithDialog(c,"Question","question");
-										a.addWithDialog(c,"Answer","answer");
+								c=b.addMenu({title:"Row"});
+									a.addWithDialog(c,"(px)","row");
+									a.addWithDialog(c,"(%)","row_fluid");
 								c=b.addMenu({title:"Columns"});
-										a.addWithDialog(c,"row","row");
-										a.addWithDialog(c,"row inner","row_in");
-										a.addWithDialog(c,"span1","span1");
-										a.addWithDialog(c,"span2","span2");
-										a.addWithDialog(c,"span3","span3");
-										a.addWithDialog(c,"span4","span4");
-										a.addWithDialog(c,"span5","span5");
-										a.addWithDialog(c,"span6","span6");
-										a.addWithDialog(c,"span7","span7");
-										a.addWithDialog(c,"span8","span8");
-										a.addWithDialog(c,"span9","span9");
-										a.addWithDialog(c,"span10","span10");
-										a.addWithDialog(c,"span11","span11");
-										a.addWithDialog(c,"span12","span12");
-								c=b.addMenu({title:"Fluid Column"});
-										a.addWithDialog(c,"row fluid","row_fluid");
-										a.addWithDialog(c,"1/2","one_half");
-										a.addWithDialog(c,"1/3","one_third");
-										a.addWithDialog(c,"2/3","two_third");
-										a.addWithDialog(c,"1/4","one_fourth");
-										a.addWithDialog(c,"3/4","three_fourth");
-										a.addWithDialog(c,"1/6","one_sixth");
-										a.addWithDialog(c,"5/6","five_sixth");
+									a.addWithDialog(c,"1","span1");
+									a.addWithDialog(c,"2","span2");
+									a.addWithDialog(c,"3","span3");
+									a.addWithDialog(c,"4","span4");
+									a.addWithDialog(c,"5","span5");
+									a.addWithDialog(c,"6","span6");
+									a.addWithDialog(c,"7","span7");
+									a.addWithDialog(c,"8","span8");
+									a.addWithDialog(c,"9","span9");
+									a.addWithDialog(c,"10","span10");
+									a.addWithDialog(c,"11","span11");
+									a.addWithDialog(c,"12","span12");
 								c=b.addMenu({title:"2 Columns"});
-										a.addWithDialog(c,"50% | 50%","dspan_50x50");
-										a.addWithDialog(c,"75% | 25%","dspan_75x25");
-										a.addWithDialog(c,"25% | 75%","dspan_25x75");
+									a.addWithDialog(c,"50% | 50%","dspan_50x50");
+									a.addWithDialog(c,"75% | 25%","dspan_75x25");
+									a.addWithDialog(c,"25% | 75%","dspan_25x75");
 								c=b.addMenu({title:"3 Columns"});
-										a.addWithDialog(c,"33.3% | 33.3% | 33.3%","tspan_33x33x33");
-										a.addWithDialog(c,"50% | 25% | 25%","tspan_50x25x25");
-										a.addWithDialog(c,"25% | 50% | 25%","tspan_25x50x25");
-										a.addWithDialog(c,"25% | 25% | 50%","tspan_25x25x50");
+									a.addWithDialog(c,"33.3% | 33.3% | 33.3%","tspan_33x33x33");
+									a.addWithDialog(c,"50% | 25% | 25%","tspan_50x25x25");
+									a.addWithDialog(c,"25% | 50% | 25%","tspan_25x50x25");
+									a.addWithDialog(c,"25% | 25% | 50%","tspan_25x25x50");
 								c=b.addMenu({title:"4 Columns"});;b.addSeparator();
-										a.addWithDialog(c,"25% | 25% | 25% | 25%","qspan_25x25x25x25");
-								c=b.addMenu({title:"Elements"});
-										a.addWithDialog(c,"Label","label");
-										a.addWithDialog(c,"Text Highlight","highlight");
-										a.addWithDialog(c,"Media Description","media_desc");
-										a.addWithDialog(c,"Button","button");
-										a.addWithDialog(c,"Drop Cap","dropcap");
-										a.addWithDialog(c,"Blockquote","blockquote");
-										a.addWithDialog(c,"Icon","icon");
-										a.addWithDialog(c,"Frame","frame");
-										a.addWithDialog(c,"Horizontal Rule","hr");
-										a.addWithDialog(c,"Small Horizontal Rule","sm_hr");
-										a.addWithDialog(c,"Vertical Rule","vr");
-										a.addWithDialog(c,"Spacer","spacer");
-										a.addWithDialog(c,"Contact Follow List","contact_follow");
-										a.addWithDialog(c,"Progressbar","progressbar");
-										a.addWithDialog(c,"Address","address");
-										a.addWithDialog(c,"Clear","clear");
-										a.addWithDialog(c,"Extra Wrap","extra_wrap");
+									a.addWithDialog(c,"25% | 25% | 25% | 25%","qspan_25x25x25x25");
+								c=b.addMenu({title:"Content"});
+									a.addWithDialog(c,"Button","button");
+									a.addWithDialog(c,"Label","label");
+									a.addWithDialog(c,"Text Highlight","highlight");
+									a.addWithDialog(c,"Drop Cap","dropcap");
+									a.addWithDialog(c,"Icon","icon");
+									a.addWithDialog(c,"Horizontal Rule","hr");
+									a.addWithDialog(c,"Small Horizontal Rule","sm_hr");
+									a.addWithDialog(c,"Spacer","spacer");
+									a.addWithDialog(c,"Progressbar","progressbar");
+								c=b.addMenu({title:"Interview"});
+									a.addWithDialog(c,"Question","question");
+									a.addWithDialog(c,"Answer","answer");
+								c=b.addMenu({title:"Box"});
+									a.addWithDialog(c,"Tabs","tabs");
+									a.addWithDialog(c,"Accordion","accordions");
+									a.addWithDialog(c,"Table","table");
+									a.addWithDialog(c,"Hero Unit","hero_unit");
+									a.addWithDialog(c,"Alert Box","alert_box");
+									a.addWithDialog(c,"Well","well");
 								c=b.addMenu({title:"Lists"});
-										a.addWithDialog(c,"Unstyled","list_un");
-										a.addWithDialog(c,"Check List","check_list");
-										a.addWithDialog(c,"Check2 List","check2_list");
-										a.addWithDialog(c,"Arrow List","arrow_list");
-										a.addWithDialog(c,"Arrow2 List","arrow2_list");
-										a.addWithDialog(c,"Star List","star_list");
-										a.addWithDialog(c,"Plus List","plus_list");
-										a.addWithDialog(c,"Minus List","minus_list");
-										a.addWithDialog(c,"Custom List","custom_list");
-								c=b.addMenu({title:"Misc"});
-										a.addWithDialog(c,"Alert Box","alert_box");
-										a.addWithDialog(c,"Close icon","close");
-										a.addWithDialog(c,"Well","well");
-										a.addWithDialog(c,"Small","small");
-										a.addWithDialog(c,"Template URL","template_url");
-								a.addWithDialog(b,"Subscribe Form","subscribe_form");
-								a.addWithDialog(b,"Lightbox (Popup)","mfc_lightbox");
-								a.addWithDialog(b,"Tabs","tabs");
-								a.addWithDialog(b,"Accordion","accordions");
-								a.addWithDialog(b,"Table","table");
-								a.addWithDialog(b,"Google Map","map");
-								a.addWithDialog(b,"Widget","widget");
-
+									a.addWithDialog(c,"Unstyled","list_un");
+									a.addWithDialog(c,"Check List","check_list");
+									a.addWithDialog(c,"Check2 List","check2_list");
+									a.addWithDialog(c,"Arrow List","arrow_list");
+									a.addWithDialog(c,"Arrow2 List","arrow2_list");
+									a.addWithDialog(c,"Star List","star_list");
+									a.addWithDialog(c,"Plus List","plus_list");
+									a.addWithDialog(c,"Minus List","minus_list");
+									a.addWithDialog(c,"Custom List","custom_list");
+								c=b.addMenu({title:"Gallery"});
+									a.addWithDialog(c,"Presentation Post","post_cycle");
+									a.addWithDialog(c,"Lightbox (Popup)","mfc_lightbox");
+								c=b.addMenu({title:"Data"});
+									a.addWithDialog(c,"Categories","categories");
+									a.addWithDialog(c,"Tags","tags");
+								c=b.addMenu({title:"Media"});
+									a.addWithDialog(c,"Google Map","map");
+									a.addWithDialog(c,"Media Description","media_desc");
+								c=b.addMenu({title:"Contact"});
+									a.addWithDialog(c,"Contact Follow List","contact_follow");
+									a.addWithDialog(c,"Address","address");
+									a.addWithDialog(c,"Subscribe Form","subscribe_form");
+								c=b.addMenu({title:"Other"});
+									a.addWithDialog(c,"Template URL","template_url");
+									a.addWithDialog(c,"Clear","clear");
+									a.addWithDialog(c,"Extra Wrap","extra_wrap");
 							});
 							
 							return d

@@ -41,13 +41,15 @@ table table { background-color:#eee; }
 }
 label[for^=pwbox] + input,
 .btn{
-	min-width: 104px;
 	font-family: @customFont;
-	font-size: 14px;
 	line-height: 23px;
-	padding: 5px 17px;
 	.border-radius(@baseBorderRadius);
 	.box-shadow(none);
+	&-normal {
+		min-width: 104px;
+		padding: 5px 17px;
+		font-size: 14px;
+	}
 	&-primary {
 		border-top-color: #d14836;
 		border-bottom-color: #d14836;
@@ -398,15 +400,11 @@ article .post-content img {
 	margin-bottom:20px;
 }
 .nav-tabs > li {
-	
 }
 .nav-tabs > li > a {
-	
 }
 .tab-content {
-	
 }
-
 
 /* Dropcap */
 .dropcap {
@@ -417,8 +415,8 @@ article .post-content img {
 	margin: 0 20px 20px 0;
 	width: 50px;
 	height: 50px;
-	background: #3A87AD;
-	color: #ffffff;
+	background: @linkColorHover;
+	color: @white;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -463,13 +461,6 @@ article .post-content img {
 	height: 30px;
 	font-size: 0;
 	line-height: 0;
-}
-	
-/* Diviver */
-.vertical-divider {
-	margin-left: 20px;
-	padding-left: 40px;
-	border-left: 1px solid #f5f5f5;
 }
 
 /* Text Highlight */

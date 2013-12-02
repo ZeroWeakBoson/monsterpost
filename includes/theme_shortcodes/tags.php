@@ -2,14 +2,14 @@
 //Tag Cloud
 if (!function_exists('shortcode_tags')) {
 	function shortcode_tags($atts, $content = null) {
-		$output = '<div class="tags-cloud clearfix">';
+		$output = '<div class="tags-cloud clearfix"><ul>';
 		$tags = wp_tag_cloud('smallest=8&largest=8&format=array');
 
 		foreach($tags as $tag){
-				$output .= $tag.' ';
+			$output .= '<li>' . $tag. '</li>';
 		}
 
-		$output .= '</div><!-- .tags-cloud (end) -->';
+		$output .= '</ul></div><!-- .tags-cloud (end) -->';
 		return $output;
 	}
 	add_shortcode('tags', 'shortcode_tags');

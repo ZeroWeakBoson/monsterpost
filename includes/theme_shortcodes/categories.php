@@ -12,18 +12,9 @@ if (!function_exists('categories_shortcode')) {
 				'class' => 'check'
 			), $atts));
 
-		$taxonomy_value = '';
-
-		if (!empty($type))
-			$taxonomy_value = $type . '_';
-
-		if (empty($class)) {
-			$class = 'categories';
-		}
-
 		$args = array(
 			'type'     => 'post',
-			'taxonomy' => $taxonomy_value . 'category'
+			'taxonomy' => 'category'
 		);
 
 		$categories = get_categories($args); 

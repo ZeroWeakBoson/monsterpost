@@ -71,7 +71,7 @@ class MY_CycleWidget extends WP_Widget {
 			</ul><!-- .slides -->
 		</div><!-- .flexslider -->
 		<div class="text-right indent-bot">
-			<a href="<?php echo home_url('/') . $category; ?>/" class="btn btn-primary view-all"><?php _e('View All', 'cherry'); ?></a>
+			<a href="<?php echo home_url('/') . $category; ?>/" class="btn btn-primary btn-normal view-all"><?php _e('View All', 'cherry'); ?></a>
 		</div>
 	<?php 
 		endif;

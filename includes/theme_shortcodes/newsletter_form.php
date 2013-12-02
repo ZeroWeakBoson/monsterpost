@@ -7,7 +7,7 @@
 		$output .= "<form action='#' method='post' id='newsletter-shortcode' class='newsletter newsletter__shortcode clearfix' novalidate>
 			<label for='email'>Have web design news delivered to your inbox. Sign up to a free newsletter report.</label>
 			<input type='email' name='email' id='email' tabindex='1'>
-			<input type='submit' value='Subscribe' class='btn btn-primary'>
+			<input type='submit' value='Subscribe' class='btn btn-primary btn-normal'>
 		</form>";
 		return $output;
 	}

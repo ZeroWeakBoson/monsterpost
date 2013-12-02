@@ -6,11 +6,6 @@ frameworkShortcodeAtts={
 				help:"This is how many recent posts will be displayed."
 			},
 			{
-				label:"Type of posts",
-				id:"type",
-				help:'This is the type of posts. Use post slug, e.g. "portfolio" or blank for posts from Blog'
-			},
-			{
 				label:"Image width",
 				id:"thumb_width",
 				help:"Set width for your featured images."
@@ -23,11 +18,6 @@ frameworkShortcodeAtts={
 			{
 				label:"Which category to pull from? (for Blog posts)",
 				id:"category",
-				help:"Enter the slug of the category you'd like to pull posts from. Leave blank if you'd like to pull from all categories."
-			},
-			{
-				label:"Which category to pull from? (for Custom posts)",
-				id:"custom_category",
 				help:"Enter the slug of the category you'd like to pull posts from. Leave blank if you'd like to pull from all categories."
 			},
 			{

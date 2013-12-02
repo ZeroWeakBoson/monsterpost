@@ -23,7 +23,7 @@
 							<label for="freq-2-mot"><input type="radio" name="freq" value="2-mo" id="freq-2-mo">twice a month</label>
 						</div>
 						<div class="control-group">
-							<button type="submit" class="btn btn-primary">Subscribe</button>
+							<button type="submit" class="btn btn-primary btn-normal">Subscribe</button>
 						</div>
 					</fieldset>
 				</form>

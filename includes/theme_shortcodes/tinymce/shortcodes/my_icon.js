@@ -3,7 +3,7 @@ frameworkShortcodeAtts={
 			{
 				label:"Icon Name",
 				id:"icon_font",
-				help:"In this field you need to specify the icon name that can be copied from the <u><a href='http://fortawesome.github.io/Font-Awesome/cheatsheet/' target='_blank'>website</a></u>. E.g. \"icon-music\".",
+				help:"In this field you need to specify the icon name that can be copied from the <u><a href='http://fontawesome.io/3.2.1/icons/' target='_blank'>website</a></u>. E.g. \"icon-music\".",
 				item_class:"tupe_font_icon"
 			},
 			{
