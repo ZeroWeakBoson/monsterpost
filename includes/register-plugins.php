@@ -19,7 +19,7 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once PARENT_DIR . '/includes/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
@@ -35,7 +35,6 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function my_theme_register_required_plugins() {
-
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -72,15 +71,15 @@ function my_theme_register_required_plugins() {
 	 * end of each line for what each argument will be.
 	 */
 	$config = array(
-		'domain'           => 'cherry',         	// Text domain - likely want to be the same as your theme.
-		'default_path'     => '',                         	// Default absolute path to pre-packaged plugins
-		'parent_menu_slug' => 'themes.php', 				// Default parent menu slug
-		'parent_url_slug'  => 'themes.php', 				// Default parent URL slug
-		'menu'             => 'install-required-plugins', 	// Menu slug
-		'has_notices'      => true,                       	// Show admin notices or not
-		'is_automatic'     => true,					   	// Automatically activate plugins after installation or not
-		'message'          => '',							// Message to output right before the plugins table
-		'strings'      		=> array(
+		'domain'           => 'cherry', // Text domain - likely want to be the same as your theme.
+		'default_path'     => '', // Default absolute path to pre-packaged plugins
+		'parent_menu_slug' => 'themes.php', // Default parent menu slug
+		'parent_url_slug'  => 'themes.php', // Default parent URL slug
+		'menu'             => 'install-required-plugins', // Menu slug
+		'has_notices'      => true, // Show admin notices or not
+		'is_automatic'     => true, // Automatically activate plugins after installation or not
+		'message'          => '', // Message to output right before the plugins table
+		'strings'          => array(
 			'page_title'                      => __( 'Install Required Plugins', 'cherry' ),
 			'menu_title'                      => __( 'Install Plugins', 'cherry' ),
 			'installing'                      => __( 'Installing Plugin: %s', 'cherry' ), // %1$s = plugin name

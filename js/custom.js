@@ -78,7 +78,7 @@ jQuery(document).ready(function(){
 			visible      = false;
 		caller.click(function(){
 			if (visible) {
-				sform.stop().animate({height: 0}, 350, function() {
+				sform.stop().animate({height: 0}, 350, function(){
 					// Animation complete.
 					sticky.removeClass('up');
 				}),
@@ -96,7 +96,7 @@ jQuery(document).ready(function(){
 			sform_txt.focus();
 		});
 		no.click(function(){
-			sform.stop().animate({height: 0}, 350, function() {
+			sform.stop().animate({height: 0}, 350, function(){
 				// Animation complete.
 				sticky.removeClass('up');
 			}),
@@ -109,7 +109,7 @@ jQuery(document).ready(function(){
 
 	caller.click(function(){
 		if (visible) {
-			sform.stop().animate({height: 0}, 350, function() {
+			sform.stop().animate({height: 0}, 350, function(){
 				// Animation complete.
 				sticky.removeClass('up');
 			}),
@@ -127,7 +127,7 @@ jQuery(document).ready(function(){
 		sform_txt.focus();
 	});
 	no.click(function(){
-		sform.stop().animate({height: 0}, 350, function() {
+		sform.stop().animate({height: 0}, 350, function(){
 			// Animation complete.
 			sticky.removeClass('up');
 		}),
@@ -139,18 +139,18 @@ jQuery(document).ready(function(){
 	// ---------------------------------------------------------
 	// Call Magnific Popup
 	// ---------------------------------------------------------
-	jQuery(".thumbnail a").each(function(){magnific_popup_init(jQuery(this))});
+	jQuery(".mfc-thumbnail").each(function(){magnific_popup_init(jQuery(this))});
 	// ---------------------------------------------------------
 	// Back to Top
 	// ---------------------------------------------------------
-	jQuery(window).scroll(function() {
-		if (jQuery(this).scrollTop() > 100) {
+	jQuery(window).scroll(function(){
+		if (jQuery(this).scrollTop() > 100){
 			jQuery('#back-top').fadeIn();
 		} else {
 			jQuery('#back-top').fadeOut();
 		}
 	});
-	jQuery('#back-top a').click(function () {
+	jQuery('#back-top a').click(function (){
 		jQuery('body,html').stop(false, false).animate({ scrollTop: 0 }, 800 );
 		return false;
 	});
@@ -183,7 +183,7 @@ jQuery(document).ready(function(){
 	// Retina images
 	// ---------------------------------------------------------
 	jQuery(function(){
-		if ( window.devicePixelRatio === 2 ) {
+		if ( window.devicePixelRatio === 2 ){
 			var images = jQuery("img.hires");
 			// loop through the images and make them hi-res
 			for( var i = 0; i < images.length; i++ ) {

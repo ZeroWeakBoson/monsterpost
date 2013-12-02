@@ -72,12 +72,25 @@ if (!function_exists('title_shortcode')) {
 	add_shortcode('title_box', 'title_shortcode');
 }
 
-if (!function_exists('mfc_lightbox_shortcode')) {
-	function mfc_lightbox_shortcode( $atts, $content ) {
+if ( !function_exists('mfc_lightbox_shortcode') ) {
+	function mfc_lightbox_shortcode( $atts, $content = null ) {
+		$output = '<div class="thumbnail-wrap"><figure class="thumbnail mfc-thumbnail">';
 
-		$output = '<div class="thumbnail-wrap"><figure class="thumbnail">';
+		if ( strpos($content, '</a>') === false ) {
+			$start_src = strpos( $content, 'src="' ) + strlen( 'src="' );
+			if ( $start_src !== false ) {
+				$end_src = strpos($content, '"', $start_src) - $start_src;
+
+				if ( $end_src !== false ) {
+					$img_src = trim( substr( $content, $start_src, $end_src ) );
+					$output .= '<a href="'. $img_src .'">';
+				}
+			}
+		}
 		$output .= do_shortcode($content);
-		$output .= '<span class="zoom-icon"></span>';
+		if ( isset($img_src) ) {
+			$output .= '</a>';
+		}
 		$output .= '</figure></div>';
 
 		return $output;

@@ -117,7 +117,6 @@
 	include_once PARENT_DIR . '/options.php';
 
 	// Plugin Activation
-	include_once PARENT_DIR . '/includes/class-tgm-plugin-activation.php';
 	include_once PARENT_DIR . '/includes/register-plugins.php';
 
 	// WP popular posts

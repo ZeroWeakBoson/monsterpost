@@ -196,17 +196,13 @@ article .post-content img {
 	img {
 		.border-radius(@baseBorderRadius);
 	}
-	&-wrap {
-		.thumbnail{
-			display: inline-block;
-			vertical-align: top;
-			&:hover {
-				.zoom-icon {
-					opacity:1;
-					.no-rgba & {
-						visibility:visible;
-					}
-				}
+}
+.mfc-thumbnail {
+	a {
+		&:hover {
+			img {
+				.opacity(60);
+				.transition(0.25s);
 			}
 		}
 	}
