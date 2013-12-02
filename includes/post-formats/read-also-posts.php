@@ -1,8 +1,9 @@
 <?php
-	$author = get_the_author();
+	$pageobj = get_queried_object();
 	$args = array(
-		'author_name'    => "$author",
-		'posts_per_page' => 3
+		'author'    => $pageobj->post_author,
+		'posts_per_page' => 3,
+		'post__not_in' => array($post->ID)
 	);
 
 	$read_also_query = new WP_Query($args);
