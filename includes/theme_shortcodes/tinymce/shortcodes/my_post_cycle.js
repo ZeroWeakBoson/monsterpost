@@ -6,6 +6,11 @@ frameworkShortcodeAtts={
 				help:"This is how many recent posts will be displayed."
 			},
 			{
+				label:"Which category to pull from? (for Blog posts)",
+				id:"category",
+				help:"Enter the slug of the category you'd like to pull posts from. Leave blank if you'd like to pull from all categories."
+			},
+			{
 				label:"Image width",
 				id:"thumb_width",
 				help:"Set width for your featured images."
@@ -14,11 +19,6 @@ frameworkShortcodeAtts={
 				label:"Image height",
 				id:"thumb_height",
 				help:"Set height for your featured images."
-			},
-			{
-				label:"Which category to pull from? (for Blog posts)",
-				id:"category",
-				help:"Enter the slug of the category you'd like to pull posts from. Leave blank if you'd like to pull from all categories."
 			},
 			{
 				label:"Effect",

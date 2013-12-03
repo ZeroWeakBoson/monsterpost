@@ -14,16 +14,25 @@
 							</header>
 
 							<?php 
-								$source = get_post_meta($post->ID, 'tz_source_url', true);
-								if (!empty($source)) {
-									if (function_exists('wp_audio_shortcode')) {
-										echo '<div class="source_holder source__audio">' . do_shortcode('[audio src="' . $source . '"]') . '</div><!--.source__audio-->';
-									}
-								}
-								$excerpt = get_the_excerpt(); ?>
+								$audio_source = get_post_meta($post->ID, 'tz_audio_source', true);
+								if ( !empty($audio_source) ) {
+									// if (function_exists('wp_audio_shortcode')) {
+									// 	echo '<div class="source_holder source__audio">' . do_shortcode('[audio src="' . $source . '"]') . '</div><!--.source__audio-->';
+									// }
+									echo '<pre>';
+									print_r($audio_source);
+									echo '</pre>';
+									// echo do_shortcode('['.$audio_source.']');
+									print do_shortcode(get_post_meta($post->ID, 'tz_audio_source', $single = true));
+								} ?>
 							<!-- Post Content -->
 							<div class="post_content">
-								<div class="excerpt"><?php echo my_string_limit_words($excerpt, 60); ?></div>
+								<div class="excerpt">
+									<?php 
+										$excerpt = get_the_excerpt();
+										echo my_string_limit_words($excerpt, 60);
+									?>
+								</div>
 							</div>
 							<!-- //Post Content -->
 						</article>

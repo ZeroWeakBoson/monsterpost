@@ -56,8 +56,9 @@
 					<h3 class="author-category-h"><?php _e('Categories', 'cherry'); ?></h3>
 					<ul class="author-category-list unstyled clearfix">
 					<?php foreach ( $authorCatArray as $k => $v ) {
+						$name = get_category_by_slug($v)->cat_name;
 						$link = get_category_link( $k );
-						echo '<li class="author-category-item"><a class="author-category-link" href="'.$link.'" title="'.$v.'">' . $v . '</a></li>';
+						echo '<li class="author-category-item"><a class="author-category-link" href="'.$link.'" title="'.$name.'">' . $name . '</a></li>';
 					} ?>
 					</ul>
 				</div><!--.author-category-->

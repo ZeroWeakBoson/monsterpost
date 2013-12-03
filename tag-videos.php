@@ -29,11 +29,16 @@
 												echo '<div class="source_holder source__video">' . do_shortcode('[video src="' . $source . '"]') . '</div><!--.source__video-->';
 											}
 										}
-									}
-									$excerpt = get_the_excerpt(); ?>
+									} ?>
 								<!-- Post Content -->
 								<div class="post_content">
-									<div class="excerpt"><?php echo my_string_limit_words($excerpt, 60); ?></div>
+									<div class="excerpt excerpt__shortcode">
+										<?php 
+											// $excerpt = get_the_excerpt();
+											// echo my_string_limit_words($excerpt, 60);
+											the_excerpt();
+										?>
+									</div>
 								</div>
 								<!-- //Post Content -->
 							</article>

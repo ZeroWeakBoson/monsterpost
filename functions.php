@@ -196,15 +196,15 @@
 	add_action('wp_head', 'add_ie_html5_shim');
 
 	// Post Formats
-	$formats = array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' );
+	$formats = array( 'audio', 'gallery', 'image', 'video' );
 	add_theme_support( 'post-formats', $formats ); 
 	add_post_type_support( 'post', 'post-formats' );
 
 	// Custom excpert length
 	if(!function_exists('new_excerpt_length')) {
 		function new_excerpt_length($length) {
-			// return (of_get_option('excerpt_count')=='') ? 20 : of_get_option('excerpt_count');
-			return 100;
+			return (of_get_option('excerpt_count')=='') ? 20 : of_get_option('excerpt_count');
+			// return 100;
 		}
 		add_filter('excerpt_length', 'new_excerpt_length');
 	}

@@ -17,57 +17,51 @@
 			echo '</div>';
 		}
 
-		if (! get_post_gallery()) {
+		if ( !get_post_gallery() ) {
 
-			$random = uniqid(); ?>
-			<script type="text/javascript">
-				// Can also be used with $(document).ready()
-				jQuery(window).load(function() {
-					jQuery('#flexslider_<?php echo $random ?>').flexslider({
-						animation: "slide",
-						smoothHeight: true
+			$args = array(
+				'orderby'        => 'menu_order',
+				'order'          => 'ASC',
+				'post_type'      => 'attachment',
+				'post_parent'    => get_the_ID(),
+				'post_mime_type' => 'image',
+				'post_status'    => null,
+				'numberposts'    => -1,
+			);
+			$attachments = get_posts($args);
+
+			if ($attachments) :
+				$random = uniqid(); ?>
+				<script type="text/javascript">
+					// Can also be used with $(document).ready()
+					jQuery(window).load(function() {
+						jQuery('#flexslider_<?php echo $random ?>').flexslider({
+							animation: "slide",
+							smoothHeight: true
+						});
 					});
-				});
-			</script>
-			
-			<!-- Gallery Post -->
-			<div class="gallery-post">
-				<!-- Slider -->
-				<div id="flexslider_<?php echo $random ?>" class="flexslider thumbnail">
-					<ul class="slides">
-						<?php 
-							$args = array(
-								'orderby'        => 'menu_order',
-								'order'          => 'ASC',
-								'post_type'      => 'attachment',
-								'post_parent'    => get_the_ID(),
-								'post_mime_type' => 'image',
-								'post_status'    => null,
-								'numberposts'    => -1,
-							);
-							$attachments = get_posts($args);
-						
-							if ($attachments) :
+				</script>
+				
+				<!-- Gallery Post -->
+				<div class="gallery-post">
+					<!-- Slider -->
+					<div id="flexslider_<?php echo $random ?>" class="flexslider thumbnail">
+						<ul class="slides">
+							<?php 
 								foreach ($attachments as $attachment) :
 									$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
 									$url            = $attachment_url['0'];
 									$image          = aq_resize($url, 800, 400, true);
+								?>
+							<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
+							<?php
+								endforeach;
 							?>
-						<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
-						<?php
-							endforeach;
-							endif;
-						?>
-					</ul>
-				</div>
-				<!-- /Slider -->
-			</div>
-			<!-- /Gallery Post -->
-			
-			<?php } else {
-				echo get_post_gallery();
+						</ul>
+					</div><!-- /Slider -->
+				</div><!-- /Gallery Post -->
+			<?php endif;
 			}
-
 	endif; ?>
 
 	<?php if (!is_singular()) :

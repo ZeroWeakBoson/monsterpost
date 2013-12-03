@@ -7,38 +7,38 @@ jQuery(document).ready(function() {
 	
 	imageOptions.css('display', 'none');
 // ---------------------------------------------------------
-//  	Link
+//  	Audio
 // ---------------------------------------------------------
-	var linkOptions = jQuery('#tz-meta-box-link');
-	var linkTrigger = jQuery('#post-format-link');
+	var audioOptions = jQuery('#tz-meta-box-audio');
+	var audioTrigger = jQuery('#post-format-audio');
 	
-	linkOptions.css('display', 'none');
+	audioOptions.css('display', 'none');
 // ---------------------------------------------------------
 //  	Core
 // ---------------------------------------------------------
 	var group = jQuery('#post-formats-select input');
 	group.change( function() {
 		
-		if(jQuery(this).val() == 'link') {
-			linkOptions.css('display', 'block');
-			tzHideAll(linkOptions);
+		if(jQuery(this).val() == 'audio') {
+			audioOptions.css('display', 'block');
+			tzHideAll(audioOptions);
 		} else if(jQuery(this).val() == 'image') {
 			imageOptions.css('display', 'block');
 			tzHideAll(imageOptions);
 		} else {
-			linkOptions.css('display', 'none');
+			audioOptions.css('display', 'none');
 			imageOptions.css('display', 'none');
 		}
 		
 	});
 
-	if(linkTrigger.is(':checked'))
-		linkOptions.css('display', 'block');
+	if(audioTrigger.is(':checked'))
+		audioOptions.css('display', 'block');
 	if(imageTrigger.is(':checked'))
 		imageOptions.css('display', 'block');
 		
 	function tzHideAll(notThisOne) {
-		linkOptions.css('display', 'none');
+		audioOptions.css('display', 'none');
 		imageOptions.css('display', 'none');
 		notThisOne.css('display', 'block');
 	}

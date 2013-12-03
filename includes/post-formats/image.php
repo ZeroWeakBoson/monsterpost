@@ -35,7 +35,7 @@
 
 		if ($lightbox) : ?>
 
-			<figure class="featured-thumbnail thumbnail large">
+			<figure class="featured-thumbnail thumbnail mfc-thumbnail large">
 				<a class="image-wrap" title="<?php the_title(); ?>" href="<?php echo $src[0]; ?>">
 					<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
 					<span class="zoom-icon"></span>
