@@ -50,10 +50,10 @@ function shortcode_empty_paragraph_fix($content) {
 }
 
 /**
-*
-* Add Thumb Column
-*
-**/
+ *
+ * Add Thumb Column
+ *
+ */
 if ( !function_exists('fb_AddThumbColumn') && function_exists('add_theme_support') ) {
 	// for post and page
 	add_theme_support('post-thumbnails', array( 'post', 'page' ) );
@@ -93,10 +93,10 @@ if ( !function_exists('fb_AddThumbColumn') && function_exists('add_theme_support
 
 
 /**
-*
-* Show filter by categories for custom posts
-*
-**/
+ *
+ * Show filter by categories for custom posts
+ *
+ */
 function my_restrict_manage_posts() {
 	global $typenow;
 	$args=array( 'public' => true, '_builtin' => false ); 
@@ -136,10 +136,10 @@ add_action('restrict_manage_posts', 'my_restrict_manage_posts' );
 add_filter('parse_query','my_convert_restrict');
 
 /**
-*
-* Pagination
-*
-**/
+ *
+ * Pagination
+ *
+ */
 if ( !function_exists( 'pagination' ) ) {
 	function pagination($pages = '', $range = 1) { 
 		$showitems = ($range * 2)+1; 
@@ -174,10 +174,10 @@ if ( !function_exists( 'pagination' ) ) {
 }
 
 /**
-*
-* Custom Comments Structure
-*
-**/
+ *
+ * Custom Comments Structure
+ *
+ */
 if ( !function_exists( 'mytheme_comment' ) ) {
 	function mytheme_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment; ?>
@@ -206,10 +206,10 @@ if ( !function_exists( 'mytheme_comment' ) ) {
 }
 
 /**
-*
-* Returns the Google font stylesheet URL, if available.
-*
-**/
+ *
+ * Returns the Google font stylesheet URL, if available.
+ *
+ */
 function monster_fonts_url() {
 	$fonts_url = '';
 

@@ -80,12 +80,6 @@
 
 	// Shortcodes
 	include_once PARENT_DIR . '/includes/theme_shortcodes/columns.php';
-	// include_once PARENT_DIR . '/includes/theme_shortcodes/shortcodes.php';
-	// include_once PARENT_DIR . '/includes/theme_shortcodes/posts_grid.php';
-	// include_once PARENT_DIR . '/includes/theme_shortcodes/posts_list.php';
-	// include_once PARENT_DIR . '/includes/theme_shortcodes/mini_posts_list.php';
-	// include_once PARENT_DIR . '/includes/theme_shortcodes/mini_posts_grid.php';
-	// include_once PARENT_DIR . '/includes/theme_shortcodes/banner.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/alert.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/tabs.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/toggle.php';

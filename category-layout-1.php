@@ -40,9 +40,9 @@ if (have_posts()) : ?>
 
 		if ( $post_counter % 2 ) {
 			echo '</div><!--.post-tile-->';
-		} ?>
-
-	<?php else: ?>
+		}
+	get_template_part('includes/post-formats/post-nav');
+	else: ?>
 		<div class="no-results">
 			<?php echo '<h5>' . __('There has been an error.', 'cherry') . '</strong></h5>'; ?>
 			<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>

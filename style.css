@@ -1,9 +1,9 @@
 /*
-	Theme Name: cherry
-	Theme URI: http://info.template-help.com/help/
-	Author: Template_Help.com
-	Author URI: http://info.template-help.com/help/
-	Description: A theme for Wordpress 3.6.x + from Template-Help.com Collection
+	Theme Name: MonsterPost
+	Theme URI: http://www.cherryframework.com/
+	Author: Cherry Team
+	Author URI: http://www.cherryframework.com/
+	Description: A theme for Wordpress 3.7.x
 	Version: 1.0
 	License:
 	License URI: http://
@@ -11,3 +11,7 @@
 	Text Domain: cherry
 */
 @import "css/style.css";
+
+/* ----------------------------------------
+	Please, You may put custom css here
+---------------------------------------- */
