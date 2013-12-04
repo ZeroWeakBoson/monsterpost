@@ -13,18 +13,26 @@
 								<h3><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'cherry');?> <?php the_title(); ?>"><?php the_title(); ?></a></h3>
 							</header>
 
-							<?php 
-								$audio_source = get_post_meta($post->ID, 'tz_audio_source', true);
+							<?php $audio_source = htmlspecialchars_decode( get_post_meta( $post->ID, 'tz_audio_source', true ) );
 								if ( !empty($audio_source) ) {
-									// if (function_exists('wp_audio_shortcode')) {
-									// 	echo '<div class="source_holder source__audio">' . do_shortcode('[audio src="' . $source . '"]') . '</div><!--.source__audio-->';
-									// }
-									echo '<pre>';
-									print_r($audio_source);
-									echo '</pre>';
-									// echo do_shortcode('['.$audio_source.']');
-									print do_shortcode(get_post_meta($post->ID, 'tz_audio_source', $single = true));
-								} ?>
+
+									if ( strpos( $audio_source, 'http' ) !== false ) {
+										$start = strpos( $audio_source, 'http' );
+
+										if ( strpos( $audio_source, '][' ) !== false ) {
+											$len = strpos( $audio_source, '][' ) - $start - 1;
+											$src = substr( $audio_source, $start, $len );
+										} else {
+											$src = substr( $audio_source, $start );
+										}
+										$src = esc_url( $src );
+										$attr = array('src' => $src);
+										if ( function_exists('wp_audio_shortcode') ) {
+											echo '<div class="source_holder source__audio">' . wp_audio_shortcode( $attr ) . '</div><!--.source__audio-->';
+										}
+									}
+								}
+							?>
 							<!-- Post Content -->
 							<div class="post_content">
 								<div class="excerpt">

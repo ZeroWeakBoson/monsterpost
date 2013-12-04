@@ -96,8 +96,24 @@ $meta_box_audio = array(
 	'priority' => 'high',
 	'fields' => array(
 		array( "name" => __('Audio shortcode (duplicate)','cherry'),
-				"desc" => __('Please, duplicate here inserted in the post\'s content shortcode.','cherry'),
+				"desc" => __('Please, duplicate here inserted in the post\'s content audio shortcode.','cherry'),
 				"id" => $prefix."audio_source",
+				"type" => "text",
+				"std" => ""
+			),
+	),
+);
+
+$meta_box_video = array(
+	'id' => 'tz-meta-box-video',
+	'title' =>  __('Video', 'cherry'),
+	'page' => 'post',
+	'context' => 'normal',
+	'priority' => 'high',
+	'fields' => array(
+		array( "name" => __('Video source (duplicate)','cherry'),
+				"desc" => __('Please, duplicate here inserted in the post\'s content video source.','cherry'),
+				"id" => $prefix."video_source",
 				"type" => "text",
 				"std" => ""
 			),
@@ -112,7 +128,7 @@ add_action('admin_menu', 'tz_add_box');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_add_box() {
-	global $meta_box_link, $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio;
+	global $meta_box_link, $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video;
 
 	add_meta_box($meta_box_image['id'], $meta_box_image['title'], 'tz_show_box_image', $meta_box_image['page'], $meta_box_image['context'], $meta_box_image['priority']);
 	add_meta_box($meta_box_link['id'], $meta_box_link['title'], 'tz_show_box_link', $meta_box_link['page'], $meta_box_link['context'], $meta_box_link['priority']);
@@ -120,6 +136,7 @@ function tz_add_box() {
 	add_meta_box($meta_box_filter['id'], $meta_box_filter['title'], 'tz_show_box_filter', $meta_box_filter['page'], $meta_box_filter['context'], $meta_box_filter['priority']);
 	add_meta_box($meta_box_source['id'], $meta_box_source['title'], 'tz_show_box_source', $meta_box_source['page'], $meta_box_source['context'], $meta_box_source['priority']);
 	add_meta_box($meta_box_audio['id'], $meta_box_audio['title'], 'tz_show_box_audio', $meta_box_audio['page'], $meta_box_audio['context'], $meta_box_audio['priority']);
+	add_meta_box($meta_box_video['id'], $meta_box_video['title'], 'tz_show_box_video', $meta_box_video['page'], $meta_box_video['context'], $meta_box_video['priority']);
 }
 
 
@@ -324,6 +341,37 @@ function tz_show_box_audio() {
 	echo '</table>';
 }
 
+function tz_show_box_video() {
+	global $meta_box_video, $post;
+
+	// Use nonce for verification
+	echo '<input type="hidden" name="tz_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+
+	echo '<table class="form-table">';
+
+	foreach ($meta_box_video['fields'] as $field) {
+		// get current post meta data
+		$meta = get_post_meta($post->ID, $field['id'], true);
+		switch ($field['type']) {
+
+			
+			//If Text
+			case 'text':
+			
+			echo '<tr>',
+				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">'. $field['desc'].'</span></label></th>',
+				'<td>';
+			echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(( $field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
+			
+			break;
+
+		}
+
+	}
+
+	echo '</table>';
+}
+
 add_action('save_post', 'tz_save_data');
 
 
@@ -332,7 +380,7 @@ add_action('save_post', 'tz_save_data');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_save_data($post_id) {
-	global $meta_box_link, $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio;
+	global $meta_box_link, $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video;
 
 	// verify nonce
 	if (!isset($_POST['tz_meta_box_nonce']) || !wp_verify_nonce($_POST['tz_meta_box_nonce'], basename(__FILE__))) {
@@ -409,6 +457,17 @@ function tz_save_data($post_id) {
 	}
 
 	foreach ($meta_box_audio['fields'] as $field) {
+		$old = get_post_meta($post_id, $field['id'], true);
+		$new = $_POST[$field['id']];
+
+		if ($new && $new != $old) {
+			update_post_meta($post_id, $field['id'], stripslashes(htmlspecialchars($new)));
+		} elseif ('' == $new && $old) {
+			delete_post_meta($post_id, $field['id'], $old);
+		}
+	}
+
+	foreach ($meta_box_video['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
 

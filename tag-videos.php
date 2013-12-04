@@ -13,30 +13,36 @@
 									<h3><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'cherry');?> <?php the_title(); ?>"><?php the_title(); ?></a></h3>
 								</header>
 
-								<?php 
-									$source = get_post_meta($post->ID, 'tz_source_url', true);
-									if (!empty($source)) {
+								<?php $video_source = htmlspecialchars_decode( get_post_meta( $post->ID, 'tz_video_source', true ) );
+									if ( !empty($video_source) ) {
 
-										$upload_dir = wp_upload_dir();
-										$pos = strpos($source, $upload_dir['baseurl']);
+										if ( strpos( $video_source, 'http' ) !== false ) {
+											$start = strpos( $video_source, 'http' );
 
-										if ($pos === false) {
-											if (function_exists('wp_oembed_get')) {
-												echo '<div class="source_holder source__video">' . wp_oembed_get($source) . '</div><!--.source__video-->';
-											}
-										} else {
-											if (function_exists('wp_video_shortcode')) {
-												echo '<div class="source_holder source__video">' . do_shortcode('[video src="' . $source . '"]') . '</div><!--.source__video-->';
+											if ( strpos( $video_source, '][' ) !== false ) {
+												$len = strpos( $video_source, '][' ) - $start - 1;
+												$src = substr( $video_source, $start, $len );
+												$attr = array( 'src' => esc_url($src) );
+
+												if ( function_exists('wp_video_shortcode') ) {
+													echo '<div class="source_holder source__video">' . wp_video_shortcode( $attr ) . '</div><!--.source__video-->';
+												}
+											} else {
+												$src = substr( $video_source, $start );
+
+												if (function_exists('wp_oembed_get')) {
+													echo '<div class="source_holder source__video">' . wp_oembed_get( esc_url($src) ) . '</div><!--.source__video-->';
+												}
 											}
 										}
-									} ?>
+									}
+								?>
 								<!-- Post Content -->
 								<div class="post_content">
 									<div class="excerpt excerpt__shortcode">
 										<?php 
-											// $excerpt = get_the_excerpt();
-											// echo my_string_limit_words($excerpt, 60);
-											the_excerpt();
+											$excerpt = get_the_excerpt();
+											echo my_string_limit_words($excerpt, 60);
 										?>
 									</div>
 								</div>

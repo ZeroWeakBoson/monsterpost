@@ -90,7 +90,7 @@
 						$i++;
 						endwhile; ?>
 						<li class="<?php echo $key; ?> view-all-item">
-							<a href='<?php echo home_url("/tag/$key"); ?>' class="view-all-link">
+							<a href='<?php echo home_url("/tag/$key"); ?>' class="view-all-link" target="_blank">
 								<div class="view-all-text">
 									<strong><?php _e('View all', 'cherry'); ?></strong>
 									<span class="view-all-tag"><?php echo $key; ?></span>

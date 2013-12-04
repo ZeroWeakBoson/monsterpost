@@ -14,6 +14,13 @@ jQuery(document).ready(function() {
 	
 	audioOptions.css('display', 'none');
 // ---------------------------------------------------------
+//  	Video
+// ---------------------------------------------------------
+	var videoOptions = jQuery('#tz-meta-box-video');
+	var videoTrigger = jQuery('#post-format-video');
+	
+	videoOptions.css('display', 'none');
+// ---------------------------------------------------------
 //  	Core
 // ---------------------------------------------------------
 	var group = jQuery('#post-formats-select input');
@@ -22,11 +29,15 @@ jQuery(document).ready(function() {
 		if(jQuery(this).val() == 'audio') {
 			audioOptions.css('display', 'block');
 			tzHideAll(audioOptions);
+		} else if(jQuery(this).val() == 'video') {
+			videoOptions.css('display', 'block');
+			tzHideAll(videoOptions);
 		} else if(jQuery(this).val() == 'image') {
 			imageOptions.css('display', 'block');
 			tzHideAll(imageOptions);
 		} else {
 			audioOptions.css('display', 'none');
+			videoOptions.css('display', 'none');
 			imageOptions.css('display', 'none');
 		}
 		
@@ -34,11 +45,14 @@ jQuery(document).ready(function() {
 
 	if(audioTrigger.is(':checked'))
 		audioOptions.css('display', 'block');
+	if(videoTrigger.is(':checked'))
+		videoOptions.css('display', 'block');
 	if(imageTrigger.is(':checked'))
 		imageOptions.css('display', 'block');
 		
 	function tzHideAll(notThisOne) {
 		audioOptions.css('display', 'none');
+		videoOptions.css('display', 'none');
 		imageOptions.css('display', 'none');
 		notThisOne.css('display', 'block');
 	}

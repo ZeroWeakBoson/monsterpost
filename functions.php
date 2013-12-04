@@ -203,8 +203,8 @@
 	// Custom excpert length
 	if(!function_exists('new_excerpt_length')) {
 		function new_excerpt_length($length) {
-			return (of_get_option('excerpt_count')=='') ? 20 : of_get_option('excerpt_count');
-			// return 100;
+			// return (of_get_option('excerpt_count')=='') ? 20 : of_get_option('excerpt_count');
+			return 100;
 		}
 		add_filter('excerpt_length', 'new_excerpt_length');
 	}
