@@ -7,22 +7,6 @@
 
 $prefix = 'tz_';
 
-$meta_box_link = array(
-	'id' => 'tz-meta-box-link',
-	'title' =>  __('Link Settings', 'cherry'),
-	'page' => 'post',
-	'context' => 'normal',
-	'priority' => 'high',
-	'fields' => array(
-		array( "name" => __('The URL','cherry'),
-				"desc" => __('Insert the URL you wish to link to.','cherry'),
-				"id" => $prefix."link_url",
-				"type" => "text",
-				"std" => ""
-			),
-	),
-);
-
 $meta_box_image = array(
 	'id' => 'tz-meta-box-image',
 	'title' =>  __('Image Settings', 'cherry'),
@@ -128,10 +112,9 @@ add_action('admin_menu', 'tz_add_box');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_add_box() {
-	global $meta_box_link, $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video;
+	global $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video;
 
 	add_meta_box($meta_box_image['id'], $meta_box_image['title'], 'tz_show_box_image', $meta_box_image['page'], $meta_box_image['context'], $meta_box_image['priority']);
-	add_meta_box($meta_box_link['id'], $meta_box_link['title'], 'tz_show_box_link', $meta_box_link['page'], $meta_box_link['context'], $meta_box_link['priority']);
 	add_meta_box($meta_box_check['id'], $meta_box_check['title'], 'tz_show_box_check', $meta_box_check['page'], $meta_box_check['context'], $meta_box_check['priority']);
 	add_meta_box($meta_box_filter['id'], $meta_box_filter['title'], 'tz_show_box_filter', $meta_box_filter['page'], $meta_box_filter['context'], $meta_box_filter['priority']);
 	add_meta_box($meta_box_source['id'], $meta_box_source['title'], 'tz_show_box_source', $meta_box_source['page'], $meta_box_source['context'], $meta_box_source['priority']);
@@ -143,37 +126,6 @@ function tz_add_box() {
 /*-----------------------------------------------------------------------------------*/
 /*	Callback function to show fields in meta box
 /*-----------------------------------------------------------------------------------*/
-
-function tz_show_box_link() {
-	global $meta_box_link, $post;
-
-	// Use nonce for verification
-	echo '<input type="hidden" name="tz_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
-
-	echo '<table class="form-table">';
-
-	foreach ($meta_box_link['fields'] as $field) {
-		// get current post meta data
-		$meta = get_post_meta($post->ID, $field['id'], true);
-		switch ($field['type']) {
-
-			
-			//If Text
-			case 'text':
-			
-			echo '<tr>',
-				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">'. $field['desc'].'</span></label></th>',
-				'<td>';
-			echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : stripslashes(htmlspecialchars(( $field['std']), ENT_QUOTES)), '" size="30" style="width:75%; margin-right: 20px; float:left;" />';
-			
-			break;
-
-		}
-
-	}
-
-	echo '</table>';
-}
 
 function tz_show_box_image() {
 	global $meta_box_image, $post;
@@ -380,7 +332,7 @@ add_action('save_post', 'tz_save_data');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_save_data($post_id) {
-	global $meta_box_link, $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video;
+	global $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video;
 
 	// verify nonce
 	if (!isset($_POST['tz_meta_box_nonce']) || !wp_verify_nonce($_POST['tz_meta_box_nonce'], basename(__FILE__))) {
@@ -399,17 +351,6 @@ function tz_save_data($post_id) {
 		}
 	} elseif (!current_user_can('edit_post', $post_id)) {
 		return $post_id;
-	}
-
-	foreach ($meta_box_link['fields'] as $field) {
-		$old = get_post_meta($post_id, $field['id'], true);
-		$new = $_POST[$field['id']];
-
-		if ($new && $new != $old) {
-			update_post_meta($post_id, $field['id'], stripslashes(htmlspecialchars($new)));
-		} elseif ('' == $new && $old) {
-			delete_post_meta($post_id, $field['id'], $old);
-		}
 	}
 
 	foreach ($meta_box_image['fields'] as $field) {
