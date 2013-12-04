@@ -716,6 +716,7 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 									a.addWithDialog(c,"Presentation Post","post_cycle");
 									a.addWithDialog(c,"Lightbox (Popup)","mfc_lightbox");
 								c=b.addMenu({title:"Data"});
+									a.addWithDialog(c,"Related Posts","related_posts");
 									a.addWithDialog(c,"Categories","categories");
 									a.addWithDialog(c,"Tags","tags");
 								c=b.addMenu({title:"Media"});

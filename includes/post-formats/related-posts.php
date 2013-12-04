@@ -12,7 +12,7 @@ if ($tags) {
 	$args = array(
 		'tag__in'             => $tag_ids,
 		'post__not_in'        => array($post->ID),
-		'showposts'           => 3, // these are the number of related posts we want to display
+		'posts_per_page'      => 3, // these are the number of related posts we want to display
 		'ignore_sticky_posts' => 1 // to exclude the sticky post
 	);
 	// WP_Query takes the same arguments as query_posts
