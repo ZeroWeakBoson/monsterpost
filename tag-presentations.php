@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<div class="container">
 		<div class="row">
-			<div id="content" class="span8 tag-slide-decks <?php echo of_get_option('blog_sidebar_pos') ?>">
+			<div id="content" class="span8 tag-presentations <?php echo of_get_option('blog_sidebar_pos') ?>">
 				<div class="content-inner">
 					<?php 
 						get_template_part('title');

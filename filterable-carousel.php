@@ -2,10 +2,10 @@
 <?php
 	// declaration array for filter
 	$filterArray = array(
-			'videos'      => '',
-			'books'       => '',
-			'podcasts'    => '',
-			'slide-decks' => ''
+			'videos'        => '',
+			'books'         => '',
+			'podcasts'      => '',
+			'presentations' => ''
 		);
 
 	// declaration array for all tags

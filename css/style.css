@@ -443,7 +443,7 @@ h6 { text-transform:uppercase; }
 #carousel li.videos:after { content:"\e01d"; }
 #carousel li.books:after { content:"\e038"; }
 #carousel li.podcasts:after { content:"\e03a"; }
-#carousel li.slide-decks:after { content:"\e00f"; }
+#carousel li.presentations:after { content:"\e00f"; }
 #carousel-current-state {
 	display:block;
 	margin-right:26px;
@@ -1714,6 +1714,14 @@ html[xmlns] .slides { display:block; }
 .post .sticky {
 	position:relative;
 	z-index:9;
+}
+.post-header {
+	word-wrap:break-word;
+	-webkit-hyphens:auto;
+	-moz-hyphens:auto;
+	-ms-hyphens:auto;
+	-o-hyphens:auto;
+	hyphens:auto;
 }
 .post-title {
 	word-wrap:break-word;
