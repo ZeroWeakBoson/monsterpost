@@ -22,7 +22,7 @@
 							$request_scheme = '';
 						}
 						if (array_key_exists('HTTP_HOST', $_SERVER)) {
-							$http_host = $_SERVER['HTTP_HOST'];
+							$http_host = 'http://' . $_SERVER['HTTP_HOST'];
 						} else {
 							$http_host = '';
 						}
@@ -33,6 +33,7 @@
 						}
 
 						$back = $request_scheme . $http_host . $redirect_url;
+
 						$pos = strrpos($back, "/");
 						if ($pos !== false) {
 							$back = substr($back, 0, $pos);
