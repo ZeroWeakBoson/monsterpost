@@ -19,6 +19,11 @@ if ( !function_exists('monster_post_cycle') ) {
 		$type_post         = 'post';
 		$slider_pagination = $pagination;
 		$slider_navigation = $navigation;
+		if ( $num > 8 ) {
+			$pagerType = 'short';
+		} else {
+			$pagerType = 'full';
+		}
 		$i                 = 0;
 		$rand              = rand();
 
@@ -33,17 +38,16 @@ if ( !function_exists('monster_post_cycle') ) {
 		if (empty($latest)) return;
 
 		$output = '<script type="text/javascript">
-					jQuery(window).load(function() {
-						jQuery("#flexslider_'.$rand.'").flexslider({
-							animation: "'.$effect.'",
-							smoothHeight : true,
-							directionNav: '.$slider_navigation.',
-							controlNav: '.$slider_pagination.'
+					jQuery(document).ready(function(){
+						jQuery("#bxslider_'.$rand.'").bxSlider({
+							mode: "'.$effect.'",
+							pager: '.$slider_navigation.',
+							pagerType: "'.$pagerType.'",
+							controls: '.$slider_pagination.'
 						});
-					});';
-		$output .= '</script>';
-		$output .= '<div id="flexslider_'.$rand.'" class="flexslider no-bg '.$custom_class.'">';
-			$output .= '<ul class="slides">';
+					});
+				</script>';
+		$output .= '<ul id="bxslider_'.$rand.'" class="bxslider unstyled '.$custom_class.'">';
 			$i = 1;
 
 			foreach($latest as $key => $post) {
@@ -59,9 +63,9 @@ if ( !function_exists('monster_post_cycle') ) {
 						$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 						$url            = $attachment_url['0'];
 						$image          = aq_resize($url, $thumb_width, $thumb_height, true);
-						$output .= '<li><figure class="featured-thumbnail"><a href="'.get_permalink($post->ID).'" title="'.get_the_title($post->ID).'">';
+						$output .= '<li><a href="'.get_permalink($post->ID).'" title="'.get_the_title($post->ID).'">';
 						$output .= '<img src="'.$image.'" alt="'.get_the_title($post->ID).'" />';
-						$output .= '</a></figure></li>';
+						$output .= '</a></li>';
 						$i++;
 					} else {
 
@@ -90,10 +94,10 @@ if ( !function_exists('monster_post_cycle') ) {
 								$image_title = $attachment->post_title;
 
 								if ( $k == 0 ) {
-									$output .= '<li><figure class="featured-thumbnail">';
+									$output .= '<li>';
 									$output .= '<a href="'.get_permalink($post->ID).'" title="'.get_the_title($post->ID).'">';
 									$output .= '<img src="'.$img.'" alt="'.get_the_title($post->ID).'" />';
-									$output .= '</a></figure></li>';
+									$output .= '</a></li>';
 								} break;
 								$k++;
 							}
@@ -104,7 +108,6 @@ if ( !function_exists('monster_post_cycle') ) {
 			}
 			wp_reset_postdata();
 			$output .= '</ul>';
-		$output .= '</div>';
 		return $output;
 	}
 	add_shortcode('post_cycle', 'monster_post_cycle');

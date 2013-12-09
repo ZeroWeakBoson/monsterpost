@@ -24,8 +24,8 @@ frameworkShortcodeAtts={
 				label:"Effect",
 				id:"effect",
 				controlType:"select-control", 
-				selectValues:['slide', 'fade'],
-				defaultValue: 'slide', 
+				selectValues:['slide', 'fade', 'vertical'],
+				defaultValue: 'slide',
 				defaultText: 'slide',
 				help:"Choose the transition effect."
 			},

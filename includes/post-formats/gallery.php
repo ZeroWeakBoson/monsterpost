@@ -31,35 +31,32 @@
 			$attachments = get_posts($args);
 
 			if ($attachments) :
-				$random = uniqid(); ?>
+				$random = uniqid();
+				if ( count($attachments) > 8 ) {
+					$pagerType = 'short';
+				} else {
+					$pagerType = 'full';
+				} ?>
 				<script type="text/javascript">
-					// Can also be used with $(document).ready()
-					jQuery(window).load(function() {
-						jQuery('#flexslider_<?php echo $random ?>').flexslider({
-							animation: "slide",
-							smoothHeight: true
+					jQuery(document).ready(function(){
+						jQuery('#bxslider_<?php echo $random ?>').bxSlider({
+							pagerType: "<?php echo $pagerType; ?>"
 						});
 					});
 				</script>
-				
-				<!-- Gallery Post -->
-				<div class="gallery-post">
-					<!-- Slider -->
-					<div id="flexslider_<?php echo $random ?>" class="flexslider thumbnail">
-						<ul class="slides">
-							<?php 
-								foreach ($attachments as $attachment) :
-									$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
-									$url            = $attachment_url['0'];
-									$image          = aq_resize($url, 800, 400, true);
-								?>
-							<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
-							<?php
-								endforeach;
-							?>
-						</ul>
-					</div><!-- /Slider -->
-				</div><!-- /Gallery Post -->
+				<!-- Slider -->
+				<ul id="bxslider_<?php echo $random ?>" class="bxslider">
+					<?php 
+						foreach ($attachments as $attachment) :
+							$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+							$url            = $attachment_url['0'];
+							$image          = aq_resize($url, 800, 400, true);
+						?>
+					<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
+					<?php
+						endforeach;
+					?>
+				</ul>
 			<?php endif;
 			}
 	endif; ?>
