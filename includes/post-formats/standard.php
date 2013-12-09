@@ -12,13 +12,31 @@
 	<?php if (is_singular()) :
 		get_template_part('includes/post-formats/single-post-meta');
 
+		echo '<div class="post_excerpt">';
 		if ( has_excerpt() ) {
-			echo '<div class="post_excerpt">';
 			the_excerpt();
-			echo '</div>';
+		} else {
+			$excerpt = apply_filters( 'the_content', get_the_content() );
+			$n = 0;
+			$offset = 0;
+			while ( $n < 3 ) {
+				$pos = stripos($excerpt, '.', $offset);
+				$offset = $pos + 1;
+				$n++;
+			}
+			echo force_balance_tags( substr($excerpt, 0, $offset) );
 		}
+		echo '</div>';
 
 		get_template_part('includes/post-formats/post-thumb');
+
+		echo '<div class="post_content">';
+		if ( has_excerpt() ) {
+			the_content('');
+		} else {
+			echo substr($excerpt, $offset);
+		}
+		echo '<div class="clear"></div></div>';
 	endif;
 
 	if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -44,16 +62,7 @@
 			<!-- //Post Content -->
 		<?php }
 
-		} else { ?>
-
-			<!-- Post Content -->
-			<div class="post_content">
-				<?php the_content(''); ?>
-				<div class="clear"></div>
-			</div>
-			<!-- //Post Content -->
-
-	<?php }
+		}
 
 	endif; ?>
 

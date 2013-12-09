@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('post__holder'); ?>>
 
-	<?php if (!is_singular()) :
+	<?php if ( !is_singular() ) :
 		get_template_part('includes/post-formats/post-thumb');
 		get_template_part('includes/post-formats/post-meta');
 	?>
@@ -9,58 +9,69 @@
 	</header>
 	<?php endif; ?>
 
-	<?php if (is_singular()) :
+	<?php if ( is_singular() ) :
 		get_template_part('includes/post-formats/single-post-meta');
 
+		echo '<div class="post_excerpt">';
 		if ( has_excerpt() ) {
-			echo '<div class="post_excerpt">';
 			the_excerpt();
-			echo '</div>';
+		} else {
+			$excerpt = apply_filters( 'the_content', get_the_content() );
+			$n = 0;
+			$offset = 0;
+			while ( $n < 3 ) {
+				$pos = stripos($excerpt, '.', $offset);
+				$offset = $pos + 1;
+				$n++;
+			}
+			echo force_balance_tags( substr($excerpt, 0, $offset) );
 		}
+		echo '</div>';
 
-		if (has_post_thumbnail() ):
+		if ( has_post_thumbnail() ):
 			$lightbox = get_post_meta(get_the_ID(), 'tz_image_lightbox', TRUE);
 			if ($lightbox == 'yes') 
 				$lightbox = TRUE;
 			else 
 				$lightbox = FALSE;
-		$src = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), array( '9999','9999' ), false, '' );
-	?>
+			$src = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), array( '9999','9999' ), false, '' ); ?>
 
-	<div class="post-thumb clearfix">
-		<?php
-			$thumb   = get_post_thumbnail_id();
-			$img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
-			$image   = aq_resize( $img_url, 770, 380, true ); //resize & crop img
+		<div class="post-thumb clearfix">
+			<?php
+				$thumb   = get_post_thumbnail_id();
+				$img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
+				$image   = aq_resize( $img_url, 770, 380, true ); //resize & crop img
 
-		if ($lightbox) : ?>
+			if ($lightbox) : ?>
 
-			<figure class="featured-thumbnail thumbnail mfc-thumbnail large">
-				<a class="image-wrap" title="<?php the_title(); ?>" href="<?php echo $src[0]; ?>">
+				<figure class="featured-thumbnail thumbnail mfc-thumbnail large">
+					<a class="image-wrap" title="<?php the_title(); ?>" href="<?php echo $src[0]; ?>">
+						<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
+						<span class="zoom-icon"></span>
+					</a>
+				</figure>
+				<div class="clear"></div>
+
+			<?php else: ?>
+
+				<figure class="featured-thumbnail thumbnail large">
 					<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
-					<span class="zoom-icon"></span>
-				</a>
-			</figure>
-			<div class="clear"></div>
+				</figure>
+				<div class="clear"></div>
+			<?php endif; ?>
+		</div><!--.post-thumb-->
 
-		<?php else: ?>
-
-			<figure class="featured-thumbnail thumbnail large">
-				<img src="<?php echo $image ?>" alt="<?php the_title(); ?>" />
-			</figure>
-			<div class="clear"></div>
-		<?php endif; ?>
-	</div>
-	<?php endif; ?>
+		<?php endif;
 	
-	<!-- Post Content -->
-	<div class="post_content">
-		<?php the_content(''); ?>
-		<div class="clear"></div>
-	</div>
-	<!-- //Post Content -->
+		echo '<div class="post_content">';
+		if ( has_excerpt() ) {
+			the_content('');
+		} else {
+			echo substr($excerpt, $offset);
+		}
+		echo '<div class="clear"></div></div>';
 
-	<?php else :
+	else :
 		$post_excerpt = of_get_option('post_excerpt');
 
 			if ($post_excerpt == 'true') {

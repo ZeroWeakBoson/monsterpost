@@ -2,7 +2,6 @@
 	<?php 
 		// $source = get_post_meta($post->ID, 'tz_source_url', true);
 		// echo wp_oembed_get($source);
-
 	?>
 	<?php if (!is_singular()) :
 		get_template_part('includes/post-formats/post-thumb');
@@ -16,13 +15,31 @@
 	<?php if (is_singular()) :
 		get_template_part('includes/post-formats/single-post-meta');
 
+		echo '<div class="post_excerpt">';
 		if ( has_excerpt() ) {
-			echo '<div class="post_excerpt">';
 			the_excerpt();
-			echo '</div>';
+		} else {
+			$excerpt = apply_filters( 'the_content', get_the_content() );
+			$n = 0;
+			$offset = 0;
+			while ( $n < 3 ) {
+				$pos = stripos($excerpt, '.', $offset);
+				$offset = $pos + 1;
+				$n++;
+			}
+			echo force_balance_tags( substr($excerpt, 0, $offset) );
 		}
+		echo '</div>';
 
-		// get_template_part('includes/post-formats/post-thumb');
+		get_template_part('includes/post-formats/post-thumb');
+
+		echo '<div class="post_content">';
+		if ( has_excerpt() ) {
+			the_content('');
+		} else {
+			echo substr($excerpt, $offset);
+		}
+		echo '<div class="clear"></div></div>';
 	endif;
 
 	if (!is_singular()) :
@@ -38,14 +55,6 @@
 			</div>
 			<!-- //Post Content -->
 		<?php } ?>
-	<?php else :?>
-
-	<!-- Post Content -->
-	<div class="post_content">
-		<?php the_content(''); ?>
-		<div class="clear"></div>
-	</div>
-	<!-- //Post Content -->
 
 	<?php endif; ?>
 
