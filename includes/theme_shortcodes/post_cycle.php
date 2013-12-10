@@ -24,6 +24,9 @@ if ( !function_exists('monster_post_cycle') ) {
 		} else {
 			$pagerType = 'full';
 		}
+		if ( $effect == 'slide' ) {
+			$effect = 'horizontal';
+		}
 		$i                 = 0;
 		$rand              = rand();
 

@@ -291,10 +291,10 @@
 				var slicePrepend = slider.children.slice(-slice).clone().addClass('bx-clone');
 				el.append(sliceAppend).prepend(slicePrepend);
 			}
-			// remove the loading DOM element
 			el.css({
 				visibility: 'visible'
 			});
+			// remove the loading DOM element
 			slider.loader.remove();
 			// set the left / top position of "el"
 			setSlidePosition();
