@@ -36,52 +36,45 @@
 		}
 		echo '</div>';
 
-		$g = get_post_galleries(get_the_ID());
-		var_dump($g);
+		$args = array(
+			'orderby'        => 'menu_order',
+			'order'          => 'ASC',
+			'post_type'      => 'attachment',
+			'post_parent'    => get_the_ID(),
+			'post_mime_type' => 'image',
+			'post_status'    => null,
+			'numberposts'    => -1,
+		);
+		$attachments = get_posts($args);
 
-		if ( ! $g ) {
-			$args = array(
-				'orderby'        => 'menu_order',
-				'order'          => 'ASC',
-				'post_type'      => 'attachment',
-				'post_parent'    => get_the_ID(),
-				'post_mime_type' => 'image',
-				'post_status'    => null,
-				'numberposts'    => -1,
-			);
-			$attachments = get_posts($args);
-
-			if ($attachments) :
-				$random = uniqid();
-				if ( count($attachments) > 8 ) {
-					$pagerType = 'short';
-				} else {
-					$pagerType = 'full';
-				} ?>
-				<script type="text/javascript">
-					jQuery(document).ready(function(){
-						jQuery('#bxslider_<?php echo $random ?>').bxSlider({
-							pagerType: "<?php echo $pagerType; ?>"
-						});
+		if ($attachments) :
+			$random = uniqid();
+			if ( count($attachments) > 8 ) {
+				$pagerType = 'short';
+			} else {
+				$pagerType = 'full';
+			} ?>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					jQuery('#bxslider_<?php echo $random ?>').bxSlider({
+						pagerType: "<?php echo $pagerType; ?>"
 					});
-				</script>
-				<!-- Slider -->
-				<ul id="bxslider_<?php echo $random ?>" class="bxslider unstyled">
-					<?php 
-						foreach ($attachments as $attachment) :
-							$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
-							$url            = $attachment_url['0'];
-							$image          = aq_resize($url, 800, 400, true);
-						?>
-					<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
-					<?php
-						endforeach;
+				});
+			</script>
+			<!-- Slider -->
+			<ul id="bxslider_<?php echo $random ?>" class="bxslider unstyled">
+				<?php 
+					foreach ($attachments as $attachment) :
+						$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+						$url            = $attachment_url['0'];
+						$image          = aq_resize($url, 800, 400, true);
 					?>
-				</ul>
-			<?php endif;
-		} else {
-			echo $g;
-		}
+				<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
+				<?php
+					endforeach;
+				?>
+			</ul>
+		<?php endif;
 
 		echo '<div class="post_content">';
 		if ( has_excerpt() || $full_content ) {
