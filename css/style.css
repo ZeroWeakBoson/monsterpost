@@ -11,8 +11,7 @@ img::selection { background:transparent; }
 img::-moz-selection { background:transparent; }
 html, body { height:100%; }
 body { position:relative; }
-zz
-	.ie8 body { min-width:980px; }
+.ie8 body { min-width:980px; }
 a { outline:none; }
 a:focus {
 	outline:none;
@@ -444,7 +443,7 @@ h6 { text-transform:uppercase; }
 #carousel li.videos:after { content:"\e01d"; }
 #carousel li.books:after { content:"\e038"; }
 #carousel li.podcasts:after { content:"\e03a"; }
-#carousel li.presentations:after { content:"\e00f"; }
+#carousel li.slide-decks:after { content:"\e00f"; }
 #carousel-current-state {
 	display:block;
 	margin-right:26px;
@@ -459,9 +458,9 @@ h6 { text-transform:uppercase; }
 #carousel-current-state span {
 	position:relative;
 	display:block;
-	width:120px;
+	width:130px;
 	height:21px;
-	padding:15px 10px;
+	padding:15px 0 15px 10px;
 	color:#fff;
 	font-size:1.23em;
 	line-height:1em;
@@ -3514,23 +3513,18 @@ nav.footer-nav ul li {
 	list-style-type:none;
 }
 nav.footer-nav ul li:first-child { background:none; }
-nav.footer-nav ul li:first-child:before, nav.footer-nav ul li:first-child:after { content:''; }
-nav.footer-nav ul li:before {
-	position:absolute;
-	left:0;
-	top:-30%;
-	content:'|';
-	color:rgba(0,0,0,0.15);
-}
-.no-rgba nav.footer-nav ul li:before { color:#e4e4e4; }
+nav.footer-nav ul li:first-child:after { background:none; }
 nav.footer-nav ul li:after {
+	display:block;
+	width:1px;
 	position:absolute;
 	left:0;
-	bottom:-30%;
-	content:'|';
-	color:rgba(0,0,0,0.1);
+	top:0;
+	bottom:0;
+	content:'';
+	background-color:rgba(0,0,0,0.1);
 }
-.no-rgba nav.footer-nav ul li:after { color:#e4e4e4; }
+.no-rgba nav.footer-nav ul li:after { background-color:#e4e4e4; }
 nav.footer-nav ul li a {
 	display:inline-block;
 	margin:15px 0;

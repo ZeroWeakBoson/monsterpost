@@ -33,29 +33,21 @@ nav.footer-nav {
 			list-style-type: none;
 			&:first-child {
 				background: none;
-				&:before,
 				&:after {
-					content: '';
-				}
-			}
-			&:before {
-				position: absolute;
-				left: 0;
-				top: -30%;
-				content: '|';
-				color: rgba(0,0,0,.15);
-				.no-rgba &{
-					color: #e4e4e4;
+					background: none;
 				}
 			}
 			&:after {
+				display: block;
+				width: 1px;
 				position: absolute;
 				left: 0;
-				bottom: -30%;
-				content: '|';
-				color: rgba(0,0,0,.1);
+				top: 0;
+				bottom: 0;
+				content: '';
+				background-color: rgba(0,0,0,.1);
 				.no-rgba &{
-					color: #e4e4e4;
+					background-color: #e4e4e4;
 				}
 			}
 			a {

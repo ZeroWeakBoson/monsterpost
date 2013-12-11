@@ -24,7 +24,7 @@
 								wp_link_pages('before=<div class="pagination">&after=</div>');
 							
 								global $tag_array; // from post-date.php
-								$filter_array = array('videos', 'books', 'podcasts', 'presentations'); // tags array from filterable-carousel.php
+								$filter_array = array('videos', 'books', 'podcasts', 'slide-decks'); // tags array from filterable-carousel.php
 								
 								if ( array_intersect($filter_array, $tag_array) ) {
 									$source = get_post_meta(get_the_ID(), 'tz_source_url', true); ?>

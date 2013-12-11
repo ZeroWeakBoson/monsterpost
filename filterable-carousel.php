@@ -2,10 +2,10 @@
 <?php
 	// declaration array for filter
 	$filterArray = array(
-			'videos'        => '',
-			'books'         => '',
-			'podcasts'      => '',
-			'presentations' => ''
+			'videos'      => '',
+			'books'       => '',
+			'podcasts'    => '',
+			'slide-decks' => ''
 		);
 
 	// declaration array for all tags
@@ -32,7 +32,7 @@
 ?>
 <div class="carousel-holder">
 	<div class="carousel-heading clearfix">
-		<div id="carousel-current-state" class="hidden-phone"><span><?php _e('Best of Web', 'cherry'); ?></span></div>
+		<div id="carousel-current-state" class="hidden-phone"><span><?php esc_html_e('Watch & Learn', 'cherry'); ?></span></div>
 		<div id="carousel-filter">
 			<?php
 				foreach ($filterArray as $key => $value) {
