@@ -4705,6 +4705,7 @@ article .post-content img { max-width:100%; }
 	overflow:hidden;
 	z-index:99;
 }
+#back-top a:hover { text-decoration:none !important; }
 #back-top span {
 	display:block;
 	margin-bottom:7px;
