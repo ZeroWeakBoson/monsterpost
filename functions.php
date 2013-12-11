@@ -92,11 +92,13 @@
 	include_once PARENT_DIR . '/includes/theme_shortcodes/hero_unit.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/categories.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/tags.php';
-	include_once PARENT_DIR . '/includes/theme_shortcodes/related_posts.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/subscribe_form.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/newsletter_form.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/contact_follow.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/interview.php';
+	if ( !class_exists('efficientRelatedPosts') ) {
+		include_once PARENT_DIR . '/includes/theme_shortcodes/related_posts.php';
+	}
 
 	// tinyMCE includes
 	include_once PARENT_DIR . '/includes/theme_shortcodes/tinymce/tinymce_shortcodes.php';
