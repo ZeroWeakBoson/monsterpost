@@ -5,15 +5,16 @@ if ( ! isset( $content_width ) )
 
 // The excerpt based on words
 function my_string_limit_words($string, $word_limit) {
-	$words = str_word_count($string, 1);
+	// $words = str_word_count($string, 1);
+	$words = explode(' ', $string);
 	if ( count($words) > $word_limit ) {
 		$output = '';
-		for ( $i=0; $i < $word_limit; $i++ ) {
+		for ( $i = 0; $i < $word_limit; $i++ ) {
 			$output .= $words[$i];
 			$output .= ' ';
 		}
 		$output = trim($output);
-		return $output.'&nbsp;... ';
+		return $output.'&nbsp;&hellip;';
 	} else {
 		return implode(' ', $words);
 	}
