@@ -328,31 +328,31 @@ if(!function_exists('optionsframework_options')) {
 							"name" => "Social",
 							"type" => "heading"
 		);
-		$options['facebook'] = array( 
+		$options['facebook_username'] = array( 
 							"name" => "Facebook Username",
 							"desc" => "Facebook Username",
 							"id" => "facebook_username",
 							"std" => "",
 							"type" => "text");
-		$options['twitter'] = array( 
+		$options['twitter_username'] = array( 
 							"name" => "Twitter Username",
 							"desc" => "Twitter UsernameL",
 							"id" => "twitter_username",
 							"std" => "",
 							"type" => "text");
-		$options['flickr'] = array( 
+		$options['google_userID'] = array( 
 							"name" => "Google+ ID",
 							"desc" => "Google+ ID",
 							"id" => "google_userID",
 							"std" => "",
 							"type" => "text");
-		$options['youtube'] = array( 
+		$options['stumble_username'] = array( 
 							"name" => "Stumble Username",
 							"desc" => "Stumble Username",
 							"id" => "stumble_username",
 							"std" => "",
 							"type" => "text");
-		$options['google'] = array( 
+		$options['pinterest_username'] = array( 
 							"name" => "Pinterest Username",
 							"desc" => "Pinterest Username",
 							"id" => "pinterest_username",
@@ -371,17 +371,38 @@ if(!function_exists('optionsframework_options')) {
 							"std" => PARENT_URL . "/images/bnr/top.png",
 							"type" => "upload");
 
+		$options['bnr_top_url'] = array( 
+							"name" => "Header Banner URL",
+							"desc" => "Header Banner URL",
+							"id" => "bnr_top_url",
+							"std" => "#",
+							"type" => "text");
+
 		$options['bnr_content'] = array( "name" => "Content Banner",
 							"desc" => "Click Upload or Enter the direct path to your <strong>Content Banner</strong>. For example <em>http://your_website_url_here/wp-content/uploads/2013/01/bnr-content.png</em>",
 							"id" => "bnr_content",
 							"std" => PARENT_URL . "/images/bnr/content.png",
 							"type" => "upload");
 
+		$options['bnr_content_url'] = array( 
+							"name" => "Content Banner URL",
+							"desc" => "Content Banner URL",
+							"id" => "bnr_content_url",
+							"std" => home_url("/free-website-templates"),
+							"type" => "text");
+
 		$options['bnr_sidebar'] = array( "name" => "Sidebar Banner",
 							"desc" => "Click Upload or Enter the direct path to your <strong>Sidebar Banner</strong>. For example <em>http://your_website_url_here/wp-content/uploads/2013/01/bnr-sidebar.png</em>",
 							"id" => "bnr_sidebar",
 							"std" => PARENT_URL . "/images/bnr/sidebar.png",
 							"type" => "upload");
+
+		$options['bnr_sidebar_url'] = array( 
+							"name" => "Sidebar Banner URL",
+							"desc" => "Sidebar Banner URL",
+							"id" => "bnr_sidebar_url",
+							"std" => "#",
+							"type" => "text");
 
 		return $options;
 	}

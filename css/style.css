@@ -3945,7 +3945,7 @@ label[for^=pwbox] + input {
 .wpcf7-form input[type=text]:-ms-input-placeholder, .wpcf7-form input[type=email]:-ms-input-placeholder, .wpcf7-form input[type=tel]:-ms-input-placeholder, .wpcf7-form input[type=url]:-ms-input-placeholder { color:#7f7f7f; }
 .wpcf7-form input[type=text]::-webkit-input-placeholder, .wpcf7-form input[type=email]::-webkit-input-placeholder, .wpcf7-form input[type=tel]::-webkit-input-placeholder, .wpcf7-form input[type=url]::-webkit-input-placeholder { color:#7f7f7f; }
 .wpcf7-form input[type=text].input-small, .wpcf7-form input[type=email].input-small, .wpcf7-form input[type=tel].input-small, .wpcf7-form input[type=url].input-small {
-	width:263px;
+	width:260px;
 	margin-right:6px;
 }
 @media (min-width: 768px) and (max-width: 979px) {
