@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('icomoon.eot');
-	src:url('icomoon.eot?#iefix') format('embedded-opentype'),
-		url('icomoon.woff') format('woff'),
-		url('icomoon.ttf') format('truetype'),
-		url('icomoon.svg#icomoon') format('svg');
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-facebook, .icon-twitter, .icon-google-plus, .icon-pinterest, .icon-feed, .icon-play-dark, .icon-grid, .icon-list, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-books, .icon-case-studies, .icon-podcasts, .icon-home, .icon-question-sign, .icon-stumbleupon, .icon-videos, .icon-user-add, .icon-dollar, .icon-cog, .icon-edit, .icon-bullhorn, .icon-database, .icon-upload, .icon-graduate, .icon-cogs, .icon-picture, .icon-locked, .icon-envelope, .icon-close, .icon-search, .icon-forward, .icon-bubble, .icon-tag, .icon-yes, .icon-no, .icon-linkedin-sign, .icon-monster, .icon-quote, .icon-list-2, .icon-quora {
+.icon-facebook, .icon-twitter, .icon-google-plus, .icon-pinterest, .icon-feed, .icon-play-dark, .icon-grid, .icon-list, .icon-angle-left, .icon-angle-right, .icon-angle-up, .icon-angle-down, .icon-pencil, .icon-books, .icon-case-studies, .icon-podcasts, .icon-home, .icon-question-sign, .icon-stumbleupon, .icon-videos, .icon-user-add, .icon-dollar, .icon-cog, .icon-edit, .icon-bullhorn, .icon-database, .icon-upload, .icon-graduate, .icon-cogs, .icon-picture, .icon-locked, .icon-envelope, .icon-close, .icon-search, .icon-forward, .icon-bubble, .icon-tag, .icon-yes, .icon-no, .icon-linkedin-sign, .icon-monster, .icon-quote, .icon-list-2, .icon-quora, .icon-pen_, .icon-pen, .icon-banknote, .icon-settings, .icon-megaphone {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -169,4 +169,19 @@ you can use the generic selector below, but it's slower:
 }
 .icon-quora:before {
 	content: "\e00a";
+}
+.icon-pen_:before {
+	content: "\e010";
+}
+.icon-pen:before {
+	content: "\e011";
+}
+.icon-banknote:before {
+	content: "\e012";
+}
+.icon-settings:before {
+	content: "\e013";
+}
+.icon-megaphone:before {
+	content: "\e014";
 }

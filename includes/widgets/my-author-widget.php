@@ -18,7 +18,7 @@ class MY_AuthorWidget extends WP_Widget {
 		
 		echo $before_widget;
 			echo "<a href='" . home_url(). "/become-an-author/' class='become-author'>";
-				echo "<span class='icon-box'><i class='icon-pencil'></i></span><strong>";
+				echo "<span class='icon-box'><i class='icon-pen_'></i></span><strong>";
 				if ( $title ) {
 					echo $title;
 				} else {

@@ -263,5 +263,5 @@ jQuery(document).ready(function(){
 	// ---------------------------------------------------------
 	// Custom File Inputs
 	// ---------------------------------------------------------
-	jQuery('.wpcf7 :file').filestyle({classButton: "btn btn-primary", buttonText: "Browse", classInput: "input-small"});
+	jQuery('.wpcf7 :file').filestyle({classButton: "btn btn-primary btn-normal", buttonText: "Browse", classInput: "input-small"});
 });

@@ -49,7 +49,7 @@ add_action('wp_enqueue_scripts', 'my_script');
 function my_styles() {
 	wp_register_style('bootsrap', PARENT_URL . '/bootstrap/css/bootstrap.css', false, '2.3.0', 'all');
 	wp_register_style('resposive', PARENT_URL . '/bootstrap/css/responsive.css', false, '2.3.0', 'all');
-	wp_register_style('icomoon', PARENT_URL.'/font/font-icomoon/style.css', false, '1.0', 'all');
+	wp_register_style('icomoon', PARENT_URL.'/font/icomoon/style.css', false, '1.0', 'all');
 	wp_register_style('font-awesome', '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css', false, '3.2.1', 'all');
 	wp_register_style('magnific', PARENT_URL.'/css/magnific-popup.css', false, '0.9.9', 'all');
 	wp_register_style('ladda', PARENT_URL.'/css/ladda.min.css', false, '0.8.0', 'all');
