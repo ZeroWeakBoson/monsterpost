@@ -62,7 +62,7 @@ class MY_CycleWidget extends WP_Widget {
 						?>
 							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo $image ?>" alt="<?php the_title(); ?>" /></a>
 							<h5 class="hidden-tablet">
-								<a href="<?php the_permalink(); ?>"><?php echo my_string_limit_words(get_the_title(), 3); ?></a>
+								<a href="<?php the_permalink(); ?>"><?php echo my_string_limit_words(get_the_title(), 4); ?></a>
 							</h5>
 						</li>
 						<?php }

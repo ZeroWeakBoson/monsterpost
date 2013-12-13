@@ -24,11 +24,13 @@
 								<?php } ?> -->
 
 								<div class="tag_excerpt">
-									<?php 
+									<?php if ( has_excerpt() ) {
+										the_excerpt();
+									} else {
 										the_content('Read More');
 										// $content = get_the_content('Read More');
 										// echo my_string_limit_words($content, 48);
-									?>
+									} ?>
 								</div>
 							</article>
 							<hr>

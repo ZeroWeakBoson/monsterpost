@@ -13,9 +13,23 @@
 						?>
 					</section><!--.title-section-->
 
-					<?php get_template_part('top-posts'); ?>
+					<?php get_template_part('top-posts');
 
-					<?php if (have_posts()) : ?>
+					query_posts(
+						array(
+							'post_status' => 'publish',
+							'orderby'     => 'date',
+							'order'       => 'DESC',
+							'meta_query'  => array(
+								array(
+									'key'     => 'tz_filter',
+									'compare' => 'NOT EXISTS'
+								)
+							)
+						)
+					);
+
+					if (have_posts()) : ?>
 
 					<div class="post-tile">
 						<div class="row-fluid">
@@ -73,6 +87,8 @@
 										<span class="ladda-label"><?php _e('Next Page &nbsp;&rsaquo;&nbsp;', 'cherry') ?></span>
 									</a>
 								</div><!--.post-control-->
+
+								<?php wp_reset_query(); ?>
 
 							<?php else: ?>
 							<div class="no-results">
