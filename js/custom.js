@@ -264,4 +264,49 @@ jQuery(document).ready(function(){
 	// Custom File Inputs
 	// ---------------------------------------------------------
 	jQuery('.wpcf7 :file').filestyle({classButton: "btn btn-primary btn-normal", buttonText: "Browse", classInput: "input-small"});
+	// ---------------------------------------------------------
+	// Ajax Filter
+	// ---------------------------------------------------------
+	jQuery("#toolbar-filter select").live("change", function(e){
+		make_order();
+		load_filters(this);
+	});
 });
+function load_filters(changed){
+	var query = jQuery('#toolbar-order').val(),
+		lediv = jQuery("<div>");
+
+	alert(query);
+	// res = query.split('&');
+	// alert(res[0]);
+	
+	jQuery("#allthatjunk").html("<div class='loading-wrap'><div class='loading'></div> Loading...</div>");
+
+	source = jQuery(this).data('source');
+	type = jQuery(this).data('selfclose');
+	var data = {
+			action: 'cherry_load_shortcode',
+			source: source,
+			security: ajax_nonce_shortcode
+		};
+	jQuery.post(ajaxurl, data, onAjaxSuccess, 'html');
+
+	function onAjaxSuccess(response){
+		jQuery('.container').html(response).wrapInner('<div id="viewer"></div>');
+	}
+	
+	// lediv.load(window.location.pathname+"?"+query+"&"+jQuery(".devices a.active").attr("href")+" #allthatjunk", function(){
+	// 	jQuery("#allthatjunk").replaceWith(lediv);
+	// 	jQuery("#patternCount").html(jQuery("#yourtrunk").data("patterncount"));
+	// 	if( history && history.pushState ) {
+	// 		history.pushState('', 'filters', window.location.pathname+"?"+query+"&"+jQuery(".devices a.active").attr("href"));
+	// 	}
+	// });
+}
+function make_order(){
+	var order = '';
+	jQuery("#toolbar-filter .toolbar-group").each(function(){
+		order += ' ' + jQuery('select', this).attr('name');
+	});
+	jQuery('#toolbar-order').val(order);
+}

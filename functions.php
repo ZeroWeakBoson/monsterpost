@@ -529,4 +529,80 @@
 				$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 			}
 		}
-	}?>
+	}
+
+	// Get Free Templates
+	add_action( 'monster_free_template', 'get_monster_free_template', 10, 3 );
+	function get_monster_free_template( $orderby = 'date', $type = '', $cat = '' ) {
+
+		// WP_Query arguments
+		$args = array(
+			// 'category_name'  => 'free-website-templates'
+			'category_name'       => 'post-formats',
+			'posts_per_page'      => '20',
+			'ignore_sticky_posts' => true,
+			'order'               => 'DESC',
+			'orderby'             => $orderby
+		);
+
+		// The Query
+		// query_posts($args);
+		$free_query = new WP_Query( $args );
+
+		// The Loop
+		if ( $free_query->have_posts() ) {
+			$counter = 1; ?>
+
+			<div class="row-fluid">
+
+			<?php while ( $free_query->have_posts() ) {
+				$free_query->the_post();
+
+				if ( $counter > 4 ) {
+					echo '<div class="row-fluid">';
+					$counter = 1;
+				} ?>
+
+				<div id="post-<?php the_ID(); ?>" <?php post_class('span3 post__holder'); ?>>
+					<?php
+						$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full' );
+						$url            = $attachment_url['0'];
+						$image          = aq_resize($url, 254, 134, true);
+
+						if ($image) { ?>
+							<figure class="thumbnail">
+								<a href="<?php the_permalink(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>">
+									<img src="<?php echo $image; ?>" alt="<?php the_title(); ?>">
+								</a>
+							</figure>
+						<?php } ?>
+
+					<header class="post-header">
+						<h4>
+							<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'cherry');?> <?php the_title(); ?>"><?php the_title(); ?></a>
+						</h4>
+					</header>
+				</div>
+
+		<?php if ( $counter == 4 ) echo '</div><!--.row-fluid--><hr>';
+			$counter++;
+			}
+
+			if (( $counter % 4 ) == 0) {
+				echo '</div><!--.row-fluid--><hr>';
+			} ?>
+
+		<?php get_template_part('includes/post-formats/post-nav');
+		} else { ?>
+			<div class="no-results">
+				<?php echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>'; ?>
+				<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
+				<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
+			</div><!--no-results-->
+	<?php }
+
+		// Restore original Post Data
+		// wp_reset_query();
+		wp_reset_postdata();
+	}
+?>
