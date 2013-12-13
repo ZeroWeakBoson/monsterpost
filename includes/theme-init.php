@@ -28,10 +28,10 @@
 		load_theme_textdomain( 'cherry', PARENT_DIR . '/languages' );
 
 		// Set post count for blog
-		update_option( 'posts_per_page', 8 );
+		// update_option( 'posts_per_page', 8 );
 
 		// Set permalink custom structure
-		update_option( 'permalink_structure', '/%category%/%postname%/' );
+		// update_option( 'permalink_structure', '/%category%/%postname%/' );
 	}
 	add_action( 'after_setup_theme', 'cherry_theme_setup' );
 endif;

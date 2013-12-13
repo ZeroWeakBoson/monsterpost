@@ -317,6 +317,16 @@
 		width: 100%;
 		overflow: hidden;
 		text-align: center;
-		margin-bottom: 30px;
+		padding-bottom: 30px;
+		&.post-tile {
+			&:before {
+				display: none;
+			}
+			&:after {
+				left: 0;
+				right: 0;
+				width: 100%;
+			}
+		}
 	}
 }

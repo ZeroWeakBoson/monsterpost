@@ -532,17 +532,36 @@
 	}
 
 	// Get Free Templates
-	add_action( 'monster_free_template', 'get_monster_free_template', 10, 3 );
-	function get_monster_free_template( $orderby = 'date', $type = '', $cat = '' ) {
+	add_action( 'monster_free_template', 'get_monster_free_template' );
+	add_action( 'wp_ajax_get_monster_free_template', 'get_monster_free_template' );
+	add_action( 'wp_ajax_nopriv_get_monster_free_template', 'get_monster_free_template' );
+
+	function get_monster_free_template() {
+		$idObj = get_category_by_slug( 'free-website-templates' );
+		$id    = $idObj->term_id;
+		
+		$defaults = array(
+			'orderby' => 'date',
+			'type'    => '',
+			'cat'     => $id
+		);
+
+		if ( !empty($_POST) && array_key_exists('orderby', $_POST) ) {
+			$defaults['orderby'] = $_POST['orderby'];
+			$defaults['type']    = $_POST['type'];
+			$defaults['cat']     = $_POST['cat'];
+		}
 
 		// WP_Query arguments
 		$args = array(
-			// 'category_name'  => 'free-website-templates'
-			'category_name'       => 'post-formats',
+			// 'category_name'  => 'free-website-templates',
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'cat'                 => $defaults['cat'],
 			'posts_per_page'      => '20',
 			'ignore_sticky_posts' => true,
 			'order'               => 'DESC',
-			'orderby'             => $orderby
+			'orderby'             => $defaults['orderby']
 		);
 
 		// The Query
@@ -551,58 +570,61 @@
 
 		// The Loop
 		if ( $free_query->have_posts() ) {
-			$counter = 1; ?>
+			$counter = 1;
 
-			<div class="row-fluid">
+			echo '<div class="row-fluid">';
 
-			<?php while ( $free_query->have_posts() ) {
+			while ( $free_query->have_posts() ) {
 				$free_query->the_post();
 
 				if ( $counter > 4 ) {
 					echo '<div class="row-fluid">';
 					$counter = 1;
-				} ?>
+				}
 
-				<div id="post-<?php the_ID(); ?>" <?php post_class('span3 post__holder'); ?>>
-					<?php
+				echo '<div id="post-' . get_the_ID() . '" class="span3 post__holder">';
 						$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full' );
 						$url            = $attachment_url['0'];
 						$image          = aq_resize($url, 254, 134, true);
 
-						if ($image) { ?>
-							<figure class="thumbnail">
-								<a href="<?php the_permalink(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>">
-									<img src="<?php echo $image; ?>" alt="<?php the_title(); ?>">
-								</a>
-							</figure>
-						<?php } ?>
+						if ($image) {
+							echo '<figure class="thumbnail">';
+								echo '<a href="' . get_permalink( get_the_ID() ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
+									echo '<img src="' . $image . '" alt="' . the_title('', '', false) . '">';
+								echo '</a>';
+							echo '</figure>';
+						}
 
-					<header class="post-header">
-						<h4>
-							<a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'cherry');?> <?php the_title(); ?>"><?php the_title(); ?></a>
-						</h4>
-					</header>
-				</div>
+					echo '<header class="post-header">';
+						echo '<h4>';
+							echo '<a href="' . get_permalink( get_the_ID() ) . '" title="Permanent Link to ' . the_title('', '', false) . '">'. the_title('', '', false) .'</a>';
+						echo '</h4>';
+					echo '</header>';
+				echo '</div>';
 
-		<?php if ( $counter == 4 ) echo '</div><!--.row-fluid--><hr>';
-			$counter++;
-			}
+				if ( $counter == 4 ) echo '</div><!--.row-fluid--><hr>';
+					$counter++;
+				}
 
-			if (( $counter % 4 ) == 0) {
-				echo '</div><!--.row-fluid--><hr>';
-			} ?>
+				if (( $counter % 4 ) == 0) {
+					echo '</div><!--.row-fluid--><hr>';
+				}
 
-		<?php get_template_part('includes/post-formats/post-nav');
-		} else { ?>
-			<div class="no-results">
-				<?php echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>'; ?>
-				<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
-				<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
-			</div><!--no-results-->
-	<?php }
+			get_template_part('includes/post-formats/post-nav');
+		} else {
+			echo '<div class="no-results">';
+				echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>';
+				echo '<p>' . __('We apologize for any inconvenience, please', 'cherry') . '<a href="' . home_url("/") . '">' . __('return to the home page', 'cherry') . '</a>' . __('or use the search form below.', 'cherry') . '</p>';
+				get_search_form(); /* outputs the default Wordpress search form */
+			echo '</div><!--no-results-->';
+		}
 
 		// Restore original Post Data
 		// wp_reset_query();
 		wp_reset_postdata();
+
+		if ( !empty($_POST) && array_key_exists('orderby', $_POST) ) {
+			exit;
+		}
 	}
 ?>
