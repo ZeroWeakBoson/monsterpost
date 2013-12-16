@@ -270,19 +270,24 @@ jQuery(document).ready(function(){
 	jQuery('#toolbar-filter select').live('change', function(e){
 		load_filters(this);
 	});
+	// Calls the selectBoxIt method on your HTML select box
+	jQuery('#toolbar-filter select').selectBoxIt({
+		// Triggers the native select box when a user interacts with the drop down
+		native: true,
+		autoWidth: false
+	});
 });
 function load_filters(changed){
 	var ajaxurl = jQuery('#ajaxurl').val();
 		query   = jQuery(changed).parents('form').serializeArray(),
 		res     = [];
 
+	jQuery('#toolbar-filter select').addClass('disabled');
 	jQuery('#allthatjunk').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
 
 	for (var i = 0, len = query.length; i < len; i++) {
 		res[query[i]['name']] = query[i]['value'];
 	};
-
-	console.log(res);
 
 	var data = {
 		action: 'get_monster_free_template',
@@ -294,5 +299,6 @@ function load_filters(changed){
 
 	function onAjaxSuccess(response){
 		jQuery('#allthatjunk').html(response);
-	}
+		jQuery('#toolbar-filter select').removeClass('disabled');
+	};
 }

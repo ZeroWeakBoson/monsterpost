@@ -10,10 +10,10 @@ function my_script() {
 	wp_register_script('mobilemenu', PARENT_URL.'/js/jquery.mobilemenu.js', array('jquery'), '1.0', true);
 	wp_register_script('flexslider', PARENT_URL.'/js/jquery.flexslider-min.js', array('jquery'), '2.1', true);
 	wp_register_script('fittext', PARENT_URL.'/js/jquery.fittext.js', array('jquery'), '1.1', true);
-	wp_register_script('spin', PARENT_URL.'/js/spin.min.js', array('jquery'), '0.8.0', true);
 	wp_register_script('ladda', PARENT_URL.'/js/ladda.min.js', array('jquery'), '0.8.0', true);
 	wp_register_script('filestyle', PARENT_URL.'/js/bootstrap-filestyle.js', array('jquery'), '1.0.3', true);
 	wp_register_script('bxslider', PARENT_URL.'/js/jquery.bxslider.js', array('jquery'), '4.1.1', true);
+	wp_register_script('selectBoxIt', PARENT_URL.'/js/jquery.selectBoxIt.min.js', array('jquery-ui-widget'), '3.8.1', true);
 	wp_register_script('custom', PARENT_URL.'/js/custom.js', array('jquery'), '1.0', true);
 
 	if ( is_front_page() || is_home() ) {
@@ -33,10 +33,10 @@ function my_script() {
 	wp_enqueue_script('mobilemenu');
 	wp_enqueue_script('flexslider');
 	wp_enqueue_script('fittext');
-	wp_enqueue_script('spin');
 	wp_enqueue_script('ladda');
 	wp_enqueue_script('filestyle');
 	wp_enqueue_script('bxslider');
+	wp_enqueue_script('selectBoxIt');
 	wp_enqueue_script('custom');
 	
 	// Bootstrap Scripts
@@ -54,6 +54,7 @@ function my_styles() {
 	wp_register_style('magnific', PARENT_URL.'/css/magnific-popup.css', false, '0.9.9', 'all');
 	wp_register_style('ladda', PARENT_URL.'/css/ladda.min.css', false, '0.8.0', 'all');
 	wp_register_style('bxslider', PARENT_URL.'/css/jquery.bxslider.css', false, '4.1.1', 'all');
+	wp_register_style('selectBoxIt', PARENT_URL.'/css/jquery.selectBoxIt.css', false, '3.8.1', 'all');
 	wp_register_style('style', get_stylesheet_uri(), false, '1.0', 'all');
 
 	wp_enqueue_style('bootsrap');
@@ -64,6 +65,7 @@ function my_styles() {
 	wp_enqueue_style('magnific');
 	wp_enqueue_style('ladda');
 	wp_enqueue_style('bxslider');
+	wp_enqueue_style('selectBoxIt');
 	wp_enqueue_style('style');
 }
 add_action('wp_enqueue_scripts', 'my_styles');

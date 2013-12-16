@@ -12,6 +12,20 @@
 							get_template_part( 'includes/post-formats/single-post-meta' );
 							monster_free_template_gallery();
 
+							$terms = get_terms( 'type' );
+							if ( is_array($terms) ) {
+								$type_val = array(
+									array(
+										'taxonomy' => 'type',
+										'field'    => 'slug',
+										'terms'    => $terms[0]->slug
+									)
+								);
+							} else {
+								$type_val = '';
+							}
+
+							// $cat_val = get_option( 'select-filter-cat' );
 							$cat_val = get_post_meta( $post->ID, 'filter-cat', true );
 							if ( empty($cat_val) ) {
 								$idObj   = get_category_by_slug( 'free-website-templates' );
@@ -20,7 +34,7 @@
 
 							$args = array(
 								'id'   => $post->ID,
-								'type' => '',
+								'type' => $type_val,
 								'cat'  => $cat_val
 							);
 							monster_free_template_related_posts( $args );
@@ -60,18 +74,37 @@
 
 					<div class="span4">
 						<dl class="free-desc-list">
-							<dt><?php _e('Type', 'cherry'); ?></dt>
-							<dd><?php _e('...', 'cherry'); ?></dd>
+							<?php 
+								if ( is_array($terms) ) {
+									echo "<dt>" . __('Type', 'cherry') . "</dt>";
+									echo "<dd>" . $terms[0]->name . "</dd>";
+								}
+							?>
 							<dt><?php _e('Category', 'cherry'); ?></dt>
 							<dd><?php $cat = get_category( $cat_val ); echo $cat->name; ?></dd>
 							<dt><?php _e('Title', 'cherry'); ?></dt>
 							<dd><?php the_title(); ?></dd>
-							<dt><?php _e('Links', 'cherry'); ?></dt>
-							<dd>
-								<a class="btn btn-small btn-primary" href="#" target="_blank"><?php _e('Blog Post', 'cherry'); ?></a>
-								<a class="btn btn-small btn-primary" href="#" target="_blank"><?php _e('Live Demo', 'cherry'); ?></a>
-								<a class="btn btn-small btn-primary" href="#" target="_blank"><?php _e('Download', 'cherry'); ?></a>
-							</dd>
+							<?php 
+								$blog_post = get_post_meta( get_the_ID(), 'tz_blog_post_url', true );
+								$lide_demo = get_post_meta( get_the_ID(), 'tz_live_demo_url', true );
+								$download  = get_post_meta( get_the_ID(), 'tz_download_url', true );
+
+								if ( !empty($blog_post) || !empty($lide_demo) || !empty($download) ) {
+									echo '<dt>' . __('Links', 'cherry') . '</dt>';
+								}
+								echo '<dd>';
+
+								if ( !empty($blog_post) ) {
+									echo '<a class="btn btn-small btn-primary" href="' . $blog_post . '" target="_blank">' . __('Blog Post', 'cherry') . '</a>&nbsp;';
+								}
+								if ( !empty($lide_demo) ) {
+									echo '<a class="btn btn-small btn-primary" href="' . $lide_demo . '" target="_blank">' . __('Live Demo', 'cherry') . '</a>&nbsp;';
+								}
+								if ( !empty($download) ) {
+									echo '<a class="btn btn-small btn-primary" href="' . $download . '" target="_blank">' . __('Download', 'cherry') . '</a>&nbsp;';
+								}
+								echo '</dd>';
+							?>
 						</dl>
 						<?php the_content(''); ?>
 					</div>

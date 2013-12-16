@@ -38,8 +38,32 @@ endif;
 
 // Custom Taxonomy Code
 // http://net.tutsplus.com/tutorials/wordpress/introducing-wordpress-3-custom-taxonomies/
-add_action( 'init', 'build_taxonomies', 0 );
-function build_taxonomies() {
-	register_taxonomy( 'operating_system', 'post', array( 'hierarchical' => true, 'label' => 'Type', 'query_var' => true, 'rewrite' => true ) );
+add_action( 'init', 'moster_add_type_taxonomies', 0 );
+function moster_add_type_taxonomies() {
+	// Add new "Types" taxonomy to Posts
+	register_taxonomy('type', 'post', array(
+		// Hierarchical taxonomy (like categories)
+		'hierarchical' => true,
+		// This array of options controls the labels displayed in the WordPress Admin UI
+		'labels' => array(
+			'name' => __( 'Types', 'cherry' ),
+			'singular_name' => __( 'Type', 'cherry' ),
+			'search_items' =>  __( 'Search Types', 'cherry' ),
+			'all_items' => __( 'All Types', 'cherry' ),
+			'parent_item' => __( 'Parent Type', 'cherry' ),
+			'parent_item_colon' => __( 'Parent Type:', 'cherry' ),
+			'edit_item' => __( 'Edit Type', 'cherry' ),
+			'update_item' => __( 'Update Type', 'cherry' ),
+			'add_new_item' => __( 'Add New Type', 'cherry' ),
+			'new_item_name' => __( 'New Type Name', 'cherry' ),
+			'menu_name' => __( 'Types', 'cherry' ),
+		),
+		// Control the slugs used for this taxonomy
+		'rewrite' => array(
+			'slug' => 'types', // This controls the base slug that will display before each term
+			'with_front' => false, // Don't display the category base before "/locations/"
+			'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+		),
+	));
 }
 ?>

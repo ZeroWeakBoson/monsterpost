@@ -545,25 +545,36 @@
 			'cat'  => $catID
 		);
 
+		$tax_query = '';
+
 		if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
 			$defaults['type'] = $_POST['type'];
 			$defaults['cat']  = $_POST['cat'];
+
+			if ( $defaults['type'] != 'all' ) {
+				$tax_query = array(
+					array(
+						'taxonomy' => 'type',
+						'field'    => 'slug',
+						'terms'    => $defaults['type']
+					)
+				);
+			}
 		}
 
 		// WP_Query arguments
 		$args = array(
-			// 'category_name'  => 'free-website-templates',
 			'post_type'           => 'post',
 			'post_status'         => 'publish',
 			'cat'                 => $defaults['cat'],
 			'posts_per_page'      => '20',
 			'ignore_sticky_posts' => true,
 			'order'               => 'DESC',
-			'orderby'             => 'date'
+			'orderby'             => 'date',
+			'tax_query'           => $tax_query
 		);
 
 		// The Query
-		// query_posts($args);
 		$free_query = new WP_Query( $args );
 
 		// The Loop
@@ -577,18 +588,12 @@
 
 				$post_id = get_the_ID();
 
-				// if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
-				// 	$val = $_POST['type'];
-				// 	if ( $val != $catID ) {
-				// 		add_post_meta( $post_id, 'filter-type', $_POST['type'], true );
-				// 	}
-				// }
-
 				if ( !empty($_POST) && array_key_exists('cat', $_POST) ) {
 					$val = $_POST['cat'];
 					if ( $val != $catID ) {
-						add_post_meta( $post_id, 'filter-cat', $_POST['cat'], true );
+						add_post_meta( $post_id, 'filter-cat', $val, true );
 					}
+					update_option( 'select-filter-cat', $val );
 				}
 
 				if ( $counter > 4 ) {
@@ -628,13 +633,12 @@
 		} else {
 			echo '<div class="no-results">';
 				echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>';
-				echo '<p>' . __('We apologize for any inconvenience, please', 'cherry') . '<a href="' . home_url("/") . '">' . __('return to the home page', 'cherry') . '</a>' . __('or use the search form below.', 'cherry') . '</p>';
+				echo '<p>' . __('We apologize for any inconvenience, please', 'cherry') . ' <a href="' . home_url("/") . '"> ' . __('return to the home page', 'cherry') . '</a>' . __('or use the search form below.', 'cherry') . '</p>';
 				get_search_form(); /* outputs the default Wordpress search form */
 			echo '</div><!--no-results-->';
 		}
 
 		// Restore original Post Data
-		// wp_reset_query();
 		wp_reset_postdata();
 
 		if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
@@ -703,7 +707,9 @@ if ( !function_exists('monster_free_template_related_posts') ) {
 			'posts_per_page' => '4',
 			'order'          => 'DESC',
 			'orderby'        => 'date',
+			'tax_query'      => $params['type']
 		);
+		// var_dump($args);
 
 		// The Query
 		$related_query = new WP_Query( $args );
