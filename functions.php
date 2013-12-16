@@ -538,18 +538,16 @@
 
 	function get_monster_free_template() {
 		$idObj = get_category_by_slug( 'free-website-templates' );
-		$id    = $idObj->term_id;
+		$catID = $idObj->term_id;
 		
 		$defaults = array(
-			'orderby' => 'date',
-			'type'    => '',
-			'cat'     => $id
+			'type' => '',
+			'cat'  => $catID
 		);
 
-		if ( !empty($_POST) && array_key_exists('orderby', $_POST) ) {
-			$defaults['orderby'] = $_POST['orderby'];
-			$defaults['type']    = $_POST['type'];
-			$defaults['cat']     = $_POST['cat'];
+		if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
+			$defaults['type'] = $_POST['type'];
+			$defaults['cat']  = $_POST['cat'];
 		}
 
 		// WP_Query arguments
@@ -561,7 +559,7 @@
 			'posts_per_page'      => '20',
 			'ignore_sticky_posts' => true,
 			'order'               => 'DESC',
-			'orderby'             => $defaults['orderby']
+			'orderby'             => 'date'
 		);
 
 		// The Query
@@ -577,19 +575,35 @@
 			while ( $free_query->have_posts() ) {
 				$free_query->the_post();
 
+				$post_id = get_the_ID();
+
+				// if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
+				// 	$val = $_POST['type'];
+				// 	if ( $val != $catID ) {
+				// 		add_post_meta( $post_id, 'filter-type', $_POST['type'], true );
+				// 	}
+				// }
+
+				if ( !empty($_POST) && array_key_exists('cat', $_POST) ) {
+					$val = $_POST['cat'];
+					if ( $val != $catID ) {
+						add_post_meta( $post_id, 'filter-cat', $_POST['cat'], true );
+					}
+				}
+
 				if ( $counter > 4 ) {
 					echo '<div class="row-fluid">';
 					$counter = 1;
 				}
 
-				echo '<div id="post-' . get_the_ID() . '" class="span3 post__holder">';
-						$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full' );
+				echo '<div id="post-' . $post_id . '" class="span3 post__holder">';
+						$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
 						$url            = $attachment_url['0'];
 						$image          = aq_resize($url, 254, 134, true);
 
 						if ($image) {
 							echo '<figure class="thumbnail">';
-								echo '<a href="' . get_permalink( get_the_ID() ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
+								echo '<a href="' . get_permalink( $post_id ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
 									echo '<img src="' . $image . '" alt="' . the_title('', '', false) . '">';
 								echo '</a>';
 							echo '</figure>';
@@ -597,7 +611,7 @@
 
 					echo '<header class="post-header">';
 						echo '<h4>';
-							echo '<a href="' . get_permalink( get_the_ID() ) . '" title="Permanent Link to ' . the_title('', '', false) . '">'. the_title('', '', false) .'</a>';
+							echo '<a href="' . get_permalink( $post_id ) . '" title="Permanent Link to ' . the_title('', '', false) . '">'. the_title('', '', false) .'</a>';
 						echo '</h4>';
 					echo '</header>';
 				echo '</div>';
@@ -623,8 +637,108 @@
 		// wp_reset_query();
 		wp_reset_postdata();
 
-		if ( !empty($_POST) && array_key_exists('orderby', $_POST) ) {
+		if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
 			exit;
 		}
 	}
-?>
+
+// Get images for posts from Free Website Templates category
+if ( !function_exists('monster_free_template_gallery') ) {
+	function monster_free_template_gallery() {
+		$args = array(
+			'orderby'        => 'menu_order',
+			'order'          => 'ASC',
+			'post_type'      => 'attachment',
+			'post_parent'    => get_the_ID(),
+			'post_mime_type' => 'image',
+			'post_status'    => null,
+			'numberposts'    => -1,
+		);
+		$attachments = get_posts($args);
+
+		if ($attachments) :
+			$random = uniqid();
+			if ( count($attachments) > 8 ) {
+				$pagerType = 'short';
+			} else {
+				$pagerType = 'full';
+			} ?>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					jQuery('#bxslider_<?php echo $random ?>').bxSlider({
+						pagerType: "<?php echo $pagerType; ?>"
+					});
+				});
+			</script>
+			<!-- Slider -->
+			<ul id="bxslider_<?php echo $random ?>" class="bxslider unstyled">
+				<?php 
+					foreach ($attachments as $attachment) :
+						$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+						$url            = $attachment_url['0'];
+						$image          = aq_resize($url, 800, 400, true);
+					?>
+				<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
+				<?php
+					endforeach;
+				?>
+			</ul>
+		<?php 
+		else:
+			get_template_part('includes/post-formats/post-thumb');
+		endif;
+	}
+}
+
+
+// Get Related Posts in single post from Free Website Templates category
+if ( !function_exists('monster_free_template_related_posts') ) {
+	function monster_free_template_related_posts( $params ) {
+		// WP_Query arguments
+		$args = array (
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
+			'post__not_in'   => array($params['id']),
+			'cat'            => $params['cat'],
+			'posts_per_page' => '4',
+			'order'          => 'DESC',
+			'orderby'        => 'date',
+		);
+
+		// The Query
+		$related_query = new WP_Query( $args );
+
+		// The Loop
+		if ( $related_query->have_posts() ) {
+			echo '<div class="free-related-posts">';
+				echo '<h3>' . __('Related Posts','cherry') . '</h3>';
+				echo '<ul class="unstyled row-fluid">';
+				while ( $related_query->have_posts() ) {
+					$related_query->the_post();
+					echo '<li class="free-related-posts_item span3">';
+
+						if ( has_post_thumbnail() ) {
+							$thumb   = get_post_thumbnail_id();
+							$img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
+							$image   = aq_resize( $img_url, 155, 120, true ); //resize & crop img
+
+							echo '<figure class="thumbnail">';
+								echo '<a href="' . get_permalink( get_the_ID() ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
+									echo '<img src="' . $image . '" alt="' . the_title('', '', false) . '">';
+								echo '</a>';
+							echo '</figure>';
+						}
+						echo '<h5><a href="' . get_permalink( get_the_ID() ) . '">' . the_title('', '', false) . '</a></h5>';
+					echo '</li>';
+				}
+				echo '</ul>';
+			echo '</div>';
+		} else {
+			// no posts found
+			echo '<p>' . __('No repaled posts', 'cherry') . '</p>';
+		}
+
+		// Restore original Post Data
+		wp_reset_postdata();
+	}
+} ?>

@@ -74,7 +74,10 @@
 					endforeach;
 				?>
 			</ul>
-		<?php endif;
+		<?php 
+		else:
+			get_template_part('includes/post-formats/post-thumb');
+		endif;
 
 		echo '<div class="post_content">';
 		if ( has_excerpt() || $full_content ) {

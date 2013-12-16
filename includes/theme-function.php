@@ -234,4 +234,17 @@ function monster_fonts_url() {
 	}
 	return $fonts_url;
 }
+
+// add_action('edit_tag_form_fields', 'monster_edit_fields');
+// function monster_edit_fields() {
+// 	echo "<tr class='form-field'><th>Type</th>";
+// 	echo "<td><input type='text' name='filter-type' id='filter-type'></input>";
+// 	echo "<p class='description'>The type of Free Website Templates</p>";
+// 	echo "</td></tr>";
+// }
+
+// add_action('add_tag_form_fields', 'monster_add_fields');
+// function monster_add_fields() {
+// 	echo "<div class='form-field'><label>Type</label><input type='text' name='filter-type' id='filter-type'></input></div>";
+// }
 ?>

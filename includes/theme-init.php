@@ -35,4 +35,11 @@
 	}
 	add_action( 'after_setup_theme', 'cherry_theme_setup' );
 endif;
+
+// Custom Taxonomy Code
+// http://net.tutsplus.com/tutorials/wordpress/introducing-wordpress-3-custom-taxonomies/
+add_action( 'init', 'build_taxonomies', 0 );
+function build_taxonomies() {
+	register_taxonomy( 'operating_system', 'post', array( 'hierarchical' => true, 'label' => 'Type', 'query_var' => true, 'rewrite' => true ) );
+}
 ?>

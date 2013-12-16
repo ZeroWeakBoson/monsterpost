@@ -2173,6 +2173,7 @@ p.gravatar {
 		margin:0 0 15px 4%;
 	}
 }
+.free-related-posts { padding:20px 0; }
 .read-also_h { margin-top:0; }
 .read-also-posts { margin:0 0 40px; }
 .read-also_list {
@@ -2726,6 +2727,18 @@ p.gravatar {
 .followers-google .followers-count { background:#db4c37; }
 .followers-pinterest .followers-count { background:#c31d23; }
 .followers-stumble .followers-count { background:#ec4823; }
+.free-desc-list {
+	padding:60px 0 0;
+	margin:0 0 20px;
+}
+.free-desc-list dt {
+	padding:0;
+	margin:0;
+}
+.free-desc-list dd {
+	padding:0;
+	margin:0 0 11px 11px;
+}
 .comment-holder {
 	padding:0;
 	margin:0 0 2em;

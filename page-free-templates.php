@@ -12,13 +12,13 @@ get_header(); ?>
 					<div class="row">
 						<div class="span12">
 							<form action="#" method="post" id="toolbar-filter" class="row-fluid">
-								<div class="toolbar-group span3">
+								<!-- <div class="toolbar-group span3">
 									<label for="orderby"><?php echo _e('Sort By', 'cherry'); ?></label>
 									<select name="orderby">
 										<option value="date">Recently Added</option>
 										<option value="title">Alphabetically</option>
 									</select>
-								</div>
+								</div> -->
 								<div class="toolbar-group span3">
 									<label for="type"><?php echo _e('Type', 'cherry'); ?></label>
 									<select name="type">
