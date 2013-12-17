@@ -1684,6 +1684,9 @@ html[xmlns] .slides { display:block; }
 	padding-left:0;
 	padding-right:0;
 }
+@media (max-width: 767px) {
+	#allthatjunk hr { border:none; }
+}
 .loading {
 	display:inline-block;
 	padding-left:35px;
@@ -1692,6 +1695,10 @@ html[xmlns] .slides { display:block; }
 .loading-wrap {
 	width:100%;
 	height:24px;
+	text-align:center;
+}
+.loadmore-wrap {
+	width:100%;
 	text-align:center;
 }
 .tag h3 {
@@ -1803,7 +1810,7 @@ h4.post-title { margin-top:0; }
 }
 .post-cat:active, .post-cat.active { background-color:#ad3727 \9; }
 @media (max-width: 979px) and (min-width: 768px) {
-	.post-cat { padding:0 5px; }
+	.post-cat { padding:0 10px; }
 }
 .post_content {
 	padding-bottom:20px;
@@ -2260,46 +2267,40 @@ p.gravatar {
 .social-buttons .socialite {
 	position:relative;
 	display:block;
-	background:url(../images/social-sprite.png) 0 0 no-repeat;
+	background:url(../images/custom-default.png) 0 0 no-repeat;
 }
 .social-buttons .socialite-loaded { background:none !important; }
 .social-buttons .twitter-share {
-	width:59px;
-	height:61px;
+	width:79px;
+	height:25px;
 	background-position:0 0;
 }
 .social-buttons .googleplus-one {
-	width:50px;
-	height:61px;
-	background-position:-75px 0;
+	width:59px;
+	height:25px;
+	background-position:0 -45px;
 }
 .social-buttons .facebook-like {
-	width:45px;
-	height:61px;
-	background-position:-145px 0;
+	width:78px;
+	height:25px;
+	background-position:0 -90px;
 }
 .social-buttons .linkedin-share {
 	width:60px;
-	height:61px;
-	background-position:-215px 0;
+	height:25px;
+	background-position:0 -135px;
 }
 .social-buttons .pinterest-pinit {
 	width:40px;
-	height:40px;
-	padding-top:20px;
-	background-position:-367px 0;
+	height:25px;
+	background-position:0 -175px;
 }
 .social-buttons .stumbleupon-share {
-	width:50px;
-	height:61px;
-	background-position:-439px 0;
+	width:75px;
+	height:25px;
+	background-position:0 -225px;
 }
-.social-buttons .twitter-follow {
-	width:56px;
-	height:61px;
-	background-position:-509px 0;
-}
-.social-buttons .twitter-follow.socialite-loaded { width:100%; }
+.social-buttons .twitter-follow.socialite-loaded { width:200px; }
 .vhidden {
 	position:absolute;
 	overflow:hidden;
@@ -2728,16 +2729,19 @@ p.gravatar {
 .followers-pinterest .followers-count { background:#c31d23; }
 .followers-stumble .followers-count { background:#ec4823; }
 .free-desc-list {
-	padding:60px 0 0;
+	padding:0px 0 15px;
 	margin:0 0 20px;
+	border-bottom:1px solid #f2f2f2;
 }
 .free-desc-list dt {
+	float:left;
 	padding:0;
 	margin:0;
 }
 .free-desc-list dd {
+	overflow:hidden;
 	padding:0;
-	margin:0 0 11px 11px;
+	margin:0 0 11px 0;
 }
 .comment-holder {
 	padding:0;
@@ -3485,6 +3489,7 @@ h5 + .contact-follow-us { margin-top:-10px; }
 .banner-wrap .btn-link { padding:0; }
 .interview__holder { margin-bottom:13px; }
 .answer.interview__holder { margin-bottom:18px; }
+.question.interview__holder { font-style:italic; }
 .interview__holder .author-avatar {
 	float:left;
 	margin:0 13px 0 0;
@@ -4066,12 +4071,13 @@ label[for^=pwbox] + input {
 	-moz-box-shadow:inset 0 1px 1px rgba(204,204,204,0.075), 0 0 3px #ddd;
 	box-shadow:inset 0 1px 1px rgba(204,204,204,0.075), 0 0 3px #ddd;
 }
+.wpcf7-form .bootstrap-filestyle label[for^=attach-file] { padding:5px 16px; }
 @media (min-width: 768px) and (max-width: 979px) {
-	.wpcf7-form .bootstrap-filestyle label[for^=attach-file] { padding:3px 17px; }
+	.wpcf7-form .bootstrap-filestyle label[for^=attach-file] { padding:3px 14px; }
 }
 @media (max-width: 767px) {
 	.wpcf7-form .bootstrap-filestyle label[for^=attach-file] {
-		padding:3px 17px;
+		padding:3px 14px;
 		float:right;
 	}
 }
@@ -4283,7 +4289,7 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 	float:left;
 	padding:5px 15px;
 	margin:0 1px 0 0;
-	width:113px;
+	width:99px;
 	height:23px;
 	vertical-align:top;
 	background:#eee;
@@ -4303,15 +4309,26 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 }
 @media (min-width: 1200px) {
 	.newsletter input[type="text"], .newsletter input[type="email"] {
-		width:179px;
+		width:165px;
 		margin:0;
+	}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+	.newsletter input[type="text"], .newsletter input[type="email"] {
+		float:none;
+		width:100%;
+		height:35px;
+		margin:0 0 10px;
+		line-height:35px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
 	}
 }
 .newsletter input[type="submit"], .newsletter input[type="reset"], .newsletter button {
 	float:right;
 	margin:0;
-	padding:0;
-	width:84px;
+	padding:0 20px;
 	min-width:inherit;
 	height:35px;
 	border-top:1px solid #d14836;
@@ -4457,7 +4474,7 @@ label[for^=pwbox] + input, .btn {
 	box-shadow:none;
 }
 label[for^=pwbox] + input-normal, .btn-normal {
-	padding:5px 17px;
+	padding:5px 28px;
 	font-size:14px;
 }
 label[for^=pwbox] + input-primary, .btn-primary {

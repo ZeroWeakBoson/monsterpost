@@ -270,20 +270,73 @@ jQuery(document).ready(function(){
 	jQuery('#toolbar-filter select').live('change', function(e){
 		load_filters(this);
 	});
-	// Calls the selectBoxIt method on your HTML select box
-	jQuery('#toolbar-filter select').selectBoxIt({
-		// Triggers the native select box when a user interacts with the drop down
-		native: true,
-		autoWidth: false
+	// ---------------------------------------------------------
+	// Load More
+	// ---------------------------------------------------------
+	jQuery('#loadmore').live('click', function(e){
+		load_more(this);
+		return false;
 	});
 });
 function load_filters(changed){
-	var ajaxurl = jQuery('#ajaxurl').val();
-		query   = jQuery(changed).parents('form').serializeArray(),
-		res     = [];
+	var ajaxurl = jQuery('#ajaxurl').val(),
+		num     = jQuery('#loadmore').data('offset'),
+		offset  = 0;
 
-	jQuery('#toolbar-filter select').addClass('disabled');
-	jQuery('#allthatjunk').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
+	data = get_ajax_data(offset, num);
+
+	jQuery.ajax({
+		type: 'POST',
+		url: ajaxurl,
+		data: data,
+		cache: false,
+		beforeSend: function () {
+			jQuery('#toolbar-filter .selectboxit-container').addClass('disabled');
+			jQuery('#loadmore').addClass('hidden');
+			jQuery('#allthatjunk').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
+		},
+		success: function (response) {
+			jQuery('#toolbar-filter .selectboxit-container').removeClass('disabled');
+			jQuery('#allthatjunk').html(response);
+			if (response) {
+				jQuery('#loadmore').removeClass('hidden');
+			}
+		},
+		dataType: 'html'
+	});
+}
+
+function load_more(clicked){
+	var ajaxurl = jQuery('#ajaxurl').val(),
+		offset  = jQuery(clicked).data('offset'),
+		num     = 4;
+		num += offset;
+
+	data = get_ajax_data(offset, num);
+
+	jQuery.ajax({
+		type: 'POST',
+		url: ajaxurl,
+		data: data,
+		cache: false,
+		beforeSend: function () {
+			jQuery('.loadmore-wrap').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
+		},
+		success: function (response) {
+			if (response) {
+				jQuery('#allthatjunk').append(response);
+				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="'+num+'">Load More</a>');
+			} else {
+				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary hidden" id="loadmore" href="#" data-offset="'+num+'">Load More</a>');
+			}
+		},
+		dataType: 'html'
+	});
+}
+
+function get_ajax_data(offset, num) {
+	var query = jQuery('#toolbar-filter').serializeArray(),
+		res   = [];
 
 	for (var i = 0, len = query.length; i < len; i++) {
 		res[query[i]['name']] = query[i]['value'];
@@ -291,14 +344,11 @@ function load_filters(changed){
 
 	var data = {
 		action: 'get_monster_free_template',
-		orderby: res['orderby'],
 		type: res['type'],
-		cat: res['cat']
+		cat: res['cat'],
+		offset: offset,
+		num: num
 	};
-	jQuery.post(ajaxurl, data, onAjaxSuccess, 'html');
 
-	function onAjaxSuccess(response){
-		jQuery('#allthatjunk').html(response);
-		jQuery('#toolbar-filter select').removeClass('disabled');
-	};
+	return data;
 }

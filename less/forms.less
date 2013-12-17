@@ -432,11 +432,12 @@ label[for^=pwbox] {
 	}
 	.bootstrap-filestyle {
 		label[for^=attach-file] {
+			padding: 5px 16px;
 			@media (min-width: 768px) and (max-width: 979px) {
-				padding: 3px 17px;
+				padding: 3px 14px;
 			}
 			@media (max-width: 767px) {
-				padding: 3px 17px;
+				padding: 3px 14px;
 				float: right;
 			}
 		}
@@ -655,7 +656,7 @@ div.wpcf7 img.ajax-loader {
 		float: left;
 		padding: 5px 15px;
 		margin: 0 1px 0 0;
-		width: 113px;
+		width: 99px;
 		height: 23px;
 		vertical-align: top;
 		background: #eee;
@@ -671,8 +672,16 @@ div.wpcf7 img.ajax-loader {
 			box-shadow: inset 0 1px 1px rgba(204, 204, 204, 0.075), 0 0 3px #ddd;
 		}
 		@media (min-width: 1200px) {
-			width: 179px;
+			width: 165px;
 			margin: 0;
+		}
+		@media (min-width: 768px) and (max-width: 979px) {
+			float: none;
+			width: 100%;
+			height: 35px;
+			margin: 0 0 10px;
+			line-height: 35px;
+			.box-sizing(border-box);
 		}
 	}
 	input[type="submit"],
@@ -680,8 +689,8 @@ div.wpcf7 img.ajax-loader {
 	button {
 		float: right;
 		margin: 0;
-		padding: 0;
-		width: 84px;
+		padding: 0 20px;
+		// width: 84px;
 		min-width: inherit;
 		height: 35px;
 		border-top: 1px solid #d14836;

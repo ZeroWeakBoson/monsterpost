@@ -142,33 +142,32 @@ add_filter('parse_query','my_convert_restrict');
  *
  */
 if ( !function_exists( 'pagination' ) ) {
-	function pagination($pages = '', $range = 1) { 
-		$showitems = ($range * 2)+1; 
-		global $paged;
-		
-		if(empty($paged)) $paged = 1;
+	function pagination( $pages = '', $range = 1 ) {
+		$showitems = ($range * 2) + 1;
 
-		if($pages == '') {
-			global $wp_query;
+		global $wp_query;
+		$paged = (int) $wp_query->query_vars['paged'];
+		if( empty($paged) || $paged == 0 ) $paged = 1;
+
+		if ( $pages == '' ) {
 			$pages = $wp_query->max_num_pages;
-			if(!$pages) {
+			if( !$pages ) {
 				$pages = 1;
 			}
 		}
-
-		if(1 != $pages) {
+		if ( 1 != $pages ) {
 			echo "<div class=\"pagination pagination__posts\"><ul>";
-			// if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li class='first'><a href='".get_pagenum_link(1)."'>".__('First', 'cherry')."</a></li>";
-			if($paged > 1 && $showitems < $pages) echo "<li class='prev'><a href='".get_pagenum_link($paged - 1)."'>&lsaquo;&nbsp;".__('Prev', 'cherry')."</a></li>";
+			if ( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<li class='first'><a href='".get_pagenum_link(1)."'>first</a></li>";
+			if ( $paged > 1 && $showitems < $pages ) echo "<li class='prev'><a href='".get_pagenum_link($paged - 1)."'>prev</a></li>";
 
-			for ($i=1; $i <= $pages; $i++) {
+			for ( $i = 1; $i <= $pages; $i++ ) {
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
-					echo ($paged == $i)? "<li class=\"active\"><a href=''>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a></li>";
+					echo ($paged == $i)? "<li class=\"active\"><a href='#'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a></li>";
 				}
 			}
 
-			if ($paged < $pages && $showitems < $pages) echo "<li class='next'><a href=\"".get_pagenum_link($paged + 1)."\">".__('Next', 'cherry')."&nbsp;&rsaquo;</a></li>"; 
-			// if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li class='last'><a href='".get_pagenum_link($pages)."'>".__('Last', 'cherry')."</a></li>";
+			if ( $paged < $pages && $showitems < $pages ) echo "<li class='next'><a href=\"".get_pagenum_link($paged + 1)."\">next</a></li>"; 
+			if ( $paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages ) echo "<li class='last'><a href='".get_pagenum_link($pages)."'>last</a></li>";
 			echo "</ul></div>\n";
 		}
 	}
@@ -235,16 +234,139 @@ function monster_fonts_url() {
 	return $fonts_url;
 }
 
-// add_action('edit_tag_form_fields', 'monster_edit_fields');
-// function monster_edit_fields() {
-// 	echo "<tr class='form-field'><th>Type</th>";
-// 	echo "<td><input type='text' name='filter-type' id='filter-type'></input>";
-// 	echo "<p class='description'>The type of Free Website Templates</p>";
-// 	echo "</td></tr>";
-// }
+/**
+ * Breadcrumbs
+ *
+ */
+if ( !function_exists( 'monster_breadcrumbs' ) ) {
+	function monster_breadcrumbs() {
 
-// add_action('add_tag_form_fields', 'monster_add_fields');
-// function monster_add_fields() {
-// 	echo "<div class='form-field'><label>Type</label><input type='text' name='filter-type' id='filter-type'></input></div>";
-// }
-?>
+	$showOnHome  = 1; // 1 - show "breadcrumbs" on home page, 0 - hide
+	$delimiter   = '<li class="divider"></li>'; // divider
+	$home        = get_the_title( get_option('page_on_front', true) ); // text for link "Home"
+	$showCurrent = 1; // 1 - show title current post/page, 0 - hide
+	$before      = '<li class="active">'; // open tag for active breadcrumb
+	$after       = '</li>'; // close tag for active breadcrumb
+
+	global $post;
+	$homeLink = home_url();
+
+	if (is_front_page()) {
+		if ($showOnHome == 1) 
+			echo '<ul class="breadcrumb breadcrumb__t"><li><a href="' . $homeLink . '">' . $home . '</a><li></ul>';
+		} else {
+			echo '<ul class="breadcrumb breadcrumb__t"><li><a href="' . $homeLink . '">' . $home . '</a></li>' . $delimiter;
+
+			if ( is_home() ) {
+				$blog_text = of_get_option('blog_text');
+				if ($blog_text == '' || empty($blog_text)) {
+					echo "Blog";
+				}
+				echo $before . $blog_text . $after;
+			} 
+			elseif ( is_category() ) {
+				$thisCat = get_category(get_query_var('cat'), false);
+				if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
+				echo $before . "Category Archives".': "' . single_cat_title('', false) . '"' . $after;
+			} 
+			elseif ( is_search() ) {
+				echo $before . "Search for" . ': "' . get_search_query() . '"' . $after;
+			} 
+			elseif ( is_day() ) {
+				echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+				echo '<li><a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
+				echo $before . get_the_time('d') . $after;
+			} 
+			elseif ( is_month() ) {
+				echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+				echo $before . get_the_time('F') . $after;
+			} 
+			elseif ( is_year() ) {
+				echo $before . get_the_time('Y') . $after;
+			}
+			elseif ( is_tax(get_post_type().'_category') ) {
+				$post_name = get_post_type();
+				echo $before . ucfirst($post_name) . ' ' . 'category' . ': ' . single_cat_title( '', false ) . $after;
+			}
+			elseif ( is_single() && !is_attachment() ) {
+				if ( get_post_type() != 'post' ) {
+					$post_id = get_the_ID();
+					$post_name = get_post_type();
+					$post_type = get_post_type_object(get_post_type());
+					// echo '<li><a href="' . $homeLink . '/' . $post_type->labels->name . '/">' . $post_type->labels->name . '</a></li>';
+
+					$terms = get_the_terms( $post_id, $post_name.'_category');
+					if ( $terms && ! is_wp_error( $terms ) ) {
+						echo '<li><a href="' .get_term_link(current($terms)->slug, $post_name.'_category') .'">'.current($terms)->name.'</a></li>';
+						echo ' ' . $delimiter . ' ';
+					} else {
+						// echo '<li><a href="' . $homeLink . '/' . $post_type->labels->name . '/">' . $post_type->labels->name . '</a></li>';
+					}
+
+					if ($showCurrent == 1)
+						echo $before . get_the_title() . $after;
+				} else {
+					$cat = get_the_category();
+					if (!empty($cat)) {
+						$cat  = $cat[0];
+						$cats = get_category_parents($cat, TRUE, '</li>' . $delimiter . '<li>');
+						if ($showCurrent == 0) 
+							$cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+						echo '<li>' . substr($cats, 0, strlen($cats)-4);
+					}
+					if ($showCurrent == 1) 
+						echo $before . get_the_title() . $after;
+				}
+			}
+			elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+				$post_type = get_post_type_object(get_post_type());
+				if ( isset($post_type) ) {
+					echo $before . $post_type->labels->singular_name . $after;
+				}
+			} 
+			elseif ( is_attachment() ) {
+				$parent = get_post($post->post_parent);
+				$cat    = get_the_category($parent->ID);
+				if ( isset($cat) && !empty($cat)) {
+					$cat    = $cat[0];
+					echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+					echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>';
+				}
+				if ($showCurrent == 1) 
+					echo $before . get_the_title() . $after;
+			} 
+			elseif ( is_page() && !$post->post_parent ) {
+				if ($showCurrent == 1) 
+					echo $before . get_the_title() . $after;
+			} 
+			elseif ( is_page() && $post->post_parent ) {
+				$parent_id  = $post->post_parent;
+				$breadcrumbs = array();
+				while ($parent_id) {
+					$page          = get_page($parent_id);
+					$breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
+					$parent_id     = $page->post_parent;
+				}
+				$breadcrumbs = array_reverse($breadcrumbs);
+				for ($i = 0; $i < count($breadcrumbs); $i++) {
+					echo $breadcrumbs[$i];
+					if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
+				}
+				if ($showCurrent == 1) 
+					echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+			} 
+			elseif ( is_tag() ) {
+				echo $before . "Tag archives" . ': "' . single_tag_title('', false) . '"' . $after;
+			} 
+			elseif ( is_author() ) {
+				global $author;
+				$userdata = get_userdata($author);
+				echo $before . "by" . ' ' . $userdata->display_name . $after;
+			} 
+			elseif ( is_404() ) {
+				echo $before . '404' . $after;
+			}
+			echo '</ul>';
+		}
+	} // end breadcrumbs()
+} ?>

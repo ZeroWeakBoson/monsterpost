@@ -59,7 +59,9 @@
 
 								<div class="feedback_holder clearfix">
 									<?php 
+										echo '<h3>' . __('Enjoyed This Post? Share!', 'cherry') . '</h3>';
 										get_template_part('includes/post-formats/social-buttons');
+										// wpsocialite_markup();
 										echo do_shortcode('[newsletter_form]');
 									?>
 								</div><!--.feedback_holder-->

@@ -541,15 +541,16 @@
 		$catID = $idObj->term_id;
 		
 		$defaults = array(
-			'type' => '',
-			'cat'  => $catID
+			'type'   => '',
+			'cat'    => $catID,
+			'offset' => 0,
+			'num'    => 4
 		);
 
 		$tax_query = '';
 
 		if ( !empty($_POST) && array_key_exists('type', $_POST) ) {
 			$defaults['type'] = $_POST['type'];
-			$defaults['cat']  = $_POST['cat'];
 
 			if ( $defaults['type'] != 'all' ) {
 				$tax_query = array(
@@ -561,13 +562,23 @@
 				);
 			}
 		}
+		if ( !empty($_POST) && array_key_exists('cat', $_POST) ) {
+			$defaults['cat']  = $_POST['cat'];
+		}
+		if ( !empty($_POST) && array_key_exists('offset', $_POST) ) {
+			$defaults['offset'] = intval( $_POST['offset'] );
+		}
+		if ( !empty($_POST) && array_key_exists('num', $_POST) ) {
+			$defaults['num'] = intval( $_POST['num'] );
+		}
 
 		// WP_Query arguments
 		$args = array(
 			'post_type'           => 'post',
 			'post_status'         => 'publish',
 			'cat'                 => $defaults['cat'],
-			'posts_per_page'      => '20',
+			'posts_per_page'      => $defaults['num'],
+			'offset'              => $defaults['offset'],
 			'ignore_sticky_posts' => true,
 			'order'               => 'DESC',
 			'orderby'             => 'date',
@@ -580,6 +591,7 @@
 		// The Loop
 		if ( $free_query->have_posts() ) {
 			$counter = 1;
+			// var_dump($args);
 
 			echo '<div class="row-fluid">';
 
@@ -625,18 +637,19 @@
 					$counter++;
 				}
 
-				if (( $counter % 4 ) == 0) {
-					echo '</div><!--.row-fluid--><hr>';
-				}
-
-			get_template_part('includes/post-formats/post-nav');
-		} else {
-			echo '<div class="no-results">';
-				echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>';
-				echo '<p>' . __('We apologize for any inconvenience, please', 'cherry') . ' <a href="' . home_url("/") . '"> ' . __('return to the home page', 'cherry') . '</a>' . __('or use the search form below.', 'cherry') . '</p>';
-				get_search_form(); /* outputs the default Wordpress search form */
-			echo '</div><!--no-results-->';
-		}
+			// if (( $counter % 4 ) == 0) {
+			if ( $counter < 4 ) {
+				echo '</div><!--.row-fluid--><hr>';
+			}
+		} 
+		// else {
+			// echo '<div class="no-results">';
+			// 	echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>';
+			// 	echo '<p>' . __('We apologize for any inconvenience, please', 'cherry') . ' <a href="' . home_url("/") . '">' . __('return to the home page', 'cherry') . '</a> ' . __('or use the search form below.', 'cherry') . '</p>';
+			// 	get_search_form();
+			// echo '</div><!--no-results-->';
+		// 	echo '';
+		// }
 
 		// Restore original Post Data
 		wp_reset_postdata();
@@ -704,7 +717,7 @@ if ( !function_exists('monster_free_template_related_posts') ) {
 			'post_status'    => 'publish',
 			'post__not_in'   => array($params['id']),
 			'cat'            => $params['cat'],
-			'posts_per_page' => '4',
+			'posts_per_page' => 4,
 			'order'          => 'DESC',
 			'orderby'        => 'date',
 			'tax_query'      => $params['type']

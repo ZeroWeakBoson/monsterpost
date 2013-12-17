@@ -15,16 +15,18 @@ if ( !function_exists('monster_question_shortcode') ) {
 		$output = '<div class="interview__holder question clearfix">';
 		if ( !empty($author_email) ) {
 			$output .= '<figure class="thumbnail author-avatar">' . get_avatar( $author_email, 37 ) . '</figure>';
+		}
+		$output .= '<div class="extra-wrap">';
+		if ( !empty($author_email) ) {
 			$user = get_user_by( 'email', $author_email );
 			if ($user) {
-				$output .= '<em><strong>' . $user->first_name . ' ' . $user->last_name . ': </strong></em>';
-			}
-			if ( !empty($author_name) ) {
-				$output .= '<em><strong>' . $author_name . '</strong></em>: ';
+				$output .= '<strong>' . $user->first_name . ' ' . $user->last_name . ': </strong>';
+			} elseif ( !empty($author_name) ) {
+				$output .= '<strong>' . $author_name . '</strong>: ';
 			}
 		}
 		$output .= do_shortcode( $content );
-		$output .= '</div>';
+		$output .= '</div></div>';
 
 		return $output;
 	}
