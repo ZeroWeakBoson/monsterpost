@@ -9,9 +9,9 @@
 /* Logo
 ---------------------------------------- */
 .logo {
-	float: left;
 	position: relative;
 	z-index: 99;
+	float: left;
 	&_h {
 		// Text Based Logo
 		&__txt {
@@ -50,22 +50,21 @@
 ---------------------------------------- */
 .nav{
 	&-row {
-		position: relative;
-		border: 1px solid #fff;
-		padding: 1px;
-		#gradient > .vertical(#fff, #fafafa);
 		.box-shadow(0 1px 3px rgba(0,0,0,.2));
 		.border-radius(0 0 5px 5px);
 		.box-sizing(border-box);
+		position: relative;
+		padding: 1px;
+		border: 1px solid #fff;
 		.top& {
 			&:after {
 				position: absolute;
-				right: 44px;
 				top: -12px;
+				right: 44px;
 				width: 0px;
 				height: 0px;
-				border-style: solid;
 				border-width: 0 10.5px 11px 10.5px;
+				border-style: solid;
 				border-color: transparent transparent #eee transparent;
 				.stuck & {
 					border-color: transparent transparent #fff transparent;
@@ -79,18 +78,19 @@
 			}
 			&:before {
 				position: absolute;
-				right: 43px;
 				top: -14px;
+				right: 43px;
 				width: 0px;
 				height: 0px;
-				border-style: solid;
 				border-width: 0 11.5px 12px 11.5px;
+				border-style: solid;
 				border-color: transparent transparent #e8e8e8 transparent;
 			}
 			.up & {
 				.border-radius(5px);
 			}
 		}
+		#gradient > .vertical(#fff, #fafafa);
 	}
 	&-container {
 		position: relative;
@@ -130,10 +130,10 @@
 }
 .sf-menu ul {
 	position: absolute;
-	display: none;
 	top: 100%;
 	left: 0;
 	z-index: 99;
+	display: none;
 	padding: 10px 0;
 }
 .sf-menu > li {
@@ -145,8 +145,8 @@
 }
 
 .sf-menu a {
-	display: block;
 	position: relative;
+	display: block;
 }
 .sf-menu ul ul {
 	top: 0;
@@ -177,8 +177,8 @@
 }
 .sf-menu > li {
 	@media (min-width: 768px) and (max-width: 979px) {
-		float: none;
 		display: inline-block;
+		float: none;
 		vertical-align: top;
 	}
 	&:first-child {
@@ -189,15 +189,15 @@
 	}
 }
 .sf-menu > li > a {
+	.transition(0.25s);
 	margin: 14px 0 12px 0;
 	padding: 0 6px;
+	background: none;
 	color: #353535;
 	text-decoration: none;
 	// font-size: 17px;
 	// line-height: 21px;
 	border-left: 1px solid rgba(0,0,0,.1);
-	background: none;
-	.transition(0.25s);
 	.no-rgba & {
 		border-left: 1px solid #e2e2e2;
 	}
@@ -207,15 +207,15 @@
 }
 .sf-menu li .desc {
 	display: block;
-	font-size: 0.5em;
 	text-transform: uppercase;
+	font-size: 0.5em;
 }
 .sf-menu li li a {
-	padding: 0;
+	.transition(0.25s);
 	margin: 0 10px;
+	padding: 0;
 	color: #999797;
 	text-decoration: none;
-	.transition(0.25s);
 }
 .sf-menu > li > a:hover,
 .sf-menu > li.sfHover> a,
@@ -241,17 +241,17 @@
 }
 /* styling for both css and generated arrows */
 .sf-arrows .sf-with-ul:after {
-	content: '';
 	position: absolute;
 	top: 50%;
 	right: 1em;
 	margin-top: -3px;
-	height: 0;
 	width: 0;
-	/* order of following 3 rules important for fallbacks to work */
-	border: 5px solid transparent;
+	height: 0;
 	border-top-color: #000; /* edit this to suit design (no rgba in IE8) */
 	border-top-color: rgba(0,0,0,.5);
+	content: '';
+	/* order of following 3 rules important for fallbacks to work */
+	border: 5px solid transparent;
 	.followers-total& {
 		border: none;
 	}
@@ -277,17 +277,17 @@
 
 /* Navigation select styling */
 .select-menu {
+	.border-radius(0);
 	display: none;
-	border: 1px solid #c8c8c8;
-	background-color: #e4e4e4;
+	margin: 0;
+	padding: 5px;
 	width: 100%;
 	height: 30px;
-	padding: 5px;
-	margin: 0;
+	outline: none;
+	border: 1px solid #c8c8c8;
+	background-color: #e4e4e4;
 	font-size: 13px;
 	cursor: pointer;
-	outline: none;
-	.border-radius(0);
 	option {
 		padding: 5px;
 		cursor: pointer;
@@ -314,17 +314,17 @@
 		}
 	}
 	&-content {
-		width: 100%;
 		overflow: hidden;
-		text-align: center;
 		padding-bottom: 30px;
+		width: 100%;
+		text-align: center;
 		&.post-tile {
 			&:before {
 				display: none;
 			}
 			&:after {
-				left: 0;
 				right: 0;
+				left: 0;
 				width: 100%;
 			}
 		}

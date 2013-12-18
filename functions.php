@@ -22,8 +22,8 @@
 		'baseLineHeight' =>	'#000000'
 		);
 
-	/* 
-	 * Helper function to return the theme option value. 
+	/*
+	 * Helper function to return the theme option value.
 	 * If no value has been saved, it returns $default.
 	 * Needed because options are saved as serialized strings.
 	 */
@@ -148,7 +148,7 @@
 	function monster_remove_dashboard_widgets(){
 		// Globalize the metaboxes array, this holds all the widgets for wp-admin
 		global $wp_meta_boxes;
-		
+
 		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
@@ -156,7 +156,7 @@
 		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
 	}
 
-	/* 
+	/*
 	 * Loads the Options Panel
 	 *
 	 * If you're loading from a child theme use stylesheet_directory
@@ -199,7 +199,7 @@
 
 	// Post Formats
 	$formats = array( 'audio', 'gallery', 'image', 'video' );
-	add_theme_support( 'post-formats', $formats ); 
+	add_theme_support( 'post-formats', $formats );
 	add_post_type_support( 'post', 'post-formats' );
 
 	// Custom excpert length
@@ -406,8 +406,8 @@
 		function author_comment_count( $author ){
 			global $wpdb;
 
-			$sql = "SELECT COUNT(comment_ID) 
-			FROM {$wpdb->comments} 
+			$sql = "SELECT COUNT(comment_ID)
+			FROM {$wpdb->comments}
 			WHERE comment_author = '$author'";
 			$a = $wpdb->get_var($sql);
 			return $a;
@@ -539,7 +539,7 @@
 	function get_monster_free_template() {
 		$idObj = get_category_by_slug( 'free-website-templates' );
 		$catID = $idObj->term_id;
-		
+
 		$defaults = array(
 			'type'   => '',
 			'cat'    => $catID,
@@ -600,13 +600,13 @@
 
 				$post_id = get_the_ID();
 
-				if ( !empty($_POST) && array_key_exists('cat', $_POST) ) {
-					$val = $_POST['cat'];
-					if ( $val != $catID ) {
-						add_post_meta( $post_id, 'filter-cat', $val, true );
-					}
-					update_option( 'select-filter-cat', $val );
-				}
+				// if ( !empty($_POST) && array_key_exists('cat', $_POST) ) {
+				// 	$val = $_POST['cat'];
+				// 	if ( $val != $catID ) {
+				// 		add_post_meta( $post_id, 'filter-cat', $val, true );
+				// 	}
+				// 	update_option( 'select-filter-cat', $val );
+				// }
 
 				if ( $counter > 4 ) {
 					echo '<div class="row-fluid">';
@@ -641,15 +641,7 @@
 			if ( $counter < 4 ) {
 				echo '</div><!--.row-fluid--><hr>';
 			}
-		} 
-		// else {
-			// echo '<div class="no-results">';
-			// 	echo '<p><strong>' . __('There has been an error.', 'cherry') . '</strong></p>';
-			// 	echo '<p>' . __('We apologize for any inconvenience, please', 'cherry') . ' <a href="' . home_url("/") . '">' . __('return to the home page', 'cherry') . '</a> ' . __('or use the search form below.', 'cherry') . '</p>';
-			// 	get_search_form();
-			// echo '</div><!--no-results-->';
-		// 	echo '';
-		// }
+		}
 
 		// Restore original Post Data
 		wp_reset_postdata();
@@ -689,7 +681,7 @@ if ( !function_exists('monster_free_template_gallery') ) {
 			</script>
 			<!-- Slider -->
 			<ul id="bxslider_<?php echo $random ?>" class="bxslider unstyled">
-				<?php 
+				<?php
 					foreach ($attachments as $attachment) :
 						$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
 						$url            = $attachment_url['0'];
@@ -700,7 +692,7 @@ if ( !function_exists('monster_free_template_gallery') ) {
 					endforeach;
 				?>
 			</ul>
-		<?php 
+		<?php
 		else:
 			get_template_part('includes/post-formats/post-thumb');
 		endif;
@@ -722,7 +714,6 @@ if ( !function_exists('monster_free_template_related_posts') ) {
 			'orderby'        => 'date',
 			'tax_query'      => $params['type']
 		);
-		// var_dump($args);
 
 		// The Query
 		$related_query = new WP_Query( $args );
@@ -760,4 +751,36 @@ if ( !function_exists('monster_free_template_related_posts') ) {
 		// Restore original Post Data
 		wp_reset_postdata();
 	}
-} ?>
+}
+
+// http://werdswords.com/force-sub-categories-use-the-parent-category-template/
+function monster_subcategory_hierarchy() {
+	$category = get_queried_object();
+
+	$parent_id = $category->category_parent;
+
+	$templates = array();
+
+	if ( $parent_id == 0 ) {
+		// Use default values from get_category_template()
+		$templates[] = "category-{$category->slug}.php";
+		$templates[] = "category-{$category->term_id}.php";
+		$templates[] = 'category.php';
+	} else {
+		// Create replacement $templates array
+		$parent = get_category( $parent_id );
+
+		// Current first
+		$templates[] = "category-{$category->slug}.php";
+		$templates[] = "category-{$category->term_id}.php";
+
+		// Parent second
+		$templates[] = "category-{$parent->slug}.php";
+		$templates[] = "category-{$parent->term_id}.php";
+		$templates[] = 'category.php';
+	}
+	return locate_template( $templates );
+}
+
+add_filter( 'category_template', 'monster_subcategory_hierarchy' );
+?>

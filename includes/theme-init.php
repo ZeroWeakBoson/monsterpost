@@ -38,32 +38,80 @@ endif;
 
 // Custom Taxonomy Code
 // http://net.tutsplus.com/tutorials/wordpress/introducing-wordpress-3-custom-taxonomies/
-add_action( 'init', 'moster_add_type_taxonomies', 0 );
+// add_action( 'init', 'moster_add_type_taxonomies', 0 );
+// function moster_add_type_taxonomies() {
+// 	// Add new "Type" taxonomy to Posts
+// 	register_taxonomy('type', 'post', array(
+// 		// Hierarchical taxonomy (like categories)
+// 		'hierarchical' => true,
+// 		// This array of options controls the labels displayed in the WordPress Admin UI
+// 		'labels' => array(
+// 			'name'              => __( 'Types', 'cherry' ),
+// 			'singular_name'     => __( 'Type', 'cherry' ),
+// 			'search_items'      => __( 'Search Types', 'cherry' ),
+// 			'all_items'         => __( 'All Types', 'cherry' ),
+// 			'parent_item'       => __( 'Parent Type', 'cherry' ),
+// 			'parent_item_colon' => __( 'Parent Type:', 'cherry' ),
+// 			'edit_item'         => __( 'Edit Type', 'cherry' ),
+// 			'update_item'       => __( 'Update Type', 'cherry' ),
+// 			'add_new_item'      => __( 'Add New Type', 'cherry' ),
+// 			'new_item_name'     => __( 'New Type Name', 'cherry' ),
+// 			'menu_name'         => __( 'Types', 'cherry' ),
+// 		),
+// 		// Control the slugs used for this taxonomy
+// 		'rewrite' => array(
+// 			// 'slug' => 'types',
+// 			'with_front' => false,
+// 			'hierarchical' => true
+// 		),
+// 	));
+// }
+
+/**
+ * Create a Type taxonomy
+ *
+ * @uses  Inserts new taxonomy object into the list
+ * @uses  Adds query vars
+ *
+ * @param string  Name of taxonomy object
+ * @param array|string  Name of the object type for the taxonomy object.
+ * @param array|string  Taxonomy arguments
+ * @return null|WP_Error WP_Error if errors, otherwise null.
+ */
 function moster_add_type_taxonomies() {
-	// Add new "Type" taxonomy to Posts
-	register_taxonomy('type', 'post', array(
-		// Hierarchical taxonomy (like categories)
-		'hierarchical' => true,
-		// This array of options controls the labels displayed in the WordPress Admin UI
-		'labels' => array(
-			'name'              => __( 'Types', 'cherry' ),
-			'singular_name'     => __( 'Type', 'cherry' ),
-			'search_items'      =>  __( 'Search Types', 'cherry' ),
-			'all_items'         => __( 'All Types', 'cherry' ),
-			'parent_item'       => __( 'Parent Type', 'cherry' ),
-			'parent_item_colon' => __( 'Parent Type:', 'cherry' ),
-			'edit_item'         => __( 'Edit Type', 'cherry' ),
-			'update_item'       => __( 'Update Type', 'cherry' ),
-			'add_new_item'      => __( 'Add New Type', 'cherry' ),
-			'new_item_name'     => __( 'New Type Name', 'cherry' ),
-			'menu_name'         => __( 'Types', 'cherry' ),
-		),
-		// Control the slugs used for this taxonomy
-		'rewrite' => array(
-			'slug' => 'types',
-			'with_front' => false,
-			'hierarchical' => true
-		),
-	));
+
+	$labels = array(
+		'name'                  => _x( 'Types', 'Taxonomy plural name', 'cherry' ),
+		'singular_name'         => _x( 'Types', 'Taxonomy singular name', 'cherry' ),
+		'search_items'          => __( 'Search Types', 'cherry' ),
+		'popular_items'         => __( 'Popular Types', 'cherry' ),
+		'all_items'             => __( 'All Types', 'cherry' ),
+		'parent_item'           => __( 'Parent Type', 'cherry' ),
+		'parent_item_colon'     => __( 'Parent Type', 'cherry' ),
+		'edit_item'             => __( 'Edit Type', 'cherry' ),
+		'update_item'           => __( 'Update Type', 'cherry' ),
+		'add_new_item'          => __( 'Add New Type', 'cherry' ),
+		'new_item_name'         => __( 'New Type Name', 'cherry' ),
+		'add_or_remove_items'   => __( 'Add or remove Type', 'cherry' ),
+		'choose_from_most_used' => __( 'Choose from most used type', 'cherry' ),
+		'menu_name'             => __( 'Types', 'cherry' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => true,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'type', array( 'post' ), $args );
 }
+add_action( 'init', 'moster_add_type_taxonomies' );
 ?>
