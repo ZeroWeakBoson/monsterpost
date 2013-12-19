@@ -8,7 +8,7 @@
 		border: 1px solid #fff;
 		background: #eee;
 		.border-radius(@baseBorderRadius);
-		.box-shadow(0 0 3px rgba(0,0,0,.4));
+		.box-shadow(0 1px 3px rgba(0,0,0,.2));
 		&:hover {
 			#carousel-prev, 
 			#carousel-next {
@@ -19,7 +19,9 @@
 	&-heading{
 		overflow: hidden;
 		height: 51px;
-		background: #333;
+		// background: #333;
+		border-bottom: 1px solid #fff;
+		#gradient > .vertical(#fff, #fafafa);
 		@media (max-width: 767px) {
 			height: auto;
 		}
@@ -142,7 +144,7 @@
 #carousel{
 	&-current-state {
 		display: block;
-		margin-right: 26px;
+		margin-right: 35px;
 		float: left;
 		border-right: 2px solid #fff;
 		background: @red;
@@ -151,11 +153,11 @@
 		span {
 			position: relative;
 			display: block;
-			width: 130px;
+			width: 145px;
 			height: 21px;
-			padding: 15px 0 15px 10px;
+			padding: 16px 0 14px 13px;
 			color: #fff;
-			font-size: 18px;
+			font-size: 19px;
 			line-height: 1em;
 			&:before {
 				position: absolute;
@@ -184,10 +186,13 @@
 				border-color: transparent transparent transparent @white;
 			}
 		}
+		@media (max-width: 979px) and (min-width: 768px) {
+			margin-right: 5px;
+		}
 	}
 	&-filter {
 		// float: left;
-		overflow: hidden;
+		// overflow: hidden;
 		padding: 0;
 		color: @grayLight;
 		white-space: nowrap;
@@ -199,24 +204,23 @@
 			float: left;
 			margin-top: 15px;
 			padding: 0 12px;
-			border-left: 1px solid #454545;
-			color: @grayLight;
+			border-left: 1px solid #e2e2e2;
+			// color: @grayLight;
 			background: none;
 			text-decoration: none;
 			text-transform: capitalize;
 			font: 17px/20px @serifFontFamily;
 			.transition(0.25s);
 			&:hover {
-				color: #fff;
+				// color: #fff;
+				color: @linkColorHover;
 			}
 			&.selected {
-				color: #fff;
+				// color: #fff;
+				color: @linkColorHover;
 			}
 			&:first-child {
 				border-left: none;
-			}
-			@media (min-width: 1200px) {
-				padding: 0 24px;
 			}
 			@media (min-width: 768px) and (max-width: 979px) {
 				padding: 0 7px;
@@ -234,9 +238,9 @@
 	}
 	&-pager {
 		float: right;
-		margin: 14px 25px 0 0;
+		margin: 20px 25px 0 0;
 		@media (min-width: 768px) and (max-width: 979px) {
-			margin: 14px 5px 0 0;
+			margin: 20px 5px 0 0;
 		}
 		a {
 			.hide-text();

@@ -57,7 +57,7 @@ get_header(); ?>
 				</div><!--#allthatjunk-->
 
 				<div class="loadmore-wrap">
-					<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="4"><?php _e('Load More', 'cherry'); ?></a>
+					<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="20"><?php _e('Load More', 'cherry'); ?></a>
 				</div><!--#loadmore-->
 
 			</div><!--.content-inner-->

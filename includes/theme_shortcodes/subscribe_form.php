@@ -21,7 +21,7 @@ if ( !function_exists('monster_subscribe_form') ) {
 							<input type="text" class="form-control" id="form-subscribe-email" name="subscribe-email" placeholder="Email">
 						</div>
 						<div class="radio-group clearfix">
-							<h4>Newsletter Frequency</h4>
+							<h4>Newsletter Frequency:</h4>
 							<label for="freq-6-wk"><input type="radio" name="freq" value="6-wk" id="freq-6-wk" checked>six times a week</label><br>
 							<label for="freq-1-wk"><input type="radio" name="freq" value="1-wk" id="freq-1-wk">once a week</label><br>
 							<label for="freq-2-mot"><input type="radio" name="freq" value="2-mo" id="freq-2-mo">twice a month</label>

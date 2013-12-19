@@ -544,7 +544,7 @@
 			'type'   => '',
 			'cat'    => $catID,
 			'offset' => 0,
-			'num'    => 4
+			'num'    => 20
 		);
 
 		$tax_query = '';

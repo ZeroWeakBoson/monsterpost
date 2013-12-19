@@ -3,8 +3,10 @@
 	$post_image_after  = (!is_singular()) ? '</a>' : '';
 	$thumb             = get_post_thumbnail_id(); //get img ID
 	$img_url           = wp_get_attachment_url($thumb, 'full'); //get img URL
-	$img_width         = (is_singular()) ? 630 : 335; //set width large img
-	$img_height        = (is_singular()) ? 330 : 200; //set height large img
+	// $img_width         = (is_singular()) ? 630 : 335; //set width large img
+	// $img_height        = (is_singular()) ? 330 : 200; //set height large img
+	$img_width         = (is_singular()) ? 900 : 335; //set width large img
+	$img_height        = (is_singular()) ? 538 : 200; //set height large img
 	$figure_class      = (is_singular()) ? 'large' : '';
 	$suffix = '';
 	if (is_singular()) {

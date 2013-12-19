@@ -9,6 +9,20 @@ if (!empty($cat_desc)) {
 	echo '<div class="category-desc">' . $cat_desc . '</div>';
 }
 
+// query_posts(
+// 	array(
+// 		'post_status' => 'publish',
+// 		'orderby'     => 'date',
+// 		'order'       => 'DESC',
+// 		'meta_query'  => array(
+// 			array(
+// 				'key'     => 'tz_filter',
+// 				'compare' => 'NOT EXISTS'
+// 			)
+// 		)
+// 	)
+// );
+
 if (have_posts()) : ?>
 
 	<div class="post-tile row-fluid">
@@ -42,6 +56,7 @@ if (have_posts()) : ?>
 			echo '</div><!--.post-tile-->';
 		}
 	get_template_part('includes/post-formats/post-nav');
+	// wp_reset_query();
 	else: ?>
 		<div class="no-results">
 			<?php echo '<h5>' . __('There has been an error.', 'cherry') . '</strong></h5>'; ?>

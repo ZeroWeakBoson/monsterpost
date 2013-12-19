@@ -36,11 +36,15 @@
 		<div id="carousel-filter">
 			<?php
 				foreach ($filterArray as $key => $value) {
-					echo '<a href="#' . $key . '">' . str_replace('-', ' ', $key) . '</a>';
+					$class = '';
+					if ( $key == 'videos' ) {
+						$class = 'selected';
+					}
+					echo '<a href="#' . $key . '" class="' . $class . '">' . str_replace('-', ' ', $key) . '</a>';
 				}
 			?>
 		</div>
-		<!-- <div id="carousel-pager" class="carousel-pager"></div> -->
+		<div id="carousel-pager" class="carousel-pager"></div>
 	</div>
 	<div class="carousel-wrapper">
 		<ul id="carousel" class="unstyled">
@@ -140,7 +144,8 @@
 						button: '#carousel-next',
 						items: 1,
 						onBefore: _onBefore
-					}
+					},
+					pagination: '#carousel-pager'
 				}, {
 					debug: false
 				});

@@ -307,10 +307,10 @@ function load_filters(changed){
 }
 
 function load_more(clicked){
-	var ajaxurl = jQuery('#ajaxurl').val(),
-		offset  = jQuery(clicked).data('offset'),
-		num     = 4;
-		num += offset;
+	var ajaxurl     = jQuery('#ajaxurl').val(),
+		offset      = jQuery(clicked).data('offset'),
+		num         = 8,
+		new_offset  = num + offset;
 
 	data = get_ajax_data(offset, num);
 
@@ -325,9 +325,9 @@ function load_more(clicked){
 		success: function (response) {
 			if (response) {
 				jQuery('#allthatjunk').append(response);
-				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="'+num+'">Load More</a>');
+				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="'+new_offset+'">Load More</a>');
 			} else {
-				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary hidden" id="loadmore" href="#" data-offset="'+num+'">Load More</a>');
+				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary hidden" id="loadmore" href="#" data-offset="'+new_offset+'">Load More</a>');
 			}
 		},
 		dataType: 'html'
