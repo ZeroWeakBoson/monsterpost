@@ -797,7 +797,6 @@ function get_monster_carousel_posts() {
 
 	//get all terms (e.g. tags or post tags), then display all posts in each term
 	$taxonomy   = 'tag';
-	// $param_type = 'tag__in';
 	$param_type = 'tag';
 	$term_args  = array(
 		'orderby' => 'name',
@@ -805,7 +804,6 @@ function get_monster_carousel_posts() {
 	);
 	$terms = get_terms($taxonomy, $term_args);
 	if ( $terms ) {
-		// foreach( $filterArray as $key => $value ) {
 		$args = array(
 			"$param_type"         => $value,
 			'post_type'           => 'post',
@@ -815,7 +813,6 @@ function get_monster_carousel_posts() {
 			'meta_key'            => 'tz_filter',
 			'meta_value'          => 'true'
 		);
-		// $i = 0;
 		$carousel_query = new WP_Query($args);
 		if( $carousel_query->have_posts() ) {
 			while ($carousel_query->have_posts()) : $carousel_query->the_post();
@@ -824,38 +821,33 @@ function get_monster_carousel_posts() {
 			$url            = $attachment_url['0'];
 			$image          = aq_resize($url, 180, 180, true);
 
-			/*if (!$i) { ?>
-				<li id="<?php echo $key; ?>" class="<?php echo $key; ?>">
-			<?php } else { */?>
-				<li class="<?php echo $value; ?>">
-			<?php //}
-
-				if ($image) { ?>
-					<figure class="thumbnail"><a class="carousel-link" href="<?php the_permalink(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php echo $image; ?>" alt="<?php the_title(); ?>"></a></figure>
-				<?php } ?>
-				<div class="desc hidden-phone">
-					<time datetime="<?php the_time('Y-m-d\TH:i:s'); ?>"><?php echo get_the_date(); ?></time>
-					<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo my_string_limit_words(get_the_title(), 5); ?></a></h5>
-				</div>
-			</li>
-			<?php
-			// $i++;
-			endwhile; ?>
-			<li class="<?php echo $value; ?> view-all-item">
-				<a href='<?php echo home_url("/tag/$value"); ?>' class="view-all-link" target="_blank">
+			echo "<li class='$value'>";
+				if ($image) {
+					echo '<figure class="thumbnail">';
+						echo '<a class="carousel-link" href="' . get_permalink( $post_id ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
+							echo '<img src="' . $image . '" alt="' . the_title('', '', false) . '">';
+						echo '</a>';
+					echo '</figure>';
+				}
+				echo '<div class="desc hidden-phone">
+						<time datetime="'.get_the_time('Y-m-d\TH:i:s', $post_id).'">' . get_the_date() . '</time>
+						<h5><a href="' . get_permalink( $post_id ) . '>" title="' . the_title('', '', false) . '">' . my_string_limit_words(get_the_title(), 5) . '</a></h5>
+					</div>';
+			echo '</li>';
+			endwhile; 
+			echo '<li class="' . $value . ' view-all-item">
+				<a href=' . home_url("/tag/$value") . ' class="view-all-link" target="_blank">
 					<div class="view-all-text">
-						<strong><?php _e('View all', 'cherry'); ?></strong>
-						<span class="view-all-tag"><?php echo str_replace('-', ' ', $value); ?></span>
+						<strong>' . __('View all', 'cherry') . '</strong>
+						<span class="view-all-tag">' . str_replace('-', ' ', $value) . '</span>
 					</div>
 					<div class="middle-hack"></div>
 				</a>
-			</li>
-		<?php }
-		// }
+			</li>';
+		}
 		wp_reset_postdata(); // Restore global post data stomped by the_post().
 	}
 	if ( !empty($_POST) && array_key_exists('filterVal', $_POST) ) {
 		exit;
 	}
-}
-?>
+} ?>

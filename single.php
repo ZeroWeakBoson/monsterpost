@@ -1,16 +1,10 @@
 <?php 
 	get_header();
 
-	// check what the page
-	// if ( is_array($_SERVER) && (array_key_exists('HTTP_REFERER', $_SERVER)) ) { 
-	// 	if ( ( stripos($_SERVER['HTTP_REFERER'], 'free-website') ) !== false ) {
-	// 		$pos = stripos( $_SERVER['HTTP_REFERER'], 'free-website' );
-	// 	}
-	// }
-
-	if ( in_category('free-website-templates') ) {
-		get_template_part( 'single-free-website-templates' );
-	} else { ?>
+	// if ( in_category('free-website-templates') ) {
+	// 	get_template_part( 'single-free-website-templates' );
+	// } else {
+	?>
 	<div class="container container_single_post">
 		<div class="row">
 			<div id="content" class="span12">
@@ -131,5 +125,6 @@
 			</div><!--#content-->
 		</div><!--.row-->
 	</div><!--.container-->
-	<?php } 
+	<?php 
+// } 
 get_footer(); ?>

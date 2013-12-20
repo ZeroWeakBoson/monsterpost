@@ -11,9 +11,6 @@
 		get_template_part('includes/post-formats/single-post-meta');
 
 		echo '<div class="post_excerpt">';
-		if ( has_excerpt() ) {
-			the_excerpt();
-		} else {
 			$excerpt      = get_the_content();
 			$content      = apply_filters( 'the_content', $excerpt );
 			$full_content = false;
@@ -33,7 +30,6 @@
 			} else {
 				$full_content = true;
 			}
-		}
 		echo '</div>';
 
 		$args = array(
