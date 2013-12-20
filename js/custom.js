@@ -376,11 +376,13 @@ function load_carousel(clicked){
 		cache: false,
 		beforeSend: function(){
 			jQuery('.carousel-wrapper').append('<div class="loading"></div>');
-			jQuery('#carousel-cover').css({'opacity':'0', 'background':'#000', 'zIndex': '99'}).animate({opacity:'0.4'}, 200).append('<div class="loading"></div>');
+			jQuery('#carousel-cover').css({'opacity':'0', 'background':'#000', 'zIndex': '99'}).animate({opacity:'0.4'}, 200);
 		},
 		success: function(response){
 			jQuery('.carousel-wrapper .loading').remove();
-			jQuery('#carousel-cover').css({'zIndex': '-1'}).animate({opacity:'0'}, 200);
+			jQuery('#carousel-cover').animate({opacity:'0'}, 200, function(){
+				jQuery(this).css({'zIndex': '-1'});
+			});
 			jQuery('#carousel').html(response);
 		},
 		dataType: 'html'
