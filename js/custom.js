@@ -277,6 +277,15 @@ jQuery(document).ready(function(){
 		load_more(this);
 		return false;
 	});
+	// ---------------------------------------------------------
+	// Ajax Filterable Carousel
+	// ---------------------------------------------------------
+	jQuery('#carousel-filter a').live('click', function(e){
+		jQuery('#carousel-filter a').removeClass('selected');
+		jQuery(this).addClass('selected');
+		load_carousel(this);
+		return false;
+	});
 });
 function load_filters(changed){
 	var ajaxurl = jQuery('#ajaxurl').val(),
@@ -290,12 +299,12 @@ function load_filters(changed){
 		url: ajaxurl,
 		data: data,
 		cache: false,
-		beforeSend: function () {
+		beforeSend: function(){
 			jQuery('#toolbar-filter .selectboxit-container').addClass('disabled');
 			jQuery('#loadmore').addClass('hidden');
 			jQuery('#allthatjunk').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
 		},
-		success: function (response) {
+		success: function(response){
 			jQuery('#toolbar-filter .selectboxit-container').removeClass('disabled');
 			jQuery('#allthatjunk').html(response);
 			if (response) {
@@ -319,10 +328,10 @@ function load_more(clicked){
 		url: ajaxurl,
 		data: data,
 		cache: false,
-		beforeSend: function () {
+		beforeSend: function(){
 			jQuery('.loadmore-wrap').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
 		},
-		success: function (response) {
+		success: function(response){
 			if (response) {
 				jQuery('#allthatjunk').append(response);
 				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="'+new_offset+'">Load More</a>');
@@ -351,4 +360,29 @@ function get_ajax_data(offset, num) {
 	};
 
 	return data;
+}
+
+function load_carousel(clicked){
+	var ajaxurl = jQuery('#ajaxurl').val(),
+		val     = jQuery(clicked).data('filter'),
+		data = {
+			action: 'get_monster_carousel_posts',
+			filterVal: val
+		};
+	jQuery.ajax({
+		type: 'POST',
+		url: ajaxurl,
+		data: data,
+		cache: false,
+		beforeSend: function(){
+			jQuery('.carousel-wrapper').append('<div class="loading"></div>');
+			jQuery('#carousel-cover').css({'opacity':'0', 'background':'#000', 'zIndex': '99'}).animate({opacity:'0.4'}, 200).append('<div class="loading"></div>');
+		},
+		success: function(response){
+			jQuery('.carousel-wrapper .loading').remove();
+			jQuery('#carousel-cover').css({'zIndex': '-1'}).animate({opacity:'0'}, 200);
+			jQuery('#carousel').html(response);
+		},
+		dataType: 'html'
+	});
 }

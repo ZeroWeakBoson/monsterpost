@@ -12,7 +12,10 @@
 		&:hover {
 			#carousel-prev, 
 			#carousel-next {
-				// .opacity(80);
+				.opacity(80);
+				&:hover {
+					.opacity(100);
+				}
 			}
 		}
 	}
@@ -33,9 +36,19 @@
 		@media (max-width: 767px) {
 			margin: 15px 0;
 		}
+		.loading {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: url(../images/loading-white.png) 50% 50% no-repeat;
+		}
 	}
 }
 #carousel {
+	overflow: hidden;
+	height: 182px;
 	li {
 		position: relative;
 		overflow: hidden;
@@ -265,7 +278,7 @@
 		bottom: 0;
 		z-index: 2;
 		display: block;
-		width: 59px;
+		width: 56px;
 		margin: 1px;
 		text-align: center;
 		vertical-align: middle;
@@ -274,7 +287,8 @@
 		border: 1px solid #fff;
 		#gradient > .vertical(#fff, #fafafa);
 		.box-shadow(0 0 1px rgba(0,0,0,.4));
-		// .opacity(0);
+		.transition(opacity 0.25s ease);
+		.opacity(0);
 		&.disabled {
 			cursor: default;
 			pointer-events: none;
@@ -291,12 +305,13 @@
 		}
 		&:hover {
 			text-decoration: none;
-			.reset-filter();
-			.box-shadow(none);
-			background: none;
-			background: @red;
-			border-color: @red;
-			color: #fff;
+			// .reset-filter();
+			// .box-shadow(none);
+			// background: none;
+			// background: @red;
+			// border-color: @red;
+			// color: #fff;
+			.opacity(100);
 		}
 	}
 	&-prev {
@@ -309,6 +324,15 @@
 		margin-right: 0;
 		.border-radius(@baseBorderRadius 0 0 @baseBorderRadius);
 	}
+}
+#carousel-cover {
+	position: absolute;
+	top: -30px;
+	right: 0;
+	bottom: -25px;
+	left: 0;
+	z-index: -1;
+	text-align: center;
 }
 .middle-hack {
 	display: inline-block;

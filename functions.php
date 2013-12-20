@@ -613,7 +613,7 @@
 					$counter = 1;
 				}
 
-				echo '<div id="post-' . $post_id . '" class="span3 post__holder">';
+				echo '<div id="post-' . $post_id . '" class="span3">';
 						$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
 						$url            = $attachment_url['0'];
 						$image          = aq_resize($url, 254, 134, true);
@@ -754,6 +754,7 @@ if ( !function_exists('monster_free_template_related_posts') ) {
 }
 
 // http://werdswords.com/force-sub-categories-use-the-parent-category-template/
+add_filter( 'category_template', 'monster_subcategory_hierarchy' );
 function monster_subcategory_hierarchy() {
 	$category = get_queried_object();
 
@@ -782,5 +783,79 @@ function monster_subcategory_hierarchy() {
 	return locate_template( $templates );
 }
 
-add_filter( 'category_template', 'monster_subcategory_hierarchy' );
+// Get Carousel Posts
+add_action( 'monster_carousel_posts', 'get_monster_carousel_posts' );
+add_action( 'wp_ajax_get_monster_carousel_posts', 'get_monster_carousel_posts' );
+add_action( 'wp_ajax_nopriv_get_monster_carousel_posts', 'get_monster_carousel_posts' );
+function get_monster_carousel_posts() {
+
+	if ( !empty($_POST) && array_key_exists('filterVal', $_POST) ) {
+		$value = $_POST['filterVal'];
+	} else {
+		$value = 'videos';
+	}
+
+	//get all terms (e.g. tags or post tags), then display all posts in each term
+	$taxonomy   = 'tag';
+	// $param_type = 'tag__in';
+	$param_type = 'tag';
+	$term_args  = array(
+		'orderby' => 'name',
+		'order'   => 'ASC'
+	);
+	$terms = get_terms($taxonomy, $term_args);
+	if ( $terms ) {
+		// foreach( $filterArray as $key => $value ) {
+		$args = array(
+			"$param_type"         => $value,
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'showposts'           => 10,
+			'ignore_sticky_posts' => 1,
+			'meta_key'            => 'tz_filter',
+			'meta_value'          => 'true'
+		);
+		// $i = 0;
+		$carousel_query = new WP_Query($args);
+		if( $carousel_query->have_posts() ) {
+			while ($carousel_query->have_posts()) : $carousel_query->the_post();
+			$post_id = get_the_ID();
+			$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
+			$url            = $attachment_url['0'];
+			$image          = aq_resize($url, 180, 180, true);
+
+			/*if (!$i) { ?>
+				<li id="<?php echo $key; ?>" class="<?php echo $key; ?>">
+			<?php } else { */?>
+				<li class="<?php echo $value; ?>">
+			<?php //}
+
+				if ($image) { ?>
+					<figure class="thumbnail"><a class="carousel-link" href="<?php the_permalink(); ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php echo $image; ?>" alt="<?php the_title(); ?>"></a></figure>
+				<?php } ?>
+				<div class="desc hidden-phone">
+					<time datetime="<?php the_time('Y-m-d\TH:i:s'); ?>"><?php echo get_the_date(); ?></time>
+					<h5><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo my_string_limit_words(get_the_title(), 5); ?></a></h5>
+				</div>
+			</li>
+			<?php
+			// $i++;
+			endwhile; ?>
+			<li class="<?php echo $value; ?> view-all-item">
+				<a href='<?php echo home_url("/tag/$value"); ?>' class="view-all-link" target="_blank">
+					<div class="view-all-text">
+						<strong><?php _e('View all', 'cherry'); ?></strong>
+						<span class="view-all-tag"><?php echo str_replace('-', ' ', $value); ?></span>
+					</div>
+					<div class="middle-hack"></div>
+				</a>
+			</li>
+		<?php }
+		// }
+		wp_reset_postdata(); // Restore global post data stomped by the_post().
+	}
+	if ( !empty($_POST) && array_key_exists('filterVal', $_POST) ) {
+		exit;
+	}
+}
 ?>

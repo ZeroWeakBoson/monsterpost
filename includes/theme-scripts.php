@@ -10,8 +10,8 @@ function my_script() {
 	wp_register_script('mobilemenu', PARENT_URL.'/js/jquery.mobilemenu.js', array('jquery'), '1.0', true);
 	wp_register_script('flexslider', PARENT_URL.'/js/jquery.flexslider-min.js', array('jquery'), '2.1', true);
 	wp_register_script('fittext', PARENT_URL.'/js/jquery.fittext.js', array('jquery'), '1.1', true);
-	wp_register_script('ladda', PARENT_URL.'/js/ladda.min.js', array('jquery'), '0.8.0', true);
 	wp_register_script('spin', PARENT_URL.'/js/spin.min.js', array('jquery'), '0.8.0', true);
+	wp_register_script('ladda', PARENT_URL.'/js/ladda.min.js', array('jquery'), '0.8.0', true);
 	wp_register_script('filestyle', PARENT_URL.'/js/bootstrap-filestyle.js', array('jquery'), '1.0.3', true);
 	wp_register_script('bxslider', PARENT_URL.'/js/jquery.bxslider.js', array('jquery'), '4.1.1', true);
 	
@@ -37,8 +37,8 @@ function my_script() {
 	wp_enqueue_script('mobilemenu');
 	wp_enqueue_script('flexslider');
 	wp_enqueue_script('fittext');
-	wp_enqueue_script('ladda');
 	wp_enqueue_script('spin');
+	wp_enqueue_script('ladda');
 	wp_enqueue_script('filestyle');
 	wp_enqueue_script('bxslider');
 	wp_enqueue_script('selectBoxIt');
