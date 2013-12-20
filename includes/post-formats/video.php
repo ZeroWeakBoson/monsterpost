@@ -40,9 +40,7 @@
 		get_template_part('includes/post-formats/post-thumb');
 
 		echo '<div class="post_content">';
-		if ( has_excerpt() || $full_content ) {
-			the_content('');
-		} else {
+		if ( !$full_content ) {
 			echo substr($content, $pos+4);
 		}
 		echo '<div class="clear"></div></div>';

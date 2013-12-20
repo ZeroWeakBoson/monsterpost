@@ -157,8 +157,8 @@ if ( !function_exists( 'pagination' ) ) {
 		}
 		if ( 1 != $pages ) {
 			echo "<div class=\"pagination pagination__posts\"><ul>";
-			if ( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<li class='first'><a href='".get_pagenum_link(1)."'>first</a></li>";
-			if ( $paged > 1 && $showitems < $pages ) echo "<li class='prev'><a href='".get_pagenum_link($paged - 1)."'>prev</a></li>";
+			if ( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<li class='first'><a href='".get_pagenum_link(1)."'>First</a></li>";
+			if ( $paged > 1 && $showitems < $pages ) echo "<li class='prev'><a href='".get_pagenum_link($paged - 1)."'>Prev</a></li>";
 
 			for ( $i = 1; $i <= $pages; $i++ ) {
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
@@ -166,8 +166,8 @@ if ( !function_exists( 'pagination' ) ) {
 				}
 			}
 
-			if ( $paged < $pages && $showitems < $pages ) echo "<li class='next'><a href=\"".get_pagenum_link($paged + 1)."\">next</a></li>"; 
-			if ( $paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages ) echo "<li class='last'><a href='".get_pagenum_link($pages)."'>last</a></li>";
+			if ( $paged < $pages && $showitems < $pages ) echo "<li class='next'><a href=\"".get_pagenum_link($paged + 1)."\">Next</a></li>"; 
+			if ( $paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages ) echo "<li class='last'><a href='".get_pagenum_link($pages)."'>Last</a></li>";
 			echo "</ul></div>\n";
 		}
 	}
