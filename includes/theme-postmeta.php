@@ -40,21 +40,21 @@ $meta_box_check = array(
 	),
 );
 
-$meta_box_filter = array(
-	'id' => 'tz-meta-box-filter',
-	'title' =>  __('Go to Filterable Carousel', 'cherry'),
-	'page' => 'post',
-	'context' => 'normal',
-	'priority' => 'high',
-	'fields' => array(
-		array( "name" => __('Post from a Filterable Carousel.','cherry'),
-				"desc" => __('Check it, If you want to send this post to Filterable Carousel.','cherry'),
-				"id" => $prefix."filter",
-				"type" => "text",
-				"std" => ""
-			),
-	),
-);
+// $meta_box_filter = array(
+// 	'id' => 'tz-meta-box-filter',
+// 	'title' =>  __('Go to Filterable Carousel', 'cherry'),
+// 	'page' => 'post',
+// 	'context' => 'normal',
+// 	'priority' => 'high',
+// 	'fields' => array(
+// 		array( "name" => __('Post from a Filterable Carousel.','cherry'),
+// 				"desc" => __('Check it, If you want to send this post to Filterable Carousel.','cherry'),
+// 				"id" => $prefix."filter",
+// 				"type" => "text",
+// 				"std" => ""
+// 			),
+// 	),
+// );
 
 $meta_box_source = array(
 	'id' => 'tz-meta-box-source',
@@ -137,11 +137,11 @@ add_action('admin_menu', 'tz_add_box');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_add_box() {
-	global $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video, $meta_box_add_links;
+	global $meta_box_image, $meta_box_check, $meta_box_source, $meta_box_audio, $meta_box_video, $meta_box_add_links;
 
 	add_meta_box($meta_box_image['id'], $meta_box_image['title'], 'tz_show_box_image', $meta_box_image['page'], $meta_box_image['context'], $meta_box_image['priority']);
 	add_meta_box($meta_box_check['id'], $meta_box_check['title'], 'tz_show_box_check', $meta_box_check['page'], $meta_box_check['context'], $meta_box_check['priority']);
-	add_meta_box($meta_box_filter['id'], $meta_box_filter['title'], 'tz_show_box_filter', $meta_box_filter['page'], $meta_box_filter['context'], $meta_box_filter['priority']);
+	// add_meta_box($meta_box_filter['id'], $meta_box_filter['title'], 'tz_show_box_filter', $meta_box_filter['page'], $meta_box_filter['context'], $meta_box_filter['priority']);
 	add_meta_box($meta_box_source['id'], $meta_box_source['title'], 'tz_show_box_source', $meta_box_source['page'], $meta_box_source['context'], $meta_box_source['priority']);
 	add_meta_box($meta_box_audio['id'], $meta_box_audio['title'], 'tz_show_box_audio', $meta_box_audio['page'], $meta_box_audio['context'], $meta_box_audio['priority']);
 	add_meta_box($meta_box_video['id'], $meta_box_video['title'], 'tz_show_box_video', $meta_box_video['page'], $meta_box_video['context'], $meta_box_video['priority']);
@@ -388,7 +388,7 @@ add_action('save_post', 'tz_save_data');
 /*-----------------------------------------------------------------------------------*/
 
 function tz_save_data($post_id) {
-	global $meta_box_image, $meta_box_check, $meta_box_filter, $meta_box_source, $meta_box_audio, $meta_box_video, $meta_box_add_links;
+	global $meta_box_image, $meta_box_check, $meta_box_source, $meta_box_audio, $meta_box_video, $meta_box_add_links;
 
 	// verify nonce
 	if (!isset($_POST['tz_meta_box_nonce']) || !wp_verify_nonce($_POST['tz_meta_box_nonce'], basename(__FILE__))) {
@@ -431,16 +431,16 @@ function tz_save_data($post_id) {
 		}
 	}
 
-	foreach ($meta_box_filter['fields'] as $field) {
-		$old = get_post_meta($post_id, $field['id'], true);
-		$new = $_POST[$field['id']];
+	// foreach ($meta_box_filter['fields'] as $field) {
+	// 	$old = get_post_meta($post_id, $field['id'], true);
+	// 	$new = $_POST[$field['id']];
 
-		if ($new && $new != $old) {
-			update_post_meta($post_id, $field['id'], stripslashes(htmlspecialchars($new)));
-		} elseif ('' == $new && $old) {
-			delete_post_meta($post_id, $field['id'], $old);
-		}
-	}
+	// 	if ($new && $new != $old) {
+	// 		update_post_meta($post_id, $field['id'], stripslashes(htmlspecialchars($new)));
+	// 	} elseif ('' == $new && $old) {
+	// 		delete_post_meta($post_id, $field['id'], $old);
+	// 	}
+	// }
 
 	foreach ($meta_box_source['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
