@@ -18,12 +18,12 @@
 
 			if ( $pos !== false ) {
 				$temp_str = substr($content, 0, $pos);
-				if ( (stripos( $temp_str, 'script' ) !== false) || (stripos( $temp_str, 'http' ) !== false) ) {
+				if ( (stripos( $temp_str, 'script' ) !== false) || (stripos( $temp_str, 'iframe' ) !== false) ) {
 					$full_content = true;
 				}
 
 				if ( stripos( $temp_str, 'script' ) === false ) { // search tag <script>
-					if ( stripos( $temp_str, 'http' ) === false ) { // search iframe and others elements with source(src) on 'http' protocol
+					if ( stripos( $temp_str, 'iframe' ) === false ) { // search iframe and others elements with source(src) on 'iframe' protocol
 						echo wpautop( force_balance_tags( $temp_str ) );
 					}
 				}
