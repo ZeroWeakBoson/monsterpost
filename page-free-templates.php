@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Template Name: Free Templates
@@ -6,7 +7,10 @@ get_header(); ?>
 	<div class="container">
 		<div id="content">
 			<div class="content-inner">
-				<?php get_template_part('title'); ?>
+				<?php
+					get_template_part('title');
+					the_content();
+				?>
 
 				<form action="#" method="post" id="toolbar-filter" class="row-fluid">
 					<?php

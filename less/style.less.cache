@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:80:"D:\wamp_x64\www\custom\monsterblog/wp-content/themes/monsterpost/less/style.less";s:8:"compiled";s:131925:"@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+a:4:{s:4:"root";s:84:"G:\wamp\www\wordpress\2013\monsterpost/wp-content/themes/monsterpost/less/style.less";s:8:"compiled";s:131846:"@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
 ::selection {
 	background:rgba(221,75,57,0.8);
 	color:#fff;
@@ -718,13 +718,7 @@ h6 { text-transform:uppercase; }
 	float:right !important;
 }
 .container_single_post #content { padding-bottom:30px; }
-#content hr {
-	border-top-color:#f2f2f2;
-	margin-left:-25%;
-	margin-right:-25%;
-	padding-left:25%;
-	padding-right:25%;
-}
+#content hr { border-top-color:#f2f2f2; }
 @media (max-width: 768px) {
 	.content-single-post {
 		padding-left:20px;
@@ -4929,4 +4923,4 @@ embed, iframe, object, video { max-width:100%; }
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
-";s:5:"files";a:13:{s:80:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\style.less";i:1386849326;s:82:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\general.less";i:1386772994;s:81:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\header.less";i:1387456454;s:83:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\carousel.less";i:1387547550;s:82:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\content.less";i:1387468737;s:83:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\comments.less";i:1380399981;s:82:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\widgets.less";i:1386079124;s:85:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\shortcodes.less";i:1387292017;s:81:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\footer.less";i:1386776360;s:80:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\forms.less";i:1387468365;s:79:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\misc.less";i:1387466530;s:84:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\less\variables.less";i:1386079119;s:91:"D:\wamp_x64\www\custom\monsterblog\wp-content\themes\monsterpost\bootstrap\less\mixins.less";i:1380107506;}s:7:"updated";i:1387547555;}
+";s:5:"files";a:13:{s:84:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\style.less";i:1386873334;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\general.less";i:1386595450;s:85:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\header.less";i:1387383394;s:87:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\carousel.less";i:1387801842;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\content.less";i:1387812107;s:87:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\comments.less";i:1385402576;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\widgets.less";i:1386595450;s:89:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\shortcodes.less";i:1387355499;s:85:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\footer.less";i:1386873334;s:84:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\forms.less";i:1387801842;s:83:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\misc.less";i:1387801842;s:88:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\variables.less";i:1385402576;s:95:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\bootstrap\less\mixins.less";i:1385402576;}s:7:"updated";i:1387812117;}

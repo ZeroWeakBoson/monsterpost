@@ -50,23 +50,19 @@
 	<div class="carousel-wrapper">
 		<div id="carousel-cover"></div>
 		<ul id="carousel" class="clearfix unstyled">
-			<?php do_action('monster_carousel_posts'); ?>
+			<?php do_action( 'monster_carousel_posts' ); ?>
 		</ul>
 		
 		<button id="carousel-prev"><span>&lsaquo;</span></button>
 		<button id="carousel-next"><span>&rsaquo;</span></button>
 		<script type="text/javascript">
 			jQuery(window).load(function(){
-				var _visible = 5;
-
 				jQuery('#carousel').carouFredSel({
-					items: _visible,
+					items: 5,
 					width: '100%',
 					circular: true,
 					infinite: false,
 					auto: false,
-					// responsive: true,
-					// align: 'left',
 					scroll: {
 						duration: 600
 					},
@@ -85,26 +81,6 @@
 				}, {
 					debug: false
 				});
-
-				// $filters.click(function(e){
-				// 	e.preventDefault();
-
-				// 	var group     = jQuery(this).attr('href').slice(1),
-				// 		slides    = jQuery('#carousel li.' + group),
-				// 		deviation = Math.floor( ( _visible - slides.length ) / 2 );
-				// 	if ( deviation < 0 ) {
-				// 		deviation = 0;
-				// 	}
-
-				// 	jQuery('#carousel').trigger('slideTo', [jQuery('#' + group), -deviation]);
-				// 	// jQuery('#carousel li').stop().fadeTo(300, 0.4);
-				// 	// slides.stop().fadeTo(300, 1);
-				// 	jQuery('#carousel li').addClass('disabled');
-				// 	slides.removeClass('disabled');
-
-				// 	$filters.removeClass('selected');
-				// 	jQuery(this).addClass('selected');
-				// });
 			});
 		</script>
 	</div>

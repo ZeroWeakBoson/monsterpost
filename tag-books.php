@@ -7,6 +7,11 @@
 						get_template_part('title');
 						echo tag_description(); // displays the tag's description from the Wordpress admin
 
+						global $query_string;
+						parse_str($query_string, $args);
+						$args['category_name'] = 'watch-learn';
+						query_posts( $args );
+
 						if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('post__holder'); ?>>
 								<?php get_template_part('includes/post-formats/post-thumb'); ?>
@@ -25,13 +30,13 @@
 							<hr>
 							<?php
 							endwhile;
+							wp_reset_query();
 							else: ?>
 								<div class="no-results">
 									<?php echo '<h5>' . __('There has been an error.', 'cherry') . '</strong></h5>'; ?>
 									<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
 									<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
 								</div><!--.no-results-->
-							</div>
 						<?php endif;
 					?>
 					<?php get_template_part('includes/post-formats/post-nav'); ?>

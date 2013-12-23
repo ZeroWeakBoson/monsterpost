@@ -7,13 +7,19 @@
 						get_template_part('title');
 						echo tag_description(); // displays the tag's description from the Wordpress admin
 
+						global $query_string;
+						parse_str($query_string, $args);
+						$args['category_name'] = 'watch-learn';
+						query_posts( $args );
+
 						if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class('post__holder'); ?>>
+							<?php get_template_part('includes/post-formats/post-thumb'); ?>
 							<header class="post-header">
 								<h3><a href="<?php the_permalink(); ?>" title="<?php _e('Permalink to:', 'cherry');?> <?php the_title(); ?>"><?php the_title(); ?></a></h3>
 							</header>
 
-							<?php $audio_source = htmlspecialchars_decode( get_post_meta( $post->ID, 'tz_audio_source', true ) );
+							<!--?php $audio_source = htmlspecialchars_decode( get_post_meta( $post->ID, 'tz_audio_source', true ) );
 								if ( !empty($audio_source) ) {
 
 									if ( strpos( $audio_source, 'http' ) !== false ) {
@@ -28,18 +34,20 @@
 										$src = esc_url( $src );
 										$attr = array('src' => $src);
 										if ( function_exists('wp_audio_shortcode') ) {
-											echo '<div class="source_holder source__audio">' . wp_audio_shortcode( $attr ) . '</div><!--.source__audio-->';
+											echo '<div class="source_holder source__audio">' . wp_audio_shortcode( $attr ) . '</div>';
 										}
 									}
 								}
-							?>
+							?-->
 							<!-- Post Content -->
 							<div class="post_content">
 								<div class="excerpt">
-									<?php 
-										$excerpt = get_the_excerpt();
-										echo my_string_limit_words($excerpt, 60);
-									?>
+									<?php if ( has_excerpt() ) {
+										the_excerpt();
+									} else {
+										$content = get_the_content();
+										echo my_string_limit_words($content, 48);
+									} ?>
 								</div>
 							</div>
 							<!-- //Post Content -->
@@ -47,6 +55,7 @@
 					<hr>
 					<?php
 						endwhile;
+						wp_reset_query();
 						get_template_part('includes/post-formats/post-nav');
 						else: ?>
 							<div class="no-results">
@@ -54,7 +63,6 @@
 								<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
 								<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
 							</div><!--.no-results-->
-						</div>
 					<?php endif; ?>
 				</div>
 			</div><!--#content-->

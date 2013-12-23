@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
-*
-* Layout for special categories
-*
-**/
+ *
+ * Layout for special categories
+ *
+ **/
 $cat_desc = category_description();
 if (!empty($cat_desc)) {
 	echo '<div class="category-desc">' . $cat_desc . '</div>';
@@ -26,12 +26,20 @@ if (!empty($cat_desc)) {
 if (have_posts()) : ?>
 
 	<div class="post-tile row-fluid">
-<?php 
+<?php
 	$post_counter = 0; // main posts counter
 	$pair_post    = 1; // counter for pair posts
+	$adv_content  = 2; // adv content - output after 2 posts
 
 		while (have_posts()) : the_post();
-		
+
+			if ( $post_counter == $adv_content ) {
+				// output advertising in the content
+				if ( of_get_option('bnr_content') ) {
+					get_template_part('bnr/foo-content');
+				}
+			}
+
 			if ( $pair_post > 2 ) {
 				echo '<div class="post-tile row-fluid">';
 				$pair_post = 1;

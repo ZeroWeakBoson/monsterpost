@@ -3,25 +3,25 @@
 		<div class="row">
 			<div id="content" class="span8 <?php echo of_get_option('blog_sidebar_pos') ?>">
 				<div class="content-inner">
-					<?php 
+					<?php
 						get_template_part('title');
 						echo tag_description(); // displays the tag's description from the Wordpress admin
 					?>
 					<div class="post-tile row-fluid">
-					<?php 
+					<?php
 						$post_counter 	= 0; // main posts counter
 						$pair_post 		= 1; // counter for pair posts
 						$adv_content 	= 2; // adv content - output after 2 posts
-					
+
 						if (have_posts()) : while (have_posts()) : the_post();
-							
+
 							if ( $post_counter == $adv_content ) {
 								// output advertising in the content
 								if ( of_get_option('bnr_content') ) {
 									get_template_part('bnr/foo-content');
 								}
 							}
-					
+
 							if ( $pair_post > 2 ) {
 								echo '<div class="post-tile row-fluid">';
 								$pair_post = 1;
@@ -47,7 +47,7 @@
 								</div><!--.no-results-->
 							</div>
 						<?php endif;
-						
+
 						if ( $post_counter % 2 ) {
 							echo '</div>'; // .row-fluid
 						}

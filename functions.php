@@ -762,6 +762,11 @@ function monster_subcategory_hierarchy() {
 
 	$templates = array();
 
+	if ( $category->slug == 'free-website-templates' ) {
+		$templates[] = 'category.php';
+		return locate_template( $templates );
+	}
+
 	if ( $parent_id == 0 ) {
 		// Use default values from get_category_template()
 		$templates[] = "category-{$category->slug}.php";
@@ -802,7 +807,7 @@ function get_monster_carousel_posts() {
 		'orderby' => 'name',
 		'order'   => 'ASC'
 	);
-	$terms = get_terms($taxonomy, $term_args);
+	$terms = get_terms( $taxonomy, $term_args );
 	if ( $terms ) {
 		$args = array(
 			"$param_type"         => $value,
@@ -810,31 +815,38 @@ function get_monster_carousel_posts() {
 			'post_status'         => 'publish',
 			'showposts'           => 10,
 			'ignore_sticky_posts' => 1,
-			'meta_key'            => 'tz_filter',
-			'meta_value'          => 'true'
+			'tax_query'           => array(
+				array(
+					'taxonomy' => 'category',
+					'field'    => 'slug',
+					'terms'    => array( 'watch-learn' )
+				)
+			)
+			// 'meta_key'            => 'tz_filter',
+			// 'meta_value'          => 'true'
 		);
 		$carousel_query = new WP_Query($args);
 		if( $carousel_query->have_posts() ) {
 			while ($carousel_query->have_posts()) : $carousel_query->the_post();
-			$post_id = get_the_ID();
-			$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
-			$url            = $attachment_url['0'];
-			$image          = aq_resize($url, 180, 180, true);
+				$post_id = get_the_ID();
+				$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
+				$url            = $attachment_url['0'];
+				$image          = aq_resize($url, 180, 180, true);
 
-			echo "<li class='$value'>";
-				if ($image) {
-					echo '<figure class="thumbnail">';
-						echo '<a class="carousel-link" href="' . get_permalink( $post_id ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
-							echo '<img src="' . $image . '" alt="' . the_title('', '', false) . '">';
-						echo '</a>';
-					echo '</figure>';
-				}
-				echo '<div class="desc hidden-phone">
-						<time datetime="'.get_the_time('Y-m-d\TH:i:s', $post_id).'">' . get_the_date() . '</time>
-						<h5><a href="' . get_permalink( $post_id ) . '>" title="' . the_title('', '', false) . '">' . my_string_limit_words(get_the_title(), 5) . '</a></h5>
-					</div>';
-			echo '</li>';
-			endwhile; 
+				echo "<li class='$value'>";
+					if ($image) {
+						echo '<figure class="thumbnail">';
+							echo '<a class="carousel-link" href="' . get_permalink( $post_id ) . '" title="Permanent Link to ' . the_title('', '', false) . '">';
+								echo '<img src="' . $image . '" alt="' . the_title('', '', false) . '">';
+							echo '</a>';
+						echo '</figure>';
+					}
+					echo '<div class="desc hidden-phone">
+							<time datetime="'.get_the_time('Y-m-d\TH:i:s', $post_id).'">' . get_the_date() . '</time>
+							<h5><a href="' . get_permalink( $post_id ) . '>" title="' . the_title('', '', false) . '">' . my_string_limit_words(get_the_title(), 5) . '</a></h5>
+						</div>';
+				echo '</li>';
+			endwhile;
 			echo '<li class="' . $value . ' view-all-item">
 				<a href=' . home_url("/tag/$value") . ' class="view-all-link" target="_blank">
 					<div class="view-all-text">

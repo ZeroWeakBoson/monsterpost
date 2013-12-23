@@ -17,15 +17,24 @@
 
 					query_posts(
 						array(
-							'post_status' => 'publish',
-							'orderby'     => 'date',
-							'order'       => 'DESC',
-							'meta_query'  => array(
+							'post_status'         => 'publish',
+							'ignore_sticky_posts' => 1,
+							'orderby'             => 'date',
+							'order'               => 'DESC',
+							'tax_query'           => array(
 								array(
-									'key'     => 'tz_filter',
-									'compare' => 'NOT EXISTS'
+									'taxonomy' => 'category',
+									'field'    => 'slug',
+									'terms'    => array( 'watch-learn' ),
+									'operator' => 'NOT IN'
 								)
 							)
+							// 'meta_query'  => array(
+							// 	array(
+							// 		'key'     => 'tz_filter',
+							// 		'compare' => 'NOT EXISTS'
+							// 	)
+							// )
 						)
 					);
 
