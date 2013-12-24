@@ -25,7 +25,7 @@
 								array(
 									'taxonomy' => 'category',
 									'field'    => 'slug',
-									'terms'    => array( 'watch-learn' ),
+									'terms'    => array( 'learn-web-design' ),
 									'operator' => 'NOT IN'
 								)
 							)

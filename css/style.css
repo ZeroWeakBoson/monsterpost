@@ -478,7 +478,7 @@ h6 { text-transform:uppercase; }
 #carousel li.videos:after { content:"\e01d"; }
 #carousel li.books:after { content:"\e038"; }
 #carousel li.podcasts:after { content:"\e03a"; }
-#carousel li.slide-decks:after { content:"\e00f"; }
+#carousel li.slideshows:after { content:"\e00f"; }
 #carousel-current-state {
 	display:block;
 	margin-right:35px;

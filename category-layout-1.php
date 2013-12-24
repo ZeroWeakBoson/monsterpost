@@ -4,25 +4,6 @@
  * Layout for special categories
  *
  **/
-$cat_desc = category_description();
-if (!empty($cat_desc)) {
-	echo '<div class="category-desc">' . $cat_desc . '</div>';
-}
-
-// query_posts(
-// 	array(
-// 		'post_status' => 'publish',
-// 		'orderby'     => 'date',
-// 		'order'       => 'DESC',
-// 		'meta_query'  => array(
-// 			array(
-// 				'key'     => 'tz_filter',
-// 				'compare' => 'NOT EXISTS'
-// 			)
-// 		)
-// 	)
-// );
-
 if (have_posts()) : ?>
 
 	<div class="post-tile row-fluid">
@@ -64,11 +45,10 @@ if (have_posts()) : ?>
 			echo '</div><!--.post-tile-->';
 		}
 	get_template_part('includes/post-formats/post-nav');
-	// wp_reset_query();
-	else: ?>
-		<div class="no-results">
-			<?php echo '<h5>' . __('There has been an error.', 'cherry') . '</strong></h5>'; ?>
-			<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
-			<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
-		</div><!--.no-results-->
-	<?php endif; ?>
+else: ?>
+	<div class="no-results">
+		<?php echo '<h5>' . __('There has been an error.', 'cherry') . '</strong></h5>'; ?>
+		<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
+		<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
+	</div><!--.no-results-->
+<?php endif; ?>

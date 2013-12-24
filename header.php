@@ -5,7 +5,9 @@
 <!--[if IE 9 ]><html class="ie ie9" <?php language_attributes();?>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes();?>> <!--<![endif]-->
 <head>
-	<title><?php if ( is_category() ) {
+	<title><?php if ( is_category('learn-web-design') ) {
+		echo __('Learn Web Design Easy &amp; Fun with Videos, Books, Podcasts &amp; Slideshows', 'cherry');
+	} elseif ( is_category() ) {
 		echo __('Category Archive for &quot;', 'cherry'); single_cat_title(); echo __('&quot; | ', 'cherry'); bloginfo( 'name' );
 	} elseif ( is_tag() ) {
 		echo __('Tag Archive for &quot;', 'cherry'); single_tag_title(); echo __('&quot; | ', 'cherry'); bloginfo( 'name' );

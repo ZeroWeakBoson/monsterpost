@@ -1,10 +1,4 @@
-<?php 
-	get_header();
-
-	// if ( in_category('free-website-templates') ) {
-	// 	get_template_part( 'single-free-website-templates' );
-	// } else {
-	?>
+<?php get_header(); ?>
 	<div class="container container_single_post">
 		<div class="row">
 			<div id="content" class="span12">
@@ -12,7 +6,7 @@
 					<div class="span2">
 						<?php get_template_part( 'includes/post-formats/post-date' ); ?>
 					</div>
-					
+
 					<div class="span10 content-single-post clearfix">
 						<?php if ( is_singular() ) : ?>
 							<h1 class="post-title"><?php the_title(); ?></h1>
@@ -28,10 +22,10 @@
 										get_template_part( 'includes/post-formats/standard' );
 
 									wp_link_pages('before=<div class="pagination">&after=</div>');
-								
+
 									global $tag_array; // from post-date.php
-									$filter_array = array('videos', 'books', 'podcasts', 'slide-decks'); // tags array from filterable-carousel.php
-									
+									$filter_array = array('videos', 'books', 'podcasts', 'slideshows'); // tags array from filterable-carousel.php
+
 									if ( array_intersect($filter_array, $tag_array) ) {
 										$source = get_post_meta(get_the_ID(), 'tz_source_url', true); ?>
 										<div class="source_holder">
@@ -52,7 +46,7 @@
 								</div><!--.post-author-->
 
 								<div class="feedback_holder clearfix">
-									<?php 
+									<?php
 										echo '<h3>' . __('Enjoyed This Post? Share!', 'cherry') . '</h3>';
 										get_template_part('includes/post-formats/social-buttons');
 										// wpsocialite_markup();
@@ -60,7 +54,7 @@
 									?>
 								</div><!--.feedback_holder-->
 
-								<?php 
+								<?php
 									get_template_part( 'includes/post-formats/read-also-posts' );
 
 									// If comments are opened.
@@ -87,7 +81,7 @@
 											<?php previous_post_link('%link', '<span>' . __('&lsaquo;&nbsp;Previous', 'cherry') . '</span>' . my_string_limit_words($prev_post->post_title, 7)); ?>
 										</li>
 										<?php endif;
-										
+
 										$next_post = get_next_post();
 										if ( !empty( $next_post ) ): ?>
 										<li class="next">
@@ -95,12 +89,12 @@
 										</li>
 										<?php endif; ?>
 									</ul><!--.single-pager -->
-									
-									<?php 
+
+									<?php
 									if (function_exists('wpp_get_mostpopular')) { ?>
 										<div class="custom-popular-posts">
 											<h3><?php _e('Popular Posts', 'cherry'); ?></h3>
-											<?php 
+											<?php
 												$args = array(
 													'range'                => 'weekly',
 													'limit'                => 5,
@@ -125,6 +119,4 @@
 			</div><!--#content-->
 		</div><!--.row-->
 	</div><!--.container-->
-	<?php 
-// } 
-get_footer(); ?>
+<?php get_footer(); ?>

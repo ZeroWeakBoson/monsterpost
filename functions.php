@@ -819,7 +819,7 @@ function get_monster_carousel_posts() {
 				array(
 					'taxonomy' => 'category',
 					'field'    => 'slug',
-					'terms'    => array( 'watch-learn' )
+					'terms'    => array( 'learn-web-design' )
 				)
 			)
 			// 'meta_key'            => 'tz_filter',

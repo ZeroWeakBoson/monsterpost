@@ -5,6 +5,10 @@
 				<div class="content-inner">
 					<?php
 						get_template_part('title');
+						$cat_desc = category_description();
+						if (!empty($cat_desc)) {
+							echo '<div class="category-desc">' . $cat_desc . '</div>';
+						}
 
 						$args = array('news', 'articles', 'tutorials', 'tools', 'inspiration', 'free-stuff', 'interviews', 'infographics');
 						if (is_category($args)) {

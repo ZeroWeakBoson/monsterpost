@@ -7,7 +7,7 @@
 						get_template_part('title');
 						echo tag_description(); // displays the tag's description from the Wordpress admin
 
-						$filter_array = array('videos', 'books', 'podcasts', 'slide-decks'); // tags array from filterable-carousel.php
+						$filter_array = array('videos', 'books', 'podcasts', 'slideshows'); // tags array from filterable-carousel.php
 						if ( is_tag( $filter_array ) ) {
 							$custom_main_query = true;
 						} else {
@@ -19,7 +19,7 @@
 							// build custom main query
 							global $query_string;
 							parse_str($query_string, $args);
-							$args['category_name'] = 'watch-learn';
+							$args['category_name'] = 'learn-web-design';
 							query_posts( $args );
 						}
 					?>
@@ -57,6 +57,7 @@
 							endwhile;
 							get_template_part('includes/post-formats/post-nav');
 						else: ?>
+								</div>
 							<div class="no-results">
 								<?php echo '<h5>' . __('There has been an error.', 'cherry') . '</strong></h5>'; ?>
 								<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
