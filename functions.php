@@ -843,7 +843,7 @@ function get_monster_carousel_posts() {
 					}
 					echo '<div class="desc hidden-phone">
 							<time datetime="'.get_the_time('Y-m-d\TH:i:s', $post_id).'">' . get_the_date() . '</time>
-							<h5><a href="' . get_permalink( $post_id ) . '>" title="' . the_title('', '', false) . '">' . my_string_limit_words(get_the_title(), 5) . '</a></h5>
+							<h5><a href="' . get_permalink( $post_id ) . '" title="' . the_title('', '', false) . '">' . my_string_limit_words( get_the_title(), 5 ) . '</a></h5>
 						</div>';
 				echo '</li>';
 			endwhile;

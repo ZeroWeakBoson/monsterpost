@@ -85,4 +85,5 @@
 		</script>
 	</div>
 </div>
+<hr>
 <!-- END CAROUSEL -->

@@ -1361,6 +1361,18 @@ html[xmlns] .slides { display: block;}
 				}
 			}
 		}
+		center {
+			*zoom: 1;
+			&:before,
+			&:after {
+				display: table;
+				content: "";
+				line-height: 0;
+			}
+			&:after {
+				clear: both;
+			}
+		}
 	}//post_content
 
 	&_excerpt {
@@ -1733,40 +1745,59 @@ p.gravatar {
 }
 
 /* Read Also Posts */
-.read-also{
-	&_h {
-		margin-top: 0;
-	}
-	&-posts {
-		margin: 0 0 40px;
-	}
-	&_list {
-		padding: 35px 0 30px;
-		#gradient>.vertical(#333, #2f2f2f);
-		.border-radius(@baseBorderRadius);
-		@media (min-width: 768px) and (max-width: 979px) {
-			padding: 20px 0;
+.read-also-posts {
+	margin-bottom: 30px;
+	.related-posts{
+		float: none;
+		margin: 0;
+		&_h {
+			margin-top: 0;
 		}
-		@media (max-width: 768px) {
-			padding: 20px 0;
+		&-posts {
+			margin: 0 0 40px;
 		}
-		@media (max-width: 480px) {
-			padding: 20px;
+		&_list {
+			overflow: hidden;
+			padding: 35px 0 30px;
+			#gradient>.vertical(#333, #2f2f2f);
+			.border-radius(@baseBorderRadius);
+			@media (min-width: 768px) and (max-width: 979px) {
+				padding: 20px 0;
+			}
+			@media (max-width: 768px) {
+				padding: 20px 0;
+			}
+			@media (max-width: 480px) {
+				padding: 20px;
+			}
 		}
-	}
-	&_item {
-		float: left;
-		width: 24%;
-		margin-left: 5%;
-		padding: 0;
-		list-style-type:none;
-		overflow: hidden;
-		vertical-align: top;
-		color: #7f7f7f;
-		.inner {
-			// padding-left: 25px;
+		&_item {
+			float: left;
+			width: 24%;
+			margin-left: 5%;
+			margin-top: 0;
+			padding: 0;
+			list-style-type:none;
+			overflow: hidden;
+			vertical-align: top;
+			color: #7f7f7f;
+			.featured-thumbnail {
+				> a {
+					display: none;
+				}
+			}
+			.desc {
+				position: relative;
+				right: auto;
+				bottom: auto;
+				left: auto;
+				padding: 0;
+				background: none;
+			}
 			time {
 				color: #7f7f7f;
+				font-size: 16px;
+				line-height: 1.23;
 			}
 			h5 {
 				font: normal 17px/20px @serifFontFamily;
@@ -1788,12 +1819,12 @@ p.gravatar {
 					color: @red;
 				}
 			}
-		}
-		@media (max-width: 480px) {
-			float: none;
-			display: block;
-			width: 100%;
-			margin: 0;
+			@media (max-width: 480px) {
+				float: none;
+				display: block;
+				width: 100%;
+				margin: 0;
+			}
 		}
 	}
 }

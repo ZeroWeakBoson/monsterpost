@@ -105,7 +105,7 @@
 								<p><?php _e('We apologize for any inconvenience, please', 'cherry'); ?> <a href="<?php echo home_url('/'); ?>" title="<?php bloginfo('description'); ?>"><?php _e('return to the home page', 'cherry'); ?></a> <?php _e('or use the search form below.', 'cherry'); ?></p>
 								<?php get_search_form(); /* outputs the default Wordpress search form */ ?>
 							</div><!--.no-results-->
-						<?php endif; ?>
+					<?php endif; ?>
 				</div><!--.content-inner-->
 			</div><!--#content-->
 			<?php get_sidebar(); ?>

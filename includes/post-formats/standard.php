@@ -20,12 +20,12 @@
 
 			if ( $pos !== false ) {
 				$temp_str = substr($content, 0, $pos);
-				if ( (stripos( $temp_str, 'script' ) !== false) || (stripos( $temp_str, 'iframe' ) !== false) ) {
+				if ( (stripos( $temp_str, '<script' ) !== false) || (stripos( $temp_str, '<iframe' ) !== false) ) {
 					$full_content = true;
 				}
 
-				if ( stripos( $temp_str, 'script' ) === false ) { // search tag <script>
-					if ( stripos( $temp_str, 'iframe' ) === false ) { // search iframe and others elements with source(src) on 'iframe' protocol
+				if ( stripos( $temp_str, '<script' ) === false ) { // search tag <script>
+					if ( stripos( $temp_str, '<iframe' ) === false ) { // search iframe and others elements with source(src) on 'iframe' protocol
 						echo wpautop( force_balance_tags( $temp_str ) );
 					}
 				}
@@ -39,6 +39,8 @@
 		echo '<div class="post_content">';
 		if ( !$full_content ) {
 			echo substr($content, $pos+4);
+		} else {
+			echo $content;
 		}
 		echo '<div class="clear"></div></div>';
 	endif;

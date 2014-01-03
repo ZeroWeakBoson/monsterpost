@@ -55,7 +55,8 @@
 								</div><!--.feedback_holder-->
 
 								<?php
-									get_template_part( 'includes/post-formats/read-also-posts' );
+									// get_template_part( 'includes/post-formats/read-also-posts' );
+									echo '<div class="read-also-posts clearfix">' . do_shortcode('[related_posts title="Read Also" num_to_display="3" no_rp_text="No Related Posts"]') . '</div>';
 
 									// If comments are opened.
 									if ( comments_open() ) :

@@ -43,7 +43,7 @@ class MY_NewsletterWidget extends WP_Widget {
 	function form( $instance ) {
 
 		//Set up some default widget settings.
-		$defaults = array( 'title' => __('Get Updates (it\'s free)', 'cherry'), 'desc' => __('Enter your email to get free newsletter updates', 'cherry') );
+		$defaults = array( 'title' => __('Get Updates (it\'s free)', 'cherry'), 'desc' => __('Enter your email to get free newsletter updates.', 'cherry') );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 		<p>
