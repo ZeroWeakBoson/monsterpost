@@ -92,7 +92,7 @@
 									else
 										$class = '';
 
-									$link = home_url( '/' . $year . '/'.date( "m", strtotime($year . '-' . $months[0] . '-01') ) );
+									$link = home_url( '/' . $year . '/'.date( "m", strtotime($year . '-' . $months[count($months)-1]) ) );
 									echo "<li><a href='$link' $class>$year</a></li>";
 								}
 							?>

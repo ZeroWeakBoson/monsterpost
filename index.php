@@ -28,13 +28,13 @@
 									'terms'    => array( 'learn-web-design' ),
 									'operator' => 'NOT IN'
 								)
+							),
+							'meta_query'  => array(
+								array(
+									'key'     => 'tz_top_check',
+									'compare' => 'NOT EXISTS'
+								)
 							)
-							// 'meta_query'  => array(
-							// 	array(
-							// 		'key'     => 'tz_filter',
-							// 		'compare' => 'NOT EXISTS'
-							// 	)
-							// )
 						)
 					);
 
