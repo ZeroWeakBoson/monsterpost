@@ -340,6 +340,30 @@ article .post-content img {
 .list.minus-list > ul li:before {
 	content: "\f068";
 }
+/* Circle List */
+.list.circle-list > ul {
+	margin-bottom: 5px;
+}
+.list.circle-list > ul li {
+	margin: 0;
+	padding-top: 4px;
+	&:first-child {
+		padding-top: 0;
+	}
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 4px;
+		height: 4px;
+		margin: 8px 10px 0 0;
+		vertical-align: top;
+		background: @red;
+		.border-radius(4px);
+	}
+	em {
+		color: #7f7f7f;
+	}
+}
 
 
 /* Lightbox */

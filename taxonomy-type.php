@@ -8,8 +8,34 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 	<div class="container">
 		<div id="content">
 			<div class="content-inner">
+				<!-- <section class="title-section">
+					<h1 class="title-header"><?php echo ucwords(str_replace('-', ' ', apply_filters( 'the_title', $term->slug ))); ?></h1>
+				</section> -->
 				<section class="title-section">
-					<h1 class="title-header"><?php _e('Free' , 'cherry'); echo ' ' . apply_filters( 'the_title', $term->name ) . ' ';  _e('Templates', 'cherry'); ?></h1>
+					<h1 class="title-header">
+					<?php
+						$wpseo_taxonomy_meta = get_option( 'wpseo_taxonomy_meta', false );
+
+						if ( is_array($wpseo_taxonomy_meta) && array_key_exists('type', $wpseo_taxonomy_meta) ) {
+
+							$wpseo_type_meta = $wpseo_taxonomy_meta['type'];
+
+							if ( array_key_exists($term->term_id, $wpseo_type_meta) ) {
+
+								$end = strpos($wpseo_type_meta[$term->term_id]['wpseo_title'], '%');
+								if ( $end === FALSE ) {
+									echo $wpseo_type_meta[$term->term_id]['wpseo_title'];
+								} else {
+									echo substr( $wpseo_type_meta[$term->term_id]['wpseo_title'], 0, $end );
+								}
+							} else {
+								single_cat_title();
+							}
+						} else {
+							single_cat_title();
+						}
+					?>
+					</h1>
 				</section>
 
 				<div id="allthatjunk">

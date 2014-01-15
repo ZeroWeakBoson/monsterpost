@@ -188,6 +188,15 @@ function minus_list_shortcode($atts, $content = null) {
 }
 add_shortcode('minus_list', 'minus_list_shortcode');
 
+// Circle List
+function circle_list_shortcode($atts, $content = null) {
+	$output = '<div class="list styled circle-list">';
+	$output .= do_shortcode($content);
+	$output .= '</div>';
+	return $output;
+}
+add_shortcode('circle_list', 'circle_list_shortcode');
+
 // Custom List
 function custom_list_shortcode($atts, $content = null) {
 	$output = '<div class="list styled custom-list">';

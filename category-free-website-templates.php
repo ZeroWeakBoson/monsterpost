@@ -8,10 +8,36 @@ get_header();
 	<div class="row">
 		<div id="content" class="span8 <?php echo of_get_option('blog_sidebar_pos') ?>">
 			<div class="content-inner">
-				<?php
-					get_template_part('title');
+				<section class="title-section">
+					<h1 class="title-header">
+					<?php
+						$wpseo_taxonomy_meta = get_option( 'wpseo_taxonomy_meta', false );
 
-					$cat_desc = category_description();
+						if ( is_array($wpseo_taxonomy_meta) && array_key_exists('category', $wpseo_taxonomy_meta) ) {
+
+							$wpseo_cat_meta = $wpseo_taxonomy_meta['category'];
+							$category       = get_category( get_query_var( 'cat' ) );
+							$cat_id         = $category->cat_ID;
+
+							if ( array_key_exists($cat_id, $wpseo_cat_meta) ) {
+
+								$end = strpos($wpseo_cat_meta[$cat_id]['wpseo_title'], '%');
+								if ( $end === FALSE ) {
+									echo $wpseo_cat_meta[$cat_id]['wpseo_title'];
+								} else {
+									echo substr( $wpseo_cat_meta[$cat_id]['wpseo_title'], 0, $end );
+								}
+							} else {
+								single_cat_title();
+							}
+						} else {
+							single_cat_title();
+						}
+					?>
+					</h1>
+				</section>
+
+				<?php $cat_desc = category_description();
 					if (!empty($cat_desc)) {
 						echo '<div class="category-desc">' . $cat_desc . '</div>';
 					}
