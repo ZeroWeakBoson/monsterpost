@@ -10,19 +10,21 @@
 		<figure class="post-author_gravatar">
 		<?php if(function_exists('get_avatar')) { echo get_avatar( $curauth->user_email, $size = '270' ); } ?>
 		</figure>
-		
-		<?php if($curauth->description !="") { ?>
-		<div class="post-author_desc">
-			<?php echo $curauth->description; ?>
-		</div>
-		<?php } ?>
+
+		<?php $description = get_user_meta( intval($author), 'description', true );
+			if ( $description ) {
+				echo '<div class="post-author_desc">' . $description . '</div>';
+			}
+		?>
 	</div><!--.post-author-->
 
 	<?php
 		// get all categories and record to array
-		$categories = get_categories(); 
+		$categories = get_categories();
 		foreach ($categories as $category) {
-			$allCategoriesArray[$category->slug] = $category->cat_ID;
+			if ( $category->parent < 1 ) {
+				$allCategoriesArray[$category->slug] = $category->cat_ID;
+			}
 		}
 
 		//get all terms (e.g. categories or post tags), then display all posts in each term

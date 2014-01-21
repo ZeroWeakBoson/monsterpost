@@ -40,9 +40,10 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 
 				<div id="allthatjunk">
 					<?php if ( !empty( $term->description ) ): ?>
-					<div class="archive-description">
+					<p class="archive-description">
 						<?php echo esc_html($term->description); ?>
-					</div>
+					</p>
+					<hr>
 					<?php endif; ?>
 
 					<?php if ( have_posts() ):
