@@ -56,7 +56,7 @@ function monster_gallery_shortcode( $atts ) {
 			$output .= "<li><img src='$image' alt='$post->post_title' /></li>";
 
 		endforeach;
-
+		wp_reset_postdata(); // restore the global $post variable
 		$output .= "</ul>";
 	}
 
