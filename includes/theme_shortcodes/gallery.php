@@ -7,8 +7,8 @@ function monster_gallery_shortcode( $atts ) {
 	// Attributes
 	extract( shortcode_atts(
 		array(
-			'orderby' => 'menu_order',
-			'order'   => 'DESC',
+			'orderby' => 'post__in',
+			'order'   => 'ASC',
 			'link'    => '',
 			'ids'     => '',
 		), $atts )
