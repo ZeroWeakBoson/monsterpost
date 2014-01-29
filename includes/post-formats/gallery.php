@@ -31,54 +31,8 @@
 				$full_content = true;
 			}
 		echo '</div>';
-
-		$args = array(
-			'orderby'        => 'menu_order',
-			'order'          => 'ASC',
-			'post_type'      => 'attachment',
-			'post_parent'    => get_the_ID(),
-			'post_mime_type' => 'image',
-			'post_status'    => null,
-			'posts_per_page' => -1,
-		);
-		$attachments = get_posts($args);
-
-		if ($attachments) :
-			$random = uniqid();
-			if ( count($attachments) > 8 ) {
-				$pagerType = 'short';
-			} else {
-				$pagerType = 'full';
-			} ?>
-			<script type="text/javascript">
-				jQuery(document).ready(function(){
-					jQuery('#bxslider_<?php echo $random ?>').bxSlider({
-						pagerType: "<?php echo $pagerType; ?>"
-					});
-				});
-			</script>
-			<!-- Slider -->
-			<ul id="bxslider_<?php echo $random ?>" class="bxslider unstyled">
-				<?php 
-					foreach ($attachments as $attachment) :
-						$attachment_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
-						$url            = $attachment_url['0'];
-						$w              = $attachment_url['1'];
-						// if ( $w >= 800 ) {
-							$image = aq_resize($url, 800, 400, true);
-						// } else {
-						// 	$image = aq_resize($url, 600, 400, true);
-						// }
-					?>
-				<li><img src="<?php echo $image; ?>" alt="<?php echo apply_filters('the_title', $attachment->post_title); ?>"/></li>
-				<?php
-					endforeach;
-				?>
-			</ul>
-		<?php 
-		else:
-			get_template_part('includes/post-formats/post-thumb');
-		endif;
+		
+		get_template_part('includes/post-formats/post-thumb');
 
 		echo '<div class="post_content">';
 		if ( !$full_content ) {

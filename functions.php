@@ -96,6 +96,7 @@
 	include_once PARENT_DIR . '/includes/theme_shortcodes/newsletter_form.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/contact_follow.php';
 	include_once PARENT_DIR . '/includes/theme_shortcodes/interview.php';
+	include_once PARENT_DIR . '/includes/theme_shortcodes/gallery.php';
 	if ( !class_exists('efficientRelatedPosts') ) {
 		include_once PARENT_DIR . '/includes/theme_shortcodes/related_posts.php';
 	}
@@ -413,6 +414,12 @@
 			return $a;
 		}
 	}
+
+	// allow html in category and taxonomy descriptions
+	remove_filter( 'pre_term_description', 'wp_filter_kses' );
+	remove_filter( 'pre_link_description', 'wp_filter_kses' );
+	remove_filter( 'pre_link_notes', 'wp_filter_kses' );
+	remove_filter( 'term_description', 'wp_kses_data' );
 
 	// Database install
 	if ( !function_exists('wpp_install')) {
