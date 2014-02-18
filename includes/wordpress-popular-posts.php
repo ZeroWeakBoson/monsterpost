@@ -1119,7 +1119,7 @@ if ( !class_exists('WordpressPopularPosts') ) {
 					$post_count++;
 
 					// output advertising in the sidebar
-					if ( ($post_count == $adv_sidebar) && (!is_singular()) ) {
+					if ( ($post_count == $adv_sidebar) && (!is_single()) ) {
 						if ( of_get_option('bnr_sidebar') ) {
 							ob_start();
 							include_once PARENT_DIR . '/bnr/foo-sidebar.php';

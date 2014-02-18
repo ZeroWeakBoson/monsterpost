@@ -261,6 +261,14 @@
 		add_filter('body_class', 'category_id_class');
 	}
 
+	add_filter('body_class','cherry_layout_class');
+	function cherry_layout_class($classes) {
+		if ( is_archive() && !is_category() && !is_author() && !is_tag() )
+			$classes[] = 'is-custom-archive';
+
+		return $classes;
+	}
+
 	// Threaded Comments
 	if(!function_exists('enable_threaded_comments')) {
 		function enable_threaded_comments(){
@@ -356,24 +364,21 @@
 	}
 
 	// Author List with Avatars
-	if (!function_exists('contributors')) {
-		function contributors() {
+	if (!function_exists('get_monster_contributors')) {
+		function get_monster_contributors() {
 			global $wpdb;
 			$authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users ORDER BY display_name");
 			foreach ($authors as $author ) {
 				echo "<li class='author-item'>";
-					echo "<figure class='featured-thumbnail'><a href=\"".get_bloginfo('url')."/author/";
+					echo "<a href=\"".get_bloginfo('url')."/author/";
 						the_author_meta('user_nicename', $author->ID);
 						echo "/\">";
-						echo get_avatar($author->ID, 120);
-					echo "<span class='zoom-icon'></span></a></figure>";
-					echo "<div class='desc'>";
-						echo "<h5><a href=\"".get_bloginfo('url')."/author/";
-							the_author_meta('user_nicename', $author->ID);
-							echo "/\">";
+							echo get_avatar($author->ID, 120);
+						echo "<span class='zoom-icon'></span>";
+						echo "<h5>";
 							the_author_meta('display_name', $author->ID);
-						echo "</a></h5>";
-					echo "</div>";
+						echo "</h5>";
+					echo "</a>";
 				echo "</li>";
 			}
 		}
@@ -598,7 +603,6 @@
 		// The Loop
 		if ( $free_query->have_posts() ) {
 			$counter = 1;
-			// var_dump($args);
 
 			echo '<div class="row-fluid">';
 

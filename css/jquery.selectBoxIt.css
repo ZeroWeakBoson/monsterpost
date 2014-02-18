@@ -69,9 +69,9 @@
 /* Button Text */
 .selectboxit-text {
   float: left;
-  overflow: hidden;
+  /*overflow: hidden;*/
   text-indent: 5px;
-  text-overflow: ellipsis;
+  /*text-overflow: ellipsis;*/
 }
 
 .selectboxit .selectboxit-option-icon-container {

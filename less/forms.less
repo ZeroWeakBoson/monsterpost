@@ -579,7 +579,8 @@ div.wpcf7 img.ajax-loader {
 		text-align: right;
 	}
 }
-.LV_validation_message {
+.LV_validation_message,
+.custom_LV_invalid {
 	position: relative;
 	vertical-align: top;
 	display: inline-block;
@@ -605,8 +606,12 @@ div.wpcf7 img.ajax-loader {
 		font-size: 12px;
 	}
 }
+.custom_LV_invalid {
+	display: none;
+}
 .LV_invalid,
-.LV_valid {
+.LV_valid,
+.custom_LV_invalid {
 	&:before {
 		position: absolute;
 		top: 0;
@@ -625,7 +630,8 @@ div.wpcf7 img.ajax-loader {
 		}
 	}
 }
-.LV_invalid {
+.LV_invalid,
+.custom_LV_invalid {
 	&:before {
 		content: "\e009";
 		color: @red;

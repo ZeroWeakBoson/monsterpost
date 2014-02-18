@@ -19,7 +19,7 @@ get_header();
 							$category       = get_category( get_query_var( 'cat' ) );
 							$cat_id         = $category->cat_ID;
 
-							if ( array_key_exists($cat_id, $wpseo_cat_meta) ) {
+							if ( array_key_exists($cat_id, $wpseo_cat_meta) && array_key_exists('wpseo_title', $wpseo_cat_meta[$cat_id]) ) {
 
 								$end = strpos($wpseo_cat_meta[$cat_id]['wpseo_title'], '%');
 								if ( $end === FALSE ) {
@@ -52,13 +52,6 @@ get_header();
 
 						while (have_posts()) : the_post();
 
-							if ( $post_counter == $adv_content ) {
-								// output advertising in the content
-								if ( of_get_option('bnr_content') ) {
-									get_template_part('bnr/foo-content');
-								}
-							}
-
 							if ( $pair_post > 2 ) {
 								echo '<div class="post-tile row-fluid">';
 								$pair_post = 1;
@@ -77,6 +70,13 @@ get_header();
 							}
 							$pair_post++;
 							$post_counter++;
+
+							if ( $post_counter == $adv_content ) {
+								// output advertising in the content
+								if ( of_get_option('bnr_content') ) {
+									get_template_part('bnr/foo-content');
+								}
+							}
 						endwhile;
 
 						if ( $post_counter % 2 ) {

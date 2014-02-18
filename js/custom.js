@@ -44,6 +44,9 @@ jQuery(document).ready(function(){
 			.parents('li') // gets all list items that are ancestors of the link
 			.addClass('current-menu-item');
 	}
+	if (jQuery('body').hasClass('is-custom-archive')) {
+		jQuery('#menu-footer-menu .archives').addClass('current-menu-item');
+	}
 	// ---------------------------------------------------------
 	// Init mobile menu
 	// ---------------------------------------------------------

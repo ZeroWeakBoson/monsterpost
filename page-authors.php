@@ -17,10 +17,10 @@ get_header(); ?>
 										<a href="become-an-author/"><i class="icon-monster"></i></a>
 									</figure>
 									<div class="desc">
-										<h5>Your Name Here</h5>
+										<h5><?php _e('Your Name Here', 'cherry'); ?></h5>
 									</div>
 								</li>
-								<?php contributors(); ?>
+								<?php get_monster_contributors(); ?>
 							</ul>
 						</div>
 					</div><!--#post-# .post-->

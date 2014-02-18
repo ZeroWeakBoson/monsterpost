@@ -14,7 +14,6 @@ function my_script() {
 	wp_register_script('ladda', PARENT_URL.'/js/ladda.min.js', array('jquery'), '0.8.0', true);
 	wp_register_script('filestyle', PARENT_URL.'/js/bootstrap-filestyle.js', array('jquery'), '1.0.3', true);
 	wp_register_script('bxslider', PARENT_URL.'/js/jquery.bxslider.js', array('jquery'), '4.1.1', true);
-	
 	wp_register_script('custom', PARENT_URL.'/js/custom.js', array('jquery'), '1.0', true);
 
 	if ( is_front_page() || is_home() ) {
@@ -43,7 +42,7 @@ function my_script() {
 	wp_enqueue_script('bxslider');
 	wp_enqueue_script('selectBoxIt');
 	wp_enqueue_script('custom');
-	
+
 	// Bootstrap Scripts
 	wp_enqueue_script('bootstrap', PARENT_URL.'/bootstrap/js/bootstrap.min.js', array('jquery'), '2.3.0');
 }

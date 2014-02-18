@@ -186,12 +186,12 @@
 }
 .image-wrap:hover .zoom-icon,
 .featured-thumbnail a:hover .zoom-icon,
-.author-item:hover .zoom-icon {
+.author-item a:hover .zoom-icon {
 	opacity:1;
 }
 .no-rgba .image-wrap:hover .zoom-icon,
 .featured-thumbnail a:hover .zoom-icon,
-.author-item:hover .zoom-icon {
+.author-item a:hover .zoom-icon {
 	visibility:visible;
 }
 
@@ -328,6 +328,7 @@ html[xmlns] .slides { display: block;}
 			border: 1px solid #fff;
 			text-align: center;
 			text-indent: 0;
+			color: @linkColor;
 			background: none;
 			#gradient > .vertical(#fff, #fafafa);
 			.border-radius(4px);
@@ -691,7 +692,7 @@ html[xmlns] .slides { display: block;}
 				margin-left: -5%;
 			}
 			@media (max-width: 480px) {
-				margin-left: -5%;
+				margin-left: 0;
 			}
 		}
 	}
@@ -702,6 +703,16 @@ html[xmlns] .slides { display: block;}
 		padding-top: 5px;
 		width: 120px;
 		text-align: center;
+		a {
+			&:hover {
+				img {
+					.opacity(50);
+				}
+				h5 {
+					color: @red;
+				}
+			}
+		}
 		.featured-thumbnail {
 			float: none;
 			margin: 0;
@@ -716,11 +727,15 @@ html[xmlns] .slides { display: block;}
 				.border-radius(50%);
 			}
 		}
+		.zoom-icon {
+			background: none;
+		}
 		h5 {
 			margin-bottom: 0;
 			padding-top: 5px;
 		}
 		img {
+			.transition(0.25s);
 			.border-radius(50%);
 		}
 		&.first-item {
@@ -736,6 +751,9 @@ html[xmlns] .slides { display: block;}
 				.border-radius(50%);
 				@media (max-width: 767px) {
 					width: 100%;
+					height: auto;
+					font-size: 60px;
+					line-height: 60px;
 				}
 			}
 			&:before {
@@ -765,8 +783,8 @@ html[xmlns] .slides { display: block;}
 		}
 		@media (max-width: 480px) {
 			float: none;
-			width: 45%;
-			margin-left: 5%;
+			width: 100%;
+			margin-left: 0;
 		}
 	}
 }
@@ -965,42 +983,35 @@ html[xmlns] .slides { display: block;}
 	float: left;
 	width: 100%;
 	margin: 5px 0 35px;
-	padding: 20px 20px 15px 20px;
+	padding: 20px 0px 5px 15px;
 	border: 1px solid #fff;
 	.border-radius(@baseBorderRadius);
 	.box-shadow(0 1px 3px rgba(0,0,0,.2));
 	.box-sizing(border-box);
 	@media (max-width: 767px) {
-		padding: 5px;
+		padding: 20px 5px 5px 15px;
 	}
 }
 .option-set {
 	&.unstyled {
-		margin: 0 0 0 -5px;
-		@media (max-width: 767px) {
-			margin: 0 0 0 -1px;
-			#sort-by-year& {
-				margin-bottom: 10px;
-			}
-		}
+		margin: 0 0 0 -10px;
 	}
 	li {
 		float: left;
-		margin: 0 0 5px 5px;
-		@media (max-width: 767px) {
-			margin: 0 0 1px 1px;
-		}
+		margin: 0 0 15px 10px;
 		a {
 			display: block;
 			overflow: hidden;
-			width: 42px;
-			padding: 1px 0 3px;
-			line-height: 18px;
-			color: #7f7f7f;
+			margin: 0;
+			padding: 2px 0 3px;
+			width: 47px;
 			background: #f2f2f2;
-			text-transform: capitalize;
-			text-decoration: none;
+			color: #7f7f7f;
 			text-align: center;
+			text-decoration: none;
+			text-transform: capitalize;
+			font-size: 14px;
+			line-height: 18px;
 			.border-radius(@baseBorderRadius);
 			.transition(0.25s);
 			&:hover {
@@ -1349,12 +1360,11 @@ html[xmlns] .slides { display: block;}
 				list-style-type: none;
 				&:after {
 					position: absolute;
-					top: 16px;
+					top: 12px;
 					display: block;
 					left: 0px;
 					width: 4px;
 					height: 4px;
-					margin-top: -2px;
 					background: @red;
 					.border-radius(50%);
 					content:'';
@@ -1436,6 +1446,12 @@ html[xmlns] .slides { display: block;}
 			@media (min-width: 768px) and (max-width: 979px) {
 				margin-bottom: 0;
 			}
+		}
+		&-separator {
+			display: inline-block;
+			width: 1px;
+			height: 10px;
+			background: url(../images/separator.gif) 0 50% no-repeat;
 		}
 	}//post_meta
 	&_date {
@@ -1903,7 +1919,7 @@ p.gravatar {
 	border: none;
 	li{
 		display: inline-block;
-		width: 50%;
+		width: 45%;
 		vertical-align: top;
 		> a {
 			display: block;
@@ -2033,7 +2049,7 @@ p.gravatar {
 				display: block;
 				float: none;
 				overflow: hidden;
-				margin: 2px;
+				margin: 4px;
 				padding: 5px 0;
 				width: 31px;
 				border: 1px solid #fff;
@@ -2041,14 +2057,15 @@ p.gravatar {
 				font-size: 14px;
 				font-family: @customFont;
 				line-height: 21px;
-				.border-radius(@baseBorderRadius);
-				.box-shadow(0 0 1px rgba(0,0,0,.1));
+				.border-radius(@borderRadiusSmall);
+				.box-shadow(0 0 0 1px #f2f2f2);
 				#gradient > .vertical(#fff, #fafafa);
 				&:hover {
 					background: none;
 					filter:none;
 					color: #fff;
 					border-color: #d14836;
+					.box-shadow(0 0 0 1px #d74a38);
 					#gradient > .vertical(#dd4b39, #d14836);
 				}
 			}

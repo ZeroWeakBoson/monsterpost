@@ -124,13 +124,6 @@
 
 							while ( have_posts() ) : the_post();
 
-								if ( $post_counter == $adv_content ) {
-									// output advertising in the content
-									if ( of_get_option('bnr_content') ) {
-										get_template_part('bnr/foo-content');
-									}
-								}
-
 								if ( $pair_post > 2 ) {
 									echo '<div class="post-tile">';
 									echo '<div class="row-fluid">';
@@ -153,6 +146,13 @@
 								}
 								$pair_post++;
 								$post_counter++;
+
+								if ( $post_counter == $adv_content ) {
+									// output advertising in the content
+									if ( of_get_option('bnr_content') ) {
+										get_template_part('bnr/foo-content');
+									}
+								}
 								endwhile;
 
 								if ( $post_counter % 2 ) {

@@ -40,7 +40,7 @@
 			foreach( $allCategoriesArray as $key => $value ) {
 			$args = array(
 				"$param_type"         => $value,
-				'author_name'         => $curauth->display_name,
+				'author'              => $curauth->ID,
 				'post_type'           => 'post',
 				'post_status'         => 'publish',
 				'showposts'           => -1,

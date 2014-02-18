@@ -13,7 +13,11 @@
 
 					<?php
 						// get all categories and record to array
-						$categories = get_categories(); 
+						$args = array(
+							'orderby' => 'name',
+							'parent' => 0
+						);
+						$categories = get_categories($args);
 						foreach ($categories as $category) {
 							$allCategoriesArray[$category->slug] = $category->cat_ID;
 						}
@@ -31,7 +35,7 @@
 							foreach( $allCategoriesArray as $key => $value ) {
 								$args = array(
 									"$param_type"         => $value,
-									'author_name'         => $curauth->display_name,
+									'author'              => $curauth->ID,
 									'post_type'           => 'post',
 									'post_status'         => 'publish',
 									'showposts'           => -1,
@@ -46,15 +50,15 @@
 								}
 							}
 						}
-						wp_reset_postdata();  // Restore global post data stomped by the_post().
+						wp_reset_postdata(); // Restore global post data stomped by the_post().
 					?>
-					
+
 					<section class="title-section clearfix">
 						<?php get_template_part('includes/author-social'); ?>
 						<h2 class="title-section-h"><?php echo $curauth->display_name; ?></h2>
 						<div class="author-counters clearfix">
 							<span class="label label__article">
-								<b class="label__value"><?php echo get_the_author_posts(); ?></b>
+								<b class="label__value"><?php echo count_user_posts($curauth->ID); ?></b>
 								<span class="label__txt"><?php _e('Articles', 'cherry'); ?></span>
 							</span>
 							<span class="label label__category">
@@ -67,7 +71,7 @@
 							</span>
 						</div>
 					</section>
-					
+
 					<div id="recent-author-posts">
 						<h2 class="recent-author-h"><?php _e('Posts by', 'cherry'); ?> <?php echo $curauth->display_name; ?></h2>
 
@@ -75,19 +79,12 @@
 
 						<div class="post-tile">
 							<div class="row-fluid">
-							<?php 
+							<?php
 								$post_counter = 0; // main posts counter
 								$pair_post    = 1; // counter for pair posts
 								$adv_content  = 2; // adv content - output after 2 posts
 
 								while (have_posts()) : the_post();
-
-									if ( $post_counter == $adv_content ) {
-										// output advertising in the content
-										if ( of_get_option('bnr_content') ) {
-											get_template_part('bnr/foo-content');
-										}
-									}
 
 									if ( $pair_post > 2 ) {
 										echo '<div class="post-tile">';
@@ -96,7 +93,7 @@
 									} ?>
 
 									<div class="span6">
-									<?php 
+									<?php
 										// The following determines what the post format is and shows the correct file accordingly
 										$format = get_post_format();
 										get_template_part( 'includes/post-formats/'.$format );
@@ -111,6 +108,13 @@
 									}
 									$pair_post++;
 									$post_counter++;
+
+									if ( $post_counter == $adv_content ) {
+										// output advertising in the content
+										if ( of_get_option('bnr_content') ) {
+											get_template_part('bnr/foo-content');
+										}
+									}
 									endwhile;
 
 									if ( $post_counter % 2 ) {
