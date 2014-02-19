@@ -105,6 +105,9 @@ label[for^=pwbox] {
 		.border-radius(0);
 		.box-shadow(none);
 		.placeholder(#999797);
+		&:-ms-input-placeholder {
+			color: red;
+		}
 		&::-moz-placeholder {
 			opacity: 1;
 		}
@@ -614,7 +617,8 @@ div.wpcf7 img.ajax-loader {
 	&.custom_LV_invalid_msg {
 		float: right;
 	}
-	#newsletter-widget & {
+	#newsletter-widget &,
+	#newsletter-form & {
 		position: absolute;
 		top: auto;
 		bottom: 5px;
@@ -670,6 +674,9 @@ div.wpcf7 img.ajax-loader {
 	position: relative;
 	margin: 0;
 	padding: 0;
+	&.newsletter__shortcode {
+		padding-bottom: 30px;
+	}
 	label {
 		display: block;
 		margin: -7px 0 16px;

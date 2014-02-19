@@ -36,10 +36,13 @@
 
 								<div class="post-author clearfix">
 									<h3 class="post-author_h"><?php _e('About the Author', 'cherry'); ?></h3>
-									<figure class="post-author_gravatar">
-										<?php if(function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '170' ); /* This avatar is the user's gravatar (http://gravatar.com) based on their administrative email address */  } ?>
-										<figcaption class="post-author_name"><?php the_author_posts_link() ?></figcaption>
-									</figure>
+									<a class="post-author_gravatar" href="#">
+										<?php if ( function_exists('get_avatar') ) { 
+											echo get_avatar( get_the_author_meta('email'), '100' );
+											echo "<span class='zoom-icon'></span>";
+										} ?>
+										<span class="post-author_name"><?php the_author(); ?></span>
+									</a>
 									<div class="post-author_desc">
 										<?php the_author_meta('description') ?>
 									</div>

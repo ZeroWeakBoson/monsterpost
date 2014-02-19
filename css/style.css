@@ -848,8 +848,8 @@ h2.title-header {
 	background:url(../images/magnify.png) 50% 50% no-repeat;
 	content:"";
 }
-.image-wrap:hover .zoom-icon, .featured-thumbnail a:hover .zoom-icon, .author-item a:hover .zoom-icon { opacity:1; }
-.no-rgba .image-wrap:hover .zoom-icon, .featured-thumbnail a:hover .zoom-icon, .author-item a:hover .zoom-icon { visibility:visible; }
+.image-wrap:hover .zoom-icon, .featured-thumbnail a:hover .zoom-icon, .author-item a:hover .zoom-icon, .post-author_gravatar:hover .zoom-icon { opacity:1; }
+.no-rgba .image-wrap:hover .zoom-icon, .no-rgba .featured-thumbnail a:hover .zoom-icon, .no-rgba .author-item a:hover .zoom-icon, .no-rgba .post-author_gravatar:hover .zoom-icon { visibility:visible; }
 .flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus { outline:none; }
 .slides, .flex-control-nav, .flex-direction-nav {
 	margin:0;
@@ -1109,10 +1109,12 @@ html[xmlns] .slides { display:block; }
 }
 .post-author_link { margin-top:1.5em; }
 .post-author_gravatar {
+	position:relative;
+	display:block;
 	float:left;
 	overflow:hidden;
-	width:170px;
 	margin:0 30px 0 0;
+	width:100px;
 }
 @media (min-width: 768px) and (max-width: 979px) {
 	.post-author_gravatar { width:100px; }
@@ -1120,19 +1122,30 @@ html[xmlns] .slides { display:block; }
 @media (max-width: 768px) {
 	.post-author_gravatar { width:100px; }
 }
+.post-author_gravatar .zoom-icon { background:none; }
+.post-author_gravatar .zoom-icon:before { top:40%; }
 .post-author_gravatar img {
 	overflow:hidden;
+	-webkit-transition:0.25s;
+	-moz-transition:0.25s;
+	-o-transition:0.25s;
+	transition:0.25s;
 	-webkit-border-radius:50%;
 	-moz-border-radius:50%;
 	border-radius:50%;
 }
+.post-author_gravatar:hover img {
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
 .post-author_name {
+	display:block;
 	text-align:center;
-	padding:15px 0;
+	padding:15px 0 0;
 }
 .post-author_desc {
 	font-size:16px;
-	line-height:25px;
+	line-height:22px;
 }
 .post-author_desc a { color:#dd4b39; }
 .post-author_desc a:hover { text-decoration:underline; }
@@ -1146,11 +1159,7 @@ html[xmlns] .slides { display:block; }
 	text-align:center;
 	margin:0 auto 25px;
 }
-.post-author.widget .post-author_desc {
-	font-size:17px;
-	line-height:20px;
-	margin-bottom:20px;
-}
+.post-author.widget .post-author_desc { margin-bottom:20px; }
 .author-category-list {
 	margin-top:-8px;
 	margin-left:-5%;
@@ -3766,6 +3775,7 @@ label[for^=pwbox] + input {
 .search-form input[type="text"]::-moz-placeholder, .search-form input[type="search"]::-moz-placeholder { color:#999797; }
 .search-form input[type="text"]:-ms-input-placeholder, .search-form input[type="search"]:-ms-input-placeholder { color:#999797; }
 .search-form input[type="text"]::-webkit-input-placeholder, .search-form input[type="search"]::-webkit-input-placeholder { color:#999797; }
+.search-form input[type="text"]:-ms-input-placeholder, .search-form input[type="search"]:-ms-input-placeholder { color:red; }
 .search-form input[type="text"]::-moz-placeholder, .search-form input[type="search"]::-moz-placeholder { opacity:1; }
 .search-form input[type="button"], .search-form input[type="reset"], .search-form input[type="submit"], .search-form button {
 	float:left;
@@ -4342,14 +4352,14 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 	}
 }
 #form-contact-msg + .LV_validation_message, #form-feedback-msg + .LV_validation_message, .LV_validation_message.custom_LV_invalid_msg, #form-contact-msg + .custom_LV_invalid, #form-feedback-msg + .custom_LV_invalid, .custom_LV_invalid.custom_LV_invalid_msg { float:right; }
-#newsletter-widget .LV_validation_message, #newsletter-widget .custom_LV_invalid {
+#newsletter-widget .LV_validation_message, #newsletter-form .LV_validation_message, #newsletter-widget .custom_LV_invalid, #newsletter-form .custom_LV_invalid {
 	position:absolute;
 	top:auto;
 	bottom:5px;
 	left:0;
 	font-size:13px;
 }
-#newsletter-widget .LV_validation_message:before, #newsletter-widget .custom_LV_invalid:before { font-size:16px; }
+#newsletter-widget .LV_validation_message:before, #newsletter-form .LV_validation_message:before, #newsletter-widget .custom_LV_invalid:before, #newsletter-form .custom_LV_invalid:before { font-size:16px; }
 .custom_LV_invalid { display:none; }
 .LV_invalid:before, .LV_valid:before, .custom_LV_invalid:before {
 	position:absolute;
@@ -4383,6 +4393,7 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 	margin:0;
 	padding:0;
 }
+.newsletter.newsletter__shortcode { padding-bottom:30px; }
 .newsletter label {
 	display:block;
 	margin:-7px 0 16px;
