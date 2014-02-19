@@ -9,7 +9,7 @@ if ( !function_exists('monster_subscribe_form') ) {
 		// Attributes
 		extract( shortcode_atts(
 			array(
-				'message' => '',
+				'message' => 'This is new subscription to newsletter.',
 			), $atts )
 		);
 
@@ -51,7 +51,7 @@ if ( !function_exists('monster_subscribe_form') ) {
 							increaseArea: "20%" // optional
 						});
 						// init Live Validation
-						var _name  = new LiveValidation("form-subscribe-name", { validMessage: "Great!" }),
+						var _name = new LiveValidation("form-subscribe-name", { validMessage: "Great!" }),
 							_email = new LiveValidation("form-subscribe-email", { validMessage: "Great!" }),
 							$name = jQuery("#form-subscribe-name"),
 							$email = jQuery("#form-subscribe-email");

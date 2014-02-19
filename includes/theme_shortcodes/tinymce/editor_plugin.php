@@ -93,6 +93,16 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 
 								break;
 
+				// contact form
+
+								case 'contact_form':
+
+								var a = '[contact_form]';
+
+								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
+
+								break;
+
 				// dropcap
 
 								case 'dropcap':
@@ -734,9 +744,10 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 									a.addWithDialog(c,"Google Map","map");
 									a.addWithDialog(c,"Media Description","media_desc");
 								c=b.addMenu({title:"Contact"});
+									a.addWithDialog(c,"Contact Form","contact_form");
+									a.addWithDialog(c,"Subscribe Form","subscribe_form");
 									a.addWithDialog(c,"Contact Follow List","contact_follow");
 									a.addWithDialog(c,"Address","address");
-									a.addWithDialog(c,"Subscribe Form","subscribe_form");
 								c=b.addMenu({title:"Other"});
 									a.addWithDialog(c,"Template URL","template_url");
 									a.addWithDialog(c,"Clear","clear");
