@@ -36,7 +36,7 @@
 
 								<div class="post-author clearfix">
 									<h3 class="post-author_h"><?php _e('About the Author', 'cherry'); ?></h3>
-									<a class="post-author_gravatar" href="#">
+									<a class="post-author_gravatar" href="<?php echo home_url() . '/author/' . get_the_author(); ?>">
 										<?php if ( function_exists('get_avatar') ) { 
 											echo get_avatar( get_the_author_meta('email'), '100' );
 											echo "<span class='zoom-icon'></span>";

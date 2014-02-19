@@ -16,11 +16,11 @@
 				<?php echo '<span class="or">' . __('or', 'cherry') . '</span>'; ?>
 				<ul class="error404-nav unstyled clearfix">
 					<?php 
-						if (array_key_exists('REQUEST_SCHEME', $_SERVER)) {
-							$request_scheme = $_SERVER['REQUEST_SCHEME'] . '://';
-						} else {
-							$request_scheme = '';
-						}
+						// if (array_key_exists('REQUEST_SCHEME', $_SERVER)) {
+						// 	$request_scheme = $_SERVER['REQUEST_SCHEME'] . '://';
+						// } else {
+						// 	$request_scheme = '';
+						// }
 						if (array_key_exists('HTTP_HOST', $_SERVER)) {
 							$http_host = 'http://' . $_SERVER['HTTP_HOST'];
 						} else {
@@ -32,7 +32,8 @@
 							$redirect_url = '';
 						}
 
-						$back = $request_scheme . $http_host . $redirect_url;
+						// $back = $request_scheme . $http_host . $redirect_url;
+						$back = $http_host . $redirect_url;
 
 						$pos = strrpos($back, "/");
 						if ($pos !== false) {

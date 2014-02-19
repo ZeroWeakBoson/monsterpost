@@ -678,6 +678,7 @@ html[xmlns] .slides { display: block;}
 #recent-author-posts {
 	margin-bottom:3em;
 	h2 {
+		font-size: 26px !important;
 		margin: 0 0 30px;
 		padding-bottom: 15px;
 		border-bottom: 1px solid #f2f2f2;
@@ -1866,6 +1867,8 @@ p.gravatar {
 
 /* Feedback */
 .feedback_holder {
+	position: relative;
+	z-index: 9999;
 	margin-bottom: 20px;
 }
 /*/ Feedback */
@@ -1887,6 +1890,8 @@ p.gravatar {
 
 /* Socialite buttons */ 
 .social-buttons {
+	position: relative;
+	z-index: 99;
 	padding: 0 0 10px;
 	margin-left: -10px;
 	margin-bottom: 0;
@@ -1895,6 +1900,7 @@ p.gravatar {
 	}
 	> li {
 		float: left;
+		display: block;
 		margin: 0 0 10px 10px; 
 		padding: 0;
 	}
@@ -1913,6 +1919,9 @@ p.gravatar {
 	.pinterest-pinit { width: 40px; height: 25px; background-position: 0 -175px; }
 	.stumbleupon-share { width: 75px; height: 25px; background-position: 0 -225px; }
 	.twitter-follow.socialite-loaded{ width: 200px; }
+	iframe {
+		max-width: none;
+	}
 }
 .vhidden {
 	position: absolute; 
@@ -2203,7 +2212,6 @@ p.gravatar {
 			line-height: 21px;
 			vertical-align: top;
 			.border-radius(@baseBorderRadius);
-			.transition(0.25s);
 			&:hover {
 				color: #fff;
 				background: @red;
@@ -2321,7 +2329,14 @@ p.gravatar {
 			i {
 				margin-right: 10px;
 				color: #343434;
-				font-size: 14px;
+				&:before {
+					font-size: 16px;
+				}
+			}
+			.icon-envelope {
+				&:before {
+					font-size: 18px;
+				}
 			}
 		}
 	}

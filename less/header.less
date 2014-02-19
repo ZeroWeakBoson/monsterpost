@@ -242,24 +242,22 @@
 /* styling for both css and generated arrows */
 .sf-arrows .sf-with-ul:after {
 	position: absolute;
-	top: 50%;
-	right: 1em;
-	margin-top: -3px;
+	bottom: -10px;
+	right: auto;
+	left: 12px;
 	width: 0;
 	height: 0;
-	border-top-color: #000; /* edit this to suit design (no rgba in IE8) */
-	border-top-color: rgba(0,0,0,.5);
-	content: '';
-	/* order of following 3 rules important for fallbacks to work */
 	border: 5px solid transparent;
-	.followers-total& {
-		border: none;
-	}
+	border-top-color: @linkColor;
+	content: '';
+	// .followers-total& {
+	// 	border: none;
+	// }
 }
 .sf-arrows > li > .sf-with-ul:focus:after,
 .sf-arrows > li:hover > .sf-with-ul:after,
 .sf-arrows > .sfHover > .sf-with-ul:after {
-	border-top-color: #000; /* IE8 fallback colour */
+	border-top-color: @linkColorHover; /* IE8 fallback colour */
 }
 /* styling for right-facing arrows */
 .sf-arrows ul .sf-with-ul:after {
