@@ -19,13 +19,76 @@ class MY_NewsletterWidget extends WP_Widget {
 		if ( $title )
 			echo $before_title . $title . $after_title;
 
-		echo "<form action='#' method='post' id='newsletter-widget' class='newsletter newsletter__widget clearfix' novalidate>
-			<label for='email'>$desc</label>
-			<input type='email' name='email' id='email' tabindex='1'>
-			<input type='submit' value='Subscribe' class='btn btn-primary btn-normal'>
-		</form>";
+		$message = 'This is new subscription to newsletter.';
+
+		echo '<form action="#" method="post" id="newsletter-widget" class="newsletter newsletter__widget clearfix" novalidate="novalidate">
+			<input type="hidden" id="form-type" name="form-type" value="subscribe">
+			<input type="hidden" id="form-msg" name="form-msg" value="'.esc_textarea($message).'">
+			<label for="newsletter-widget-email">'.$desc.'</label>
+			<input type="text" name="newsletter-widget-email" id="newsletter-widget-email" tabindex="1">
+			<span class="custom_LV_invalid">You have not entered an email address.</span>
+			<input type="submit" value="Subscribe" class="btn btn-primary btn-normal">
+		</form>
+
+		<script>
+			jQuery(document).ready(function(){
+				// init Live Validation
+				var _email = new LiveValidation("newsletter-widget-email", { validMessage: "Great!" }),
+					$email = jQuery("#newsletter-widget-email");
+				_email.add(Validate.Email, { validMessage: "I am valid!", onlyOnBlur: true } );
+
+				jQuery(".custom_LV_invalid").hide();
+				$email.focus(function(){
+					$email.next(".custom_LV_invalid").hide();
+				});
+				jQuery("#newsletter-widget").submit(function(){
+					var $email = jQuery("#newsletter-widget-email"),
+						$email_val = $email.val(),
+						$is_email_invalid = false,
+						$type_val = jQuery("#form-type").val(),
+						$data = "";
+
+					if ($email_val == ""){
+						$email.next(".custom_LV_invalid").show();
+						return false;
+					}
+					if (jQuery("#newsletter-widget-email").hasClass("LV_invalid_field")) {
+						$is_email_invalid = true;
+					}
+					if ($is_email_invalid == true) {
+						jQuery("#newsletter-widget-email").focus();
+						return false;
+					}
+					$data = "email=" + $email_val + "&type=" + $type_val;
+
+					jQuery.ajax({
+						type: "POST",
+						url: "'.PARENT_URL.'/bin/process.php",
+						data: $data,
+						success: function(){
+							jQuery("#newsletter-widget")
+								.parent()
+								.append("<div id=\'message\' class=\'alert alert-block alert-success\'></div>")
+								.find("span").hide();
+							$email.val("");
+							jQuery("#message")
+								.hide()
+								.append("<button type=\'button\' class=\'close\' data-dismiss=\'alert\'>&times;</button>")
+								.append("Thank you for your subscription to our newsletter.")
+								.fadeIn()
+								.delay(3000)
+								.fadeOut();
+						}
+					});
+					return false;
+				})
+			});
+		</script>';
 
 		echo $after_widget;
+
+		// Load script
+		wp_enqueue_script('livevalidation', PARENT_URL.'/js/livevalidation_standalone.js', array('jquery'), '1.3');
 	}
 
 	//Update the widget 

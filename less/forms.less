@@ -315,9 +315,11 @@ label[for^=pwbox] {
 
 
 /* Contact form */
+.wpcf7-form,
 #form-contact {
 	.formFieldState(#7f7f7f, #d6d6d6, #eee);
-	.form-group {
+	.form-group,
+	p {
 		position: relative;
 		margin-bottom: 5px;
 		vertical-align: top;
@@ -610,6 +612,16 @@ div.wpcf7 img.ajax-loader {
 	&.custom_LV_invalid_msg {
 		float: right;
 	}
+	#newsletter-widget & {
+		position: absolute;
+		top: auto;
+		bottom: 5px;
+		left: 0;
+		font-size: 13px;
+		&:before {
+			font-size: 16px;
+		}
+	}
 }
 .custom_LV_invalid {
 	display: none;
@@ -653,6 +665,7 @@ div.wpcf7 img.ajax-loader {
 /* Newsletter Form
 ---------------------------------------- */
 .newsletter{
+	position: relative;
 	margin: 0;
 	padding: 0;
 	label {
@@ -683,7 +696,7 @@ div.wpcf7 img.ajax-loader {
 			box-shadow: inset 0 1px 1px rgba(204, 204, 204, 0.075), 0 0 3px #ddd;
 		}
 		@media (min-width: 1200px) {
-			width: 165px;
+			width: 160px;
 			margin: 0;
 		}
 		@media (min-width: 768px) and (max-width: 979px) {
@@ -696,8 +709,7 @@ div.wpcf7 img.ajax-loader {
 		}
 	}
 	input[type="submit"],
-	input[type="reset"],
-	button {
+	input[type="reset"] {
 		float: right;
 		margin: 0;
 		padding: 0 20px;
