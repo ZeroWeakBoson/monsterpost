@@ -103,6 +103,16 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 
 								break;
 
+				// feedback form
+
+								case 'feedback_form':
+
+								var a = '[feedback_form]';
+
+								tinyMCE.activeEditor.execCommand("mceInsertContent", false, a);
+
+								break;
+
 				// dropcap
 
 								case 'dropcap':
@@ -745,6 +755,7 @@ $plugin_url = get_template_directory_uri().'/includes/theme_shortcodes/tinymce/'
 									a.addWithDialog(c,"Media Description","media_desc");
 								c=b.addMenu({title:"Contact"});
 									a.addWithDialog(c,"Contact Form","contact_form");
+									a.addWithDialog(c,"Feedback Form","feedback_form");
 									a.addWithDialog(c,"Subscribe Form","subscribe_form");
 									a.addWithDialog(c,"Contact Follow List","contact_follow");
 									a.addWithDialog(c,"Address","address");

@@ -106,19 +106,24 @@ if ( !function_exists('monster_subscribe_form') ) {
 								type: "POST",
 								url: "'.PARENT_URL.'/bin/process.php",
 								data: $data,
+								beforeSend: function(){
+									jQuery("#form-subscribe .btn").attr("disabled", true);
+								},
 								success: function(){
 									jQuery("#form-subscribe")
-										.append("<div id=\'message\' class=\'alert alert-block alert-success\'></div>")
+										.append("<div id=\'message\'><div class=\'alert alert-block alert-success\'></div></div>")
 										.find("span").hide();
 									$name.val("");
 									$email.val("");
-									jQuery("#message")
-										.hide()
-										.append("<button type=\'button\' class=\'close\' data-dismiss=\'alert\'>&times;</button>")
+									jQuery("#message").hide();
+									jQuery(".alert-success")
+										.html("<button type=\'button\' class=\'close\' data-dismiss=\'alert\'>&times;</button>")
 										.append("Thank you for your subscription to our newsletter.")
+										.parent()
 										.fadeIn()
 										.delay(3000)
 										.fadeOut();
+									jQuery("#form-subscribe .btn").removeAttr("disabled");
 								}
 							});
 							return false;
