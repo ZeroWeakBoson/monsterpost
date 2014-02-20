@@ -396,7 +396,8 @@ label[for^=pwbox] {
 		}
 	}
 	input[type=submit],
-	input[type=reset] {
+	input[type=reset],
+	button[type=submit] {
 		display: inline-block;
 		margin-top: 15px;
 		height: 35px;
@@ -615,7 +616,12 @@ div.wpcf7 img.ajax-loader {
 	#form-contact-msg + &,
 	#form-feedback-msg + &,
 	&.custom_LV_invalid_msg {
-		float: right;
+		// float: right;
+		position: absolute;
+		left: auto;
+		top: auto;
+		right: 0;
+		bottom: -25px;
 	}
 	#newsletter-widget &,
 	#newsletter-form & {

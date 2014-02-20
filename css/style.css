@@ -2172,7 +2172,7 @@ h4.post-title { margin-top:0; }
 	top:0;
 	right:0;
 	z-index:99;
-	margin-bottom:25px;
+	padding-bottom:25px;
 }
 @media (min-width: 768px) and (max-width: 979px) {
 	.top-posts .righttop-side {
@@ -4138,7 +4138,7 @@ label[for^=pwbox] + input {
 		box-sizing:border-box;
 	}
 }
-.wpcf7-form input[type=submit], .wpcf7-form input[type=reset], #form-contact input[type=submit], #form-contact input[type=reset], #form-feedback input[type=submit], #form-feedback input[type=reset] {
+.wpcf7-form input[type=submit], .wpcf7-form input[type=reset], .wpcf7-form button[type=submit], #form-contact input[type=submit], #form-contact input[type=reset], #form-contact button[type=submit], #form-feedback input[type=submit], #form-feedback input[type=reset], #form-feedback button[type=submit] {
 	display:inline-block;
 	margin-top:15px;
 	height:35px;
@@ -4151,7 +4151,7 @@ label[for^=pwbox] + input {
 	border:none;
 }
 @media (min-width: 768px) and (max-width: 979px) {
-	.wpcf7-form input[type=submit], .wpcf7-form input[type=reset], #form-contact input[type=submit], #form-contact input[type=reset], #form-feedback input[type=submit], #form-feedback input[type=reset] { height:30px; }
+	.wpcf7-form input[type=submit], .wpcf7-form input[type=reset], .wpcf7-form button[type=submit], #form-contact input[type=submit], #form-contact input[type=reset], #form-contact button[type=submit], #form-feedback input[type=submit], #form-feedback input[type=reset], #form-feedback button[type=submit] { height:30px; }
 }
 .wpcf7-form textarea, #form-contact textarea, #form-feedback textarea {
 	padding:4px 19px 6px;
@@ -4362,7 +4362,13 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 		font-size:12px;
 	}
 }
-#form-contact-msg + .LV_validation_message, #form-feedback-msg + .LV_validation_message, .LV_validation_message.custom_LV_invalid_msg, #form-contact-msg + .custom_LV_invalid, #form-feedback-msg + .custom_LV_invalid, .custom_LV_invalid.custom_LV_invalid_msg { float:right; }
+#form-contact-msg + .LV_validation_message, #form-feedback-msg + .LV_validation_message, .LV_validation_message.custom_LV_invalid_msg, #form-contact-msg + .custom_LV_invalid, #form-feedback-msg + .custom_LV_invalid, .custom_LV_invalid.custom_LV_invalid_msg {
+	position:absolute;
+	left:auto;
+	top:auto;
+	right:0;
+	bottom:-25px;
+}
 #newsletter-widget .LV_validation_message, #newsletter-form .LV_validation_message, #newsletter-widget .custom_LV_invalid, #newsletter-form .custom_LV_invalid {
 	position:absolute;
 	top:auto;

@@ -310,7 +310,7 @@ function load_filters(changed){
 		success: function(response){
 			jQuery('#toolbar-filter .selectboxit-container').removeClass('disabled');
 			jQuery('#allthatjunk').html(response);
-			if (response) {
+			if (POST_EXISTS) {
 				jQuery('#loadmore').removeClass('hidden');
 			}
 		},
@@ -321,7 +321,7 @@ function load_filters(changed){
 function load_more(clicked){
 	var ajaxurl     = jQuery('#ajaxurl').val(),
 		offset      = jQuery(clicked).data('offset'),
-		num         = 8,
+		num         = 8, // 8
 		new_offset  = num + offset;
 
 	data = get_ajax_data(offset, num);
@@ -332,14 +332,17 @@ function load_more(clicked){
 		data: data,
 		cache: false,
 		beforeSend: function(){
-			jQuery('.loadmore-wrap').html("<div class='loading-wrap'><div class='loading'>Loading ...</div></div>");
+			jQuery('.loadmore-wrap').html("<div class='loading'>Loading ...</div>");
 		},
 		success: function(response){
 			if (response) {
 				jQuery('#allthatjunk').append(response);
 				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="'+new_offset+'">Load More</a>');
 			} else {
-				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary hidden" id="loadmore" href="#" data-offset="'+new_offset+'">Load More</a>');
+				jQuery('.loadmore-wrap').html('<a class="btn btn-normal btn-primary" id="loadmore" href="#" data-offset="'+new_offset+'">Load More</a>');
+			}
+			if (!POST_EXISTS) {
+				jQuery('#loadmore').addClass('hidden');
 			}
 		},
 		dataType: 'html'

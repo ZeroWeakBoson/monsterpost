@@ -46,6 +46,19 @@
 		}
 	}
 
+	/**
+	*
+	* JS global variables
+	*
+	**/
+	function monster_js_global_variables(){
+		$output = "<script>";
+		$output .="\nvar POST_EXISTS = 0;\n";
+		$output .= "</script>\n";
+		echo $output;
+	}
+	add_action('wp_head', 'monster_js_global_variables');
+
 	/*
 	 * Unlink less cache files
 	 *
@@ -558,7 +571,7 @@
 			'type'   => '',
 			'cat'    => $catID,
 			'offset' => 0,
-			'num'    => 20
+			'num'    => 20 // 20
 		);
 
 		$tax_query = '';
@@ -655,7 +668,32 @@
 				echo '</div><!--.row-fluid--><hr>';
 			}
 		}
+		// Restore original Post Data
+		wp_reset_postdata();
 
+		// temp WP_Query arguments
+		$temp_args = array(
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'cat'                 => $defaults['cat'],
+			'posts_per_page'      => $defaults['num'],
+			'offset'              => $defaults['offset'] + $defaults['num'],
+			'ignore_sticky_posts' => true,
+			'order'               => 'DESC',
+			'orderby'             => 'date',
+			'tax_query'           => $tax_query
+		);
+		// temp The Query
+		$temp_free_query = new WP_Query( $temp_args );
+		if ( $temp_free_query->have_posts() ) {
+			echo "<script>";
+				echo "POST_EXISTS = 1;";
+			echo "</script>";
+		} else {
+			echo "<script>";
+				echo "POST_EXISTS = 0;";
+			echo "</script>";
+		}
 		// Restore original Post Data
 		wp_reset_postdata();
 
