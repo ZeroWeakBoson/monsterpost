@@ -1270,7 +1270,7 @@ html[xmlns] .slides { display:block; }
 }
 #recent-author-posts { margin-bottom:3em; }
 #recent-author-posts h2 {
-	font-size:26px !important;
+	font-size:22px !important;
 	margin:0 0 30px;
 	padding-bottom:15px;
 	border-bottom:1px solid #f2f2f2;
@@ -2188,6 +2188,7 @@ h4.post-title { margin-top:0; }
 .top-posts-item .featured-thumbnail {
 	float:none;
 	margin:0 0 6px;
+	min-height:140px;
 }
 @media (max-width: 768px) {
 	.top-posts-item .featured-thumbnail { display:inline-block; }
