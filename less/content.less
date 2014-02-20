@@ -1629,7 +1629,8 @@ html[xmlns] .slides { display: block;}
 			}
 		}
 	}
-	.right-side {
+	.righttop-side,
+	.rightbottom-side {
 		float: right;
 		width: 34%;
 		@media (max-width: 768px) {
@@ -1639,6 +1640,21 @@ html[xmlns] .slides { display: block;}
 		.excerpt {
 			display: none;
 		}
+	}
+	.righttop-side {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 99;
+		margin-bottom: 25px;
+		@media (min-width: 768px) and (max-width: 979px) {
+			position: relative;
+			top: auto;
+			right: auto;
+		}
+	}
+	.rightbottom-side {
+		background: @white;
 	}
 	&-item {
 		padding-top: 28px;
@@ -2099,6 +2115,7 @@ p.gravatar {
 					#gradient > .vertical(#fff, #fafafa);
 					&:hover {
 						border-color: #fff;
+						.box-shadow(0 0 0 1px #f2f2f2);
 					}
 				}
 
@@ -2116,6 +2133,7 @@ p.gravatar {
 						filter: none;
 						background: @linkColor;
 						border-color: @linkColor;
+						.box-shadow(0 0 0 1px #f2f2f2);
 					}
 				}
 			}
@@ -2132,6 +2150,7 @@ p.gravatar {
 						filter: none;
 						background: @linkColor;
 						border-color: @linkColor;
+						.box-shadow(0 0 0 1px #f2f2f2);
 					}
 				}
 			}
@@ -2147,6 +2166,7 @@ p.gravatar {
 						filter: none;
 						background: @linkColor;
 						border-color: @linkColor;
+						.box-shadow(0 0 0 1px #f2f2f2);
 					}
 				}
 			}
@@ -2162,6 +2182,7 @@ p.gravatar {
 						filter: none;
 						background: @linkColor;
 						border-color: @linkColor;
+						.box-shadow(0 0 0 1px #f2f2f2);
 					}
 				}
 			}
@@ -2267,6 +2288,12 @@ p.gravatar {
 				> i {
 					margin: 0;
 				}
+			}
+		}
+		&.author-social {
+			.followers-lists {
+				width: 150px;
+				margin-left: -134px !important;
 			}
 		}
 	}

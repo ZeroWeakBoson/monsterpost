@@ -14,6 +14,7 @@
 					</section><!--.title-section-->
 
 					<?php get_template_part('top-posts');
+					global $top_posts_offset;
 
 					query_posts(
 						array(
@@ -21,6 +22,7 @@
 							'ignore_sticky_posts' => 1,
 							'orderby'             => 'date',
 							'order'               => 'DESC',
+							'offset'              => $top_posts_offset,
 							'tax_query'           => array(
 								array(
 									'taxonomy' => 'category',

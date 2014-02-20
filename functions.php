@@ -230,9 +230,9 @@
 
 	// no more jumping for read more link
 	if(!function_exists('no_more_jumping')) {
-		function no_more_jumping() {
+		function no_more_jumping($post_id) {
 			global $post;
-			return '&nbsp;<a href="'.get_permalink($post->ID).'" class="btn-link">'.__('Read More', 'cherry').'</a>';
+			return '&nbsp;<a href="'.get_permalink( $post_id ).'" class="btn-link">'.__('Read More', 'cherry').'</a>';
 		}
 		add_filter('excerpt_more', 'no_more_jumping');
 	}
@@ -875,4 +875,91 @@ function get_monster_carousel_posts() {
 	if ( !empty($_POST) && array_key_exists('filterVal', $_POST) ) {
 		exit;
 	}
-} ?>
+}
+
+function loop_monster_top_post( $posts, $is_meta = false ) {
+	global $post, $top_post_side;
+	$side_array = array( "left", "right top", "right bottom" );
+
+	if ( !empty($top_post_side) ) {
+		$diff = array_diff( $side_array, $top_post_side );
+	}
+
+	$tmp_post = $post;
+	foreach( $posts as $post ) : setup_postdata($post);
+		if ( $is_meta ) {
+			$top_post_side[$post->ID] = get_post_meta( $post->ID, 'tz_top_check', true );
+		} else {
+			if ( isset($diff) ) {
+				$top_post_side[$post->ID] = array_shift($diff);
+			} else {
+				$top_post_side[$post->ID] = array_shift($side_array);
+			}
+		}
+		get_monster_top_post( $post->ID, $top_post_side[$post->ID] );
+	endforeach;
+	wp_reset_postdata();
+	// return value $post
+	$post = $tmp_post;
+}
+
+function get_monster_top_post( $post_id, $side ) {
+	$side            = sanitize_html_class( $side );
+	$post_permalink  = get_permalink( $post_id );
+	$post_title      = esc_html( get_the_title( $post_id ) );
+	$post_title_attr = esc_attr( strip_tags( get_the_title( $post_id ) ) );
+	if ( ( has_excerpt($post_id) ) && ( 'left' === $side ) ) {
+		$post_excerpt = wp_strip_all_tags( get_the_excerpt() );
+	}
+
+	echo "<div class='$side-side'>";
+
+		if ( has_post_thumbnail( $post_id ) ) {
+			$attachment_url = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'full' );
+			$url = $attachment_url['0'];
+			if ( 'left' === $side ) {
+				$image = aq_resize($url, 435, 268, true);
+			} else {
+				$image = aq_resize($url, 235, 140, true);
+			}
+		}
+
+		echo "<div class='top-posts-item'>";
+
+			if ( has_post_thumbnail( $post_id ) ) {
+				echo "<figure class='featured-thumbnail thumbnail'>";
+					echo "<a href='$post_permalink' title='$post_title'>";
+						echo "<img src='$image' alt='$post_title' />";
+					echo "</a>";
+					$categories = get_the_category();
+					if( !empty($categories) ){
+						$category = $categories[0];
+						echo "<span class='post-cat'>$category->cat_name</span>";
+					}
+				echo "</figure>";
+			}
+
+			echo "<div class='post_meta'>";
+				_e('by ', 'cherry');
+				echo " <a href='" . get_author_posts_url( get_the_author_meta( 'ID' ) ) . "'>" . get_the_author_meta( 'display_name' ) . "</a>";
+				echo " &nbsp<em class='post_meta-separator'></em>&nbsp; <time datetime='".get_the_time( 'Y-m-d\TH:i:s', $post_id )."'>".get_the_date()."</time>";
+			echo "</div><!--.post_meta-->";
+
+			if ( !has_post_thumbnail( $post_id ) ) {
+				$categories = get_the_category();
+				if( !empty($categories) ){
+					$category = $categories[0];
+					echo __('in ', 'cherry') . '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>';
+				}
+			}
+
+			echo "<h4><a href='$post_permalink' title='$post_title_attr'>$post_title</a></h4>";
+			if ( isset($post_excerpt) ) {
+				echo "<p class='excerpt'>" . my_string_limit_words( $post_excerpt, 30 ) . "</p>";
+			}
+
+		echo "</div><!--.top-posts-item-->";
+
+	echo "</div><!--.$side-side-->";
+}
+?>

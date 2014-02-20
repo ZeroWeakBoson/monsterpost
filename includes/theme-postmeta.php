@@ -34,11 +34,28 @@ $meta_box_check = array(
 		array( "name" => __('Yep, I\'m top post.','cherry'),
 				"desc" => __('Check it, If you want to mark this post as a top.','cherry'),
 				"id" => $prefix."top_check",
-				"type" => "text",
-				"std" => ""
+				"type" => "select",
+				'std' => '',
+				'options' => array("", "left", "right top", "right bottom"),
 			),
 	),
 );
+
+// $meta_box_check = array(
+// 	'id' => 'tz-meta-box-check',
+// 	'title' =>  __('Go to Top Posts', 'cherry'),
+// 	'page' => 'post',
+// 	'context' => 'normal',
+// 	'priority' => 'high',
+// 	'fields' => array(
+// 		array( "name" => __('Yep, I\'m top post.','cherry'),
+// 				"desc" => __('Check it, If you want to mark this post as a top.','cherry'),
+// 				"id" => $prefix."top_check",
+// 				"type" => "text",
+// 				"std" => ""
+// 			),
+// 	),
+// );
 
 // $meta_box_filter = array(
 // 	'id' => 'tz-meta-box-filter',
@@ -220,6 +237,29 @@ function tz_show_box_check() {
 				'<td>';
 
 			echo '<input type="checkbox" name="', $field['id'], '" id="<?php echo $id ?>" ', checked($meta, 'true'), ' value="true" />';
+			
+			break;
+
+			//If Select
+			case 'select':
+			
+				echo '<tr>',
+				'<th style="width:25%"><label for="', $field['id'], '"><strong>', $field['name'], '</strong><span style=" display:block; color:#999; margin:5px 0 0 0;">'. $field['desc'].'</span></label></th>',
+				'<td>';
+			
+				echo'<select name="'.$field['id'].'">';
+			
+				foreach ($field['options'] as $option) {
+					
+					echo'<option';
+					if ($meta == $option ) { 
+						echo ' selected="selected"'; 
+					}
+					echo'>'. $option .'</option>';
+				
+				} 
+				
+				echo'</select>';
 			
 			break;
 		}
