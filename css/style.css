@@ -495,7 +495,6 @@ h6 { text-transform:uppercase; }
 	height:21px;
 	padding:16px 0 14px 13px;
 	color:#fff;
-	font-size:19px;
 	line-height:1em;
 }
 #carousel-current-state span:before {
@@ -4443,7 +4442,7 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 }
 @media (min-width: 1200px) {
 	.newsletter input[type="text"], .newsletter input[type="email"] {
-		width:160px;
+		width:178px;
 		margin:0;
 	}
 }
@@ -4462,7 +4461,7 @@ div.wpcf7 img.ajax-loader { margin-top:20px; }
 .newsletter input[type="submit"], .newsletter input[type="reset"] {
 	float:right;
 	margin:0;
-	padding:0 20px;
+	padding:0 13px;
 	min-width:inherit;
 	height:35px;
 	border-top:1px solid #d14836;
