@@ -491,9 +491,9 @@ h6 { text-transform:uppercase; }
 #carousel-current-state span {
 	position:relative;
 	display:block;
-	width:145px;
+	width:153px;
 	height:21px;
-	padding:16px 0 14px 13px;
+	padding:16px 0 14px 5px;
 	color:#fff;
 	line-height:1em;
 }
@@ -1950,7 +1950,6 @@ h4.post-title { margin-top:0; }
 	border-radius:50%;
 	content:'';
 }
-.post_content > ul > li a { color:#808080; }
 .post_content center { *zoom:1; }
 .post_content center:before, .post_content center:after {
 	display:table;
@@ -2173,7 +2172,7 @@ h4.post-title { margin-top:0; }
 	z-index:99;
 	padding-bottom:25px;
 }
-@media (min-width: 768px) and (max-width: 979px) {
+@media (max-width: 767px) {
 	.top-posts .righttop-side {
 		position:relative;
 		top:auto;
@@ -2181,6 +2180,9 @@ h4.post-title { margin-top:0; }
 	}
 }
 .top-posts .rightbottom-side { background:#fff; }
+@media (max-width: 767px) {
+	.top-posts .rightbottom-side { margin-top:0 !important; }
+}
 .top-posts-item { padding-top:28px; }
 .top-posts-item:first-child { padding-top:0; }
 .top-posts-item h4 { margin-top:0; }
@@ -4607,7 +4609,7 @@ label[for^=pwbox] + input, .btn {
 	box-shadow:none;
 }
 label[for^=pwbox] + input-normal, .btn-normal {
-	padding:5px 28px;
+	padding:5px 16px;
 	font-size:14px;
 }
 label[for^=pwbox] + input-primary, .btn-primary {

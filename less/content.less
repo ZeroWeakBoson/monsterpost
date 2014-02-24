@@ -1386,7 +1386,7 @@ html[xmlns] .slides { display: block;}
 					content:'';
 				}
 				a {
-					color: #808080;
+					// color: #808080;
 				}
 			}
 		}
@@ -1647,7 +1647,7 @@ html[xmlns] .slides { display: block;}
 		right: 0;
 		z-index: 99;
 		padding-bottom: 25px;
-		@media (min-width: 768px) and (max-width: 979px) {
+		@media (max-width: 767px) {
 			position: relative;
 			top: auto;
 			right: auto;
@@ -1655,6 +1655,9 @@ html[xmlns] .slides { display: block;}
 	}
 	.rightbottom-side {
 		background: @white;
+		@media (max-width: 767px) {
+			margin-top: 0 !important;
+		}
 	}
 	&-item {
 		padding-top: 28px;

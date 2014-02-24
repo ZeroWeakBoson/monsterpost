@@ -1,4 +1,4 @@
-a:4:{s:4:"root";s:84:"G:\wamp\www\wordpress\2013\monsterpost/wp-content/themes/monsterpost/less/style.less";s:8:"compiled";s:141021:"@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+a:4:{s:4:"root";s:84:"G:\wamp\www\wordpress\2013\monsterpost/wp-content/themes/monsterpost/less/style.less";s:8:"compiled";s:141041:"@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
 ::selection {
 	background:rgba(221,75,57,0.8);
 	color:#fff;
@@ -491,9 +491,9 @@ h6 { text-transform:uppercase; }
 #carousel-current-state span {
 	position:relative;
 	display:block;
-	width:145px;
+	width:153px;
 	height:21px;
-	padding:16px 0 14px 13px;
+	padding:16px 0 14px 5px;
 	color:#fff;
 	line-height:1em;
 }
@@ -1950,7 +1950,6 @@ h4.post-title { margin-top:0; }
 	border-radius:50%;
 	content:'';
 }
-.post_content > ul > li a { color:#808080; }
 .post_content center { *zoom:1; }
 .post_content center:before, .post_content center:after {
 	display:table;
@@ -2173,7 +2172,7 @@ h4.post-title { margin-top:0; }
 	z-index:99;
 	padding-bottom:25px;
 }
-@media (min-width: 768px) and (max-width: 979px) {
+@media (max-width: 767px) {
 	.top-posts .righttop-side {
 		position:relative;
 		top:auto;
@@ -2181,6 +2180,9 @@ h4.post-title { margin-top:0; }
 	}
 }
 .top-posts .rightbottom-side { background:#fff; }
+@media (max-width: 767px) {
+	.top-posts .rightbottom-side { margin-top:0 !important; }
+}
 .top-posts-item { padding-top:28px; }
 .top-posts-item:first-child { padding-top:0; }
 .top-posts-item h4 { margin-top:0; }
@@ -4607,7 +4609,7 @@ label[for^=pwbox] + input, .btn {
 	box-shadow:none;
 }
 label[for^=pwbox] + input-normal, .btn-normal {
-	padding:5px 28px;
+	padding:5px 16px;
 	font-size:14px;
 }
 label[for^=pwbox] + input-primary, .btn-primary {
@@ -5029,4 +5031,4 @@ embed, iframe, object, video { max-width:100%; }
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
-";s:5:"files";a:13:{s:84:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\style.less";i:1386873334;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\general.less";i:1392674916;s:85:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\header.less";i:1392813214;s:87:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\carousel.less";i:1393086492;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\content.less";i:1392903672;s:87:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\comments.less";i:1385402576;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\widgets.less";i:1392812034;s:89:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\shortcodes.less";i:1387355499;s:85:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\footer.less";i:1386873334;s:84:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\forms.less";i:1393087297;s:83:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\misc.less";i:1393087522;s:88:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\variables.less";i:1385402576;s:95:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\bootstrap\less\mixins.less";i:1385402576;}s:7:"updated";i:1393088029;}
+";s:5:"files";a:13:{s:84:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\style.less";i:1386873334;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\general.less";i:1392674916;s:85:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\header.less";i:1392813214;s:87:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\carousel.less";i:1393088769;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\content.less";i:1393250874;s:87:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\comments.less";i:1385402576;s:86:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\widgets.less";i:1392812034;s:89:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\shortcodes.less";i:1387355499;s:85:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\footer.less";i:1386873334;s:84:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\forms.less";i:1393087297;s:83:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\misc.less";i:1393088372;s:88:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\less\variables.less";i:1385402576;s:95:"G:\wamp\www\wordpress\2013\monsterpost\wp-content\themes\monsterpost\bootstrap\less\mixins.less";i:1385402576;}s:7:"updated";i:1393250880;}
