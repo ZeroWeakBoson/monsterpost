@@ -8,7 +8,7 @@
 						<?php 
 							$blog_text = of_get_option('blog_text');
 							if( $blog_text ){
-								echo '<h2 class="title-header">' . of_get_option('blog_text') . '</h2>';
+								echo '<h1 class="title-header">' . of_get_option('blog_text') . '</h1>';
 							}
 						?>
 					</section><!--.title-section-->
