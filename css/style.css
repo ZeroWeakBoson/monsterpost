@@ -481,7 +481,6 @@ h6 { text-transform:uppercase; }
 	display:block;
 	margin-right:35px;
 	float:left;
-	border-right:2px solid #fff;
 	background:#dd4b39;
 	text-align:center;
 	-webkit-border-radius:3px 0 0 0;
@@ -509,19 +508,6 @@ h6 { text-transform:uppercase; }
 	border-style:solid;
 	border-width:25.5px 0 25.5px 11px;
 	border-color:transparent transparent transparent #dd4b39;
-}
-#carousel-current-state span:after {
-	position:absolute;
-	top:0;
-	bottom:0;
-	right:-13px;
-	z-index:1;
-	content:'';
-	width:0px;
-	height:0px;
-	border-style:solid;
-	border-width:25.5px 0 25.5px 11px;
-	border-color:transparent transparent transparent #fff;
 }
 @media (max-width: 979px) and (min-width: 768px) {
 	#carousel-current-state { margin-right:5px; }
@@ -2527,6 +2513,7 @@ p.gravatar {
 	text-align:center;
 }
 .pagination__posts ul {
+	position:relative;
 	overflow:hidden;
 	display:block;
 	width:100%;
@@ -2543,6 +2530,7 @@ p.gravatar {
 	vertical-align:top;
 }
 .pagination__posts ul > li a {
+	position:relative;
 	display:block;
 	float:none;
 	overflow:hidden;
@@ -2586,6 +2574,13 @@ p.gravatar {
 	background-repeat:repeat-x;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdd4b39', endColorstr='#ffd14836', GradientType=0);
 }
+@media (max-width: 768px) {
+	.pagination__posts ul > li a {
+		width:25px;
+		padding:2px 0;
+		margin-top:60px;
+	}
+}
 .pagination__posts ul > li.active a {
 	color:#dd4b39;
 	background-color:#fdfdfd;
@@ -2627,6 +2622,29 @@ p.gravatar {
 	-moz-box-shadow:0 0 0 1px #f2f2f2;
 	box-shadow:0 0 0 1px #f2f2f2;
 }
+@media (max-width: 768px) {
+	.pagination__posts ul > li.prev {
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:99;
+	}
+	.pagination__posts ul > li.prev a {
+		margin-top:0;
+		text-indent:-999px;
+	}
+	.pagination__posts ul > li.prev a:after {
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		content:'\2039';
+		color:#fff;
+		text-indent:0;
+		line-height:25px;
+	}
+}
 .pagination__posts ul > li.next { float:right; }
 .pagination__posts ul > li.next a {
 	width:auto;
@@ -2651,6 +2669,29 @@ p.gravatar {
 	-moz-box-shadow:0 0 0 1px #f2f2f2;
 	box-shadow:0 0 0 1px #f2f2f2;
 }
+@media (max-width: 768px) {
+	.pagination__posts ul > li.next {
+		position:absolute;
+		top:0;
+		right:0;
+		z-index:99;
+	}
+	.pagination__posts ul > li.next a {
+		margin-top:0;
+		text-indent:-999px;
+	}
+	.pagination__posts ul > li.next a:after {
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		content:'\203A';
+		color:#fff;
+		text-indent:0;
+		line-height:25px;
+	}
+}
 .pagination__posts ul > li.first a {
 	width:auto;
 	padding-left:20px;
@@ -2674,6 +2715,15 @@ p.gravatar {
 	-moz-box-shadow:0 0 0 1px #f2f2f2;
 	box-shadow:0 0 0 1px #f2f2f2;
 }
+@media (max-width: 768px) {
+	.pagination__posts ul > li.first {
+		position:absolute;
+		top:30px;
+		left:0;
+		z-index:99;
+	}
+	.pagination__posts ul > li.first a { margin-top:0; }
+}
 .pagination__posts ul > li.last a {
 	width:auto;
 	padding-left:20px;
@@ -2696,6 +2746,15 @@ p.gravatar {
 	-webkit-box-shadow:0 0 0 1px #f2f2f2;
 	-moz-box-shadow:0 0 0 1px #f2f2f2;
 	box-shadow:0 0 0 1px #f2f2f2;
+}
+@media (max-width: 768px) {
+	.pagination__posts ul > li.last {
+		position:absolute;
+		top:30px;
+		right:0;
+		z-index:99;
+	}
+	.pagination__posts ul > li.last a { margin-top:0; }
 }
 .post-control {
 	text-align:right;
@@ -2746,16 +2805,10 @@ p.gravatar {
 }
 @media (min-width: 768px) and (max-width: 979px) {
 	.followers-total-link { padding:3px 10px; }
-	.followers-total i {
-		font-size:14px;
-		margin-right:5px;
-	}
+	.followers-total i { margin-right:5px; }
 }
 @media (max-width: 767px) {
-	.followers-total i {
-		font-size:14px;
-		margin-right:5px;
-	}
+	.followers-total i { margin-right:5px; }
 }
 @media (max-width: 480px) {
 	.followers-total {
@@ -2769,9 +2822,13 @@ p.gravatar {
 	width:35px;
 	padding:0;
 	text-align:center;
+	background:none;
 }
 .followers-total.author-social .followers-total-link { padding:7px 0 5px; }
 .followers-total.author-social .followers-total-link > i { margin:0; }
+@media (max-width: 480px) {
+	.followers-total.author-social { float:right; }
+}
 .followers-total.author-social .followers-lists {
 	width:150px;
 	margin-left:-134px !important;
