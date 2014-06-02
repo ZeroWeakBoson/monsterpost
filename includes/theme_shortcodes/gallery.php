@@ -49,7 +49,7 @@ function monster_gallery_shortcode( $atts ) {
 			$url            = $attachment_url['0'];
 			$w              = $attachment_url['1'];
 			if ( $w >= 800 ) {
-				$image = aq_resize($url, 800, 400, true);
+				$image = aq_resize($url, 800, 400, false);
 			} else {
 				$image = aq_resize($url, 600, 400, false);
 			}
