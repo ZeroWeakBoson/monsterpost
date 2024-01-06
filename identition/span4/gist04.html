@@ -1,0 +1,548 @@
+<!DOCTYPE html> <html lang="en" dir="auto"> <head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no"> <meta name="description" content="Directory Structure This page walks through the steps required to train an object detection model with Recommended Directory Structure for Training..."> <meta name="revised" content="a7e86066fd838fa86b83f1bfd9845e6c80564c0b"> <meta name="author" content="Extra Dimensions"> <meta name="generator" content="jekyll-rtd-theme v2.0.10"><meta name="theme-color" content="#2980b9"> <title>Directory Structure · eQuantum</title> <meta name="twitter:title" content="Directory Structure · eQuantum"> <meta name="twitter:description" content="Directory Structure This page walks through the steps required to train an object detection model with Recommended Directory Structure for Training..."> <meta name="twitter:card" content="summary"> <meta name="twitter:site" content="@Extra Dimensions"> <meta name="twitter:url" content="/monsterpost/identition/span4/gist04.html"> <meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10"> <meta property="og:title" content="Directory Structure · eQuantum"> <meta property="og:description" content="Directory Structure This page walks through the steps required to train an object detection model with Recommended Directory Structure for Training..."> <meta property="og:locale" content="en"> <meta property="og:url" content="/monsterpost/identition/span4/gist04.html"> <meta property="og:type" content="article"> <meta property="article:author" content="Extra Dimensions"> <meta property="article:published_time" content="2016-04-07T14:38:29-05:00"> <meta property="article:modified_time" content="2024-01-06T10:45:23-06:00"> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "Article", "mainEntityOfPage": { "@type": "WebPage", "@id": "/monsterpost/identition/span4/gist04.html" }, "headline": "Directory Structure · eQuantum", "image": [], "author": { "@type": "Person", "name": "Extra Dimensions" }, "datePublished": "2016-04-07T14:38:29-05:00", "dateModified": "2024-01-06T10:45:23-06:00", "publisher": { "@type": "Organization", "name": "Extra Dimensions", "logo": { "@type": "ImageObject", "url": "https://avatars.githubusercontent.com/u/18101900?v=4" } }, "description": "Directory Structure This page walks through the steps required to train an object detection model with Recommended Directory Structure for Training..." } </script> <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="prev" href="/monsterpost/identition/span4/gist06.html"><link rel="next" href="/monsterpost/identition/span4/gist01.html"><link rel="canonical" href="/monsterpost/identition/span4/gist04.html"><link rel="icon" type="image/svg+xml" href="/monsterpost/assets/images/favicon.svg"><link rel="icon" type="image/png" href="/monsterpost/assets/images/favicon-16x16.png" sizes="16x16"> <link rel="icon" type="image/png" href="/monsterpost/assets/images/favicon-32x32.png" sizes="32x32"> <link rel="icon" type="image/png" href="/monsterpost/assets/images/favicon-96x96.png" sizes="96x96"><link rel="mask-icon" href="/monsterpost/assets/images/favicon.svg" color="#2980b9"><link rel="apple-touch-icon" href="/monsterpost/assets/images/apple-touch-icon-300x300.jpg"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/css/theme.min.css"><script> window.ui = { title: "eQuantum", baseurl: "/monsterpost", i18n: { search_results: "Search Results", search_results_found: "Search finished, found # page(s) matching the search query.", search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!" } }; </script> </head> <body class="container"><div class="sidebar-wrap overflow-hidden"> <div class="sidebar height-full overflow-y-scroll overflow-x-hidden"> <div class="header d-flex flex-column p-3 text-center"> <div class="title pb-1"> <a class="h4 no-underline py-1 px-2 rounded-1" href="https://eq19.com/" title="Mapping the quantum way across prime identity"> <i class="fa fa-home"></i> eQuantum </a> </div> <span class="version"></span> <form class="search pt-2" action="/monsterpost/search.html" method="get" autocomplete="off"> <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs..."> </form> </div> <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation"> <ul> </ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/monsterpost/addition/"> . Addition Zones (0-18) </a><ul> <li class="toc level-1 " data-sort="2" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/2.html">2. True Prime Pairs</a> </li> <li class="toc level-1 " data-sort="3" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/3.html">3. Primes Platform</a> </li> <li class="toc level-1 " data-sort="4" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/4.html">5. Pairwise Scenario</a> </li> <li class="toc level-1 " data-sort="5" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/5.html">7. Power of Magnitude</a> </li> <li class="toc level-1 " data-sort="6" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/6.html">11. The Pairwise Disjoint</a> </li> <li class="toc level-1 " data-sort="7" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/7.html">13. The Prime Recycling ζ(s)</a> </li> <li class="toc level-1 " data-sort="8" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/addition/8.html">17. Implementation in Physics</a> </li></ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/monsterpost/multiplication/"> . Multiplication Zones (18-30) </a><ul> <li class="toc level-1 " data-sort="10" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/10.html">23. Elementary Particles (spin 1)</a> </li> <li class="toc level-1 " data-sort="13" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/11.html">20. The Angular Momentum (spin 2)</a> </li> <li class="toc level-1 " data-sort="14" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/12.html">21. Entrypoint of Momentum (spin 3)</a> </li> <li class="toc level-1 " data-sort="15" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/13.html">22. The Mapping of Spacetime (spin 4)</a> </li> <li class="toc level-1 " data-sort="16" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/14.html">23. Similar Order of Magnitude (spin 5)</a> </li> <li class="toc level-1 " data-sort="17" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/15.html">24. The Search for The Graviton (spin 6)</a> </li> <li class="toc level-1 " data-sort="18" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/16.html">25. Elementary Retracements (spin 7)</a> </li> <li class="toc level-1 " data-sort="19" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/17.html">26. The Recycling Momentum (spin 8)</a> </li> <li class="toc level-1 " data-sort="20" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/18.html">27. Exchange Entrypoint (spin 10)</a> </li> <li class="toc level-1 " data-sort="21" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/19.html">28. The Mapping Order (spin 10)</a> </li> <li class="toc level-1 " data-sort="22" data-level="1"> <a class="d-flex flex-items-baseline " href="/monsterpost/multiplication/20.html">29. Magnitude Order (spin 11)</a> </li></ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/monsterpost/exponentiation/"> 30. Exponentiation Zones (30-36) </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/exponentiation/span17/"> 31. Strong Force (maps) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist09.html">gist09.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span17/gist10.html">gist10.md</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/exponentiation/span16/"> 32. Quantum Gravity (feed) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist07.html">Antiparallels</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist06.html">Deploying containers</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist01.html">gist01.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist09.html">gist09.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist10.html">gist10.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span16/gist12.html">gist12.md</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/exponentiation/span15/"> 33. Electromagnetism (lexer) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span15/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span15/gist02.html">Electron scattering</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span15/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span15/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="15" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span15/gist01.html">intro. Mass Gap (Δ)</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/exponentiation/span14/"> 34. Electroweak Theory (parser) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist02.html">gist02.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="14" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span14/gist01.html">intro. Turbulence</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/exponentiation/span13/"> 35. Grand Unified Theory (syntax) </a><ul> <li class="toc level-2 " data-sort="1" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist01.html">algorithm</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist02.html">core</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist03.html">default</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist04.html">factor</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist05.html">grouping</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist06.html">helix</a> </li> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist07.html">impact</a> </li> <li class="toc level-2 " data-sort="8" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist08.html">level</a> </li> <li class="toc level-2 " data-sort="9" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/exponentiation/span13/gist09.html">centralize</a> </li></ul> </li></ul> <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/monsterpost/identition/"> 36. Identition Zones (36-102) </a><ul> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span12/"> 37. Theories of Everything (span12) </a><ul> <li class="toc level-2 " data-sort="21" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist01.html">main. Feeding (spin 3)</a> </li> <li class="toc level-2 " data-sort="22" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist02.html">main. Entrypoint (spin 4)</a> </li> <li class="toc level-2 " data-sort="23" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist03.html">main. Mapping (spin 5)</a> </li> <li class="toc level-2 " data-sort="24" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist04.html">main. Keyring (spin 6)</a> </li> <li class="toc level-2 " data-sort="25" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist05.html">main. Enneagram (spin 7)</a> </li> <li class="toc level-2 " data-sort="26" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist06.html">main. Twisting (spin 8)</a> </li> <li class="toc level-2 " data-sort="27" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist07.html">main. Recycling (spin 9)</a> </li> <li class="toc level-2 " data-sort="28" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist08.html">main. Exchange (spin 10)</a> </li> <li class="toc level-2 " data-sort="29" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span12/gist09.html">main. Dimensions</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span11/"> 39. The Extra Dimensions (span 11) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist02.html">gist02.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist09.html">gist09.md</a> </li> <li class="toc level-2 " data-sort="11" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span11/gist01.html">intro. Rationalization</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span10/"> 40. Truncated Perturbation (span 10) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist06.html">Site GitHub</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist02.html">gist02.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist09.html">gist09.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist10.html">Poincaré Conjecture</a> </li> <li class="toc level-2 " data-sort="10" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span10/gist01.html">intro. The Centralizing</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span9/"> 42. Quadratic Polynomials (span 9) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist07.html">How to deal with cicular destination of 36?</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist02.html">The Bilateral 9 Sums</a> </li> <li class="toc level-2 " data-sort="9" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span9/gist01.html">intro. Lexer vs Parser</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span8/"> 44. Fundamental Forces (span 8) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist02.html">gist02.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist06.html">How to select repos?</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="8" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span8/gist01.html">intro. Seven Ate Nine (7, ‘8’, 9)</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span7/"> 48. Elementary Particles (span 7) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist02.html">gist02.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist04.html">Why is 7 the most feared number?</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span7/gist01.html">intro. Double strands</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span6/"> 50. Basic Transformation (span 6) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist10.html">gist10.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist02.html">Why was 6 afraid of 7?</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist09.html">gist09.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist04.html">Fonts Test</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist01.html">intro. The Prime hexagon</a> </li> <li class="toc level-2 " data-sort="103" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span6/gist05.html">Markdown Elements</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span5/"> 54. Hidden Dimensions (span 5) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist05.html">gist05.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist02.html">Where is the 5?</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span5/gist01.html">intro. Triangular waves</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span4/"> 56. Parallel Universes (span 4) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist08.html">gist08.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist02.html">Binary</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist05.html">The Classes</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist09.html">gist09.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist06.html">License</a> </li> <li class="toc level-2 current" data-sort="" data-level="2"> <a class="d-flex flex-items-baseline current" href="/monsterpost/identition/span4/gist04.html">Directory Structure</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span4/gist01.html">intro. Lexer vs Parser</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span3/"> 60. Vibrating Strings (span 3) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist06.html">System Storage</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist02.html">gist02.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist05.html">Container-Optimized</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist01.html">intro. DNA Recombination</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span3/gist04.html">intro. Mass vs Gap (Δ)</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span2/"> 66. Series Expansion (span 2) </a><ul> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist08.html">Project Repositories</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist09.html">Polar Plot</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist03.html">gist03.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist02.html">The Bilateral 9 Sums</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist04.html">gist04.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist07.html">gist07.md</a> </li> <li class="toc level-2 " data-sort="" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist06.html">gist06.md</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist05.html">intro. 2.5 Parsering</a> </li> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span2/gist01.html">intro. Assigning Repositories</a> </li></ul> </li> <li class="toc level-1"> <a class="d-flex flex-items-baseline" href="/monsterpost/identition/span1/"> 68. Wormhole Theory (span 1) </a><ul> <li class="toc level-2 " data-sort="2" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist02.html">intro. Partition function</a> </li> <li class="toc level-2 " data-sort="3" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist03.html">intro. Irrational Partitions</a> </li> <li class="toc level-2 " data-sort="4" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist04.html">intro. Object Orientation</a> </li> <li class="toc level-2 " data-sort="5" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist05.html">intro. Bonding Position</a> </li> <li class="toc level-2 " data-sort="6" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist06.html">intro. The Quantum Way</a> </li> <li class="toc level-2 " data-sort="7" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist07.html">intro. Proofreading Ability</a> </li> <li class="toc level-2 " data-sort="8" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist08.html">center. Replication Fork</a> </li> <li class="toc level-2 " data-sort="9" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist09.html">intro. Building The Instance</a> </li> <li class="toc level-2 " data-sort="10" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist10.html">intro. Imaginary Square</a> </li> <li class="toc level-2 " data-sort="11" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist11.html">intro. Rational vs Irrational</a> </li> <li class="toc level-2 " data-sort="12" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist12.html">intro. Rotation vs Revolution</a> </li> <li class="toc level-2 " data-sort="13" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist13.html">intro. Zeta vs Zero</a> </li> <li class="toc level-2 " data-sort="14" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist14.html">intro. Anti Parallel</a> </li> <li class="toc level-2 " data-sort="15" data-level="2"> <a class="d-flex flex-items-baseline " href="/monsterpost/identition/span1/gist15.html">intro. Mass vs Gap (Δ)</a> </li></ul> </li></ul> </div> </div> </div> <div class="content-wrap"> <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation"> <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button"> <i class="fa fa-bars"></i> </button> <div class="title flex-1 d-flex flex-justify-center"> <a class="h4 no-underline py-1 px-2 rounded-1" href="/monsterpost/">eQuantum</a> </div> </div> <div class="content p-3 p-sm-5"> <div class="navigation-top d-flex flex-justify-between"> <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation"> <li class="breadcrumb-item"> <a class="no-underline" href="https://eq19.com/" title="Home"> <i class="fa fa-home"></i> </a> </li><li class="breadcrumb-item"> <a href="/">Extra Dimensions</a> </li><li class="breadcrumb-item"> <a href="/monsterpost/">Monsterpost</a> </li><li class="breadcrumb-item" ><a href="/monsterpost/identition/">Identition</a></li><li class="breadcrumb-item" ><a href="/monsterpost/identition/span4/">Span4</a></li><li class="breadcrumb-item" aria-current="page">Gist04</li></ul> <a class="edit" href="https://github.com/ZeroWeakBoson/monsterpost/edit/gh-pages/identition/span4/gist04.md" title="Edit on GitHub" rel="noreferrer" target="_blank"> <i class="fa fa-edit"></i> </a> </div> <hr> <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article"> <div class="markdown-body" itemprop="articleBody"> <h2 id="directory-structure">Directory Structure</h2> <p>This page walks through the steps required to <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_training_and_evaluation.md">train an object detection model</a> with Recommended Directory Structure for Training and Evaluation for <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/dockerfiles/tf2_ai_platform/Dockerfile">tf2_ai_platform</a></p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>$ cat /mnt/disks/Linux/usr/share/models/research/object_detection/dockerfiles/tf2_ai_platform/Dockerfile
+
+FROM tensorflow/tensorflow:latest-gpu
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Install apt dependencies
+RUN apt-get update &amp;&amp; apt-get install -y \
+    git \
+    gpg-agent \
+    python3-cairocffi \
+    protobuf-compiler \
+    python3-pil \
+    python3-lxml \
+    python3-tk \
+    python3-opencv \
+    wget
+
+# Installs google cloud sdk, this is mostly for using gsutil to export model.
+RUN wget -nv \
+    https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz &amp;&amp; \
+    mkdir /root/tools &amp;&amp; \
+    tar xvzf google-cloud-sdk.tar.gz -C /root/tools &amp;&amp; \
+    rm google-cloud-sdk.tar.gz &amp;&amp; \
+    /root/tools/google-cloud-sdk/install.sh --usage-reporting=false \
+        --path-update=false --bash-completion=false \
+        --disable-installation-options &amp;&amp; \
+    rm -rf /root/.config/* &amp;&amp; \
+    ln -s /root/.config /config &amp;&amp; \
+    rm -rf /root/tools/google-cloud-sdk/.install/.backup
+
+# Path configuration
+ENV PATH $PATH:/root/tools/google-cloud-sdk/bin
+# Make sure gsutil will use the default service account
+RUN echo '[GoogleCompute]\nservice_account = default' &gt; /etc/boto.cfg
+
+WORKDIR /home/tensorflow
+
+## Copy this code (make sure you are under the ../models/research directory)
+COPY . /home/tensorflow/models
+
+# Compile protobuf configs
+RUN (cd /home/tensorflow/models/ &amp;&amp; protoc object_detection/protos/*.proto --python_out=.)
+WORKDIR /home/tensorflow/models/
+
+RUN cp object_detection/packages/tf2/setup.py ./
+ENV PATH="/home/tensorflow/.local/bin:${PATH}"
+
+RUN python -m pip install -U pip
+RUN python -m pip install .
+
+ENTRYPOINT ["python", "object_detection/model_main_tf2.py"]
+</code></pre>  </div></div> <p>GitHub allows developers to run GitHub Actions workflows on your own runners. This Docker image allows you to create your own runners on Docker. The GitHub runner (the binary) will update itself when receiving a job, if a new release is available.</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>ARG FROM=debian:buster-slim
+FROM ${FROM}
+
+ARG DEBIAN_FRONTEND=noninteractive
+ARG GIT_VERSION="2.26.2"
+ARG GH_RUNNER_VERSION
+ARG DOCKER_COMPOSE_VERSION="1.27.4"
+
+ENV RUNNER_NAME=""
+ENV RUNNER_WORK_DIRECTORY="_work"
+ENV RUNNER_TOKEN=""
+ENV RUNNER_REPOSITORY_URL=""
+ENV RUNNER_LABELS=""
+ENV RUNNER_ALLOW_RUNASROOT=true
+ENV GITHUB_ACCESS_TOKEN=""
+ENV AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+
+# Labels.
+LABEL maintainer="me@tcardonne.fr" \
+    org.label-schema.schema-version="1.0" \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.name="tcardonne/github-runner" \
+    org.label-schema.description="Dockerized GitHub Actions runner." \
+    org.label-schema.url="https://github.com/tcardonne/docker-github-runner" \
+    org.label-schema.vcs-url="https://github.com/tcardonne/docker-github-runner" \
+    org.label-schema.vendor="Thomas Cardonne" \
+    org.label-schema.docker.cmd="docker run -it tcardonne/github-runner:latest"
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update &amp;&amp; \
+    apt-get install -y \
+        curl \
+        unzip \
+        apt-transport-https \
+        ca-certificates \
+        software-properties-common \
+        sudo \
+        supervisor \
+        jq \
+        iputils-ping \
+        build-essential \
+        zlib1g-dev \
+        gettext \
+        liblttng-ust0 \
+        libcurl4-openssl-dev \
+        openssh-client &amp;&amp; \
+    rm -rf /var/lib/apt/lists/* &amp;&amp; \
+    apt-get clean
+
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN chmod 644 /etc/supervisor/conf.d/supervisord.conf
+
+# Install Docker CLI
+RUN curl -fsSL https://get.docker.com -o- | sh &amp;&amp; \
+    rm -rf /var/lib/apt/lists/* &amp;&amp; \
+    apt-get clean
+
+# Install Docker-Compose
+RUN curl -L -o /usr/local/bin/docker-compose \
+    "https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" &amp;&amp; \
+    chmod +x /usr/local/bin/docker-compose
+
+RUN cd /tmp &amp;&amp; \
+    curl -sL -o git.tgz \
+    https://www.kernel.org/pub/software/scm/git/git-${GIT_VERSION}.tar.gz &amp;&amp; \
+    tar zxf git.tgz  &amp;&amp; \
+    cd git-${GIT_VERSION}  &amp;&amp; \
+    ./configure --prefix=/usr  &amp;&amp; \
+    make &amp;&amp; \
+    make install &amp;&amp; \
+    rm -rf /tmp/*
+
+RUN mkdir -p /home/runner ${AGENT_TOOLSDIRECTORY}
+
+WORKDIR /home/runner
+
+RUN GH_RUNNER_VERSION=${GH_RUNNER_VERSION:-$(curl --silent "https://api.github.com/repos/actions/runner/releases/latest" | grep tag_name | sed -E 's/.*"v([^"]+)".*/\1/')} \
+    &amp;&amp; curl -L -O https://github.com/actions/runner/releases/download/v${GH_RUNNER_VERSION}/actions-runner-linux-x64-${GH_RUNNER_VERSION}.tar.gz \
+    &amp;&amp; tar -zxf actions-runner-linux-x64-${GH_RUNNER_VERSION}.tar.gz \
+    &amp;&amp; rm -f actions-runner-linux-x64-${GH_RUNNER_VERSION}.tar.gz \
+    &amp;&amp; ./bin/installdependencies.sh \
+    &amp;&amp; chown -R root: /home/runner \
+    &amp;&amp; rm -rf /var/lib/apt/lists/* \
+    &amp;&amp; apt-get clean
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+</code></pre>  </div></div> <p>In order to allow the runner to exit and restart by itself, the binary is started by a <a href="https://github.com/tcardonne/docker-github-runner/blob/master/docker/Dockerfile">supervisord process</a> and <a href="https://github.com/tcardonne/docker-github-runner/blob/master/docker/entrypoint.sh">entrypoint</a>.</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>$ cat /etc/supervisord.conf
+
+[supervisord]
+user=root
+nodaemon=true
+logfile=/dev/fd/1
+logfile_maxbytes=0
+loglevel=error
+
+[program:runner]
+directory=/home/runner
+command=/home/runner/bin/runsvc.sh
+stdout_logfile=/dev/fd/1
+stdout_logfile_maxbytes=0
+redirect_stderr=true
+</code></pre>  </div></div> <p>The self-hosted runner application creates a detailed log file for each job that it processes. These files are stored in the <em>diag directory where you installed the runner application, and the filename begins with Worker</em>.</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>$ cat /home/runner/_diag/Runner_20230515-184422-utc.log
+
+[2023-05-15 18:44:22Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO HostContext] Well known config file 'Credentials': '/home/runner/.credentials'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO HostContext] Well known config file 'Runner': '/home/runner/.runner'
+[2023-05-15 18:44:22Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2023-05-15 18:44:22Z INFO Listener] RuntimeInformation: Linux 5.15.109+ #1 SMP Sat May 6 10:58:50 UTC 2023.
+[2023-05-15 18:44:22Z INFO Listener] Version: 2.303.0
+[2023-05-15 18:44:22Z INFO Listener] Commit: e676c7871817c1b484299cd93fabdf4b95e70741
+[2023-05-15 18:44:22Z INFO Listener] Culture: 
+[2023-05-15 18:44:22Z INFO Listener] UI Culture: 
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO Listener] Validating directory permissions for: '/home/runner'
+[2023-05-15 18:44:22Z INFO CommandLineParser] Parse
+[2023-05-15 18:44:22Z INFO CommandLineParser] Parsing 11 args
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: False
+[2023-05-15 18:44:22Z INFO CommandLineParser] Adding Command: configure
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] arg: url
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] Adding option 'url': 'https://github.com/FeedMapping'
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] arg: token
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] Adding option 'token': '***'
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] arg: name
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] Adding option 'name': 'Google-optimized-instance'
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] arg: work
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] Adding option 'work': '_work'
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] arg: replace
+[2023-05-15 18:44:22Z INFO CommandLineParser] parsing argument
+[2023-05-15 18:44:22Z INFO CommandLineParser] HasArgs: True
+[2023-05-15 18:44:22Z INFO CommandLineParser] arg: unattended
+[2023-05-15 18:44:22Z INFO CommandLineParser] Adding flag: replace
+[2023-05-15 18:44:22Z INFO Listener] Arguments parsed
+[2023-05-15 18:44:22Z INFO Runner] ExecuteCommand
+[2023-05-15 18:44:22Z INFO ConfigurationStore] currentAssemblyLocation: /home/runner/bin/Runner.Listener.dll
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] binPath: /home/runner/bin
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] RootFolder: /home/runner
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO HostContext] Well known config file 'Runner': '/home/runner/.runner'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] ConfigFilePath: /home/runner/.runner
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO HostContext] Well known config file 'Credentials': '/home/runner/.credentials'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] CredFilePath: /home/runner/.credentials
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO HostContext] Well known config file 'MigratedCredentials': '/home/runner/.credentials_migrated'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] MigratedCredFilePath: /home/runner/.credentials_migrated
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:22Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:22Z INFO HostContext] Well known config file 'Service': '/home/runner/.service'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] ServiceConfigFilePath: /home/runner/.service
+[2023-05-15 18:44:22Z INFO CommandSettings] Flag 'help': 'False'
+[2023-05-15 18:44:22Z INFO CommandSettings] Flag 'version': 'False'
+[2023-05-15 18:44:22Z INFO CommandSettings] Flag 'commit': 'False'
+[2023-05-15 18:44:22Z INFO CommandSettings] Flag 'check': 'False'
+[2023-05-15 18:44:22Z INFO CommandSettings] Command 'configure': 'True'
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |                                                                              |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE: |                       
+[2023-05-15 18:44:22Z INFO Terminal] WRITE: Self-hosted runner registration
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE:                         |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: |                                                                              |
+[2023-05-15 18:44:22Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2023-05-15 18:44:22Z INFO ConfigurationManager] ConfigureAsync
+[2023-05-15 18:44:22Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2023-05-15 18:44:22Z INFO ConfigurationStore] IsConfigured()
+[2023-05-15 18:44:22Z INFO ConfigurationStore] IsConfigured: False
+[2023-05-15 18:44:22Z INFO ConfigurationManager] Is configured: False
+[2023-05-15 18:44:22Z INFO CommandSettings] Arg 'url': 'https://github.com/FeedMapping'
+[2023-05-15 18:44:22Z INFO CommandSettings] Remove url from Arg dictionary.
+[2023-05-15 18:44:22Z INFO CommandSettings] Arg 'token': '***'
+[2023-05-15 18:44:22Z INFO CommandSettings] Remove token from Arg dictionary.
+[2023-05-15 18:44:24Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (E774:461B:1E7DC8F:3E4A2E3:64627D87)
+[2023-05-15 18:44:24Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2023-05-15 18:44:24Z INFO RunnerServer] EstablishVssConnection
+[2023-05-15 18:44:24Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-05-15 18:44:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-15 18:44:24Z INFO RunnerServer] EstablishVssConnection
+[2023-05-15 18:44:24Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-05-15 18:44:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-15 18:44:24Z INFO RunnerServer] EstablishVssConnection
+[2023-05-15 18:44:24Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-05-15 18:44:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-15 18:44:24Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-15 18:44:24Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-15 18:44:24Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-15 18:44:25Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:25Z INFO ConfigurationManager] Test Connection complete.
+[2023-05-15 18:44:25Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:25Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:25Z INFO HostContext] Well known config file 'RSACredentials': '/home/runner/.credentials_rsaparams'
+[2023-05-15 18:44:25Z INFO RSAFileKeyManager] Creating new RSA key using 2048-bit key length
+[2023-05-15 18:44:25Z INFO RSAFileKeyManager] Successfully saved RSA key parameters to file /home/runner/.credentials_rsaparams
+[2023-05-15 18:44:25Z INFO RSAFileKeyManager] Which: 'chmod'
+[2023-05-15 18:44:25Z INFO RSAFileKeyManager] Location: '/bin/chmod'
+[2023-05-15 18:44:26Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:26Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   File name: '/bin/chmod'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Arguments: '600 /home/runner/.credentials_rsaparams'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Working directory: '/home/runner'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 75.
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper] Process started with process id 75, waiting for process exit.
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-15 18:44:26Z INFO ProcessInvokerWrapper] Finished process 75 with exit code 0, and elapsed time 00:00:00.2254015.
+[2023-05-15 18:44:26Z INFO RSAFileKeyManager] Successfully set permissions for RSA key parameters file /home/runner/.credentials_rsaparams
+[2023-05-15 18:44:26Z INFO CommandSettings] Arg 'runnergroup': ''
+[2023-05-15 18:44:26Z INFO CommandSettings] Flag 'unattended': 'True'
+[2023-05-15 18:44:26Z INFO PromptManager] ReadValue
+[2023-05-15 18:44:26Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:26Z INFO ConfigurationManager] Found a self-hosted runner group with id 1 and name Default
+[2023-05-15 18:44:26Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2023-05-15 18:44:26Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2023-05-15 18:44:26Z INFO CommandSettings] Arg 'name': 'Google-optimized-instance'
+[2023-05-15 18:44:26Z INFO CommandSettings] Remove name from Arg dictionary.
+[2023-05-15 18:44:26Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:26Z INFO CommandSettings] Arg 'labels': ''
+[2023-05-15 18:44:26Z INFO CommandSettings] Flag 'unattended': 'True'
+[2023-05-15 18:44:26Z INFO PromptManager] ReadValue
+[2023-05-15 18:44:26Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:27Z INFO Terminal] WRITE LINE: A runner exists with the same name
+[2023-05-15 18:44:27Z INFO CommandSettings] Flag 'replace': 'True'
+[2023-05-15 18:44:27Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2023-05-15 18:44:27Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2023-05-15 18:44:27Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2023-05-15 18:44:27Z INFO ConfigurationStore] Saving OAuth credential @ /home/runner/.credentials
+[2023-05-15 18:44:27Z INFO ConfigurationStore] Credentials Saved.
+[2023-05-15 18:44:27Z INFO ConfigurationStore] HasCredentials()
+[2023-05-15 18:44:27Z INFO ConfigurationStore] stored True
+[2023-05-15 18:44:27Z INFO CredentialManager] GetCredentialProvider
+[2023-05-15 18:44:27Z INFO CredentialManager] Creating type OAuth
+[2023-05-15 18:44:27Z INFO CredentialManager] Creating credential type: OAuth
+[2023-05-15 18:44:27Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/runner/.credentials_rsaparams
+[2023-05-15 18:44:27Z INFO RunnerServer] EstablishVssConnection
+[2023-05-15 18:44:27Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2023-05-15 18:44:27Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-15 18:44:27Z INFO RunnerServer] EstablishVssConnection
+[2023-05-15 18:44:27Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-05-15 18:44:27Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-15 18:44:27Z INFO RunnerServer] EstablishVssConnection
+[2023-05-15 18:44:27Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2023-05-15 18:44:28Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2023-05-15 18:44:28Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-15 18:44:28Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-15 18:44:28Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2023-05-15 18:44:28Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/runner/.credentials_rsaparams
+[2023-05-15 18:44:28Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/runner/.credentials_rsaparams
+[2023-05-15 18:44:29Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2023-05-15 18:44:29Z INFO CommandSettings] Arg 'work': '_work'
+[2023-05-15 18:44:29Z INFO CommandSettings] Remove work from Arg dictionary.
+[2023-05-15 18:44:29Z INFO ConfigurationStore] Saving runner settings.
+[2023-05-15 18:44:29Z INFO ConfigurationStore] Settings Saved.
+[2023-05-15 18:44:29Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:29Z INFO Terminal] WRITE LINE: 
+[2023-05-15 18:44:29Z INFO SystemDControlManager] Service name 'actions.runner.FeedMapping.Google-optimized-instance.service' display name 'GitHub Actions Runner (FeedMapping.Google-optimized-instance)' will be used for service configuration.
+[2023-05-15 18:44:29Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:29Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:29Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:29Z INFO HostContext] Well known directory 'Bin': '/home/runner/bin'
+[2023-05-15 18:44:29Z INFO HostContext] Well known directory 'Root': '/home/runner'
+[2023-05-15 18:44:29Z INFO UnixUtil] Which: 'chmod'
+[2023-05-15 18:44:29Z INFO UnixUtil] Location: '/bin/chmod'
+[2023-05-15 18:44:29Z INFO UnixUtil] Running /bin/chmod 755 "/home/runner/svc.sh"
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper] Starting process:
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   File name: '/bin/chmod'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Arguments: '755 "/home/runner/svc.sh"'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Working directory: '/home/runner'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'True'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'False'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper] Updated oom_score_adj to 500 for PID: 79.
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper] Process started with process id 79, waiting for process exit.
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2023-05-15 18:44:29Z INFO ProcessInvokerWrapper] Finished process 79 with exit code 0, and elapsed time 00:00:00.0022358.
+[2023-05-15 18:44:29Z INFO Listener] Runner execution has finished with return code 0
+</code></pre>  </div></div> <h3 id="system-file">System File</h3> <p>There is a powerful command in Linux that helps you search for files and folders called find. In this article, we will discuss the find command with some examples.</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>$ find / -type f -name "Dockerfile*"
+
+/mnt/disks/Linux/opt/src/github.com/google/inverting-proxy/agent/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/inverting-proxy-master/agent/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/src/models/research/object_detection/dockerfiles/android/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/src/models/research/object_detection/dockerfiles/tf2_ai_platform/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/src/models/research/object_detection/dockerfiles/tf1/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/src/models/research/object_detection/dockerfiles/tf2/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/pipelines/containers/deploycmle/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/pipelines/containers/bqtocsv/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/pipelines/containers/hypertrain/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/pipelines/containers/deployapp/Dockerfile
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/pipelines/containers/traintuned/Dockerfile
+
+/mnt/disks/Linux/usr/share/models/research/object_detection/dockerfiles/android/Dockerfile
+/mnt/disks/Linux/usr/share/models/research/object_detection/dockerfiles/tf2_ai_platform/Dockerfile
+/mnt/disks/Linux/usr/share/models/research/object_detection/dockerfiles/tf1/Dockerfile
+/mnt/disks/Linux/usr/share/models/research/object_detection/dockerfiles/tf2/Dockerfile
+/mnt/disks/Linux/usr/share/man/man5/Dockerfile.5.gz
+
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.install_app
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.virtualenv.template
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.requirements_txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/python/data/Dockerfile.preamble
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/ruby/templates/Dockerfile.template
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/php/templates/Dockerfile.template
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/php/templates/Dockerfile.entrypoint.template
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/go/data/Dockerfile
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/nodejs/data/Dockerfile
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/docker/docs/Dockerfile
+/mnt/disks/Linux/usr/local/go/src/crypto/elliptic/internal/fiat/Dockerfile
+
+/mnt/stateful_partition/var/lib/docker/overlay2/l5js8cyp55dvi6cah1i3gzu4k/diff/Dockerfile
+/mnt/stateful_partition/var/lib/docker/overlay2/6af1c7208063f51f2dc03dbc263eae3f4e148d6bcfd1608bfa4231ca764c5658/diff/home/runner/_work/Partition/Partition/.github/actions/intro/Dockerfile
+</code></pre>  </div></div> <p>Now let's say we want to find files with a particular extension like .txt. We'll modify the command like this:</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>/mnt/disks/Linux/opt/conda/pkgs/grpc-cpp-1.48.1-hc2bec63_1/info/test/examples/python/xds/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/src/models/official/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/src/models/official/projects/unified_detector/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/src/models/official/projects/movinet/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/src/models/research/deep_speech/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/tf2_course/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/serving/application/requirements.txt
+/mnt/disks/Linux/opt/deeplearning/workspace/tutorials/machine_learning_deepdive/06_structured/labs/serving/application/requirements.txt
+
+/mnt/disks/Linux/usr/share/models/official/requirements.txt
+/mnt/disks/Linux/usr/share/models/official/projects/unified_detector/requirements.txt
+/mnt/disks/Linux/usr/share/models/official/projects/movinet/requirements.txt
+/mnt/disks/Linux/usr/share/models/research/deep_speech/requirements.txt
+
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/ext-runtime/java/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/gslib/vendored/boto/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/gslib/vendored/oauth2client/docs/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/httplib2/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/requests/docs/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/pyasn1/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/pyasn1-modules/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/charset_normalizer/docs/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/gcs-oauth2-boto-plugin/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/urllib3/docs/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/samples/cloud-client/snippets/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/system_tests/system_tests_sync/app_engine_test_app/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil/third_party/mock/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil_py2/gslib/vendored/boto/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil_py2/gslib/vendored/oauth2client/docs/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil_py2/third_party/pyasn1/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil_py2/third_party/pyasn1-modules/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil_py2/third_party/gcs-oauth2-boto-plugin/requirements.txt
+/mnt/disks/Linux/usr/lib/google-cloud-sdk/platform/gsutil_py2/third_party/mock/requirements.txt
+
+/mnt/disks/Linux/usr/samples/python/network_api_pytorch_mnist/requirements.txt
+/mnt/disks/Linux/usr/samples/python/requirements.txt
+/mnt/disks/Linux/usr/samples/python/engine_refit_onnx_bidaf/requirements.txt
+/mnt/disks/Linux/usr/samples/python/introductory_parser_samples/requirements.txt
+/mnt/disks/Linux/usr/samples/python/end_to_end_tensorflow_mnist/requirements.txt
+/mnt/disks/Linux/usr/samples/python/int8_caffe_mnist/requirements.txt
+/mnt/disks/Linux/usr/samples/python/engine_refit_mnist/requirements.txt
+/mnt/disks/Linux/usr/samples/python/uff_ssd/requirements.txt
+/mnt/disks/Linux/usr/samples/python/uff_custom_plugin/requirements.txt
+/mnt/disks/Linux/usr/samples/python/yolov3_onnx/requirements.txt
+/mnt/disks/Linux/usr/samples/python/onnx_packnet/requirements.txt
+/mnt/disks/Linux/usr/samples/sampleUffMaskRCNN/converted/requirements.txt
+/mnt/disks/Linux/usr/samples/sampleSSD/requirements.txt
+
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/network_api_pytorch_mnist/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/engine_refit_onnx_bidaf/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/introductory_parser_samples/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/end_to_end_tensorflow_mnist/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/int8_caffe_mnist/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/engine_refit_mnist/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/uff_ssd/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/uff_custom_plugin/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/yolov3_onnx/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/python/onnx_packnet/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/sampleUffMaskRCNN/converted/requirements.txt
+/mnt/disks/Linux/usr/targets/x86_64-linux-gnu/samples/sampleSSD/requirements.txt
+</code></pre>  </div></div> <p>The find command lets you efficiently search for files, folders, and character and block devices. Below is the basic syntax of the find command:</p> <div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>$ find / -type d -name "tensorflow*"
+
+/mnt/disks/Linux/opt/deeplearning/binaries/tensorflow
+/mnt/disks/Linux/opt/deeplearning/src/models/tensorflow_models
+/mnt/disks/Linux/usr/share/models/tensorflow_models
+
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_cloud-0.1.16.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_probability
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_io_gcs_filesystem-0.29.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_io
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/google/cloud/aiplatform/training_utils/cloud_profiler/plugins/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_io_gcs_filesystem
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_datasets
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_estimator
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorboard_plugin_wit/_vendor/tensorflow_serving
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_cloud
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow/xla_aot_runtime_src/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow/compiler/mlir/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow/include/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow/include/tensorflow/compiler/mlir/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_io-0.29.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_probability-0.19.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/ray/train/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/witwidget/_vendor/tensorflow_serving
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_serving_api-2.11.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_hub-0.13.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_estimator-2.11.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_transform-1.12.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/pyarrow/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/pyarrow/include/arrow/adapters/tensorflow
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow-2.11.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_metadata
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_serving
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_hub
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_transform
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_metadata-1.12.0.dist-info
+/mnt/disks/Linux/opt/conda/lib/python3.7/site-packages/tensorflow_datasets-4.8.2.dist-info
+
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_cloud-0.1.16.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorboard/compat/tensorflow_stub
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_probability
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_io_gcs_filesystem-0.29.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_io
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/google/cloud/aiplatform/training_utils/cloud_profiler/plugins/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_io_gcs_filesystem
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_datasets
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_estimator
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorboard_plugin_wit/_vendor/tensorflow_serving
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_cloud
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow/xla_aot_runtime_src/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow/compiler/mlir/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow/include/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow/include/tensorflow/compiler/mlir/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_io-0.29.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_probability-0.19.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/ray/train/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/witwidget/_vendor/tensorflow_serving
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_serving_api-2.11.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_hub-0.13.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_estimator-2.11.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_transform-1.12.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/pyarrow/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/pyarrow/include/arrow/adapters/tensorflow
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow-2.11.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_metadata
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_serving
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_hub
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_transform
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_metadata-1.12.0.dist-info
+/mnt/disks/Linux/opt/conda/pkgs/dlenv-tf-2-11-gpu-1.0.20230429-py37hfd508a8_0/lib/python3.7/site-packages/tensorflow_datasets-4.8.2.dist-info
+</code></pre>  </div></div> <p><img src="https://user-images.githubusercontent.com/8466209/199132181-38a98bf9-9d72-4740-b96c-c57da26a6135.png" alt="default" /></p> <p><a href="https://www.chetabahana.com/"><img src="https://user-images.githubusercontent.com/8466209/198812060-bcf0c3e5-1918-4245-b2fa-1c43c2602a90.png" alt="default" /></a></p> <p><a href="https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--metadata"><img src="https://user-images.githubusercontent.com/8466209/227684922-9b3190e2-879c-42e5-b404-fb975b9b8752.png" alt="default" /></a></p> </div> </div> <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation"> <div class="prev"><a href="/monsterpost/identition/span4/gist06.html" class="btn" title="License" accesskey="p" rel="prev"> <i class="fa fa-arrow-circle-left"></i> Previous </a></div> <div class="next"><a href="/monsterpost/identition/span4/gist01.html" class="btn" title="Lexer vs Parser" accesskey="n" rel="next"> Next <i class="fa fa-arrow-circle-right"></i> </a></div> </div><hr> <div class="copyright text-center text-gray" role="contentinfo"> <i class="fa fa-copyright"></i> <span class="time">2016-2023,</span> <a class="text-gray" href="https://github.com/eq19" rel="noreferrer" target="_blank"> eQuantum, </a> Prime Spin <a class="text-gray" href="https://github.com/ZeroWeakBoson/monsterpost/commit/a7e86066fd838fa86b83f1bfd9845e6c80564c0b" title="a7e86066fd838fa86b83f1bfd9845e6c80564c0b" rel="noreferrer" target="_blank">[11,1]</a> <br> <div class="generator"> Built with <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a> using a <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a> provided by <a href="https://github.com/rundocs" rel="noreferrer" target="_blank">RunDocs</a>. </div> </div> </div> </div> <div class="addons-wrap d-flex flex-column overflow-y-auto"> <div class="status d-flex flex-justify-between p-2"> <div class="title p-1"> <i class="fa fa-book"></i> eQuantum </div> <div class="branch p-1"> <span class="name"> profiles </span> <i class="fa fa-caret-down"></i> </div> </div> <div class="addons d-flex flex-column height-full p-2 d-none"> <dl> <dt>GitHub</dt> <dd> <a href="https://eq19.com/" title="Homepage"> <i class="fa fa-home"></i> Homepage </a> </dd> <dd> <a href="https://github.com/eq19/eq19.github.io" title="Repository" target="_blank"> <i class="fa fa-github"></i> Repository </a> </dd> <dd> <a href="https://gist.github.com/eq19" title="Gist" target="_blank"> <i class="fa fa-download"></i> Gist </a> </dd> </dl> <hr> <div class="license f6 pb-2"> This <a href="/monsterpost/" title="eQuantum" target="_blank">Software</a> is under the terms of <a href="https://github.com/ZeroWeakBoson/monsterpost" target="_blank">Other</a>. </div> </div> </div> <script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@2.0.10/assets/js/theme.min.js"></script> </body> </html>
